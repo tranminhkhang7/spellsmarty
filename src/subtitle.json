@@ -1,0 +1,920 @@
+{
+    "wireMagic": "pb3",
+    "pens": [ {
+    
+    } ],
+    "wsWinStyles": [ {
+    
+    } ],
+    "wpWinPositions": [ {
+    
+    } ],
+    "events": [ {
+      "tStartMs": 3000,
+      "dDurationMs": 2720,
+      "segs": [ {
+        "utf8": "You were on your way home, when you died."
+      } ]
+    }, {
+      "tStartMs": 6100,
+      "dDurationMs": 2100,
+      "segs": [ {
+        "utf8": "It was a car accident."
+      } ]
+    }, {
+      "tStartMs": 8920,
+      "dDurationMs": 2280,
+      "segs": [ {
+        "utf8": "Nothing particularly remarkable."
+      } ]
+    }, {
+      "tStartMs": 11480,
+      "dDurationMs": 1680,
+      "segs": [ {
+        "utf8": "But fatal, none the less."
+      } ]
+    }, {
+      "tStartMs": 13740,
+      "dDurationMs": 1520,
+      "segs": [ {
+        "utf8": "It was a painless death."
+      } ]
+    }, {
+      "tStartMs": 15460,
+      "dDurationMs": 3980,
+      "segs": [ {
+        "utf8": "The medics tried their best to save you... but to no avail."
+      } ]
+    }, {
+      "tStartMs": 19900,
+      "dDurationMs": 4660,
+      "segs": [ {
+        "utf8": "Your body was so utterly shattered, you were better off. Trust me."
+      } ]
+    }, {
+      "tStartMs": 25335,
+      "dDurationMs": 1930,
+      "segs": [ {
+        "utf8": "And that's when you met me."
+      } ]
+    }, {
+      "tStartMs": 28215,
+      "dDurationMs": 1190,
+      "segs": [ {
+        "utf8": "What happened?"
+      } ]
+    }, {
+      "tStartMs": 30205,
+      "dDurationMs": 1050,
+      "segs": [ {
+        "utf8": "Where am I?"
+      } ]
+    }, {
+      "tStartMs": 31740,
+      "dDurationMs": 879,
+      "segs": [ {
+        "utf8": "You died."
+      } ]
+    }, {
+      "tStartMs": 33100,
+      "dDurationMs": 1792,
+      "segs": [ {
+        "utf8": "I said, matter of factly."
+      } ]
+    }, {
+      "tStartMs": 35260,
+      "dDurationMs": 2080,
+      "segs": [ {
+        "utf8": "No point in mincing words."
+      } ]
+    }, {
+      "tStartMs": 37600,
+      "dDurationMs": 2520,
+      "segs": [ {
+        "utf8": "There was... there was a truck."
+      } ]
+    }, {
+      "tStartMs": 40468,
+      "dDurationMs": 1272,
+      "segs": [ {
+        "utf8": "And it was skidding."
+      } ]
+    }, {
+      "tStartMs": 43140,
+      "dDurationMs": 1000,
+      "segs": [ {
+        "utf8": "Yes."
+      } ]
+    }, {
+      "tStartMs": 44580,
+      "dDurationMs": 2180,
+      "segs": [ {
+        "utf8": "I... I died?"
+      } ]
+    }, {
+      "tStartMs": 47640,
+      "dDurationMs": 780,
+      "segs": [ {
+        "utf8": "Yes."
+      } ]
+    }, {
+      "tStartMs": 49000,
+      "dDurationMs": 1740,
+      "segs": [ {
+        "utf8": "But don't feel bad about it."
+      } ]
+    }, {
+      "tStartMs": 51400,
+      "dDurationMs": 1283,
+      "segs": [ {
+        "utf8": "Everyone dies."
+      } ]
+    }, {
+      "tStartMs": 53120,
+      "dDurationMs": 1259,
+      "segs": [ {
+        "utf8": "You looked around."
+      } ]
+    }, {
+      "tStartMs": 55080,
+      "dDurationMs": 1780,
+      "segs": [ {
+        "utf8": "There was... nothingness."
+      } ]
+    }, {
+      "tStartMs": 56740,
+      "dDurationMs": 2280,
+      "segs": [ {
+        "utf8": "Just you, and me."
+      } ]
+    }, {
+      "tStartMs": 59788,
+      "dDurationMs": 1292,
+      "segs": [ {
+        "utf8": "What is this place?"
+      } ]
+    }, {
+      "tStartMs": 62255,
+      "dDurationMs": 2040,
+      "segs": [ {
+        "utf8": "Is this, the afterlife?"
+      } ]
+    }, {
+      "tStartMs": 64783,
+      "dDurationMs": 1217,
+      "segs": [ {
+        "utf8": "More or less."
+      } ]
+    }, {
+      "tStartMs": 67000,
+      "dDurationMs": 1400,
+      "segs": [ {
+        "utf8": "Are you... God?"
+      } ]
+    }, {
+      "tStartMs": 69295,
+      "dDurationMs": 625,
+      "segs": [ {
+        "utf8": "Yes."
+      } ]
+    }, {
+      "tStartMs": 70420,
+      "dDurationMs": 755,
+      "segs": [ {
+        "utf8": "I'm God."
+      } ]
+    }, {
+      "tStartMs": 72700,
+      "dDurationMs": 600,
+      "segs": [ {
+        "utf8": "My kids..."
+      } ]
+    }, {
+      "tStartMs": 73940,
+      "dDurationMs": 920,
+      "segs": [ {
+        "utf8": "My wife..."
+      } ]
+    }, {
+      "tStartMs": 75940,
+      "dDurationMs": 1095,
+      "segs": [ {
+        "utf8": "What about them?"
+      } ]
+    }, {
+      "tStartMs": 78340,
+      "dDurationMs": 1760,
+      "segs": [ {
+        "utf8": "Will they be alright?"
+      } ]
+    }, {
+      "tStartMs": 81000,
+      "dDurationMs": 2269,
+      "segs": [ {
+        "utf8": "\"That's what I like to see,\" I said."
+      } ]
+    }, {
+      "tStartMs": 83580,
+      "dDurationMs": 3648,
+      "segs": [ {
+        "utf8": "You just died, and your main concern is for your family."
+      } ]
+    }, {
+      "tStartMs": 87228,
+      "dDurationMs": 2112,
+      "segs": [ {
+        "utf8": "That's good stuff right there."
+      } ]
+    }, {
+      "tStartMs": 90408,
+      "dDurationMs": 2052,
+      "segs": [ {
+        "utf8": "You looked at me with fascination."
+      } ]
+    }, {
+      "tStartMs": 92820,
+      "dDurationMs": 2609,
+      "segs": [ {
+        "utf8": "To you, I didn't look like God."
+      } ]
+    }, {
+      "tStartMs": 95660,
+      "dDurationMs": 3188,
+      "segs": [ {
+        "utf8": "I just looked like some man, or possibly a woman."
+      } ]
+    }, {
+      "tStartMs": 99460,
+      "dDurationMs": 1960,
+      "segs": [ {
+        "utf8": "Some vague authority figure maybe."
+      } ]
+    }, {
+      "tStartMs": 103780,
+      "dDurationMs": 980,
+      "segs": [ {
+        "utf8": "\"Don't worry,\" I said."
+      } ]
+    }, {
+      "tStartMs": 105220,
+      "dDurationMs": 880,
+      "segs": [ {
+        "utf8": "They'll be fine."
+      } ]
+    }, {
+      "tStartMs": 106460,
+      "dDurationMs": 3160,
+      "segs": [ {
+        "utf8": "Your kids will remember you as perfect in every way."
+      } ]
+    }, {
+      "tStartMs": 110480,
+      "dDurationMs": 2880,
+      "segs": [ {
+        "utf8": "They didn't have time to grow contemptuous of you."
+      } ]
+    }, {
+      "tStartMs": 114100,
+      "dDurationMs": 2240,
+      "segs": [ {
+        "utf8": "Your wife will cry on the outside."
+      } ]
+    }, {
+      "tStartMs": 116800,
+      "dDurationMs": 1700,
+      "segs": [ {
+        "utf8": "But will be secretly relieved."
+      } ]
+    }, {
+      "tStartMs": 120020,
+      "dDurationMs": 2820,
+      "segs": [ {
+        "utf8": "To be fair, your marriage was falling apart."
+      } ]
+    }, {
+      "tStartMs": 123600,
+      "dDurationMs": 4980,
+      "segs": [ {
+        "utf8": "If it's any consolation, she'll feel very guilty for feeling relieved."
+      } ]
+    }, {
+      "tStartMs": 129560,
+      "dDurationMs": 500,
+      "segs": [ {
+        "utf8": "Oh..."
+      } ]
+    }, {
+      "tStartMs": 130880,
+      "dDurationMs": 1280,
+      "segs": [ {
+        "utf8": "So what happens now?"
+      } ]
+    }, {
+      "tStartMs": 133020,
+      "dDurationMs": 2680,
+      "segs": [ {
+        "utf8": "Do I go to Heaven? Or Hell or something?"
+      } ]
+    }, {
+      "tStartMs": 136880,
+      "dDurationMs": 1120,
+      "segs": [ {
+        "utf8": "Neither."
+      } ]
+    }, {
+      "tStartMs": 138060,
+      "dDurationMs": 1540,
+      "segs": [ {
+        "utf8": "You'll be reincarnated."
+      } ]
+    }, {
+      "tStartMs": 140960,
+      "dDurationMs": 500,
+      "segs": [ {
+        "utf8": "Ah..."
+      } ]
+    }, {
+      "tStartMs": 142920,
+      "dDurationMs": 1640,
+      "segs": [ {
+        "utf8": "So the Hindus were right!"
+      } ]
+    }, {
+      "tStartMs": 145280,
+      "dDurationMs": 2060,
+      "segs": [ {
+        "utf8": "All religions are right in their own way."
+      } ]
+    }, {
+      "tStartMs": 148660,
+      "dDurationMs": 660,
+      "segs": [ {
+        "utf8": "Walk with me."
+      } ]
+    }, {
+      "tStartMs": 151100,
+      "dDurationMs": 2820,
+      "segs": [ {
+        "utf8": "You followed along as we strolled through the void."
+      } ]
+    }, {
+      "tStartMs": 155680,
+      "dDurationMs": 760,
+      "segs": [ {
+        "utf8": "Where are we going?"
+      } ]
+    }, {
+      "tStartMs": 157280,
+      "dDurationMs": 1480,
+      "segs": [ {
+        "utf8": "No where in particular."
+      } ]
+    }, {
+      "tStartMs": 158780,
+      "dDurationMs": 1940,
+      "segs": [ {
+        "utf8": "It's just nice to walk while we talk."
+      } ]
+    }, {
+      "tStartMs": 162240,
+      "dDurationMs": 1920,
+      "segs": [ {
+        "utf8": "So, what's the point then?"
+      } ]
+    }, {
+      "tStartMs": 165220,
+      "dDurationMs": 3360,
+      "segs": [ {
+        "utf8": "When I get reborn, I'll just be a blank slate right?"
+      } ]
+    }, {
+      "tStartMs": 169760,
+      "dDurationMs": 500,
+      "segs": [ {
+        "utf8": "A baby?"
+      } ]
+    }, {
+      "tStartMs": 171140,
+      "dDurationMs": 4560,
+      "segs": [ {
+        "utf8": "So, all my experiences and everything... everything I did in this life..."
+      } ]
+    }, {
+      "tStartMs": 176040,
+      "dDurationMs": 500,
+      "segs": [ {
+        "utf8": "Won't matter..."
+      } ]
+    }, {
+      "tStartMs": 177600,
+      "dDurationMs": 820,
+      "segs": [ {
+        "utf8": "Not so."
+      } ]
+    }, {
+      "tStartMs": 179140,
+      "dDurationMs": 5360,
+      "segs": [ {
+        "utf8": "You have within you, all the knowledge and experiences of all your past lives."
+      } ]
+    }, {
+      "tStartMs": 185000,
+      "dDurationMs": 1780,
+      "segs": [ {
+        "utf8": "You just don't remember them right now."
+      } ]
+    }, {
+      "tStartMs": 188220,
+      "dDurationMs": 2780,
+      "segs": [ {
+        "utf8": "I stopped walking, and took you by the shoulders."
+      } ]
+    }, {
+      "tStartMs": 191640,
+      "dDurationMs": 5660,
+      "segs": [ {
+        "utf8": "Your soul is more magnificent, beautiful, and gigantic than you can possibly imagine."
+      } ]
+    }, {
+      "tStartMs": 198520,
+      "dDurationMs": 3860,
+      "segs": [ {
+        "utf8": "A human mind can only contain a tiny fraction of what you are."
+      } ]
+    }, {
+      "tStartMs": 203220,
+      "dDurationMs": 2700,
+      "segs": [ {
+        "utf8": "It's like sticking your finger in a glass of water."
+      } ]
+    }, {
+      "tStartMs": 206240,
+      "dDurationMs": 1280,
+      "segs": [ {
+        "utf8": "To see if it's hot or cold."
+      } ]
+    }, {
+      "tStartMs": 208340,
+      "dDurationMs": 7540,
+      "segs": [ {
+        "utf8": "You put a tiny part of yourself into the vessel, and when you bring it back out, you've gained all the experiences it had."
+      } ]
+    }, {
+      "tStartMs": 216860,
+      "dDurationMs": 2640,
+      "segs": [ {
+        "utf8": "You've been in a human for the last 48 years."
+      } ]
+    }, {
+      "tStartMs": 219940,
+      "dDurationMs": 4420,
+      "segs": [ {
+        "utf8": "So you haven't stretched out yet and felt the rest of your immense consciousness."
+      } ]
+    }, {
+      "tStartMs": 225460,
+      "dDurationMs": 3900,
+      "segs": [ {
+        "utf8": "If we hung out here for long enough, you'd start remembering everything."
+      } ]
+    }, {
+      "tStartMs": 229960,
+      "dDurationMs": 2320,
+      "segs": [ {
+        "utf8": "But there's not point to doing that between each life."
+      } ]
+    }, {
+      "tStartMs": 234060,
+      "dDurationMs": 2400,
+      "segs": [ {
+        "utf8": "How many times have I been reincarnated then?"
+      } ]
+    }, {
+      "tStartMs": 237800,
+      "dDurationMs": 2000,
+      "segs": [ {
+        "utf8": "Oh, lots! Lots and lots!"
+      } ]
+    }, {
+      "tStartMs": 240220,
+      "dDurationMs": 2080,
+      "segs": [ {
+        "utf8": "And into lots of different lives."
+      } ]
+    }, {
+      "tStartMs": 242760,
+      "dDurationMs": 4780,
+      "segs": [ {
+        "utf8": "This time around, you'll be a Chinese peasant girl in 540 A.D."
+      } ]
+    }, {
+      "tStartMs": 249160,
+      "dDurationMs": 1460,
+      "segs": [ {
+        "utf8": "Wait... what?!"
+      } ]
+    }, {
+      "tStartMs": 251200,
+      "dDurationMs": 1780,
+      "segs": [ {
+        "utf8": "You're sending me back in time?"
+      } ]
+    }, {
+      "tStartMs": 254300,
+      "dDurationMs": 1740,
+      "segs": [ {
+        "utf8": "Well I guess technically."
+      } ]
+    }, {
+      "tStartMs": 256560,
+      "dDurationMs": 3340,
+      "segs": [ {
+        "utf8": "Time as you know it, only exists in your universe."
+      } ]
+    }, {
+      "tStartMs": 260500,
+      "dDurationMs": 1560,
+      "segs": [ {
+        "utf8": "Things are different where I come from."
+      } ]
+    }, {
+      "tStartMs": 263560,
+      "dDurationMs": 1740,
+      "segs": [ {
+        "utf8": "Where... where you come from?"
+      } ]
+    }, {
+      "tStartMs": 266520,
+      "dDurationMs": 3100,
+      "segs": [ {
+        "utf8": "Oh sure, I come from somewhere. Somewhere else."
+      } ]
+    }, {
+      "tStartMs": 270040,
+      "dDurationMs": 1760,
+      "segs": [ {
+        "utf8": "And there are others like me."
+      } ]
+    }, {
+      "tStartMs": 272440,
+      "dDurationMs": 4260,
+      "segs": [ {
+        "utf8": "I know you'll want to know what it's like there but honestly you wouldn't understand."
+      } ]
+    }, {
+      "tStartMs": 278400,
+      "dDurationMs": 500,
+      "segs": [ {
+        "utf8": "\"Oh...\""
+      } ]
+    }, {
+      "tStartMs": 279200,
+      "dDurationMs": 1580,
+      "segs": [ {
+        "utf8": "You said, a little let down."
+      } ]
+    }, {
+      "tStartMs": 281920,
+      "dDurationMs": 540,
+      "segs": [ {
+        "utf8": "But wait..."
+      } ]
+    }, {
+      "tStartMs": 283240,
+      "dDurationMs": 5980,
+      "segs": [ {
+        "utf8": "If I get reincarnated to other places in time, I could have interacted with myself at some point."
+      } ]
+    }, {
+      "tStartMs": 291000,
+      "dDurationMs": 1740,
+      "segs": [ {
+        "utf8": "Sure, happens all the time."
+      } ]
+    }, {
+      "tStartMs": 293240,
+      "dDurationMs": 5480,
+      "segs": [ {
+        "utf8": "And with both lives only aware of their own lifespans, you don't even know it's happening."
+      } ]
+    }, {
+      "tStartMs": 300180,
+      "dDurationMs": 740,
+      "segs": [ {
+        "utf8": "So..."
+      } ]
+    }, {
+      "tStartMs": 300920,
+      "dDurationMs": 1663,
+      "segs": [ {
+        "utf8": "what's the point of it all?"
+      } ]
+    }, {
+      "tStartMs": 303403,
+      "dDurationMs": 1277,
+      "segs": [ {
+        "utf8": "I looked you in the eye."
+      } ]
+    }, {
+      "tStartMs": 305200,
+      "dDurationMs": 1711,
+      "segs": [ {
+        "utf8": "The meaning of life,"
+      } ]
+    }, {
+      "tStartMs": 306911,
+      "dDurationMs": 2489,
+      "segs": [ {
+        "utf8": "the reason I made this whole universe,"
+      } ]
+    }, {
+      "tStartMs": 309400,
+      "dDurationMs": 2000,
+      "segs": [ {
+        "utf8": "is for you to mature."
+      } ]
+    }, {
+      "tStartMs": 312000,
+      "dDurationMs": 1860,
+      "segs": [ {
+        "utf8": "You mean... mankind?"
+      } ]
+    }, {
+      "tStartMs": 313860,
+      "dDurationMs": 2000,
+      "segs": [ {
+        "utf8": "You want to us to mature?"
+      } ]
+    }, {
+      "tStartMs": 317020,
+      "dDurationMs": 1240,
+      "segs": [ {
+        "utf8": "No, just you."
+      } ]
+    }, {
+      "tStartMs": 318760,
+      "dDurationMs": 2128,
+      "segs": [ {
+        "utf8": "I made this whole universe for you."
+      } ]
+    }, {
+      "tStartMs": 321220,
+      "dDurationMs": 1380,
+      "segs": [ {
+        "utf8": "With each new life"
+      } ]
+    }, {
+      "tStartMs": 322600,
+      "dDurationMs": 4100,
+      "segs": [ {
+        "utf8": "you grow and mature, and become a larger and greater intellect."
+      } ]
+    }, {
+      "tStartMs": 328100,
+      "dDurationMs": 900,
+      "segs": [ {
+        "utf8": "Just me?"
+      } ]
+    }, {
+      "tStartMs": 329540,
+      "dDurationMs": 1700,
+      "segs": [ {
+        "utf8": "What about everyone else?"
+      } ]
+    }, {
+      "tStartMs": 332080,
+      "dDurationMs": 1520,
+      "segs": [ {
+        "utf8": "There is no one else."
+      } ]
+    }, {
+      "tStartMs": 333600,
+      "dDurationMs": 3531,
+      "segs": [ {
+        "utf8": "In this universe, there's just you and me."
+      } ]
+    }, {
+      "tStartMs": 337940,
+      "dDurationMs": 1751,
+      "segs": [ {
+        "utf8": "You stared blankly at me."
+      } ]
+    }, {
+      "tStartMs": 340500,
+      "dDurationMs": 1406,
+      "segs": [ {
+        "utf8": "But all the people on Earth..."
+      } ]
+    }, {
+      "tStartMs": 342480,
+      "dDurationMs": 1031,
+      "segs": [ {
+        "utf8": "All you."
+      } ]
+    }, {
+      "tStartMs": 343680,
+      "dDurationMs": 2092,
+      "segs": [ {
+        "utf8": "Different incarnations of you."
+      } ]
+    }, {
+      "tStartMs": 346700,
+      "dDurationMs": 2560,
+      "segs": [ {
+        "utf8": "Wait... I'm... everyone?"
+      } ]
+    }, {
+      "tStartMs": 350320,
+      "dDurationMs": 1640,
+      "segs": [ {
+        "utf8": "Now you're getting it."
+      } ]
+    }, {
+      "tStartMs": 352560,
+      "dDurationMs": 2394,
+      "segs": [ {
+        "utf8": "I'm every human being who ever lived?"
+      } ]
+    }, {
+      "tStartMs": 356560,
+      "dDurationMs": 2560,
+      "segs": [ {
+        "utf8": "Or who will ever live,  yes."
+      } ]
+    }, {
+      "tStartMs": 359700,
+      "dDurationMs": 1260,
+      "segs": [ {
+        "utf8": "I'm Abraham Lincoln?"
+      } ]
+    }, {
+      "tStartMs": 362040,
+      "dDurationMs": 2160,
+      "segs": [ {
+        "utf8": "And you're John Wilkes Booth too."
+      } ]
+    }, {
+      "tStartMs": 364600,
+      "dDurationMs": 1180,
+      "segs": [ {
+        "utf8": "I'm Hitler?!"
+      } ]
+    }, {
+      "tStartMs": 366589,
+      "dDurationMs": 1577,
+      "segs": [ {
+        "utf8": "You said appalled."
+      } ]
+    }, {
+      "tStartMs": 368800,
+      "dDurationMs": 2080,
+      "segs": [ {
+        "utf8": "And you're the millions he killed."
+      } ]
+    }, {
+      "tStartMs": 371180,
+      "dDurationMs": 1700,
+      "segs": [ {
+        "utf8": "I'm Jesus?!"
+      } ]
+    }, {
+      "tStartMs": 373080,
+      "dDurationMs": 2100,
+      "segs": [ {
+        "utf8": "And you're everyone who followed Him."
+      } ]
+    }, {
+      "tStartMs": 375700,
+      "dDurationMs": 1560,
+      "segs": [ {
+        "utf8": "You fell silent."
+      } ]
+    }, {
+      "tStartMs": 378200,
+      "dDurationMs": 3891,
+      "segs": [ {
+        "utf8": "Every time you victimized someone, you were victimizing yourself."
+      } ]
+    }, {
+      "tStartMs": 382640,
+      "dDurationMs": 4100,
+      "segs": [ {
+        "utf8": "Every act of kindness you have done, you have done to yourself."
+      } ]
+    }, {
+      "tStartMs": 387000,
+      "dDurationMs": 7860,
+      "segs": [ {
+        "utf8": "Every happy and sad moment ever experienced by any human was or will be experienced by you."
+      } ]
+    }, {
+      "tStartMs": 396020,
+      "dDurationMs": 1660,
+      "segs": [ {
+        "utf8": "You thought for a long time."
+      } ]
+    }, {
+      "tStartMs": 398880,
+      "dDurationMs": 3440,
+      "segs": [ {
+        "utf8": "Why? Why do all this?"
+      } ]
+    }, {
+      "tStartMs": 402380,
+      "dDurationMs": 3151,
+      "segs": [ {
+        "utf8": "Because someday you will become like me."
+      } ]
+    }, {
+      "tStartMs": 405660,
+      "dDurationMs": 2218,
+      "segs": [ {
+        "utf8": "Because that's what you are!"
+      } ]
+    }, {
+      "tStartMs": 407878,
+      "dDurationMs": 2042,
+      "segs": [ {
+        "utf8": "You're one of my kind."
+      } ]
+    }, {
+      "tStartMs": 409920,
+      "dDurationMs": 1580,
+      "segs": [ {
+        "utf8": "You're my child!"
+      } ]
+    }, {
+      "tStartMs": 413100,
+      "dDurationMs": 2240,
+      "segs": [ {
+        "utf8": "Wow!! You said incredulous."
+      } ]
+    }, {
+      "tStartMs": 415720,
+      "dDurationMs": 1840,
+      "segs": [ {
+        "utf8": "You mean I'm a God?"
+      } ]
+    }, {
+      "tStartMs": 419040,
+      "dDurationMs": 2623,
+      "segs": [ {
+        "utf8": "No, not yet, you're a fetus."
+      } ]
+    }, {
+      "tStartMs": 421663,
+      "dDurationMs": 1317,
+      "segs": [ {
+        "utf8": "You're still growing."
+      } ]
+    }, {
+      "tStartMs": 423140,
+      "dDurationMs": 3872,
+      "segs": [ {
+        "utf8": "Once you've lived every human life throughout all time,"
+      } ]
+    }, {
+      "tStartMs": 427012,
+      "dDurationMs": 2548,
+      "segs": [ {
+        "utf8": "you will have grown enough to be born."
+      } ]
+    }, {
+      "tStartMs": 430980,
+      "dDurationMs": 1820,
+      "segs": [ {
+        "utf8": "So the whole universe..."
+      } ]
+    }, {
+      "tStartMs": 433300,
+      "dDurationMs": 1180,
+      "segs": [ {
+        "utf8": "it's just..."
+      } ]
+    }, {
+      "tStartMs": 435280,
+      "dDurationMs": 931,
+      "segs": [ {
+        "utf8": "an egg!"
+      } ]
+    }, {
+      "tStartMs": 436460,
+      "dDurationMs": 1400,
+      "segs": [ {
+        "utf8": "I answered:"
+      } ]
+    }, {
+      "tStartMs": 438120,
+      "dDurationMs": 2669,
+      "segs": [ {
+        "utf8": "now it's time for you to move on to your next life."
+      } ]
+    }, {
+      "tStartMs": 441320,
+      "dDurationMs": 1747,
+      "segs": [ {
+        "utf8": "And I sent you on your way."
+      } ]
+    } ]
+  }
+  
