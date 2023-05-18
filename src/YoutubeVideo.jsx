@@ -5,7 +5,6 @@ const YouTubeVideo = () => {
     const [data, setData] = useState(null);
 
     useEffect(() => {
-        // setData(JSON.parse(JSON.stringify(jsonData, null, 2)));
         const JSONobj = JSON.parse(JSON.stringify(jsonData, null, 2)).events;
         setData(JSONobj);
         console.log(JSONobj);
@@ -20,6 +19,8 @@ const YouTubeVideo = () => {
     const handleKeyDown = (e) => {
         if (e.key === 'Shift') {
             alert('Shift key pressed!');
+        } else if (e.key === 'Enter') {
+            playerRef.current.playVideo();
         }
     };
 
@@ -57,9 +58,21 @@ const YouTubeVideo = () => {
         }
     };
 
-    // if (!data) {
-    //     return <div>Loading...</div>;
-    // }
+    const handleAdvance = () => {
+        if (playerRef.current && playerRef.current.getCurrentTime) {
+            const currentTime = playerRef.current.getCurrentTime();
+            const newTime = currentTime + 10.2;
+            playerRef.current.seekTo(newTime);
+        }
+    };
+
+    const handleRewind = () => {
+        if (playerRef.current && playerRef.current.getCurrentTime) {
+            const currentTime = playerRef.current.getCurrentTime();
+            const newTime = currentTime - 10.5;
+            playerRef.current.seekTo(newTime);
+        }
+    };
 
     return (
         <>
@@ -80,14 +93,16 @@ const YouTubeVideo = () => {
                 <div>
                     <button onClick={handlePlay}>Play</button>
                     <button onClick={handlePause}>Pause</button>
+                    <button onClick={handleAdvance}>Advance 10s</button>
+                    <button onClick={handleRewind}>Rewind 10s</button>
                 </div>
             </div>
 
             <div>
                 {data?.map((sub) => (
-                    <div>                        
-                        {sub.dDurationMs}
-                        {sub.tStartMs}
+                    <div>
+                        {sub.tStartMs} &nbsp;
+                        {sub.dDurationMs} &nbsp;
                         {sub.segs[0]['utf8']}
                     </div>
                 ))}
