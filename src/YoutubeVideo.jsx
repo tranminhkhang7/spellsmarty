@@ -4,12 +4,6 @@ import jsonData from './subtitle.json';
 const YouTubeVideo = () => {
     const [data, setData] = useState(null);
 
-    useEffect(() => {
-        const JSONobj = JSON.parse(JSON.stringify(jsonData, null, 2)).events;
-        setData(JSONobj);
-        console.log(JSONobj);
-    }, []);
-
     const [line, setLine] = useState('');
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -61,7 +55,7 @@ const YouTubeVideo = () => {
     const handleAdvance = () => {
         if (playerRef.current && playerRef.current.getCurrentTime) {
             const currentTime = playerRef.current.getCurrentTime();
-            const newTime = currentTime + 10.2;
+            const newTime = currentTime + 10;
             playerRef.current.seekTo(newTime);
         }
     };
@@ -69,10 +63,32 @@ const YouTubeVideo = () => {
     const handleRewind = () => {
         if (playerRef.current && playerRef.current.getCurrentTime) {
             const currentTime = playerRef.current.getCurrentTime();
-            const newTime = currentTime - 10.5;
+            const newTime = currentTime - 10;
             playerRef.current.seekTo(newTime);
         }
     };
+
+    useEffect(() => {
+        const JSONobj = JSON.parse(JSON.stringify(jsonData, null, 2)).events;
+        setData(JSONobj);
+    }, []);
+
+    const [currentIndex, setCurrentIndex] = useState(0);
+
+    const handleButtonClick = () => {
+        playerRef.current.playVideo();
+
+        if (currentIndex < data.length) {
+            console.log(data[currentIndex].segs[0]['utf8']);
+
+            setTimeout(() => {
+                // console.log(array[currentIndex] + 1);
+                playerRef.current.pauseVideo();
+                setCurrentIndex(currentIndex + 1);
+            }, data[currentIndex].dDurationMs);
+        }
+    };
+
 
     return (
         <>
@@ -95,7 +111,9 @@ const YouTubeVideo = () => {
                     <button onClick={handlePause}>Pause</button>
                     <button onClick={handleAdvance}>Advance 10s</button>
                     <button onClick={handleRewind}>Rewind 10s</button>
+                    <button onClick={handleButtonClick}>Log Next Element</button>
                 </div>
+
             </div>
 
             <div>
@@ -107,6 +125,8 @@ const YouTubeVideo = () => {
                     </div>
                 ))}
             </div>
+
+
         </>
     );
 };
