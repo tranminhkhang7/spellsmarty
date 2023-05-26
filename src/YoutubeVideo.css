@@ -1,0 +1,71 @@
+.dictation-section {
+    display: flex;
+    justify-content: center;
+}
+
+.dictation-section .left-side {
+    flex: 1;
+    background-color: #2C542F;
+    padding: 60px;
+}
+
+.dictation-section .left-side h1 {
+    color: #F2F4E6;
+    font-size: 28px;
+}
+
+.dictation-section .left-side .creator-level {
+    display: flex;
+    justify-content: space-between;
+}
+
+.dictation-section .left-side .creator-level h2 {
+    color: #F2F4E6;
+    font-size: 22px;
+    font-weight: 200;
+    margin: 0;
+}
+
+.dictation-section .left-side .creator-level .box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 30px;
+    /* width: 200px; */
+    padding: 0 20px;
+    background-color: #F2F4E6;
+}
+
+.dictation-section .left-side .creator-level .text {
+    color: #2C542F;
+    text-align: center;
+}
+
+.dictation-section .left-side h3 {
+    color: #F2F4E6;
+}
+
+
+.dictation-section .right-side {
+    flex: 1;
+    position: relative;
+    /* Add position relative */
+}
+
+.dictation-section .right-side::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('https://static.skillshare.com/uploads/users/tmp/67305fda');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    filter: blur(40px);
+    /* Apply the blur effect */
+    z-index: -1;
+    /* Place the background behind other elements */
+}
+
