@@ -1,0 +1,18 @@
+.image-container {
+    margin-left: 60px;
+    width: 100%;
+    /* Adjust the width as needed */
+    overflow-x: auto;
+    white-space: nowrap;
+}
+
+.image {
+    display: inline-block;
+    width: auto;
+    /* Adjust the width of the images */
+    height: 180px;
+    /* Adjust the height of the images */
+    margin-right: 10px;
+    /* Adjust the spacing between images */
+    border-radius: 10px;
+}

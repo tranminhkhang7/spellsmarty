@@ -1,0 +1,101 @@
+.image-grid {
+    margin-left: 60px;
+    margin-right: 60px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 50px;
+}
+
+.grid-item {}
+
+.grid-item-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: left;
+    height: 100%;
+}
+
+.grid-image {
+    width: 100%;
+    /* Adjust the desired width */
+    height: 200px;
+    /* Adjust the desired height */
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.grid-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.grid-title {
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-between;
+    /* grid-template-rows: auto 1fr; */
+}
+
+.grid-title .circular-image {
+    flex-shrink: 0;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.grid-title .circular-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.grid-title .title .title-video {
+    margin-left: 20px;
+    grid-row: 1;
+    text-align: left;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.grid-title .title .creator {
+    margin-top: 12px;
+    margin-left: 20px;
+    grid-row: 1;
+    text-align: left;
+    font-size: 14px;
+    font-weight: 300;
+}
+
+.grid-title .title .views {
+    /* margin-top: 5px; */
+    margin-left: 20px;
+    grid-row: 1;
+    text-align: left;
+    font-size: 14px;
+    font-weight: 300;
+}
+
+.button-container {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* height: 100vh; */
+    /* Adjust the desired height */
+}
+
+.button-container .button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #2C542F;
+    color: #F2F4E6;
+    font-size: 16px;
+    font-weight: 800;
+    border: none;
+    cursor: pointer;
+
+    margin-bottom: 50px;
+}

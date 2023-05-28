@@ -72,6 +72,7 @@ const YouTubeVideo = () => {
 
     const [currentIndex, setCurrentIndex] = useState(0);
     const handleButtonClick = () => {
+        console.log("hkhk", data[currentIndex].tStartMs, data[currentIndex].dDurationMs, data[currentIndex].segs[0]['utf8']);
         if (playerRef.current && playerRef.current.getCurrentTime) {
             playerRef.current.seekTo(data[currentIndex].tStartMs / 1000);
         }
@@ -136,9 +137,9 @@ const YouTubeVideo = () => {
                         </div>
                     </div>
                     <h3>12,345 views</h3>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#F2F4E6" class="bi bi-heart" viewBox="0 0 16 16">
+                    {/* <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#F2F4E6" class="bi bi-heart" viewBox="0 0 16 16">
                         <path d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01L8 2.748zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143c.06.055.119.112.176.171a3.12 3.12 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15z" />
-                    </svg>
+                    </svg> */}
                     <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#F2F4E6" class="bi bi-heart-fill" viewBox="0 0 16 16">
                         <path fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z" />
                     </svg>
@@ -149,22 +150,24 @@ const YouTubeVideo = () => {
                         style={{ paddingLeft: "50px" }}
                         onSubmit={handleSubmit}
                     >
-                        <input
+                        <textarea
                             type="text"
+                            className="textarea"
                             value={line}
                             onChange={(e) => setLine(e.target.value)}
                             onKeyDown={handleKeyDown}>
-                        </input>
+                        </textarea>
                     </form>
 
-                    <div>
-                        <button onClick={handlePlay}>Play</button>
+                    {/* <div> */}
+                    {/* <button onClick={handlePlay}>Play</button>
                         <button onClick={handlePause}>Pause</button>
                         <button onClick={handleAdvance}>Advance 10s</button>
-                        <button onClick={handleRewind}>Rewind 10s</button>
-                        <button onClick={handleButtonClick}>Log Next</button>
-                        {/* {correctLine} */}
-                    </div>
+                        <button onClick={handleRewind}>Rewind 10s</button> */}
+                    <span>
+                        <button onClick={handleButtonClick}>Log Next</button></span>
+                    {/* {correctLine} */}
+                    {/* </div> */}
                 </div>
             </div>
 
