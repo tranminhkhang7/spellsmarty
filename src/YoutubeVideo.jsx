@@ -9,11 +9,12 @@ const YouTubeVideo = () => {
         if (e.key === 'Shift') {
             // alert('Shift key pressed!');
         }
-        // else if (e.key === 'Enter') {
-        //     console.log('Submitted:', { line });
-        //     console.log(currentIndex > 0 ? data[currentIndex - 1].segs[0]['utf8'] : "");
-        //     // playerRef.current.playVideo();
-        // }
+        else if (e.key === 'Enter') {
+            // console.log('Submitted:', { line });
+            // console.log(currentIndex > 0 ? data[currentIndex - 1].segs[0]['utf8'] : "");
+            // playerRef.current.playVideo();
+            handleSubmit(e);
+        }
     };
 
     const playerRef = useRef(null);
@@ -36,6 +37,11 @@ const YouTubeVideo = () => {
             });
         };
     }, []);
+
+    function normalize(str) {
+        // while (str.search('  ') >= 0) str.replace('  ', ' ');
+        return str.replace(/[^a-zA-Z0-9 ]/g, '').toUpperCase().replace('  ', ' ');
+    }
 
     const handlePlay = () => {
         if (playerRef.current && playerRef.current.playVideo) {
@@ -88,7 +94,8 @@ const YouTubeVideo = () => {
     };
 
     const [line, setLine] = useState('');
-    // const [correctLine, setCorrectLine] = useState('');
+    const [correctLine, setCorrectLine] = useState('');
+
     const handleSubmit = (e) => {
         e.preventDefault();
 
@@ -96,7 +103,7 @@ const YouTubeVideo = () => {
         // console.log(currentIndex > 0 ? data[currentIndex - 1].segs[0]['utf8'] : "");
         const correctLine = currentIndex > 0 ? data[currentIndex - 1].segs[0]['utf8'] : "";
 
-        if (line === correctLine) {
+        if (normalize(line) === normalize(correctLine)) {
             // console.log("dung");
             if (playerRef.current && playerRef.current.getCurrentTime) {
                 playerRef.current.seekTo(data[currentIndex].tStartMs / 1000);
@@ -115,6 +122,7 @@ const YouTubeVideo = () => {
         }
         else {
             console.log("sai");
+            setCorrectLine(correctLine);
         }
 
         // setCorrectLine(currentIndex > 0 ? data[currentIndex - 1].segs[0]['utf8'] : '');
@@ -146,29 +154,37 @@ const YouTubeVideo = () => {
                 </div>
 
                 <div className='right-side'>
-                    <form
-                        style={{ paddingLeft: "50px" }}
-                        onSubmit={handleSubmit}
-                    >
-                        <textarea
-                            type="text"
-                            className="textarea"
-                            value={line}
-                            onChange={(e) => setLine(e.target.value)}
-                            onKeyDown={handleKeyDown}>
-                        </textarea>
-                    </form>
+                    <div>
+                        <form
+                            onSubmit={handleSubmit}
+                        >
+                            <textarea
+                                type="text"
+                                className="textarea"
+                                value={line}
+                                onChange={(e) => setLine(e.target.value)}
+                                onKeyDown={handleKeyDown}>
+                            </textarea>
 
+                            <button className="button-check" onClick={handleButtonClick}>Check</button>
+                            <button className="button-skip" onClick={handleButtonClick}>Skip</button>
+<br></br>
+                            {correctLine}
+                        </form>
+                    </div>
                     {/* <div> */}
                     {/* <button onClick={handlePlay}>Play</button>
                         <button onClick={handlePause}>Pause</button>
                         <button onClick={handleAdvance}>Advance 10s</button>
                         <button onClick={handleRewind}>Rewind 10s</button> */}
-                    <span>
-                        <button onClick={handleButtonClick}>Log Next</button></span>
-                    {/* {correctLine} */}
+
                     {/* </div> */}
+
+
                 </div>
+
+
+
             </div>
 
             {/* <div>

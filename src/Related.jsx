@@ -4,7 +4,7 @@ import "./Related.css"
 const Related = () => {
     return (
         <>
-            <h2 style={{ marginLeft: '60px', color: '#2C2C2C' }}>Related</h2>
+            <h2 style={{ marginLeft: '60px', marginTop: '19.92px', marginBottom: '19.92px', color: '#2C2C2C',  fontWeight: 'bold', fontSize: '26px' }}>Related</h2>
             <div class="image-grid">
 
                 <div class="grid-item">
@@ -24,7 +24,7 @@ const Related = () => {
                                     David Godman
                                 </div>
                                 <div className="views">
-                                    47K writes · 1 years ago
+                                    47K writes · 1 year ago
                                 </div>
                             </div>
                         </div>
@@ -48,7 +48,7 @@ const Related = () => {
                                     David Godman
                                 </div>
                                 <div className="views">
-                                    47K writes · 1 years ago
+                                    47K writes · 1 year ago
                                 </div>
                             </div>
                         </div>
@@ -72,7 +72,7 @@ const Related = () => {
                                     David Godman
                                 </div>
                                 <div className="views">
-                                    47K writes · 1 years ago
+                                    47K writes · 2 years ago
                                 </div>
                             </div>
                         </div>
@@ -96,7 +96,7 @@ const Related = () => {
                                     David Godman
                                 </div>
                                 <div className="views">
-                                    47K writes · 1 years ago
+                                    47K writes · 2 years ago
                                 </div>
                             </div>
                         </div>
