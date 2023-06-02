@@ -74,16 +74,16 @@ const SearchPage = () =>{
 				</div>
 			</form>
 			</div>
-		<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+		<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
 			{filteredData.map((video) => (
 				<VideoCard
-				key={video.id}
-				thumbnail={video.thumbnail}
-				length={video.length}
-				title={video.title}
-				channelAvatar={video.channel.avatar}
-				channelName={video.channel.name}
-				views={video.views}
+					key={video.id}
+					thumbnail={video.thumbnail}
+					length={video.length}
+					title={video.title}
+					channelAvatar={video.channel.avatar}
+					channelName={video.channel.name}
+					views={video.views}
 				/>
 			))}
     	</div>
