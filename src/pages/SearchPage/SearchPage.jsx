@@ -1,8 +1,8 @@
 import React, { useEffect } from 'react';
-import './Search.css';
-import Videos from '../draftData/videos';
+import './SearchPage.css';
+import Videos from '../../assets/videos';
 import { useState } from 'react';
-import VideoCard from './VideoCard';
+import VideoCard from '../../components/Search/VideoCard';
 
 const SearchPage = () =>{
 	const [data, setData] = useState(Videos);
