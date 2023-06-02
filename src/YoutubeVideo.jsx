@@ -105,6 +105,8 @@ const YouTubeVideo = () => {
 
         if (normalize(line) === normalize(correctLine)) {
             // console.log("dung");
+            setLine('');
+            setCorrectLine('')
             if (playerRef.current && playerRef.current.getCurrentTime) {
                 playerRef.current.seekTo(data[currentIndex].tStartMs / 1000);
             }
