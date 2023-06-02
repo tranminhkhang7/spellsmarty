@@ -25,7 +25,7 @@ const SearchPage = () =>{
 	}
 
 	return (
-		<div className='search-form'>
+		<div className='search-section'>
 		{/* <div id="background-item"></div> */}
 		<div className="flex items-center mb-4">
 			<form action="/search" method="GET" className="w-full" onSubmit={handleSearch}>
