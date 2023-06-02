@@ -4,7 +4,7 @@ const Navbar = () => {
   return (
     <nav className="bg-gray-950 py-4 px-8 flex flex-wrap items-center">
       <div className="text-2xl font-bold text-white">
-        <img width={70} src={require('../assets/logo.png')} alt="Logo" />
+        <img width={70} src={require('../../assets/logo.png')} alt="Logo" />
       </div>
       <ul className="ml-10 space-x-14 flex flex-wrap md:flex-nowrap">
         <li>

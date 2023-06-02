@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
-import jsonData from './subtitle.json';
+import jsonData from '../../assets/subtitle.json';
 import "./YoutubeVideo.css"
 
 const YouTubeVideo = () => {

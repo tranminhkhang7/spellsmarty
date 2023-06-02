@@ -1,11 +1,11 @@
 import { useState } from 'react';
 import './HomePage.css';
 import { FiSearch } from 'react-icons/fi';
-import YourLevel from './Components/YourLevel/YourLevel';
-import CustomSlider from './Components/Slider/CustomSlider';
-import HomeVideos from './Components/HomeVideos/HomeVideos';
-import TypingEffect from '../TypingEffect/TypingEffect';
-import NavBar from '../Navbar/Navbar';
+import YourLevel from '../../components/Home/YourLevel/YourLevel';
+import CustomSlider from '../../components/Home/Slider/CustomSlider';
+import HomeVideos from '../../components/Home/HomeVideos/HomeVideos';
+import TypingEffect from '../../utils/TypingEffect/TypingEffect';
+import NavBar from '../../components/Navbar/Navbar';
 
 const HomePage = () => {
   const [inputValue, setInputValue] = useState('');
