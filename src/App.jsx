@@ -1,9 +1,9 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import SingleVideo from './pages/SingleVideoPage/SingleVideo';
 import HomePage from './pages/HomePage/HomePage';
 import SearchPage from './pages/SearchPage/SearchPage';
-
+import ProgressPage from './pages/Progress/ProgressPage';
 const App = () => {
   return (
     <div className="app">
@@ -21,6 +21,7 @@ const App = () => {
           <Route path="/home" element={<HomePage />} />
           <Route path="/video" element={<SingleVideo />} />
           <Route path="/search" element={<SearchPage />} />
+          <Route path="/progress" element={<ProgressPage />} />
         </Routes>
       </Router>
     </div>

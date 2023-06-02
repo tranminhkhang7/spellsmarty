@@ -55,9 +55,9 @@ const HomePage = () => {
           <YourLevel />
         </div>
         {/* <YourLevel /> */}
-        <h2 className="text-4xl font-semibold">Continue your good work</h2>
+        {/* <h2 className="text-4xl font-semibold">Continue your good work</h2> */}
         <CustomSlider />
-        <h2 className="text-4xl font-semibold">Browse</h2>
+        {/* <h2 className="text-4xl font-semibold">Browse</h2> */}
         <HomeVideos />
       </div>
     </>

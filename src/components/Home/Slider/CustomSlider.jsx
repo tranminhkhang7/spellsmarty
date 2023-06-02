@@ -61,6 +61,18 @@
 const CustomSlider = () => {
   return (
     <>
+      <h2
+        style={{
+          marginLeft: '60px',
+          marginTop: '19.92px',
+          marginBottom: '19.92px',
+          color: '#2C2C2C',
+          fontWeight: 'bold',
+          fontSize: '26px',
+        }}
+      >
+        Continue Your Good Work
+      </h2>
       <div className="image-container">
         {/* <div>
           <img
