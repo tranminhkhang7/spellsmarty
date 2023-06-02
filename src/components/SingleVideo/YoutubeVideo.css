@@ -75,6 +75,21 @@
     z-index: -1;
 }
 
+.dictation-section .right-side .box-correct-line {
+    margin-top: 20px;
+    display: block;
+    border: 2px solid transparent;
+    width: 450px;
+    background-color: rgba(255, 255, 255, 0.6);
+    padding: 10px;
+}
+
+.dictation-section .right-side .text-correct-line {
+    color: black;
+    /* Text color */
+}
+
+
 .textarea {
     display: block;
     width: 450px;

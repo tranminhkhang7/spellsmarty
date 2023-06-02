@@ -4,15 +4,31 @@ import "./YoutubeVideo.css"
 
 const YouTubeVideo = () => {
     const [data, setData] = useState(null);
+    const [timeoutId, setTimeoutId] = useState(null);
+
+    function play(currentIndex) {
+        if (playerRef.current && playerRef.current.getCurrentTime) {
+            playerRef.current.seekTo(data[currentIndex].tStartMs / 1000);
+        }
+        playerRef.current.playVideo();
+
+        if (currentIndex < data.length) {
+            const id = setTimeout(() => {
+                console.log(data[currentIndex].segs[0]['utf8']);
+                playerRef.current.pauseVideo();
+            }, data[currentIndex].dDurationMs);
+            setTimeoutId(id);
+        }
+    }
 
     const handleKeyDown = (e) => {
+        setCorrectLine('');
         if (e.key === 'Shift') {
-            // alert('Shift key pressed!');
+            clearTimeout(timeoutId);
+            setTimeoutId(null);
+            play(currentIndex - 1);
         }
         else if (e.key === 'Enter') {
-            // console.log('Submitted:', { line });
-            // console.log(currentIndex > 0 ? data[currentIndex - 1].segs[0]['utf8'] : "");
-            // playerRef.current.playVideo();
             handleSubmit(e);
         }
     };
@@ -33,43 +49,16 @@ const YouTubeVideo = () => {
                 videoId: 'h6fcK_fRYaI',
                 playerVars: {
                     autoplay: 0,
+                    modestbranding: 1, // Hide YouTube branding             
+                    controls: 0, // Hide control buttons
                 },
             });
         };
     }, []);
 
     function normalize(str) {
-        // while (str.search('  ') >= 0) str.replace('  ', ' ');
-        return str.replace(/[^a-zA-Z0-9 ]/g, '').toUpperCase().replace('  ', ' ');
+        return str.replace(/[^a-zA-Z0-9]/g, '').toUpperCase().replace('  ', ' ');
     }
-
-    const handlePlay = () => {
-        if (playerRef.current && playerRef.current.playVideo) {
-            playerRef.current.playVideo();
-        }
-    };
-
-    const handlePause = () => {
-        if (playerRef.current && playerRef.current.pauseVideo) {
-            playerRef.current.pauseVideo();
-        }
-    };
-
-    const handleAdvance = () => {
-        if (playerRef.current && playerRef.current.getCurrentTime) {
-            const currentTime = playerRef.current.getCurrentTime();
-            const newTime = currentTime + 10;
-            playerRef.current.seekTo(newTime);
-        }
-    };
-
-    const handleRewind = () => {
-        if (playerRef.current && playerRef.current.getCurrentTime) {
-            const currentTime = playerRef.current.getCurrentTime();
-            const newTime = currentTime - 10;
-            playerRef.current.seekTo(newTime);
-        }
-    };
 
     useEffect(() => {
         const JSONobj = JSON.parse(JSON.stringify(jsonData, null, 2)).events;
@@ -77,60 +66,28 @@ const YouTubeVideo = () => {
     }, []);
 
     const [currentIndex, setCurrentIndex] = useState(0);
-    const handleButtonClick = () => {
-        console.log("hkhk", data[currentIndex].tStartMs, data[currentIndex].dDurationMs, data[currentIndex].segs[0]['utf8']);
-        if (playerRef.current && playerRef.current.getCurrentTime) {
-            playerRef.current.seekTo(data[currentIndex].tStartMs / 1000);
-        }
-        playerRef.current.playVideo();
-
-        if (currentIndex < data.length) {
-            setTimeout(() => {
-                console.log(data[currentIndex].segs[0]['utf8']);
-                playerRef.current.pauseVideo();
-                setCurrentIndex(currentIndex + 1);
-            }, data[currentIndex].dDurationMs);
-        }
-    };
 
     const [line, setLine] = useState('');
     const [correctLine, setCorrectLine] = useState('');
+    const [showStatus, setShowStatus] = useState(false);
 
     const handleSubmit = (e) => {
         e.preventDefault();
 
-        // console.log('Submitted:', { line });
-        // console.log(currentIndex > 0 ? data[currentIndex - 1].segs[0]['utf8'] : "");
         const correctLine = currentIndex > 0 ? data[currentIndex - 1].segs[0]['utf8'] : "";
 
-        if (normalize(line) === normalize(correctLine)) {
-            // console.log("dung");
+        if (normalize(line) === normalize(correctLine) || currentIndex === 0) {
+            setCurrentIndex(currentIndex + 1);
+            console.log("keke", currentIndex);
+
             setLine('');
             setCorrectLine('')
-            if (playerRef.current && playerRef.current.getCurrentTime) {
-                playerRef.current.seekTo(data[currentIndex].tStartMs / 1000);
-            }
-            playerRef.current.playVideo();
-
-            if (currentIndex < data.length) {
-                // console.log(data[currentIndex].segs[0]['utf8']);
-
-                setTimeout(() => {
-                    console.log(data[currentIndex].segs[0]['utf8']);
-                    playerRef.current.pauseVideo();
-                    setCurrentIndex(currentIndex + 1);
-                }, data[currentIndex].dDurationMs);
-            }
+            play(currentIndex);
         }
         else {
             console.log("sai");
             setCorrectLine(correctLine);
         }
-
-        // setCorrectLine(currentIndex > 0 ? data[currentIndex - 1].segs[0]['utf8'] : '');
-
-        // console.log('Submitted:', { line });
-        // console.log(data[currentIndex].segs[0]['utf8']);
     };
 
     return (
@@ -168,36 +125,21 @@ const YouTubeVideo = () => {
                                 onKeyDown={handleKeyDown}>
                             </textarea>
 
-                            <button className="button-check" onClick={handleButtonClick}>Check</button>
-                            <button className="button-skip" onClick={handleButtonClick}>Skip</button>
-<br></br>
-                            {correctLine}
+                            <button className="button-check" onClick={handleSubmit}>Check</button>
+                            {(correctLine == '')
+                                ?
+                                <>
+                                </>
+                                :
+                                <>
+                                    <div className="box-correct-line">
+                                        {correctLine}
+                                    </div>
+                                </>}
                         </form>
                     </div>
-                    {/* <div> */}
-                    {/* <button onClick={handlePlay}>Play</button>
-                        <button onClick={handlePause}>Pause</button>
-                        <button onClick={handleAdvance}>Advance 10s</button>
-                        <button onClick={handleRewind}>Rewind 10s</button> */}
-
-                    {/* </div> */}
-
-
                 </div>
-
-
-
             </div>
-
-            {/* <div>
-                {data?.map((sub) => (
-                    <div>
-                        {sub.tStartMs} &nbsp;
-                        {sub.dDurationMs} &nbsp;
-                        {sub.segs[0]['utf8']}
-                    </div>
-                ))}
-            </div> */}
         </>
     );
 };
