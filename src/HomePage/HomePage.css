@@ -1,0 +1,28 @@
+.home-text {
+  color: #b7783a;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+}
+
+.stroke-line {
+  background-color: #b7783a;
+}
+
+.splash-text {
+  background-color: #b7783a;
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.animate-fade-in {
+  animation-name: fade-in;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+}
