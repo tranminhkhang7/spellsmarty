@@ -1,11 +1,13 @@
 .image-container {
   margin-left: 60px;
-  width: 100%;
+  /* width: 100%; */
   /* Adjust the width as needed */
-  overflow-x: auto;
+  overflow-x: hidden;
   white-space: nowrap;
 }
-
+.image-container::-webkit-scrollbar {
+  display: none; /* Hide the scroll bar for WebKit browsers (e.g., Chrome, Safari) */
+}
 .image {
   display: inline-block;
   width: auto;

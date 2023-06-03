@@ -28,7 +28,7 @@ const Navbar = () => {
           </a>
         </li>
       </ul>
-      <div className="ml-auto flex space-x-4">
+      <div className="ml-auto flex space-x-6">
         <button className="flex items-center text-white hover:text-gray-600">
           <FiLogIn className="mr-2" />
           Login
