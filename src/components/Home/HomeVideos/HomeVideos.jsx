@@ -20,6 +20,18 @@ const GridItem = ({ imageSrc, authorName, authorAvatar, title }) => {
 const HomeVideos = () => {
   return (
     <>
+      <h2
+        style={{
+          marginLeft: '60px',
+          marginTop: '19.92px',
+          marginBottom: '19.92px',
+          color: '#2C2C2C',
+          fontWeight: 'bold',
+          fontSize: '26px',
+        }}
+      >
+        Browse
+      </h2>
       <div class="image-grid relative">
         <div class="grid-item">
           <div class="grid-item-content">

@@ -1,5 +1,5 @@
 import { FiLogIn, FiUserPlus } from 'react-icons/fi';
-
+import { Link } from 'react-router-dom';
 const Navbar = () => {
   return (
     <nav className="bg-gray-950 py-4 px-8 flex flex-wrap items-center">
@@ -8,9 +8,9 @@ const Navbar = () => {
       </div>
       <ul className="ml-10 space-x-14 flex flex-wrap md:flex-nowrap">
         <li>
-          <a href="#" className="text-white hover:text-gray-600">
+          <Link to="/home" className="text-white hover:text-gray-600">
             Home
-          </a>
+          </Link>
         </li>
         <li>
           <a href="#" className="text-white hover:text-gray-600">
@@ -28,7 +28,7 @@ const Navbar = () => {
           </a>
         </li>
       </ul>
-      <div className="ml-auto flex space-x-4">
+      <div className="ml-auto flex space-x-6">
         <button className="flex items-center text-white hover:text-gray-600">
           <FiLogIn className="mr-2" />
           Login

@@ -1,141 +1,167 @@
-// import React from 'react';
-// import Slider from 'react-slick';
-// import 'slick-carousel/slick/slick.css';
-// import 'slick-carousel/slick/slick-theme.css';
-// import './CustomSlider.css';
-// const CustomSlider = () => {
-//   const data = [
-//     {
-//       imageSrc:
-//         'https://images.unsplash.com/photo-1575936123452-b67c3203c357?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8aW1hZ2V8ZW58MHx8MHx8fDA%3D&w=1000&q=80',
-//       progress: 50,
-//     },
-//     {
-//       imageSrc:
-//         'https://images.unsplash.com/photo-1575936123452-b67c3203c357?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8aW1hZ2V8ZW58MHx8MHx8fDA%3D&w=1000&q=80',
-//       progress: 75,
-//     },
-//     {
-//       imageSrc:
-//         'https://images.unsplash.com/photo-1575936123452-b67c3203c357?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8aW1hZ2V8ZW58MHx8MHx8fDA%3D&w=1000&q=80',
-//       progress: 25,
-//     },
-//     {
-//       imageSrc:
-//         'https://images.unsplash.com/photo-1575936123452-b67c3203c357?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8aW1hZ2V8ZW58MHx8MHx8fDA%3D&w=1000&q=80',
-//       progress: 90,
-//     },
-//   ];
-
-//   const settings = {
-//     dots: false,
-//     infinite: true,
-//     speed: 300,
-//     slidesToShow: 2,
-//     centerMode: true,
-//   };
-
-//   return (
-//     <div className="slider-container overflow-hidden">
-//       <Slider {...settings}>
-//         {data.map((item, index) => (
-//           <div key={index} className="slider-item">
-//             <img
-//               src={item.imageSrc}
-//               alt={`Image ${index + 1}`}
-//               className="slider-image"
-//               loading="lazy"
-//             />
-//             <div className="progress-bar">
-//               <div className="progress" style={{ width: `${item.progress}%` }}></div>
-//             </div>
-//           </div>
-//         ))}
-//       </Slider>
-//     </div>
-//   );
-// };
-
+import { useRef, useEffect } from 'react';
+import './CustomSlider.css';
 // export default CustomSlider;
 
 const CustomSlider = () => {
+  const containerRef = useRef(null);
+
+  useEffect(() => {
+    const container = containerRef.current;
+
+    container.addEventListener('mousedown', startDragging);
+    container.addEventListener('mousemove', handleDragging);
+    container.addEventListener('mouseup', stopDragging);
+    container.addEventListener('mouseleave', stopDragging);
+    container.addEventListener('touchstart', startDragging);
+    container.addEventListener('touchmove', handleDragging);
+    container.addEventListener('touchend', stopDragging);
+    container.addEventListener('touchcancel', stopDragging);
+
+    return () => {
+      container.removeEventListener('mousedown', startDragging);
+      container.removeEventListener('mousemove', handleDragging);
+      container.removeEventListener('mouseup', stopDragging);
+      container.removeEventListener('mouseleave', stopDragging);
+      container.removeEventListener('touchstart', startDragging);
+      container.removeEventListener('touchmove', handleDragging);
+      container.removeEventListener('touchend', stopDragging);
+      container.removeEventListener('touchcancel', stopDragging);
+    };
+  }, []);
+
+  let isDragging = false;
+  let startX = 0;
+  let scrollLeft = 0;
+
+  const startDragging = (event) => {
+    isDragging = true;
+    startX = event.pageX || event.touches[0].pageX;
+    scrollLeft = containerRef.current.scrollLeft;
+  };
+
+  const handleDragging = (event) => {
+    if (!isDragging) return;
+    event.preventDefault();
+
+    const x = event.pageX || event.touches[0].pageX;
+    const walk = x - startX;
+    containerRef.current.scrollLeft = scrollLeft - walk;
+  };
+
+  const stopDragging = () => {
+    isDragging = false;
+  };
   return (
     <>
-      <div className="image-container">
-        {/* <div>
+      <h2
+        style={{
+          marginLeft: '60px',
+          marginTop: '19.92px',
+          marginBottom: '19.92px',
+          color: '#2C2C2C',
+          fontWeight: 'bold',
+          fontSize: '26px',
+        }}
+      >
+        Continue Your Good Work
+      </h2>
+      <div className="image-container" ref={containerRef}>
+        <div className="image h-full p-2">
           <img
             src="https://static.skillshare.com/uploads/users/tmp/67305fda"
-            alt="Image 1"
-            className="image"
+            alt="Image 2"
+            className="w-full h-full"
           />
-          <div className="h-2 bg-gray-300">
-            <div
-              className="h-full bg-blue-500"
-              style={{ width: '' }} // Set the width dynamically based on progress prop
-            ></div>
-          </div>
-        </div> */}
-
-        <img
-          src="https://static.skillshare.com/uploads/users/tmp/67305fda"
-          alt="Image 2"
-          className="image"
-        />
-        <img
-          src="https://static.skillshare.com/uploads/users/tmp/67305fda"
-          alt="Image 3"
-          className="image"
-        />
-        <img
-          src="https://static.skillshare.com/uploads/users/tmp/67305fda"
-          alt="Image 3"
-          className="image"
-        />
-        <img
-          src="https://static.skillshare.com/uploads/users/tmp/67305fda"
-          alt="Image 3"
-          className="image"
-        />
-        <img
-          src="https://static.skillshare.com/uploads/users/tmp/67305fda"
-          alt="Image 3"
-          className="image"
-        />
-        <img
-          src="https://static.skillshare.com/uploads/users/tmp/67305fda"
-          alt="Image 3"
-          className="image"
-        />
-        <img
-          src="https://static.skillshare.com/uploads/users/tmp/67305fda"
-          alt="Image 3"
-          className="image"
-        />
-        <img
-          src="https://static.skillshare.com/uploads/users/tmp/67305fda"
-          alt="Image 3"
-          className="image"
-        />
-        <img
-          src="https://static.skillshare.com/uploads/users/tmp/67305fda"
-          alt="Image 3"
-          className="image"
-        />
-        <img
-          src="https://static.skillshare.com/uploads/users/tmp/67305fda"
-          alt="Image 3"
-          className="image"
-        />
-        <img
-          src="https://static.skillshare.com/uploads/users/tmp/67305fda"
-          alt="Image 3"
-          className="image"
-        />
-        <img
-          src="https://static.skillshare.com/uploads/users/tmp/67305fda"
-          alt="Image 3"
-          className="image"
-        />
+          <div className="progress-bar rounded-2xl mt-2"></div>
+        </div>
+        <div className="image h-full p-2">
+          <img
+            src="https://static.skillshare.com/uploads/users/tmp/67305fda"
+            alt="Image 2"
+            className="w-full h-full"
+          />
+          <div className="progress-bar rounded-2xl mt-2"></div>
+        </div>
+        <div className="image h-full p-2">
+          <img
+            src="https://static.skillshare.com/uploads/users/tmp/67305fda"
+            alt="Image 2"
+            className="w-full h-full"
+          />
+          <div className="progress-bar rounded-2xl mt-2"></div>
+        </div>
+        <div className="image h-full p-2">
+          <img
+            src="https://static.skillshare.com/uploads/users/tmp/67305fda"
+            alt="Image 2"
+            className="w-full h-full"
+          />
+          <div className="progress-bar rounded-2xl mt-2"></div>
+        </div>
+        <div className="image h-full p-2">
+          <img
+            src="https://static.skillshare.com/uploads/users/tmp/67305fda"
+            alt="Image 2"
+            className="w-full h-full"
+          />
+          <div className="progress-bar rounded-2xl mt-2"></div>
+        </div>
+        <div className="image h-full p-2">
+          <img
+            src="https://static.skillshare.com/uploads/users/tmp/67305fda"
+            alt="Image 2"
+            className="w-full h-full"
+          />
+          <div className="progress-bar rounded-2xl mt-2"></div>
+        </div>
+        <div className="image h-full p-2">
+          <img
+            src="https://static.skillshare.com/uploads/users/tmp/67305fda"
+            alt="Image 2"
+            className="w-full h-full"
+          />
+          <div className="progress-bar rounded-2xl mt-2"></div>
+        </div>
+        <div className="image h-full p-2">
+          <img
+            src="https://static.skillshare.com/uploads/users/tmp/67305fda"
+            alt="Image 2"
+            className="w-full h-full"
+          />
+          <div className="progress-bar rounded-2xl mt-2"></div>
+        </div>
+        <div className="image h-full p-2">
+          <img
+            src="https://static.skillshare.com/uploads/users/tmp/67305fda"
+            alt="Image 2"
+            className="w-full h-full"
+          />
+          <div className="progress-bar rounded-2xl mt-2"></div>
+        </div>
+        <div className="image h-full p-2">
+          <img
+            src="https://static.skillshare.com/uploads/users/tmp/67305fda"
+            alt="Image 2"
+            className="w-full h-full"
+          />
+          <div className="progress-bar rounded-2xl mt-2"></div>
+        </div>
+        <div className="image h-full p-2">
+          <img
+            src="https://static.skillshare.com/uploads/users/tmp/67305fda"
+            alt="Image 2"
+            className="w-full h-full"
+          />
+          <div className="progress-bar rounded-2xl mt-2"></div>
+        </div>
+        <div className="image h-full p-2">
+          <img
+            src="https://static.skillshare.com/uploads/users/tmp/67305fda"
+            alt="Image 2"
+            className="w-full h-full"
+          />
+          <div className="progress-bar rounded-2xl mt-2"></div>
+        </div>
         {/* Add more images as needed */}
       </div>
     </>
