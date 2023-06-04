@@ -7,10 +7,13 @@ const YouTubeVideo = () => {
     const [timeoutId, setTimeoutId] = useState(null);
 
     function normalize(str) {
-        return str.replace(/[^a-zA-Z0-9 ]/g, '').toUpperCase().replace('  ', ' ');
+        if (str === undefined) { } else
+            return str.replace(/[^a-zA-Z0-9 ]/g, '').toUpperCase().replace('  ', ' ');
     }
 
     function play(currentIndex) {
+        clearTimeout(timeoutId);
+        setTimeoutId(null);
         if (playerRef.current && playerRef.current.getCurrentTime) {
             playerRef.current.seekTo(data[currentIndex].tStartMs / 1000);
         }
@@ -25,17 +28,22 @@ const YouTubeVideo = () => {
         }
     }
 
-    const handleKeyDown = (e) => {
-        setCorrectLine('');
-        if (e.key === 'Shift') {
-            clearTimeout(timeoutId);
-            setTimeoutId(null);
-            play(currentIndex - 1);
-        }
-        else if (e.key === 'Enter') {
-            handleSubmit(e);
-        }
-    };
+    // const handleKeyDown = (e) => {
+    //     setCorrectLine('');
+    //     if (e.key === 'Shift') {
+    //         clearTimeout(timeoutId);
+    //         setTimeoutId(null);
+    //         play(currentIndex - 1);
+    //     }
+    //     else if (e.key === 'Enter') {
+    //         handleSubmit(e);
+    //     }
+    // };
+
+    useEffect(() => {
+        const JSONobj = JSON.parse(JSON.stringify(jsonData, null, 2)).events;
+        setData(JSONobj);
+    }, []);
 
     const playerRef = useRef(null);
     useEffect(() => {
@@ -60,65 +68,75 @@ const YouTubeVideo = () => {
         };
     }, []);
 
-    useEffect(() => {
-        const JSONobj = JSON.parse(JSON.stringify(jsonData, null, 2)).events;
-        setData(JSONobj);
-    }, []);
 
-    const [currentIndex, setCurrentIndex] = useState(0);
+
+    // const [currentIndex, setCurrentIndex] = useState(0);
     // const [line, setLine] = useState('');
     const [correctLine, setCorrectLine] = useState('');
-    const handleSubmit = (e) => {
+    const handleSubmit = (e, currentIndexLine) => {
+
+        play(currentIndexLine);
+
         e.preventDefault();
 
-        const line = inputValues.join(' ');
+        const line = (inputValues[currentIndexLine] ?? []).join(' ');
+        const correctLine = data[currentIndexLine]?.segs[0]['utf8'];
 
-        console.log(line);
+        console.log("koko", line, data[currentIndexLine]?.segs[0]['utf8']);
 
-        const correctLine = currentIndex > 0 ? data[currentIndex - 1].segs[0]['utf8'] : "";
-        if (normalize(line) === normalize(correctLine) || currentIndex === 0) {
-            setCurrentIndex(currentIndex + 1);
+        if (normalize(line) === normalize(correctLine)) {
+            // setCurrentIndex(currentIndexLine + 1);
             // setLine('');
             setCorrectLine('');
-            play(currentIndex);
+            play(currentIndexLine + 1);
         }
         else {
             console.log("sai");
-            setCorrectLine(correctLine);
+            // setCorrectLine(correctLine);
         }
     };
 
 
     const inputRefs = useRef([]);
+    for (let i = 0; i < data?.length + 1; i++) {
+        inputRefs.current[i] = Array(100).fill(0);
+    }
 
-    const handleKeyPress = (event, currentIndex) => {
+    const handleKeyPress = (event, currentIndexLine, currentIndex, isTheLast) => {
         const keyCode = event.keyCode || event.which;
         const inputValue = event.target.value;
 
-
         if (keyCode === 32) { // Spacebar
             event.preventDefault();
-            focusNextInput(currentIndex);
+            focusNextInput(currentIndexLine, currentIndex, isTheLast);
         } else if (keyCode === 8 || keyCode === 46) { // Backspace or Delete
             const previousIndex = currentIndex - 2;
             if (previousIndex >= 0 && inputValue === '') {
                 event.preventDefault();
-                focusPreviousInput(previousIndex);
+                focusPreviousInput(currentIndexLine, previousIndex);
             }
+        } else if (keyCode === 13) { // Enter
+            handleSubmit(event, currentIndexLine);
+        } else if (keyCode === 16) { // Shift
+            clearTimeout(timeoutId);
+            setTimeoutId(null);
+            play(currentIndex - 1);
         }
     };
 
-    const focusNextInput = (nextIndex) => {
-        if (nextIndex < inputRefs.current.length) {
-            inputRefs.current[nextIndex].focus();
+    const focusNextInput = (currentIndexLine, nextIndex, isTheLast) => {
+        if (!isTheLast && nextIndex < inputRefs.current[currentIndexLine].length) {
+            inputRefs.current[currentIndexLine][nextIndex].focus();
         }
     };
 
-    const focusPreviousInput = (previousIndex) => {
+    const focusPreviousInput = (currentIndexLine, previousIndex) => {
         if (previousIndex >= 0) {
-            inputRefs.current[previousIndex].focus();
+            inputRefs.current[currentIndexLine][previousIndex].focus();
         }
     };
+
+
     const [inputValues, setInputValues] = useState([]);
     const handleInputChange = (indexLine, indexWord, value) => {
         const newInputValues = [...inputValues];
@@ -261,36 +279,46 @@ const YouTubeVideo = () => {
                                     <div
                                         className='wrap-dictation'
                                     >
-                                        <svg style={{ cursor: 'pointer', display: 'inline', color: '#53483D', marginLeft: '10px', verticalAlign: 'middle' }} xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-play-circle-fill" viewBox="0 0 16 16">
+                                        <svg
+                                            style={{ cursor: 'pointer', display: 'inline', color: '#53483D', marginLeft: '10px', verticalAlign: 'middle' }}
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            width="30"
+                                            height="30"
+                                            fill="currentColor"
+                                            className="bi bi-play-circle-fill"
+                                            viewBox="0 0 16 16"
+                                            onClick={(e) => handleSubmit(e, index)}
+                                        >
                                             <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM6.79 5.093A.5.5 0 0 0 6 5.5v5a.5.5 0 0 0 .79.407l3.5-2.5a.5.5 0 0 0 0-.814l-3.5-2.5z" />
                                         </svg>
                                         <form
                                             onSubmit={(event) => handleFormSubmit(event, index)}
                                             className="form-dictation"
+
                                         >
 
                                             <input
-                                                ref={ref => (inputRefs.current[0] = ref)}
+                                                ref={ref => (inputRefs.current[index][0] = ref)}
                                                 type="text"
                                                 className="word-input"
                                                 style={{ width: "50px" }}
-                                                onKeyDown={(e) => handleKeyPress(e, 1)}
+                                                onKeyDown={(e) => handleKeyPress(e, index, 1)}
                                                 onChange={(e) => handleInputChange(index, 0, e.target.value)}
                                             />
                                             <input
-                                                ref={ref => (inputRefs.current[1] = ref)}
+                                                ref={ref => (inputRefs.current[index][1] = ref)}
                                                 type="text"
                                                 className="word-input"
                                                 style={{ width: "80px" }}
-                                                onKeyDown={(e) => handleKeyPress(e, 2)}
+                                                onKeyDown={(e) => handleKeyPress(e, index, 2)}
                                                 onChange={(e) => handleInputChange(index, 1, e.target.value)}
                                             />
                                             <input
-                                                ref={ref => (inputRefs.current[2] = ref)}
+                                                ref={ref => (inputRefs.current[index][2] = ref)}
                                                 type="text"
                                                 className="word-input"
                                                 style={{ width: "30px" }}
-                                                onKeyDown={(e) => handleKeyPress(e, 3)}
+                                                onKeyDown={(e) => handleKeyPress(e, index, 3, true)}
                                                 onChange={(e) => handleInputChange(index, 2, e.target.value)}
                                             />
                                             {/* <button className="button-check" onClick={(event) => handleFormSubmit(event, index)}>Check</button> */}
@@ -302,6 +330,8 @@ const YouTubeVideo = () => {
 
                             </div>
                         </div>
+
+                        <button className="button-check" onClick={handleSubmit}>Check</button>
 
 
                         {/* <form>
