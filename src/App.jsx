@@ -4,6 +4,8 @@ import SingleVideo from './pages/SingleVideoPage/SingleVideo';
 import HomePage from './pages/HomePage/HomePage';
 import SearchPage from './pages/SearchPage/SearchPage';
 import ProgressPage from './pages/Progress/ProgressPage';
+import Signin from './signin-signup/Signin';
+import Signup from './signin-signup/Signup';
 const App = () => {
   return (
     <div className="app">
@@ -22,6 +24,8 @@ const App = () => {
           <Route path="/video" element={<SingleVideo />} />
           <Route path="/search" element={<SearchPage />} />
           <Route path="/progress" element={<ProgressPage />} />
+          <Route path="/signin" element={<Signin />} />
+          <Route path="/signup" element={<Signup />} />
         </Routes>
       </Router>
     </div>

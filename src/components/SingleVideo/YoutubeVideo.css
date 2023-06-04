@@ -126,3 +126,90 @@
     cursor: pointer;
     margin-top: 10px;
 }
+
+/* .word-input {
+    height: 30px;
+    margin-top: 10px;
+    margin-left: 8px;
+    padding-top: 5px;
+    padding-bottom: 8px;
+    border-bottom: 3px solid rgba(83, 72, 61, 0.8);
+
+
+    background-color: rgba(255, 255, 255, 0.4);
+    color: #53483D;
+    font-size: 20px;
+    font-weight: bold;
+} */
+
+/* .form-container {
+    height: 400px;
+    width: 500px;
+    overflow: auto;
+    background-color: rgba(255, 255, 255, 0.6);
+}
+
+.forms-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.form-item {
+    width: 100%;
+    border-bottom: 2px solid rgba(83, 72, 61, 0.4);
+    padding: 15px;
+}
+
+.input-row {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+} */
+
+
+.container-dictation {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* height: 100vh; */
+}
+
+.box-dictation {
+    width: 500px;
+    height: 400px;
+    overflow: auto;
+
+    background-color: rgba(255, 255, 255, 0.6);
+    /* padding: 20px; */
+}
+
+.wrap-dictation {
+    display: flex;
+    align-items: center;
+
+    border-bottom: 2px solid rgba(83, 72, 61, 0.4);
+}
+
+.form-dictation {
+    /* margin-top: 10px; */
+    padding-bottom: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: left;
+/* 
+    border-bottom: 2px solid rgba(83, 72, 61, 0.4); */
+}
+
+.word-input {
+    width: 50px;
+    height: 30px;
+    margin-top: 5px;
+    margin-left: 8px;
+    /* padding-top: 5px;
+    padding-bottom: 8px; */
+    border-bottom: 3px solid rgba(83, 72, 61, 0.8);
+    background-color: rgba(255, 255, 255, 0);
+    color: #53483D;
+    font-size: 20px;
+    font-weight: bold;
+}
