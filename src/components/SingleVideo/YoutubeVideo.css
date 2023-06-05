@@ -190,10 +190,17 @@
     border-bottom: 2px solid rgba(83, 72, 61, 0.4);
 }
 
+.icon-play {
+    cursor: pointer;
+    margin-left: 20px;
+    font-size: 20px;
+    color: #53483D;
+}
+
 .form-dictation {
     /* margin-top: 10px; */
     padding-bottom: 20px;
-    display: flex;
+    /* display: flex; */
     flex-wrap: wrap;
     justify-content: left;
 /* 

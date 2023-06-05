@@ -1,6 +1,9 @@
 import React, { useEffect, useRef, useState } from 'react';
 import jsonData from '../../assets/subtitle.json';
 import "./YoutubeVideo.css"
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCirclePlay } from '@fortawesome/free-solid-svg-icons';
+
 
 const YouTubeVideo = () => {
     const [data, setData] = useState(null);
@@ -76,13 +79,14 @@ const YouTubeVideo = () => {
             const line = (inputValues[currentIndexLine] ?? []).join(' ');
             const correctLine = data[currentIndexLine]?.segs[0]['utf8'];
 
-            console.log("koko", line, data[currentIndexLine]?.segs[0]['utf8']);
+            // console.log("koko", line, data[currentIndexLine]?.segs[0]['utf8']);
 
             if (normalize(line) === normalize(correctLine)) {
                 // setCurrentIndex(currentIndexLine + 1);
                 // setLine('');
                 setCorrectLine('');
                 play(currentIndexLine + 1);
+                inputRefs.current[currentIndexLine + 1][0].focus();
             }
             else {
                 console.log("sai");
@@ -112,10 +116,10 @@ const YouTubeVideo = () => {
             }
         } else if (keyCode === 13) { // Enter            
             handleSubmit(event, false, currentIndexLine);
-        } else if (keyCode === 16) { // Shift
+        } else if (keyCode === 17) { // Control
             clearTimeout(timeoutId);
             setTimeoutId(null);
-            play(currentIndex - 1);
+            play(currentIndexLine);
         }
     };
 
@@ -170,43 +174,65 @@ const YouTubeVideo = () => {
                 </div>
 
                 <div className='right-side'>
-                    <div>                       
+                    <div>
                         <div className="container-dictation">
                             <div className="box-dictation">
                                 {data?.map((sub, index) => (
                                     <div
                                         className='wrap-dictation'
                                     >
-                                        <svg
+                                        <FontAwesomeIcon
+                                            icon={faCirclePlay}
+                                            className='icon-play'
+                                            onClick={(e) => handleSubmit(e, true, index)} />
+                                        {/* <svg
                                             style={{ cursor: 'pointer', display: 'inline', color: '#53483D', marginLeft: '10px', verticalAlign: 'middle' }}
                                             xmlns="http://www.w3.org/2000/svg"
                                             width="30"
                                             height="30"
                                             fill="currentColor"
-                                            className="bi bi-play-circle-fill"
+                                            className="bi bi-play-circle-fill play-icon"
                                             viewBox="0 0 16 16"
                                             onClick={(e) => handleSubmit(e, true, index)}
                                         >
                                             <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM6.79 5.093A.5.5 0 0 0 6 5.5v5a.5.5 0 0 0 .79.407l3.5-2.5a.5.5 0 0 0 0-.814l-3.5-2.5z" />
-                                        </svg>
+                                        </svg> */}
                                         <form
                                             onSubmit={(event) => handleFormSubmit(event, index)}
                                             className="form-dictation"
 
                                         >
-                                            {countWords(sub.segs[0]['utf8'])?.map((word, indexWord) => (
-                                                <>
-                                            
-                                                    <input
-                                                        ref={ref => (inputRefs.current[index][indexWord] = ref)}
-                                                        type="text"
-                                                        className="word-input"
-                                                        style={{ width: `${word * 12}px` }}
-                                                        onKeyDown={(e) => handleKeyPress(e, index, indexWord + 1)}
-                                                        onChange={(e) => handleInputChange(index, indexWord, e.target.value)}
-                                                    />
-                                                </>
-                                            ))}
+                                            {countWords(sub.segs[0]['utf8'])?.map((word, indexWord) => {
+                                                if (indexWord !== countWords(sub.segs[0]['utf8'])?.length - 1) {
+                                                    return (
+                                                        <input
+                                                            ref={ref => (inputRefs.current[index][indexWord] = ref)}
+                                                            type="text"
+                                                            className="word-input"
+                                                            style={{ width: `${word * 12}px` }}
+                                                            onKeyDown={(e) => handleKeyPress(e, index, indexWord + 1)}
+                                                            onChange={(e) => handleInputChange(index, indexWord, e.target.value)}
+                                                        />
+                                                    );
+                                                }
+                                                return null; // Exclude the last element
+                                            })}
+
+                                            {countWords(sub.segs[0]['utf8'])?.map((word, indexWord) => {
+                                                if (indexWord === countWords(sub.segs[0]['utf8'])?.length - 1) {
+                                                    return (
+                                                        <input
+                                                            ref={ref => (inputRefs.current[index][indexWord] = ref)}
+                                                            type="text"
+                                                            className="word-input"
+                                                            style={{ width: `${word * 12}px` }}
+                                                            onKeyDown={(e) => handleKeyPress(e, index, indexWord + 1, true)}
+                                                            onChange={(e) => handleInputChange(index, indexWord, e.target.value)}
+                                                        />
+                                                    );
+                                                }
+                                                return null; // Exclude the last element
+                                            })}
 
                                             {/* <input
                                                 ref={ref => (inputRefs.current[index][0] = ref)}
@@ -244,7 +270,7 @@ const YouTubeVideo = () => {
                             </div>
                         </div>
 
-                        <button className="button-check" onClick={handleSubmit}>Check</button>
+                        {/* <button className="button-check" onClick={handleSubmit}>Check</button> */}
                     </div>
                 </div>
             </div>
