@@ -210,6 +210,7 @@
     border-bottom: 3px solid rgba(83, 72, 61, 0.8);
     background-color: rgba(255, 255, 255, 0);
     color: #53483D;
+    font-family: 'Consolas', 'monaco', monospace;
     font-size: 20px;
     font-weight: bold;
 }

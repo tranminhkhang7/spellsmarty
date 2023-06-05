@@ -11,6 +11,19 @@ const YouTubeVideo = () => {
             return str.replace(/[^a-zA-Z0-9 ]/g, '').toUpperCase().replace('  ', ' ');
     }
 
+    function countWords(str) {
+        // Remove leading and trailing white spaces
+        const trimmedString = str.trim().replace(/[^a-zA-Z0-9 ]/g, '');
+
+        // Split the string into an array of words using white spaces as the delimiter
+        const words = trimmedString.split(/\s+/);
+
+        // Count the number of words
+        const letterCounts = words.map(word => word.length);
+
+        return letterCounts;
+    }
+
     function play(currentIndex) {
         clearTimeout(timeoutId);
         setTimeoutId(null);
@@ -176,104 +189,7 @@ const YouTubeVideo = () => {
                 </div>
 
                 <div className='right-side'>
-                    <div>
-                        {/* <form
-                            onSubmit={handleSubmit}
-                        >
-                            <textarea
-                                type="text"
-                                className="textarea"
-                                value={line}
-                                onChange={(e) => setLine(e.target.value)}
-                                onKeyDown={handleKeyDown}>
-                            </textarea>
-
-                            <button className="button-check" onClick={handleSubmit}>Check</button>
-                            {(correctLine == '')
-                                ?
-                                <>
-                                </>
-                                :
-                                <>
-                                    <div className="box-correct-line">
-                                        {correctLine}
-                                    </div>
-                                </>}
-                        </form> */}
-
-                        {/* <div className="form-container">
-                            <div className="forms-wrapper">
-                                {data?.map((sub, index) => (
-                                    <form
-                                        onSubmit={(event) => handleFormSubmit(event, index)}
-                                        className='form-item'
-                                    >
-                                        <div className="input-row">
-                                    
-                                            <input
-                                                ref={ref => (inputRefs.current[0] = ref)}
-                                                type="text"
-                                                className="word-input"
-                                                style={{ width: "50px" }}
-                                                onKeyDown={(e) => handleKeyPress(e, 1)}
-                                                onChange={(e) => handleInputChange(0, e.target.value)}
-                                            />
-                                            <input
-                                                ref={ref => (inputRefs.current[1] = ref)}
-                                                type="text"
-                                                className="word-input"
-                                                style={{ width: "80px" }}
-                                                onKeyDown={(e) => handleKeyPress(e, 2)}
-                                                onChange={(e) => handleInputChange(1, e.target.value)}
-                                            />
-                                            <input
-                                                ref={ref => (inputRefs.current[2] = ref)}
-                                                type="text"
-                                                className="word-input"
-                                                style={{ width: "30px" }}
-                                                onKeyDown={(e) => handleKeyPress(e, 3)}
-                                                onChange={(e) => handleInputChange(2, e.target.value)}
-                                            />
-                                            <input
-                                                ref={ref => (inputRefs.current[3] = ref)}
-                                                type="text"
-                                                className="word-input"
-                                                style={{ width: "70px" }}
-                                                onKeyDown={(e) => handleKeyPress(e, 4)}
-                                                onChange={(e) => handleInputChange(3, e.target.value)}
-                                            />
-                                            <input
-                                                ref={ref => (inputRefs.current[3] = ref)}
-                                                type="text"
-                                                className="word-input"
-                                                style={{ width: "70px" }}
-                                                onKeyDown={(e) => handleKeyPress(e, 4)}
-                                                onChange={(e) => handleInputChange(3, e.target.value)}
-                                            /><input
-                                                ref={ref => (inputRefs.current[3] = ref)}
-                                                type="text"
-                                                className="word-input"
-                                                style={{ width: "70px" }}
-                                                onKeyDown={(e) => handleKeyPress(e, 4)}
-                                                onChange={(e) => handleInputChange(3, e.target.value)}
-                                            />
-                                            <input
-                                                ref={ref => (inputRefs.current[3] = ref)}
-                                                type="text"
-                                                className="word-input"
-                                                style={{ width: "70px" }}
-                                                onKeyDown={(e) => handleKeyPress(e, 4)}
-                                                onChange={(e) => handleInputChange(3, e.target.value)}
-                                            />
-
-
-                                        </div>
-                                    </form>
-
-                                ))}
-                            </div>
-                        </div> */}
-
+                    <div>                       
                         <div className="container-dictation">
                             <div className="box-dictation">
                                 {data?.map((sub, index) => (
@@ -297,8 +213,21 @@ const YouTubeVideo = () => {
                                             className="form-dictation"
 
                                         >
+                                            {countWords(sub.segs[0]['utf8'])?.map((word, indexWord) => (
+                                                <>
+                                            
+                                                    <input
+                                                        ref={ref => (inputRefs.current[index][indexWord] = ref)}
+                                                        type="text"
+                                                        className="word-input"
+                                                        style={{ width: `${word * 12}px` }}
+                                                        onKeyDown={(e) => handleKeyPress(e, index, indexWord + 1)}
+                                                        onChange={(e) => handleInputChange(index, indexWord, e.target.value)}
+                                                    />
+                                                </>
+                                            ))}
 
-                                            <input
+                                            {/* <input
                                                 ref={ref => (inputRefs.current[index][0] = ref)}
                                                 type="text"
                                                 className="word-input"
@@ -306,6 +235,8 @@ const YouTubeVideo = () => {
                                                 onKeyDown={(e) => handleKeyPress(e, index, 1)}
                                                 onChange={(e) => handleInputChange(index, 0, e.target.value)}
                                             />
+
+
                                             <input
                                                 ref={ref => (inputRefs.current[index][1] = ref)}
                                                 type="text"
@@ -321,7 +252,7 @@ const YouTubeVideo = () => {
                                                 style={{ width: "30px" }}
                                                 onKeyDown={(e) => handleKeyPress(e, index, 3, true)}
                                                 onChange={(e) => handleInputChange(index, 2, e.target.value)}
-                                            />
+                                            /> */}
                                             {/* <button className="button-check" onClick={(event) => handleFormSubmit(event, index)}>Check</button> */}
                                         </form>
 
@@ -333,44 +264,6 @@ const YouTubeVideo = () => {
                         </div>
 
                         <button className="button-check" onClick={handleSubmit}>Check</button>
-
-
-                        {/* <form>
-                            <input
-                                ref={ref => (inputRefs.current[0] = ref)}
-                                type="text"
-                                className="word-input"
-                                style={{ width: "50px" }}
-                                onKeyDown={(e) => handleKeyPress(e, 1)}
-                                onChange={(e) => handleInputChange(0, e.target.value)}
-                            />
-                            <input
-                                ref={ref => (inputRefs.current[1] = ref)}
-                                type="text"
-                                className="word-input"
-                                style={{ width: "80px" }}
-                                onKeyDown={(e) => handleKeyPress(e, 2)}
-                                onChange={(e) => handleInputChange(1, e.target.value)}
-                            />
-                            <input
-                                ref={ref => (inputRefs.current[2] = ref)}
-                                type="text"
-                                className="word-input"
-                                style={{ width: "30px" }}
-                                onKeyDown={(e) => handleKeyPress(e, 3)}
-                                onChange={(e) => handleInputChange(2, e.target.value)}
-                            />
-                            <input
-                                ref={ref => (inputRefs.current[3] = ref)}
-                                type="text"
-                                className="word-input"
-                                style={{ width: "70px" }}
-                                onKeyDown={(e) => handleKeyPress(e, 4)}
-                                onChange={(e) => handleInputChange(3, e.target.value)}
-                            />
-                            <button className="button-check" onClick={handleSubmit}>Check</button>
-                        </form> */}
-
                     </div>
                 </div>
             </div>
