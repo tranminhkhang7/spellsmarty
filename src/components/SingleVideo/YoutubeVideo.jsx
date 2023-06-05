@@ -275,7 +275,7 @@ const YouTubeVideo = () => {
                 </div>
             </div>
 
-            <div>
+            {/* <div>
                 {data?.map((sub) => (
                     <div>
                         {sub.tStartMs} &nbsp;
@@ -283,7 +283,7 @@ const YouTubeVideo = () => {
                         {sub.segs[0]['utf8']}
                     </div>
                 ))}
-            </div>
+            </div> */}
         </>
     );
 };
