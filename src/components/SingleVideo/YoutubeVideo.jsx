@@ -12,15 +12,9 @@ const YouTubeVideo = () => {
     }
 
     function countWords(str) {
-        // Remove leading and trailing white spaces
         const trimmedString = str.trim().replace(/[^a-zA-Z0-9 ]/g, '');
-
-        // Split the string into an array of words using white spaces as the delimiter
         const words = trimmedString.split(/\s+/);
-
-        // Count the number of words
         const letterCounts = words.map(word => word.length);
-
         return letterCounts;
     }
 
@@ -40,18 +34,6 @@ const YouTubeVideo = () => {
             setTimeoutId(id);
         }
     }
-
-    // const handleKeyDown = (e) => {
-    //     setCorrectLine('');
-    //     if (e.key === 'Shift') {
-    //         clearTimeout(timeoutId);
-    //         setTimeoutId(null);
-    //         play(currentIndex - 1);
-    //     }
-    //     else if (e.key === 'Enter') {
-    //         handleSubmit(e);
-    //     }
-    // };
 
     useEffect(() => {
         const JSONobj = JSON.parse(JSON.stringify(jsonData, null, 2)).events;
@@ -80,7 +62,6 @@ const YouTubeVideo = () => {
             });
         };
     }, []);
-
 
 
     // const [currentIndex, setCurrentIndex] = useState(0);
