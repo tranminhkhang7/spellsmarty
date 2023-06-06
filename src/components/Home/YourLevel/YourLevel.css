@@ -1,4 +1,11 @@
 .level-recommend {
+  top: 5%;
   left: 40%;
+  width: 40%;
+}
+
+.level-recommend-2 {
+  top: 9%;
+  left: 65%;
   width: 30%;
 }

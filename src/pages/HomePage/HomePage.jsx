@@ -42,7 +42,7 @@ const HomePage = () => {
               dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."
             />
           </div>
-          <div className="inline-block text-gray-400 focus-within:text-gray-600 absolute bottom-1/3 left-14 mb-4 ml-4 w-1/4 lg:w-1/4 md:w-full sm:w-full">
+          <div className="inline-block text-gray-400 focus-within:text-gray-600 absolute bottom-1/3 left-14 mb-28 ml-4 w-1/4 lg:w-1/4 md:w-full sm:w-full">
             <input
               value={inputValue}
               onChange={handleChange}

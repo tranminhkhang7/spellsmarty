@@ -6,6 +6,7 @@ import SearchPage from './pages/SearchPage/SearchPage';
 import ProgressPage from './pages/Progress/ProgressPage';
 import Signin from './signin-signup/Signin';
 import Signup from './signin-signup/Signup';
+import ProfilePage from './pages/ProfilePage/ProfilePage';
 const App = () => {
   return (
     <div className="app">
@@ -26,6 +27,7 @@ const App = () => {
           <Route path="/progress" element={<ProgressPage />} />
           <Route path="/signin" element={<Signin />} />
           <Route path="/signup" element={<Signup />} />
+          <Route path="/profile" element={<ProfilePage />} />
         </Routes>
       </Router>
     </div>
