@@ -3,6 +3,9 @@ import jsonData from '../../assets/subtitle.json';
 import "./YoutubeVideo.css"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCirclePlay } from '@fortawesome/free-solid-svg-icons';
+import { faSquareCheck } from '@fortawesome/free-solid-svg-icons';
+import { faCrown } from '@fortawesome/free-solid-svg-icons';
+
 
 
 const YouTubeVideo = () => {
@@ -15,7 +18,7 @@ const YouTubeVideo = () => {
     }
 
     function countWords(str) {
-        const trimmedString = str.trim().replace(/[^a-zA-Z0-9 ]/g, '');
+        const trimmedString = str.trim().replace(/[^a-zA-Z0-9 ']/g, '');
         const words = trimmedString.split(/\s+/);
         const letterCounts = words.map(word => word.length);
         return letterCounts;
@@ -69,7 +72,8 @@ const YouTubeVideo = () => {
 
     // const [currentIndex, setCurrentIndex] = useState(0);
     // const [line, setLine] = useState('');
-    const [correctLine, setCorrectLine] = useState('');
+    // const [correctLineToShow, setCorrectLineToShow] = useState('');
+    const correctLineToShow = useRef('');
     const handleSubmit = (e, isForcedPlay, currentIndexLine) => {
         if (isForcedPlay) {
             play(currentIndexLine);
@@ -84,13 +88,16 @@ const YouTubeVideo = () => {
             if (normalize(line) === normalize(correctLine)) {
                 // setCurrentIndex(currentIndexLine + 1);
                 // setLine('');
-                setCorrectLine('');
+
                 play(currentIndexLine + 1);
                 inputRefs.current[currentIndexLine + 1][0].focus();
+                // setCorrectLineToShow('You are correct!');
+                correctLineToShow.current = 'You are correct!';
             }
             else {
-                console.log("sai");
-                // setCorrectLine(correctLine);
+                correctLineToShow.current = correctLine;
+                // setCorrectLineToShow("saii");
+                // console.log("sai");
             }
         }
     };
@@ -129,6 +136,7 @@ const YouTubeVideo = () => {
         }
     };
 
+
     const focusPreviousInput = (currentIndexLine, previousIndex) => {
         if (previousIndex >= 0) {
             inputRefs.current[currentIndexLine][previousIndex].focus();
@@ -157,9 +165,10 @@ const YouTubeVideo = () => {
 
                 <div className='left-side'>
                     <div id="youtube-player"></div>
-                    <h1>The Egg - A Short Story | Seb Bennett</h1>
+                    <h1>The Egg - A Short Story &nbsp; <FontAwesomeIcon style={{ color: '#f1c40f' }} icon={faCrown} /></h1>
+
                     <div className='creator-level'>
-                        <h2>Seb Bennett</h2>
+                        <h2>Kurzgesagt – In a Nutshell</h2>
                         <div className="box">
                             <h4 className="text">B2 Level</h4>
                         </div>
@@ -203,23 +212,23 @@ const YouTubeVideo = () => {
 
                                         >
                                             {countWords(sub.segs[0]['utf8'])?.map((word, indexWord) => {
+
+
+
                                                 if (indexWord !== countWords(sub.segs[0]['utf8'])?.length - 1) {
                                                     return (
-                                                        <input
-                                                            ref={ref => (inputRefs.current[index][indexWord] = ref)}
-                                                            type="text"
-                                                            className="word-input"
-                                                            style={{ width: `${word * 12}px` }}
-                                                            onKeyDown={(e) => handleKeyPress(e, index, indexWord + 1)}
-                                                            onChange={(e) => handleInputChange(index, indexWord, e.target.value)}
-                                                        />
+                                                        <>
+                                                            <input
+                                                                ref={ref => (inputRefs.current[index][indexWord] = ref)}
+                                                                type="text"
+                                                                className="word-input"
+                                                                style={{ width: `${word * 12}px` }}
+                                                                onKeyDown={(e) => handleKeyPress(e, index, indexWord + 1)}
+                                                                onChange={(e) => handleInputChange(index, indexWord, e.target.value)}
+                                                            />
+                                                        </>
                                                     );
-                                                }
-                                                return null; // Exclude the last element
-                                            })}
-
-                                            {countWords(sub.segs[0]['utf8'])?.map((word, indexWord) => {
-                                                if (indexWord === countWords(sub.segs[0]['utf8'])?.length - 1) {
+                                                } else if (indexWord === countWords(sub.segs[0]['utf8'])?.length - 1) {
                                                     return (
                                                         <input
                                                             ref={ref => (inputRefs.current[index][indexWord] = ref)}
@@ -231,8 +240,8 @@ const YouTubeVideo = () => {
                                                         />
                                                     );
                                                 }
-                                                return null; // Exclude the last element
                                             })}
+
 
                                             {/* <input
                                                 ref={ref => (inputRefs.current[index][0] = ref)}
@@ -269,6 +278,32 @@ const YouTubeVideo = () => {
 
                             </div>
                         </div>
+
+
+                        {correctLineToShow.current ?
+                            <>
+                                <div className="correct-section">
+                                    {correctLineToShow.current === 'You are correct!' ?
+                                        <>
+                                            <FontAwesomeIcon
+                                                icon={faSquareCheck}
+                                            /> &nbsp;
+                                            <span style={{ color: '#2C542F' }}>{correctLineToShow.current}</span>
+
+                                        </>
+                                        :
+                                        <>
+                                            {correctLineToShow.current}
+                                        </>}
+
+                                </div>
+                            </>
+                            :
+                            <>
+                            </>
+                        }
+
+
 
                         {/* <button className="button-check" onClick={handleSubmit}>Check</button> */}
                     </div>

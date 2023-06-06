@@ -68,6 +68,7 @@
     right: 0;
     bottom: 0;
     background-image: url('https://static.skillshare.com/uploads/users/tmp/67305fda');
+    /* background-image: url('https://i.ytimg.com/vi/h6fcK_fRYaI/maxresdefault.jpg'); */
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -127,46 +128,6 @@
     margin-top: 10px;
 }
 
-/* .word-input {
-    height: 30px;
-    margin-top: 10px;
-    margin-left: 8px;
-    padding-top: 5px;
-    padding-bottom: 8px;
-    border-bottom: 3px solid rgba(83, 72, 61, 0.8);
-
-
-    background-color: rgba(255, 255, 255, 0.4);
-    color: #53483D;
-    font-size: 20px;
-    font-weight: bold;
-} */
-
-/* .form-container {
-    height: 400px;
-    width: 500px;
-    overflow: auto;
-    background-color: rgba(255, 255, 255, 0.6);
-}
-
-.forms-wrapper {
-    display: flex;
-    flex-wrap: wrap;
-}
-
-.form-item {
-    width: 100%;
-    border-bottom: 2px solid rgba(83, 72, 61, 0.4);
-    padding: 15px;
-}
-
-.input-row {
-    display: flex;
-    align-items: center;
-    margin-bottom: 10px;
-} */
-
-
 .container-dictation {
     display: flex;
     justify-content: center;
@@ -179,27 +140,37 @@
     height: 400px;
     overflow: auto;
 
-    background-color: rgba(255, 255, 255, 0.6);
+    /* background-color: rgba(255, 255, 255, 0.6); */
     /* padding: 20px; */
 }
 
 .wrap-dictation {
+    padding: 10px 20px;
     display: flex;
     align-items: center;
 
     border-bottom: 2px solid rgba(83, 72, 61, 0.4);
+    background-color: rgba(255, 255, 255, 0.5);
+    /* background-color: #2C542F20; */
 }
+
+.status-bar {
+    /* width: 100px; */
+    width: 10px;
+    height: 100px;
+    background-color: #2C542F85;
+  }
 
 .icon-play {
     cursor: pointer;
-    margin-left: 20px;
+    /* margin-left: 20px; */
     font-size: 20px;
     color: #53483D;
 }
 
 .form-dictation {
     /* margin-top: 10px; */
-    padding-bottom: 20px;
+    padding-bottom: 10px;
     /* display: flex; */
     flex-wrap: wrap;
     justify-content: left;
@@ -216,6 +187,35 @@
     padding-bottom: 8px; */
     border-bottom: 3px solid rgba(83, 72, 61, 0.8);
     background-color: rgba(255, 255, 255, 0);
+    color: #53483D;
+    font-family: 'Consolas', 'monaco', monospace;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.word-input-PUNCTUATION {
+    width: 12px;
+    height: 30px;
+    margin-top: 5px;
+    margin-left: 8px;
+    /* padding-top: 5px;
+    padding-bottom: 8px; */
+    /* border-bottom: 3px solid rgba(83, 72, 61, 0.8); */
+    background-color: rgba(255, 255, 255, 0);
+    color: #53483D;
+    font-family: 'Consolas', 'monaco', monospace;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.correct-section {
+    width: 500px;
+    margin-top: 20px;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.5);
+
     color: #53483D;
     font-family: 'Consolas', 'monaco', monospace;
     font-size: 20px;
