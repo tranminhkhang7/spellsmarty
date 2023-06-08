@@ -67,7 +67,7 @@ const CustomSlider = () => {
       >
         Continue Your Good Work
       </h2>
-      <div className="image-container" ref={containerRef}>
+      <div className="image-container py-6" ref={containerRef}>
         <div className="image h-full p-2">
           <img
             src="https://static.skillshare.com/uploads/users/tmp/67305fda"

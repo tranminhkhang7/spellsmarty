@@ -20,18 +20,20 @@ const HomePage = () => {
       <div>
         <div className="relative">
           <img
-            src="https://www.nationalcollege.edu.au/wp-content/uploads/2019/08/iStock-877985916.jpg"
+            src="https://scontent.fsgn5-11.fna.fbcdn.net/v/t39.30808-6/348226226_4626506184139767_8564810293824353910_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=e3f864&_nc_ohc=mp0amoSM768AX9LXuII&_nc_ht=scontent.fsgn5-11.fna&oh=00_AfBgNfsLsH5kgyA7V7adi-HOGxdNOKxMSmXfM6oxNL3-8g&oe=6487C665"
             alt="background"
             className="w-full"
             loading="lazy"
           />
           <div className="flex flex-col absolute top-1/3 left-3/4 home-text text-base md:text-5xl sm:text-sm md:w-1/3">
             <div className="text-white mb-10 text-left">
-              <div className="inline-block px-5 py-3 splash-text">We're here to help you</div>
+              <div className="inline-block px-5 py-3 splash-text uppercase font-semibold">
+                We are here to help you
+              </div>
             </div>
             <h1 className="text-center relative mb-10">
               <span className="text-base md:text-7xl sm:text-sm">
-                <span className="before:absolute before:content before:w-1.5 before:h-full before:left-0 before:top-1/2 before:transform before:-translate-y-1/2 before:bg-red-500"></span>
+                <span className="before:absolute before:content before:w-1.5 before:h-full before:left-0 before:top-1/2 before:transform before:-translate-y-1/2 before:bg-browne"></span>
                 Write Your Way To English Fluency
               </span>
             </h1>

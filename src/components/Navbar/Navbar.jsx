@@ -29,14 +29,14 @@ const Navbar = () => {
         </li>
       </ul>
       <div className="ml-auto flex space-x-6">
-        <button className="flex items-center text-white hover:text-gray-600">
+        <Link to="/signin" className="flex items-center text-white hover:text-gray-600">
           <FiLogIn className="mr-2" />
           Login
-        </button>
-        <button className="flex items-center text-white hover:text-gray-600">
+        </Link>
+        <Link to="/signup" className="flex items-center text-white hover:text-gray-600">
           <FiUserPlus className="mr-2" />
           Sign Up
-        </button>
+        </Link>
       </div>
     </nav>
   );

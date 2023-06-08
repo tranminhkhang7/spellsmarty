@@ -8,7 +8,7 @@ const Progress = [
     views: 2023,
     level: 'C1',
     progress: 80,
-    color: '#A31F36',
+    color: '#2C542F',
   },
   {
     title: 'Climate change: can money stop deforestation?',
@@ -26,7 +26,7 @@ const Progress = [
     views: 2023,
     level: 'B1',
     progress: 70,
-    color: '#2F3D7E',
+    color: '#2C542F',
   },
 ];
 

@@ -3,9 +3,9 @@ import './YourLevel.css';
 function YourLevel() {
   return (
     <div className="relative -mt-12">
-      <div className="h-full w-6/12 bg-blue-900 flex flex-col py-28">
+      <div className="h-full w-6/12 bg-primary flex flex-col py-28">
         <div className="flex max-w-full w-full justify-start items-center ml-20">
-          <h2 className="text-white text-7xl">Your Level</h2>
+          <h2 className="text-white text-7xl">Personalize Your Experience</h2>
           <div className="bg-blue-300 text-base lg:text-4xl sm:text-sm ml-14 rounded-xl p-3">
             B1 Level
           </div>
@@ -26,8 +26,8 @@ function YourLevel() {
               alt=""
               className="object-fill h-full rounded-xl max-h-full max-w-full hover:z-20 hover:scale-105 transition-all duration-300"
             />
-            <div className="absolute bottom-0 left-0 w-full bg-white rounded-b-xl p-2 text-center">
-              How being a nomad changes my entire life forever, like, ever
+            <div className="absolute bottom-0 left-0 w-full bg-white rounded-b-xl p-5 text-center font-semibold ">
+              Climate change: can money stop deforestation?
             </div>
           </div>
         </div>
@@ -40,7 +40,7 @@ function YourLevel() {
               alt=""
               className="object-fill h-full w-auto rounded-xl"
             />
-            <div className="absolute bottom-0 left-0 w-full bg-white rounded-b-xl p-2 text-center">
+            <div className="absolute bottom-0 left-0 w-full bg-white rounded-b-xl p-5 text-center font-semibold">
               How being a nomad changes my entire life forever, like, ever
             </div>
           </div>
