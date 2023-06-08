@@ -1,5 +1,7 @@
 import { useRef, useEffect } from 'react';
 import './CustomSlider.css';
+import ProgressBarSlider from './ProgressBarSlider/ProgressBarSlider';
+import ProgressBar from '../../Progress/ProgressBar';
 // export default CustomSlider;
 
 const CustomSlider = () => {
@@ -72,7 +74,8 @@ const CustomSlider = () => {
             alt="Image 2"
             className="w-full h-full"
           />
-          <div className="progress-bar rounded-2xl mt-2"></div>
+          <ProgressBarSlider bgcolor="#6a1b9a" completed="50" />
+          {/* <div className="progress-bar rounded-2xl mt-2"></div> */}
         </div>
         <div className="image h-full p-2">
           <img
@@ -80,7 +83,7 @@ const CustomSlider = () => {
             alt="Image 2"
             className="w-full h-full"
           />
-          <div className="progress-bar rounded-2xl mt-2"></div>
+          <ProgressBarSlider bgcolor="#6a1b9a" completed="30" />
         </div>
         <div className="image h-full p-2">
           <img
@@ -88,7 +91,7 @@ const CustomSlider = () => {
             alt="Image 2"
             className="w-full h-full"
           />
-          <div className="progress-bar rounded-2xl mt-2"></div>
+          <ProgressBarSlider bgcolor="#6a1b9a" completed="40" />
         </div>
         <div className="image h-full p-2">
           <img
@@ -96,7 +99,7 @@ const CustomSlider = () => {
             alt="Image 2"
             className="w-full h-full"
           />
-          <div className="progress-bar rounded-2xl mt-2"></div>
+          <ProgressBarSlider bgcolor="#6a1b9a" completed="60" />
         </div>
         <div className="image h-full p-2">
           <img
@@ -104,7 +107,7 @@ const CustomSlider = () => {
             alt="Image 2"
             className="w-full h-full"
           />
-          <div className="progress-bar rounded-2xl mt-2"></div>
+          <ProgressBarSlider bgcolor="#6a1b9a" completed="70" />{' '}
         </div>
         <div className="image h-full p-2">
           <img
@@ -112,7 +115,7 @@ const CustomSlider = () => {
             alt="Image 2"
             className="w-full h-full"
           />
-          <div className="progress-bar rounded-2xl mt-2"></div>
+          <ProgressBarSlider bgcolor="#6a1b9a" completed="80" />{' '}
         </div>
         <div className="image h-full p-2">
           <img
@@ -120,7 +123,7 @@ const CustomSlider = () => {
             alt="Image 2"
             className="w-full h-full"
           />
-          <div className="progress-bar rounded-2xl mt-2"></div>
+          <ProgressBarSlider bgcolor="#6a1b9a" completed="90" />{' '}
         </div>
         <div className="image h-full p-2">
           <img
@@ -128,7 +131,7 @@ const CustomSlider = () => {
             alt="Image 2"
             className="w-full h-full"
           />
-          <div className="progress-bar rounded-2xl mt-2"></div>
+          <ProgressBarSlider bgcolor="#6a1b9a" completed="10" />{' '}
         </div>
         <div className="image h-full p-2">
           <img
@@ -136,7 +139,7 @@ const CustomSlider = () => {
             alt="Image 2"
             className="w-full h-full"
           />
-          <div className="progress-bar rounded-2xl mt-2"></div>
+          <ProgressBarSlider bgcolor="#6a1b9a" completed="20" />{' '}
         </div>
         <div className="image h-full p-2">
           <img
@@ -144,7 +147,7 @@ const CustomSlider = () => {
             alt="Image 2"
             className="w-full h-full"
           />
-          <div className="progress-bar rounded-2xl mt-2"></div>
+          <ProgressBarSlider bgcolor="#6a1b9a" completed="35" />{' '}
         </div>
         <div className="image h-full p-2">
           <img
@@ -152,7 +155,7 @@ const CustomSlider = () => {
             alt="Image 2"
             className="w-full h-full"
           />
-          <div className="progress-bar rounded-2xl mt-2"></div>
+          <ProgressBarSlider bgcolor="#6a1b9a" completed="45" />{' '}
         </div>
         <div className="image h-full p-2">
           <img
@@ -160,7 +163,7 @@ const CustomSlider = () => {
             alt="Image 2"
             className="w-full h-full"
           />
-          <div className="progress-bar rounded-2xl mt-2"></div>
+          <ProgressBarSlider bgcolor="#6a1b9a" completed="100" />{' '}
         </div>
         {/* Add more images as needed */}
       </div>
