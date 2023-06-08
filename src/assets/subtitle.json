@@ -71,7 +71,7 @@
       } ]
     }, {
       "tStartMs": 31740,
-      "dDurationMs": 879,
+      "dDurationMs": 1300,
       "segs": [ {
         "utf8": "You died."
       } ]
@@ -89,7 +89,7 @@
       } ]
     }, {
       "tStartMs": 37600,
-      "dDurationMs": 2520,
+      "dDurationMs": 2720,
       "segs": [ {
         "utf8": "There was... there was a truck."
       } ]
@@ -113,25 +113,25 @@
       } ]
     }, {
       "tStartMs": 47640,
-      "dDurationMs": 780,
+      "dDurationMs": 900,
       "segs": [ {
         "utf8": "Yes."
       } ]
     }, {
       "tStartMs": 49000,
-      "dDurationMs": 1740,
+      "dDurationMs": 1940,
       "segs": [ {
         "utf8": "But don't feel bad about it."
       } ]
     }, {
-      "tStartMs": 51400,
-      "dDurationMs": 1283,
+      "tStartMs": 51200,
+      "dDurationMs": 1483,
       "segs": [ {
         "utf8": "Everyone dies."
       } ]
     }, {
-      "tStartMs": 53120,
-      "dDurationMs": 1259,
+      "tStartMs": 53020,
+      "dDurationMs": 1359,
       "segs": [ {
         "utf8": "You looked around."
       } ]
@@ -173,7 +173,7 @@
       } ]
     }, {
       "tStartMs": 69295,
-      "dDurationMs": 625,
+      "dDurationMs": 825,
       "segs": [ {
         "utf8": "Yes."
       } ]
@@ -329,17 +329,11 @@
       } ]
     }, {
       "tStartMs": 140960,
-      "dDurationMs": 500,
+      "dDurationMs": 4000,
       "segs": [ {
-        "utf8": "Ah..."
+        "utf8": "Ah... So the Hindus were right!"
       } ]
-    }, {
-      "tStartMs": 142920,
-      "dDurationMs": 1640,
-      "segs": [ {
-        "utf8": "So the Hindus were right!"
-      } ]
-    }, {
+    },  {
       "tStartMs": 145280,
       "dDurationMs": 2060,
       "segs": [ {
