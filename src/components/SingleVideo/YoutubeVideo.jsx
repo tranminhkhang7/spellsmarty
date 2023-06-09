@@ -5,12 +5,47 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCirclePlay } from '@fortawesome/free-solid-svg-icons';
 import { faSquareCheck } from '@fortawesome/free-solid-svg-icons';
 import { faCrown } from '@fortawesome/free-solid-svg-icons';
+import { useParams } from 'react-router-dom';
+import { fetchVideoByVideoId } from '../../services/videoServices';
 
 
 
 const YouTubeVideo = () => {
+    const { videoId } = useParams();
+    const [videoSrcId, setVideoSrcId] = useState('');
+    const [videoTitle, setVideoTitle] = useState('');
+    const [channelName, setChannelName] = useState('');
+    const [videoLevel, setVideoLevel] = useState('');
+    const [videoLearntCount, setVideoLearntCount] = useState('');
+
     const [data, setData] = useState(null);
     const [timeoutId, setTimeoutId] = useState(null);
+
+    const fetchVideo = () => {
+        fetchVideoByVideoId(videoId)
+            .then((res) => {
+                setVideoSrcId(res?.data?.srcId);
+                setVideoTitle(res?.data?.title);
+                setChannelName(res?.data?.channelName);
+                setVideoLevel(res?.data?.level);
+                setVideoLearntCount(res?.data?.learntCount);
+                // const JSONobj = JSON.parse(JSON.stringify(jsonData, null, 2)).events;
+                setData(JSON.parse(res?.data?.subtitle).events);
+            })
+            .catch((err) => {
+                console.log(err);
+            });
+    };
+
+    // useEffect(() => {
+
+    //     const JSONobj = JSON.parse(JSON.stringify(jsonData, null, 2)).events;
+    //     setData(JSONobj);
+    // }, []);
+
+    useEffect(() => {
+        fetchVideo();
+    }, []);
 
     function normalize(str) {
         if (str === undefined) { } else
@@ -34,17 +69,12 @@ const YouTubeVideo = () => {
 
         if (currentIndex < data.length) {
             const id = setTimeout(() => {
-                console.log(data[currentIndex].segs[0]['utf8']);
+                // console.log(data[currentIndex].segs[0]['utf8']);
                 playerRef.current.pauseVideo();
             }, data[currentIndex].dDurationMs);
             setTimeoutId(id);
         }
     }
-
-    useEffect(() => {
-        const JSONobj = JSON.parse(JSON.stringify(jsonData, null, 2)).events;
-        setData(JSONobj);
-    }, []);
 
     const playerRef = useRef(null);
     useEffect(() => {
@@ -59,7 +89,7 @@ const YouTubeVideo = () => {
             playerRef.current = new window.YT.Player('youtube-player', {
                 // height: 'auto',
                 width: '100%',
-                videoId: 'h6fcK_fRYaI',
+                videoId: videoSrcId,
                 playerVars: {
                     autoplay: 0,
                     modestbranding: 1, // Hide YouTube branding             
@@ -67,7 +97,7 @@ const YouTubeVideo = () => {
                 },
             });
         };
-    }, []);
+    }, [videoSrcId]);
 
 
     // const [currentIndex, setCurrentIndex] = useState(0);
@@ -136,13 +166,11 @@ const YouTubeVideo = () => {
         }
     };
 
-
     const focusPreviousInput = (currentIndexLine, previousIndex) => {
         if (previousIndex >= 0) {
             inputRefs.current[currentIndexLine][previousIndex].focus();
         }
     };
-
 
     const [inputValues, setInputValues] = useState([]);
     const handleInputChange = (indexLine, indexWord, value) => {
@@ -156,7 +184,6 @@ const YouTubeVideo = () => {
 
     const handleFormSubmit = (event, formId) => {
         event.preventDefault();
-        console.log("formId", formId, inputValues);
     };
 
     return (
@@ -165,15 +192,18 @@ const YouTubeVideo = () => {
 
                 <div className='left-side'>
                     <div id="youtube-player"></div>
-                    <h1>The Egg - A Short Story &nbsp; <FontAwesomeIcon style={{ color: '#f1c40f' }} icon={faCrown} /></h1>
+                    <h1>{videoTitle} <FontAwesomeIcon style={{ color: '#f1c40f' }} icon={faCrown} /></h1>
 
                     <div className='creator-level'>
-                        <h2>Kurzgesagt – In a Nutshell</h2>
+                        <h2>{channelName}</h2>
                         <div className="box">
-                            <h4 className="text">B2 Level</h4>
+                            <h4 className="text">{videoLevel} Level</h4>
                         </div>
                     </div>
-                    <h3>12,345 views</h3>
+                    <h3>
+                        {videoLearntCount}
+                        {videoLearntCount >= 2 ? <> writes </> : <> write</>}
+                    </h3>
                     {/* <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#F2F4E6" class="bi bi-heart" viewBox="0 0 16 16">
                         <path d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01L8 2.748zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143c.06.055.119.112.176.171a3.12 3.12 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15z" />
                     </svg> */}
@@ -189,6 +219,7 @@ const YouTubeVideo = () => {
                                 {data?.map((sub, index) => (
                                     <div
                                         className='wrap-dictation'
+                                        key={index}
                                     >
                                         <FontAwesomeIcon
                                             icon={faCirclePlay}
@@ -212,25 +243,22 @@ const YouTubeVideo = () => {
 
                                         >
                                             {countWords(sub.segs[0]['utf8'])?.map((word, indexWord) => {
-
-
-
                                                 if (indexWord !== countWords(sub.segs[0]['utf8'])?.length - 1) {
                                                     return (
-                                                        <>
-                                                            <input
-                                                                ref={ref => (inputRefs.current[index][indexWord] = ref)}
-                                                                type="text"
-                                                                className="word-input"
-                                                                style={{ width: `${word * 12}px` }}
-                                                                onKeyDown={(e) => handleKeyPress(e, index, indexWord + 1)}
-                                                                onChange={(e) => handleInputChange(index, indexWord, e.target.value)}
-                                                            />
-                                                        </>
+                                                        <input
+                                                            key={indexWord}
+                                                            ref={ref => (inputRefs.current[index][indexWord] = ref)}
+                                                            type="text"
+                                                            className="word-input"
+                                                            style={{ width: `${word * 12}px` }}
+                                                            onKeyDown={(e) => handleKeyPress(e, index, indexWord + 1)}
+                                                            onChange={(e) => handleInputChange(index, indexWord, e.target.value)}
+                                                        />
                                                     );
                                                 } else if (indexWord === countWords(sub.segs[0]['utf8'])?.length - 1) {
                                                     return (
                                                         <input
+                                                            key={indexWord}
                                                             ref={ref => (inputRefs.current[index][indexWord] = ref)}
                                                             type="text"
                                                             className="word-input"

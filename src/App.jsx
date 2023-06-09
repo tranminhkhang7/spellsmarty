@@ -22,7 +22,7 @@ const App = () => {
             }
           /> */}
           <Route path="/home" element={<HomePage />} />
-          <Route path="/video" element={<SingleVideo />} />
+          <Route path="/video/:videoId" element={<SingleVideo />} />
           <Route path="/search" element={<SearchPage />} />
           <Route path="/progress" element={<ProgressPage />} />
           <Route path="/signin" element={<Signin />} />
