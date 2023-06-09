@@ -24,6 +24,7 @@ const YouTubeVideo = () => {
     const fetchVideo = () => {
         fetchVideoByVideoId(videoId)
             .then((res) => {
+                // console.log("hehe", res.data);
                 setVideoSrcId(res?.data?.srcId);
                 setVideoTitle(res?.data?.title);
                 setChannelName(res?.data?.channelName);
@@ -31,6 +32,8 @@ const YouTubeVideo = () => {
                 setVideoLearntCount(res?.data?.learntCount);
                 // const JSONobj = JSON.parse(JSON.stringify(jsonData, null, 2)).events;
                 setData(JSON.parse(res?.data?.subtitle).events);
+
+
             })
             .catch((err) => {
                 console.log(err);
@@ -92,12 +95,14 @@ const YouTubeVideo = () => {
                 videoId: videoSrcId,
                 playerVars: {
                     autoplay: 0,
-                    modestbranding: 1, // Hide YouTube branding             
-                    controls: 0, // Hide control buttons
+                    modestbranding: 1, // Hide YouTube branding      
+                    controls: 0, // Disable default controls
+                    disablekb: 1, // Disable keyboard controls 
                 },
             });
         };
     }, [videoSrcId]);
+
 
 
     // const [currentIndex, setCurrentIndex] = useState(0);
