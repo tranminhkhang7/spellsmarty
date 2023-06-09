@@ -49,7 +49,7 @@ const HomeVideos = () => {
       </h2>
       <div class="image-grid relative">
         {videos.map((video, index) => (
-          <div key={index} class="grid-item">
+          <div key={index} class="grid-item hover:cursor-pointer">
             <div class="grid-item-content">
               <div class="grid-image">
                 <img src={`${video.thumbnailLink}`} alt="Image 1" />

@@ -1,7 +1,7 @@
-import { useRef, useEffect } from 'react';
+import { useRef, useEffect, useState } from 'react';
 import './CustomSlider.css';
 import ProgressBarSlider from './ProgressBarSlider/ProgressBarSlider';
-import ProgressBar from '../../Progress/ProgressBar';
+import { fetchVideosByUserId } from '../../../services/homeServices';
 // export default CustomSlider;
 
 const CustomSlider = () => {
@@ -53,6 +53,22 @@ const CustomSlider = () => {
   const stopDragging = () => {
     isDragging = false;
   };
+
+  const [progressItems, setProgressItems] = useState([]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await fetchVideosByUserId(2);
+        setProgressItems(response.data);
+        console.log(response.data);
+      } catch (error) {
+        console.log('Error fetching videos:', error);
+      }
+    };
+
+    fetchData();
+  }, []);
   return (
     <>
       <h2
@@ -67,105 +83,13 @@ const CustomSlider = () => {
       >
         Continue Your Good Work
       </h2>
-      <div className="image-container py-6" ref={containerRef}>
-        <div className="image h-full p-2">
-          <img
-            src="https://static.skillshare.com/uploads/users/tmp/67305fda"
-            alt="Image 2"
-            className="w-full h-full"
-          />
-          <ProgressBarSlider bgcolor="#6a1b9a" completed="50" />
-          {/* <div className="progress-bar rounded-2xl mt-2"></div> */}
-        </div>
-        <div className="image h-full p-2">
-          <img
-            src="https://static.skillshare.com/uploads/users/tmp/67305fda"
-            alt="Image 2"
-            className="w-full h-full"
-          />
-          <ProgressBarSlider bgcolor="#6a1b9a" completed="30" />
-        </div>
-        <div className="image h-full p-2">
-          <img
-            src="https://static.skillshare.com/uploads/users/tmp/67305fda"
-            alt="Image 2"
-            className="w-full h-full"
-          />
-          <ProgressBarSlider bgcolor="#6a1b9a" completed="40" />
-        </div>
-        <div className="image h-full p-2">
-          <img
-            src="https://static.skillshare.com/uploads/users/tmp/67305fda"
-            alt="Image 2"
-            className="w-full h-full"
-          />
-          <ProgressBarSlider bgcolor="#6a1b9a" completed="60" />
-        </div>
-        <div className="image h-full p-2">
-          <img
-            src="https://static.skillshare.com/uploads/users/tmp/67305fda"
-            alt="Image 2"
-            className="w-full h-full"
-          />
-          <ProgressBarSlider bgcolor="#6a1b9a" completed="70" />{' '}
-        </div>
-        <div className="image h-full p-2">
-          <img
-            src="https://static.skillshare.com/uploads/users/tmp/67305fda"
-            alt="Image 2"
-            className="w-full h-full"
-          />
-          <ProgressBarSlider bgcolor="#6a1b9a" completed="80" />{' '}
-        </div>
-        <div className="image h-full p-2">
-          <img
-            src="https://static.skillshare.com/uploads/users/tmp/67305fda"
-            alt="Image 2"
-            className="w-full h-full"
-          />
-          <ProgressBarSlider bgcolor="#6a1b9a" completed="90" />{' '}
-        </div>
-        <div className="image h-full p-2">
-          <img
-            src="https://static.skillshare.com/uploads/users/tmp/67305fda"
-            alt="Image 2"
-            className="w-full h-full"
-          />
-          <ProgressBarSlider bgcolor="#6a1b9a" completed="10" />{' '}
-        </div>
-        <div className="image h-full p-2">
-          <img
-            src="https://static.skillshare.com/uploads/users/tmp/67305fda"
-            alt="Image 2"
-            className="w-full h-full"
-          />
-          <ProgressBarSlider bgcolor="#6a1b9a" completed="20" />{' '}
-        </div>
-        <div className="image h-full p-2">
-          <img
-            src="https://static.skillshare.com/uploads/users/tmp/67305fda"
-            alt="Image 2"
-            className="w-full h-full"
-          />
-          <ProgressBarSlider bgcolor="#6a1b9a" completed="35" />{' '}
-        </div>
-        <div className="image h-full p-2">
-          <img
-            src="https://static.skillshare.com/uploads/users/tmp/67305fda"
-            alt="Image 2"
-            className="w-full h-full"
-          />
-          <ProgressBarSlider bgcolor="#6a1b9a" completed="45" />{' '}
-        </div>
-        <div className="image h-full p-2">
-          <img
-            src="https://static.skillshare.com/uploads/users/tmp/67305fda"
-            alt="Image 2"
-            className="w-full h-full"
-          />
-          <ProgressBarSlider bgcolor="#6a1b9a" completed="100" />{' '}
-        </div>
-        {/* Add more images as needed */}
+      <div className="image-container py-8" ref={containerRef}>
+        {progressItems.slice(0, 8).map((progressItem, index) => (
+          <div key={index} className="image h-full p-2">
+            <img src={progressItem.thumbnailLink} alt="Image 2" className="w-full h-full" />
+            <ProgressBarSlider bgcolor="#6a1b9a" completed={progressItem.progress} />
+          </div>
+        ))}
       </div>
     </>
   );

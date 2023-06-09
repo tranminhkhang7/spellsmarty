@@ -2,7 +2,7 @@
   margin-left: 60px;
   /* width: 100%; */
   /* Adjust the width as needed */
-  overflow-x: hidden;
+  overflow-x: scroll;
   white-space: nowrap;
 }
 .image-container::-webkit-scrollbar {

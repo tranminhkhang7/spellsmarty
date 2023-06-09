@@ -14,7 +14,7 @@ function ProgressCard({ title, thumbnail, channel, views, level, progress, color
           <div className="flex justify-between items-start">
             <div>
               <span className="text-gray-600">{channel} | </span>
-              <span className="text-gray-600">{views}</span>
+              <span className="text-gray-600">{`${views} writes`}</span>
             </div>
             <div className="px-7 rounded-xl bg-primary text-white">{level}</div>
           </div>
