@@ -7,7 +7,10 @@ import ProgressPage from './pages/Progress/ProgressPage';
 import Signin from './signin-signup/Signin';
 import Signup from './signin-signup/Signup';
 import ProfilePage from './pages/ProfilePage/ProfilePage';
+import NotFoundPage from './pages/NotFoundPage/NotFoundPage';
+import AboutPage from './pages/AboutPage/AboutPage';
 const App = () => {
+
   return (
     <div className="app">
       <Router>
@@ -28,6 +31,9 @@ const App = () => {
           <Route path="/signin" element={<Signin />} />
           <Route path="/signup" element={<Signup />} />
           <Route path="/profile" element={<ProfilePage />} />
+
+          <Route path="/about" element={<AboutPage />} />
+          <Route path='*' element={<NotFoundPage />}/>
         </Routes>
       </Router>
     </div>

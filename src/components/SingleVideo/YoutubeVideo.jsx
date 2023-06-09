@@ -7,6 +7,7 @@ import { faSquareCheck } from '@fortawesome/free-solid-svg-icons';
 import { faCrown } from '@fortawesome/free-solid-svg-icons';
 import { useParams } from 'react-router-dom';
 import { fetchVideoByVideoId } from '../../services/videoServices';
+import NotFoundVideo from '../NotFoundVideo/NotFoundVideo';
 
 
 
@@ -21,6 +22,8 @@ const YouTubeVideo = () => {
     const [data, setData] = useState(null);
     const [timeoutId, setTimeoutId] = useState(null);
 
+    const [isLoadSuccess, setIsLoadSuccess] = useState(true);
+
     const fetchVideo = () => {
         fetchVideoByVideoId(videoId)
             .then((res) => {
@@ -30,21 +33,13 @@ const YouTubeVideo = () => {
                 setChannelName(res?.data?.channelName);
                 setVideoLevel(res?.data?.level);
                 setVideoLearntCount(res?.data?.learntCount);
-                // const JSONobj = JSON.parse(JSON.stringify(jsonData, null, 2)).events;
                 setData(JSON.parse(res?.data?.subtitle).events);
-
-
             })
             .catch((err) => {
                 console.log(err);
+                setIsLoadSuccess(false);
             });
     };
-
-    // useEffect(() => {
-
-    //     const JSONobj = JSON.parse(JSON.stringify(jsonData, null, 2)).events;
-    //     setData(JSONobj);
-    // }, []);
 
     useEffect(() => {
         fetchVideo();
@@ -94,8 +89,7 @@ const YouTubeVideo = () => {
                 width: '100%',
                 videoId: videoSrcId,
                 playerVars: {
-                    autoplay: 0,
-                    modestbranding: 1, // Hide YouTube branding      
+                    autoplay: 0, // Disable autoplay  
                     controls: 0, // Disable default controls
                     disablekb: 1, // Disable keyboard controls 
                 },
@@ -191,7 +185,8 @@ const YouTubeVideo = () => {
         event.preventDefault();
     };
 
-    return (
+    if (!isLoadSuccess) return (<NotFoundVideo />); 
+    else return (
         <>
             <div className="dictation-section">
 
