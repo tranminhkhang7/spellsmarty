@@ -1,12 +1,13 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-const VideoCard = ({ srcId,thumbnail, length, title, channelAvatar, channelName, views }) => {
+const VideoCard = ({ srcId, videoId, thumbnail, length, title, channelAvatar, channelName, views }) => {
   const navigator = useNavigate();
 
   const handleClick = () => {
-    navigator(`/video/${srcId}`);
+    navigator(`/video/${videoId}`);
   }
+
   return (
     <div onClick={handleClick} className="bg-white rounded-lg shadow-lg transition duration-300 ease-out hover:-translate-y-3  hover:ease-in hover:shadow-black cursor-pointer">
       <div className="relative">
