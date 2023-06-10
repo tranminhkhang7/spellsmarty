@@ -1,8 +1,14 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 
-const VideoCard = ({ thumbnail, length, title, channelAvatar, channelName, views }) => {
+const VideoCard = ({ srcId,thumbnail, length, title, channelAvatar, channelName, views }) => {
+  const navigator = useNavigate();
+
+  const handleClick = () => {
+    navigator(`/video/${srcId}`);
+  }
   return (
-    <div className="bg-white rounded-lg shadow-lg transition duration-300 ease-out hover:-translate-y-3  hover:ease-in hover:shadow-black">
+    <div onClick={handleClick} className="bg-white rounded-lg shadow-lg transition duration-300 ease-out hover:-translate-y-3  hover:ease-in hover:shadow-black cursor-pointer">
       <div className="relative">
         <img src={thumbnail} alt={title} className="w-full h-auto rounded-t-lg" />
         {/* <span className="absolute top-2 right-2 px-2 py-1 bg-black text-white text-xs font-bold rounded">{length}</span> */}
