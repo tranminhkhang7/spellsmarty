@@ -7,7 +7,6 @@ import Navbar from '../../components/Navbar/Navbar';
 const SingleVideo = () => {
     return (
         <>
-            <title>hehe</title>
             <Navbar />
             <YouTubeVideo />
             <FromThisCreator />

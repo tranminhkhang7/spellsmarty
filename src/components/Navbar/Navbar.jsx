@@ -4,7 +4,9 @@ const Navbar = () => {
   return (
     <nav className="bg-gray-950 py-4 px-8 flex flex-wrap items-center">
       <div className="text-2xl font-bold text-white">
-        <img width={70} src={require('../../assets/logo.png')} alt="Logo" />
+        <Link to="/home">
+          <img width={70} src={require('../../assets/logo.png')} alt="Logo" />
+        </Link>
       </div>
       <ul className="ml-10 space-x-14 flex flex-wrap md:flex-nowrap">
         <li>
@@ -13,11 +15,11 @@ const Navbar = () => {
           </Link>
         </li>
         <li>
-          <a href="#" className="text-white hover:text-gray-600">
+          <a href="/about" className="text-white hover:text-gray-600">
             About
           </a>
         </li>
-        <li>
+        {/* <li>
           <a href="#" className="text-white hover:text-gray-600">
             Products
           </a>
@@ -26,7 +28,7 @@ const Navbar = () => {
           <a href="#" className="text-white hover:text-gray-600">
             Pricing
           </a>
-        </li>
+        </li> */}
       </ul>
       <div className="ml-auto flex space-x-6">
         <Link to="/signin" className="flex items-center text-white hover:text-gray-600">
