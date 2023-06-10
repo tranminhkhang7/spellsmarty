@@ -32,16 +32,13 @@ const HomePage = () => {
               </div>
             </div>
             <h1 className="text-center relative mb-10">
-              <span className="text-base md:text-7xl sm:text-sm">
+              <span className="text-base md:text-7xl sm:text-sm font-bold">
                 <span className="before:absolute before:content before:w-1.5 before:h-full before:left-0 before:top-1/2 before:transform before:-translate-y-1/2 before:bg-browne"></span>
                 Write Your Way To English Fluency
               </span>
             </h1>
             <TypingEffect
-              text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-              incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-              exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
-              dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."
+              text={`Master English with SpellSmarty!\n\nWelcome to our immersive English learning platform. Dive into a world of captivating content, interactive exercises, and a supportive community.\n\nMaster English. Empower Yourself.`}
             />
           </div>
           <div className="inline-block text-gray-400 focus-within:text-gray-600 absolute bottom-1/3 left-14 mb-28 ml-4 w-1/4 lg:w-1/4 md:w-full sm:w-full">
