@@ -1,8 +1,41 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useRef, useEffect } from 'react';
 import './FromThisCreator.css';
+import { fetchVideoByVideoId } from '../../services/videoServices';
+import { useParams } from 'react-router-dom';
 
 const FromThisCreator = () => {
+  const { videoId } = useParams();
+  const [channelName, setChannelName] = useState('');
+
+  const fetchVideo = () => {
+    fetchVideoByVideoId(videoId)
+      .then((res) => {
+        setChannelName(res?.data?.channelName);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
+
+  useEffect(() => {
+    fetchVideo();
+  }, []);
+
+  const fetchVideoByChannelName = () => {
+    fetchVideoByChannelName(channelName)
+      .then((res) => {
+        console.log(res);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
+
+  // useEffect(() => {
+  //   fetchVideoByChannelName();
+  // }, []);
+
   const containerRef = useRef(null);
   useEffect(() => {
     const container = containerRef.current;

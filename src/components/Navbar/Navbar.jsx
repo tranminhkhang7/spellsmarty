@@ -15,9 +15,14 @@ const Navbar = () => {
           </Link>
         </li>
         <li>
-          <a href="/about" className="text-white hover:text-gray-600">
+          <Link to="/search" className="text-white hover:text-gray-600">
+            Videos
+          </Link>
+        </li>
+        <li>
+          <Link to="/about" className="text-white hover:text-gray-600">
             About
-          </a>
+          </Link>
         </li>
         {/* <li>
           <a href="#" className="text-white hover:text-gray-600">

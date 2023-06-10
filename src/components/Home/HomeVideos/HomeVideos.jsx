@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { fetchVideos } from '../../../services/homeServices';
+import { useNavigate } from 'react-router-dom';
 const GridItem = ({ imageSrc, authorName, authorAvatar, title }) => {
   return (
     <div className="flex flex-col">
@@ -33,6 +34,13 @@ const HomeVideos = () => {
 
     fetchData();
   }, []);
+
+  const navigator = useNavigate();
+
+  const handleClick = (videoid) => {
+    navigator(`/video/${videoid}`);
+  }
+
   return (
     <>
       <h2
@@ -49,7 +57,7 @@ const HomeVideos = () => {
       </h2>
       <div class="image-grid relative">
         {videos.map((video, index) => (
-          <div key={index} class="grid-item hover:cursor-pointer">
+          <div key={index} class="grid-item hover:cursor-pointer"  onClick={() => handleClick(video?.videoid)}>
             <div class="grid-item-content">
               <div class="grid-image">
                 <img src={`${video.thumbnailLink}`} alt="Image 1" />

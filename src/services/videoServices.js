@@ -5,3 +5,9 @@ export const fetchVideoByVideoId = async (videoId) => {
         return response;
     });
 };
+
+export const fetchVideoByChannelName = async (channelName) => {
+    return await axios.get(`/Video/GetVideosByCreator?creator=${channelName}`).then((response) => {
+        return response;
+    });
+};
