@@ -4,13 +4,13 @@ const Navbar = () => {
   return (
     <nav className="bg-gray-950 py-4 px-8 flex flex-wrap items-center">
       <div className="text-2xl font-bold text-white">
-        <Link to="/home">
+        <Link to="/">
           <img width={70} src={require('../../assets/logo.png')} alt="Logo" />
         </Link>
       </div>
       <ul className="ml-10 space-x-14 flex flex-wrap md:flex-nowrap">
         <li>
-          <Link to="/home" className="text-white hover:text-gray-600">
+          <Link to="/" className="text-white hover:text-gray-600">
             Home
           </Link>
         </li>

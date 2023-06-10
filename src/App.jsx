@@ -24,6 +24,7 @@ const App = () => {
               </NotAdminRoute>
             }
           /> */}
+          <Route path="/" element={<HomePage />} />
           <Route path="/home" element={<HomePage />} />
           <Route path="/video/:videoId" element={<SingleVideo />} />
           <Route path="/search" element={<SearchPage />} />
@@ -31,8 +32,8 @@ const App = () => {
           <Route path="/signin" element={<Signin />} />
           <Route path="/signup" element={<Signup />} />
           <Route path="/profile" element={<ProfilePage />} />
-
           <Route path="/about" element={<AboutPage />} />
+          
           <Route path='*' element={<NotFoundPage />}/>
         </Routes>
       </Router>
