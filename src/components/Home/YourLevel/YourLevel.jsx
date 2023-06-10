@@ -5,10 +5,10 @@ function YourLevel() {
     <div className="relative -mt-12">
       <div className="h-full w-6/12 bg-primary flex flex-col py-28">
         <div className="flex max-w-full w-full justify-start items-center ml-20">
-          <h2 className="text-white text-7xl">Personalize Your Experience</h2>
-          <div className="bg-blue-300 text-base lg:text-4xl sm:text-sm ml-14 rounded-xl p-3">
+          <h2 className="text-white text-6xl">Personalize Your Experience</h2>
+          {/* <div className="bg-blue-300 text-base lg:text-4xl sm:text-sm ml-14 rounded-xl p-3">
             B1 Level
-          </div>
+          </div> */}
         </div>
         <div className="w-1/2 text-white mt-14 ml-20">
           We offer a personalized experience to help you improve your English skills. With our
@@ -24,7 +24,7 @@ function YourLevel() {
             <img
               src="https://photoresources.wtatennis.com/photo-resources/2019/10/08/16313740-f4f5-4d76-bb46-10048e3a74fc/UUdKdWvR.jpg?width=1200&height=630"
               alt=""
-              className="object-fill h-full rounded-xl max-h-full max-w-full hover:z-20 hover:scale-105 transition-all duration-300"
+              className="object-fill h-full rounded-xl max-h-full max-w-full hover:z-20 hover:scale-105 transition-all duration-350"
             />
             <div className="absolute bottom-0 left-0 w-full bg-white rounded-b-xl p-5 text-center font-semibold ">
               Climate change: can money stop deforestation?
@@ -32,7 +32,7 @@ function YourLevel() {
           </div>
         </div>
       </div>
-      <div className="level-recommend-2 rounded-xl w-full absolute left-1/2 top-9 mt-12 ml-20 shadow-xl hover:z-20 hover:scale-105 transition-all duration-300">
+      <div className="level-recommend-2 rounded-xl w-full absolute left-1/2 top-9 mt-12 ml-20 shadow-xl hover:z-20 hover:scale-105 transition-all duration-350">
         <div className="bg-white rounded-xl w-full h-full">
           <div className="relative w-full h-full">
             <img

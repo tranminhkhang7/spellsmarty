@@ -15,7 +15,7 @@ const TypingEffect = ({ text }) => {
       if (currentIndex === text.length) {
         clearInterval(typingInterval);
       }
-    }, 20);
+    }, 10);
 
     return () => {
       clearInterval(typingInterval);
@@ -23,7 +23,9 @@ const TypingEffect = ({ text }) => {
   }, [text]);
 
   return (
-    <div className="text-white text-base md:text-3xl sm:text-sm splash-text p-5">{displayText}</div>
+    <div className="text-white text-base md:text-3xl sm:text-sm splash-text p-5 whitespace-pre-line">
+      {displayText}
+    </div>
   );
 };
 
