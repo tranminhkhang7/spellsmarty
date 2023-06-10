@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import { useState } from "react";
+import { Navigate, useNavigate } from "react-router-dom";
 
 const Signup = () => {
 	const [email, setEmail] = useState('');
@@ -7,11 +8,50 @@ const Signup = () => {
 	const [fullname, setFullname] = useState('');
 	const [password, setPassword] = useState('');
 	const [confirmPassword, setConfirmPassword] = useState('');
-	const [passwordMatch, setPasswordMatch] = useState(false);
-
+	const [success,setSuccess] = useState(true);
+	const [passwordMatch, setPasswordMatch] = useState(true);
+	const [isButtonDisabled, setIsButtonDisabled] = useState(true);
+	const navigate = useNavigate();
+	
 	useEffect(() => {
-		setPasswordMatch(password == confirmPassword);
 	}, [confirmPassword]);
+	
+	useEffect(() =>{
+		setSuccess(true);
+		setPasswordMatch(password !== '' && password === confirmPassword);
+		setIsButtonDisabled(email === '' || username === '' || fullname === '' || password === '' || password !== confirmPassword);
+	},[email,username,fullname,password,confirmPassword]);
+
+	const handleSignup = () => {
+		setIsButtonDisabled(true);
+		var axios = require('axios');
+		var data = JSON.stringify({
+			"userName": username,
+			"password": password,
+			"name": fullname,
+			"email": email
+		});
+
+		var config = {
+			method: 'post',
+			url: 'https://spellsmarty.azurewebsites.net/api/Auth/signup',
+			headers: { 
+				'Content-Type': 'application/json', 
+			},
+			data : data
+		};
+
+		axios(config)
+		.then(function (response) {
+			console.log("Signed up successfully!");
+			navigate('/');
+		})
+		.catch(function (error) {
+			console.log(error);
+			setSuccess(false);
+			setIsButtonDisabled(false);
+		});
+	}
 
 	return (
 		<div class="min-h-screen bg-gray-100 flex flex-col justify-center sm:py-12">
@@ -38,25 +78,32 @@ const Signup = () => {
 							onChange={(e) => setFullname(e.target.value)}
 						/>
 						<label class="font-semibold text-sm text-gray-600 pb-1 block">Password</label>
-						<input type="text"
+						<input type="password"
 							className="border rounded-lg px-3 py-2 mt-1 mb-5 text-sm w-full focus:shadow-md focus:shadow-blue-300 focus:outline-none"
 							value={password}
 							onChange={(e) => setPassword(e.target.value)}
 						/>
 						<label class="font-semibold text-sm text-gray-600 pb-1 block">Confirm Password</label>
 						{!passwordMatch && <p className="text-red-400 text-sm text-right">Passwords do not match!</p>}
-						<input type="text"
+						<input type="password"
 							className={`border rounded-lg px-3 py-2 mt-1 mb-5 text-sm w-full focus:shadow-md focus:outline-none 
 										${passwordMatch ? 'focus:shadow-blue-300' : 'focus:shadow-red-400'}`}
 							value={confirmPassword}
 							onChange={(e) => setConfirmPassword(e.target.value)}
 						/>
-						<button type="button" class="transition duration-200 bg-blue-500 hover:bg-blue-600 focus:bg-blue-700 focus:shadow-sm focus:ring-4 focus:ring-blue-500 focus:ring-opacity-50 text-white w-full py-2.5 rounded-lg text-sm shadow-sm hover:shadow-md font-semibold text-center inline-block">
-							<span class="inline-block mr-2">Login</span>
+						<button type="button" 
+							className={`transition duration-200 bg-blue-500 hover:bg-blue-600 focus:bg-blue-700 focus:shadow-sm focus:ring-4 focus:ring-blue-500 focus:ring-opacity-50 text-white w-full py-2.5 rounded-lg text-sm shadow-sm hover:shadow-md font-semibold text-center inline-block ${
+								isButtonDisabled ? 'opacity-50 cursor-not-allowed' : ''
+							  }`}
+							disabled={isButtonDisabled}
+							onClick={handleSignup}
+							>
+							<span class="inline-block mr-2">Sign Up</span>
 							<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-4 h-4 inline-block">
 								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
 							</svg>
 						</button>
+						{!success && <p className="text-red-400 text-lg text-center">Fail to login</p>}
 					</div>
 					<div class="py-5">
 						<div class="grid grid-cols-2 gap-1">
