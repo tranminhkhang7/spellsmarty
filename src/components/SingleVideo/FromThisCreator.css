@@ -23,7 +23,7 @@
   width: 320px;
   height: 180px;
   background-color: rgba(0, 0, 0, 0.7);
-  border-radius: 10px;
+  /* border-radius: 10px; */
   opacity: 0;
   transition: opacity 0.3s;
 }
@@ -55,5 +55,5 @@
   width: 320px;
   height: 180px;
   margin-right: 10px;
-  border-radius: 10px;
+  /* border-radius: 10px; */
 }
