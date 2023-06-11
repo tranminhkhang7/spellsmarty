@@ -9,6 +9,7 @@ const SearchPage = () => {
 	const [data, setData] = useState([]);
 	const [filteredData, setFilteredData] = useState(data);
 	const [keyword, setKeyword] = useState('');
+	const [level,setLevel] = useState('');
 
 	var axios = require('axios');
 
@@ -37,8 +38,12 @@ const SearchPage = () => {
 
 	useEffect(() => {
 		console.log(keyword);
-		setFilteredData(data.filter(videos => videos.title.toLowerCase().includes(keyword.toLowerCase())));
+		setFilteredData(data.filter(video => video.title.toLowerCase().includes(keyword.toLowerCase())));
 	}, [keyword]);
+
+	useEffect(()=>{
+		setFilteredData(data.filter(video => video.level.includes(level)));
+	}, [level]);
 
 	const searchDynamic = (e) => {
 		setKeyword(e.target.value);
@@ -46,8 +51,8 @@ const SearchPage = () => {
 
 	const handleSearch = (e) => {
 		e.preventDefault();
-		console.log(e.target.category);
-		setFilteredData(data.filter(video => video.title.toLowerCase().includes(keyword.toLocaleLowerCase())));
+		console.log(level);
+		setFilteredData(data.filter(video => video.title.toLowerCase().includes(keyword.toLocaleLowerCase()) && video.level.includes(level)));
 	}
 
 	return (
@@ -69,13 +74,17 @@ const SearchPage = () => {
 							</button>
 						</div>
 						<div className="flex items-center justify-between mb-4 ">
-							<select className='w-1/5 px-4 py-2 rounded-md border border-gray-300 text-center text-grey-500 focus:outline-none focus:ring-1 focus:ring-blue-500/50 '>
-								<option value="" disabled selected hidden>Level</option>
-								<option value="option1">A1</option>
-								<option value="option1">A2</option>
-								<option value="option1">B1</option>
-								<option value="option2">B2</option>
-								<option value="option3">C1</option>
+							<select className='w-1/5 px-4 py-2 rounded-md border border-gray-300 text-center text-grey-500 focus:outline-none focus:ring-1 focus:ring-blue-500/50'
+								value={level}
+								onChange={(e)=> setLevel(e.target.value)}
+							>
+								<option value="" disabled hidden selected>Level</option>
+								<option value="">All</option>
+								<option value="A1">A1</option>
+								<option value="A2">A2</option>
+								<option value="B1">B1</option>
+								<option value="B2">B2</option>
+								<option value="C1">C1</option>
 							</select>
 
 							<select className='w-1/5 px-4 py-2 rounded-md border border-gray-300 text-center text-grey-500 focus:outline-none focus:ring-1 focus:ring-blue-500/50'>
