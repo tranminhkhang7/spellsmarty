@@ -1,7 +1,7 @@
 import Navbar from '../../components/Navbar/Navbar';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCrown } from '@fortawesome/free-solid-svg-icons';
-import { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 function ProfilePage() {
   // Sample user data
   const user = {
@@ -14,13 +14,33 @@ function ProfilePage() {
     plan: 'Free',
   };
 
-  // Sample latest videos
-  const latestVideos = [
-    'https://static.skillshare.com/uploads/users/tmp/67305fda',
-    'https://static.skillshare.com/uploads/video/thumbnails/41dad68d5836f509b9d1dd7201d0db7c/original',
-    'https://hardrockmedia.org/wp-content/uploads/2022/11/Hardrockmedia.org_-51.png',
-  ];
   const [showQR, setShowQR] = useState(false);
+  const modalRef = useRef(null);
+
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (showQR && modalRef.current && !modalRef.current.contains(event.target)) {
+        // Clicked outside of the modal, close it
+        setShowQR(false);
+      }
+    };
+
+    const handleEscapeKey = (event) => {
+      if (showQR && event.keyCode === 27) {
+        // Pressed Escape key, close the modal
+        setShowQR(false);
+      }
+    };
+
+    document.addEventListener('mousedown', handleClickOutside);
+    document.addEventListener('keydown', handleEscapeKey);
+
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+      document.removeEventListener('keydown', handleEscapeKey);
+    };
+  }, [showQR]);
+
   const toggleQR = () => {
     setShowQR(!showQR);
   };
@@ -44,7 +64,7 @@ function ProfilePage() {
         {/* Modal For QR */}
         {showQR && (
           <div className="fixed w-full h-full bg-black bg-opacity-50 backdrop-filter backdrop-blur-sm">
-            <div className="bg-white p-4 rounded max-w-lg m-auto">
+            <div className="bg-white p-4 rounded max-w-lg m-auto" ref={modalRef}>
               <img src="https://z-p3-scontent.fsgn5-6.fna.fbcdn.net/v/t1.15752-9/353071081_969901747690094_4238618978827462517_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=ae9488&_nc_ohc=EmyBF0hMtRsAX9U7QtV&_nc_ht=z-p3-scontent.fsgn5-6.fna&oh=03_AdSu60a8G5c6cJh_ApUpbpHCKLt9wH-bNZ6fkxHaqBVDLA&oe=64A97306" />
             </div>
           </div>
@@ -75,3 +95,57 @@ function ProfilePage() {
 }
 
 export default ProfilePage;
+
+// import React, { useState, useEffect, useRef } from 'react';
+
+// function ProfilePage() {
+//   const [showQR, setShowQR] = useState(false);
+//   const modalRef = useRef(null);
+
+//   useEffect(() => {
+//     const handleClickOutside = (event) => {
+//       if (showQR && modalRef.current && !modalRef.current.contains(event.target)) {
+//         // Clicked outside of the modal, close it
+//         setShowQR(false);
+//       }
+//     };
+
+//     const handleEscapeKey = (event) => {
+//       if (showQR && event.keyCode === 27) {
+//         // Pressed Escape key, close the modal
+//         setShowQR(false);
+//       }
+//     };
+
+//     document.addEventListener('mousedown', handleClickOutside);
+//     document.addEventListener('keydown', handleEscapeKey);
+
+//     return () => {
+//       document.removeEventListener('mousedown', handleClickOutside);
+//       document.removeEventListener('keydown', handleEscapeKey);
+//     };
+//   }, [showQR]);
+
+//   const openModal = () => {
+//     setShowQR(true);
+//   };
+
+//   const closeModal = () => {
+//     setShowQR(false);
+//   };
+
+//   return (
+//     <div>
+//       <button onClick={openModal}>Open Modal</button>
+//       {showQR && (
+//         <div className="fixed w-full h-full bg-black bg-opacity-50 backdrop-filter backdrop-blur-sm">
+//           <div className="bg-white p-4 rounded max-w-lg m-auto" ref={modalRef}>
+//             <img src="https://example.com/image.jpg" alt="QR Code" />
+//             <button onClick={closeModal}>Close Modal</button>
+//           </div>
+//         </div>
+//       )}
+//     </div>
+//   );
+// }
+// export default ProfilePage;
