@@ -2,12 +2,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Arvo:wght@400;700&display=swap');
 
 :root {
+  --primary-color: #1C0735;
+  --secondary-color: #faf9fc;
+  --golden-color: #E3B23C;
+  --text-color: #333;
+  --home-page-text-color: #b7783a --default-layout-header-height: 60px;
+  --default-layout-header-width: 1150px;
+  
   --primary: #fe2c55;
   --black: #000;
   --white: #fff;
   --text-color: #333;
-  --home-page-text-color: #b7783a --default-layout-header-height: 60px;
-  --default-layout-header-width: 1150px;
 }
 
 * {
