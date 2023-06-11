@@ -22,9 +22,7 @@ const ProgressBarSlider = (props) => {
 
   return (
     <div className="mt-6 h-4" style={containerStyles}>
-      <div className="bg-primary" style={fillerStyles}>
-        <span className="relative top-4 text-black" style={labelStyles}>{`${completed}%`}</span>
-      </div>
+      <div className="bg-primary" style={fillerStyles}></div>
     </div>
   );
 };

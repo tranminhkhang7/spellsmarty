@@ -8,12 +8,12 @@ import TypingEffect from '../../utils/TypingEffect/TypingEffect';
 import NavBar from '../../components/Navbar/Navbar';
 
 const HomePage = () => {
-  const [inputValue, setInputValue] = useState('');
+  // const [inputValue, setInputValue] = useState('');
 
-  const handleChange = (e) => {
-    setInputValue(e.target.value);
-    console.log(inputValue);
-  };
+  // const handleChange = (e) => {
+  //   setInputValue(e.target.value);
+  //   console.log(inputValue);
+  // };
   return (
     <>
       <NavBar />
@@ -25,7 +25,7 @@ const HomePage = () => {
             className="w-full"
             loading="lazy"
           />
-          <div className="flex flex-col absolute top-1/3 left-3/4 home-text text-base md:text-5xl sm:text-sm md:w-1/3">
+          <div className="flex flex-col absolute top-1/4 left-3/4 home-text text-base md:text-5xl sm:text-sm md:w-1/3">
             <div className="text-white mb-10 text-left">
               <div className="inline-block px-5 py-3 splash-text uppercase font-semibold">
                 We are here to help you
@@ -41,7 +41,7 @@ const HomePage = () => {
               text={`Master English with SpellSmarty!\n\nWelcome to our immersive English learning platform. Dive into a world of captivating content, interactive exercises, and a supportive community.\n\nMaster English. Empower Yourself.`}
             />
           </div>
-          <div className="inline-block text-gray-400 focus-within:text-gray-600 absolute bottom-1/3 left-14 mb-28 ml-4 w-1/4 lg:w-1/4 md:w-full sm:w-full">
+          {/* <div className="inline-block text-gray-400 focus-within:text-gray-600 absolute bottom-1/3 left-14 mb-28 ml-4 w-1/4 lg:w-1/4 md:w-full sm:w-full">
             <input
               value={inputValue}
               onChange={handleChange}
@@ -50,12 +50,12 @@ const HomePage = () => {
               placeholder="Search your favorite video"
             />
             <FiSearch className="pointer-events-none w-8 h-8 absolute top-1/2 transform -translate-y-1/2 right-5" />
-          </div>
+          </div> */}
           <YourLevel />
         </div>
         {/* <YourLevel /> */}
         {/* <h2 className="text-4xl font-semibold">Continue your good work</h2> */}
-        <CustomSlider />
+        {/* <CustomSlider /> */}
         {/* <h2 className="text-4xl font-semibold">Browse</h2> */}
         <HomeVideos />
       </div>

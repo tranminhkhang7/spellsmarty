@@ -1,7 +1,11 @@
+.level-container {
+  height: 450px;
+}
 .level-recommend {
   top: 5%;
-  left: 40%;
-  width: 40%;
+  left: 30%;
+  width: 100%;
+  overflow: hidden;
 }
 
 .level-recommend-2 {
