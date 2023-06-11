@@ -1,20 +1,59 @@
+.image-container::-webkit-scrollbar {
+  display: none;
+  /* Hide the scroll bar for WebKit browsers (e.g., Chrome, Safari) */
+}
+
 .image-container {
   margin-left: 60px;
-  /* width: 100%; */
-  /* Adjust the width as needed */
   overflow-x: scroll;
   white-space: nowrap;
 }
-.image-container::-webkit-scrollbar {
-  display: none; /* Hide the scroll bar for WebKit browsers (e.g., Chrome, Safari) */
+
+.image-wrapper {
+  position: relative;
+  display: inline-block;
 }
+
+.overlay {
+  padding: 10px 15px;
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 320px;
+  height: 180px;
+  background-color: rgba(0, 0, 0, 0.7);
+  border-radius: 10px;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.overlay .title {
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  white-space: normal;
+}
+
+.overlay .title .views {
+  color: white;
+  font-size: 14px;
+  font-weight: 100;
+  white-space: normal;
+}
+
+.image-wrapper:hover .overlay {
+  opacity: 1;
+}
+
+.image-wrapper:hover .text {
+  opacity: 1;
+}
+
 .image {
   display: inline-block;
-  width: auto;
-  /* Adjust the width of the images */
+  width: 320px;
   height: 180px;
-  /* Adjust the height of the images */
   margin-right: 10px;
-  /* Adjust the spacing between images */
   border-radius: 10px;
 }

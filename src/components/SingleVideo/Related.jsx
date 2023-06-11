@@ -18,7 +18,7 @@ const Related = () => {
                             </div>
                             <div className="title">
                                 <div className="title-video">
-                                    How being a nomad changes my entire life forever, like, ever
+                                    How being a nom
                                 </div>
                                 <div className="creator">
                                     David Godman
