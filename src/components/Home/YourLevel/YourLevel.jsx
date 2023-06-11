@@ -10,7 +10,7 @@ function YourLevel() {
             B1 Level
           </div> */}
         </div>
-        <div className="w-1/2 text-white mt-14 ml-20 text-3xl">
+        <div className="w-1/2 text-white mt-14 ml-20 text-3xl text-justify">
           We offer a personalized experience to help you improve your English skills. With our
           advanced technology, we can assess your language proficiency and preferences, and provide
           you with customized learning materials tailored to your specific needs. Our platform

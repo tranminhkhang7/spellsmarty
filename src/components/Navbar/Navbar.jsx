@@ -43,10 +43,10 @@ const Navbar = () => {
               value={inputValue}
               onChange={handleChange}
               type="text"
-              className="px-16 py-2 rounded-full w-full shadow-lg"
+              className="px-20 py-3 rounded-full w-full shadow-lg"
               placeholder="Search your favorite video"
             />
-            <FiSearch className="absolute top-1/4 left-3/4 ml-14" />
+            <FiSearch className="absolute top-1/4 left-3/4 ml-10" />
           </div>
         </li>
       </ul>
