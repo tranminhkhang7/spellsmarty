@@ -9,8 +9,8 @@ import Signup from './signin-signup/Signup';
 import ProfilePage from './pages/ProfilePage/ProfilePage';
 import NotFoundPage from './pages/NotFoundPage/NotFoundPage';
 import AboutPage from './pages/AboutPage/AboutPage';
+import Customers from './pages/Admin/Customer/Customers';
 const App = () => {
-
   return (
     <div className="app">
       <Router>
@@ -24,7 +24,7 @@ const App = () => {
               </NotAdminRoute>
             }
           /> */}
-          <Route path="/" element={<HomePage/>} />
+          <Route path="/" element={<HomePage />} />
           <Route path="/home" element={<HomePage />} />
           <Route path="/video/:videoId" element={<SingleVideo />} />
           <Route path="/search" element={<SearchPage />} />
@@ -33,8 +33,9 @@ const App = () => {
           <Route path="/signup" element={<Signup />} />
           <Route path="/profile" element={<ProfilePage />} />
           <Route path="/about" element={<AboutPage />} />
-          
-          <Route path='*' element={<NotFoundPage />}/>
+
+          <Route path="*" element={<NotFoundPage />} />
+          <Route path="/admin/customers" element={<Customers />} />
         </Routes>
       </Router>
     </div>

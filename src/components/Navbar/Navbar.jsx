@@ -21,7 +21,7 @@ const Navbar = () => {
           <img width={70} src={require('../../assets/logo.png')} alt="Logo" />
         </Link>
       </div>
-      <ul className="ml-10 space-x-14 flex flex-wrap md:flex-nowrap">
+      <ul className="ml-10 py-4 space-x-14 flex flex-wrap md:flex-nowrap items-center">
         <li>
           <Link to="/" className="text-white hover:text-gray-600">
             Home
@@ -37,27 +37,20 @@ const Navbar = () => {
             About
           </Link>
         </li>
-        {/* <li>
-          <a href="#" className="text-white hover:text-gray-600">
-            Products
-          </a>
-        </li>
         <li>
-          <a href="#" className="text-white hover:text-gray-600">
-            Pricing
-          </a>
-        </li> */}
+          <div className="relative text-gray-400 focus-within:text-gray-600">
+            <input
+              value={inputValue}
+              onChange={handleChange}
+              type="text"
+              className="px-16 py-2 rounded-full w-full shadow-lg"
+              placeholder="Search your favorite video"
+            />
+            <FiSearch className="absolute top-1/4 left-3/4 ml-14" />
+          </div>
+        </li>
       </ul>
-      <div className=" text-gray-400 focus-within:text-gray-600 absolute left-1/4 w-1/4 lg:w-1/4 md:w-full sm:w-full">
-        <input
-          value={inputValue}
-          onChange={handleChange}
-          type="text"
-          className="px-6 py-3 rounded-full w-full shadow-lg"
-          placeholder="Search your favorite video"
-        />
-        <FiSearch className="pointer-events-none w-8 h-8 absolute top-1/2 transform -translate-y-1/2 right-5" />
-      </div>
+
       <div className="ml-auto flex space-x-6">
         {token ? (
           <Link to="/profile">
