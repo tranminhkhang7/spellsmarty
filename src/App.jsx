@@ -34,7 +34,7 @@ const App = () => {
           <Route path="/profile" element={<ProfilePage />} />
           <Route path="/about" element={<AboutPage />} />
 
-          <Route path="*" element={<NotFoundPage />} />
+          <Route path="*" element={<NotFoundPage />} />c
           <Route path="/admin/customers" element={<Customers />} />
         </Routes>
       </Router>

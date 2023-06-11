@@ -3,7 +3,7 @@ import jsonData from '../../assets/subtitle.json';
 import "./YoutubeVideo.css"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCirclePlay } from '@fortawesome/free-solid-svg-icons';
-import { faSquareCheck } from '@fortawesome/free-solid-svg-icons';
+import { faSquareCheck } from '@fortawesome/free-solid-svg-icons'; 
 import { faCrown } from '@fortawesome/free-solid-svg-icons';
 import { useParams } from 'react-router-dom';
 import { fetchVideoByVideoId } from '../../services/videoServices';
@@ -192,7 +192,7 @@ const YouTubeVideo = () => {
 
                 <div className='left-side'>
                     <div id="youtube-player"></div>
-                    <h1>{videoTitle} <FontAwesomeIcon style={{ color: '#f1c40f' }} icon={faCrown} /></h1>
+                    <h1>{videoTitle} <FontAwesomeIcon style={{ color: 'var(--golden-color)' }} icon={faCrown} /></h1>
 
                     <div className='creator-level'>
                         <h2>{channelName}</h2>

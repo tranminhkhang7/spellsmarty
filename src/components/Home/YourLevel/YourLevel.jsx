@@ -4,7 +4,7 @@ function YourLevel() {
   return (
     <div className="level-container relative -mt-12 overflow-x-hidden flex flex-row h-full">
       <div className="h-full w-7/12 bg-primary flex flex-col py-32 relative">
-        <div className="flex max-w-full w-full justify-start items-center ml-20">
+        <div className="flex max-w-full w-full justify-start items-center ml-20" >
           <h2 className="text-white text-6xl">Personalize Your Experience</h2>
           {/* <div className="bg-blue-300 text-base lg:text-4xl sm:text-sm ml-14 rounded-xl p-3">
             B1 Level

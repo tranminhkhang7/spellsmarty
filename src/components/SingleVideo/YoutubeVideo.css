@@ -5,12 +5,13 @@
 
 .dictation-section .left-side {
     flex: 1;
-    background-color: #2C542F;
+    /* background-color: var(--primary-color); */
+    background-color: var(--primary-color);
     padding: 60px;
 }
 
 .dictation-section .left-side h1 {
-    color: #F2F4E6;
+    color: var(--secondary-color);
     font-size: 28px;
     font-weight: bold;
     margin-top: 18.76px;
@@ -23,7 +24,7 @@
 }
 
 .dictation-section .left-side .creator-level h2 {
-    color: #F2F4E6;
+    color: var(--secondary-color);
     font-size: 22px;
     font-weight: 200;
     margin: 0;
@@ -36,17 +37,17 @@
     height: 30px;
     /* width: 200px; */
     padding: 0 20px;
-    background-color: #F2F4E6;
+    background-color: var(--secondary-color);
 }
 
 .dictation-section .left-side .creator-level .text {
-    color: #2C542F;
+    color: var(--primary-color);
     text-align: center;
     font-weight: bold;
 }
 
 .dictation-section .left-side h3 {
-    color: #F2F4E6;
+    color: var(--secondary-color);
     margin-top: 18.72px;
     margin-bottom: 18.72px;
     font-weight: bold;
@@ -109,8 +110,8 @@
     /* width: 100px;
     height: 30px; */
     padding: 4px 10px;
-    background-color: #2C542F;
-    color: #F2F4E6;
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
     border: none;
     cursor: pointer;
     margin-top: 10px;
@@ -121,8 +122,8 @@
     height: 30px; */
     padding: 4px 10px;
     margin-left: 20px;
-    color: #2C542F;
-    background-color: #F2F4E6;
+    color: var(--primary-color);
+    background-color: var(--secondary-color);
     border: none;
     cursor: pointer;
     margin-top: 10px;
@@ -151,14 +152,14 @@
 
     border-bottom: 2px solid rgba(83, 72, 61, 0.4);
     background-color: rgba(255, 255, 255, 0.5);
-    /* background-color: #2C542F20; */
+    /* background-color: var(--primary-color)20; */
 }
 
 .status-bar {
     /* width: 100px; */
     width: 10px;
     height: 100px;
-    background-color: #2C542F85;
+    background-color: var(--primary-color)85;
   }
 
 .icon-play {
