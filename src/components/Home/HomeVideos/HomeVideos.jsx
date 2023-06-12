@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { fetchVideos } from '../../../services/homeServices';
 import { useNavigate } from 'react-router-dom';
+import Footer from '../../Navbar/Footer';
 const GridItem = ({ imageSrc, authorName, authorAvatar, title }) => {
   return (
     <div className="flex flex-col">
@@ -80,9 +81,10 @@ const HomeVideos = () => {
         ))}
       </div>
 
-      <div className="button-container">
+      {/* <div className="button-container">
         <button class="button hover:bg-red-300">SEE MORE</button>
-      </div>
+      </div> */}
+      <Footer />
     </>
   );
 };

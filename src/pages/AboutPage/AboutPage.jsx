@@ -1,6 +1,7 @@
 import React from 'react';
 import Navbar from '../../components/Navbar/Navbar';
 import "./AboutPage.css"
+import Footer from '../../components/Navbar/Footer';
 
 const AboutPage = () => {
     return (
@@ -22,15 +23,7 @@ const AboutPage = () => {
                     <dd class="answer">I&rsquo;ve been listening to a ton of <a href="https://soundcloud.com/rynweaver/promises">Ryn Weaver</a> lately, ever since her first EP came out in late July.</dd>
                 </dl>
             </section>
-            <footer class="content-footer">
-                <p class="body-copy">Say hi to me on these social networks:</p>
-                <ul class="social">
-                    <li><a href="https://github.com/brebory">Github</a></li>
-                    <li><a href="https://twitter.com/brebory">Twitter</a></li>
-                    <li><a href="https://plus.google.com/+BrendonRobertoThinkful">Google+</a></li>
-                </ul>
-                <p>Cover Image via <a href="http://unsplash.com">Unsplash</a></p>
-            </footer>
+            <Footer />
         </>
     );
 };
