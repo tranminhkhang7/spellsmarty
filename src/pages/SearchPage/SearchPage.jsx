@@ -4,8 +4,11 @@ import Videos from '../../assets/videos';
 import { useState } from 'react';
 import VideoCard from '../../components/Search/VideoCard';
 import Navbar from '../../components/Navbar/Navbar';
+import { useSearchParams } from 'react-router-dom';
 
 const SearchPage = () => {
+	const [queryParameters] = useSearchParams();
+
 	const [data, setData] = useState([]);
 	const [filteredData, setFilteredData] = useState(data);
 	const [keyword, setKeyword] = useState('');
@@ -22,6 +25,7 @@ const SearchPage = () => {
 	};
 
 	useEffect(() => {
+		setKeyword(queryParameters.get("q") ? queryParameters.get("q") : '');
 		axios(config)
 			.then(function (response) {
 				//console.log(JSON.stringify(response.data));
@@ -38,7 +42,7 @@ const SearchPage = () => {
 	useEffect(() => {
 		console.log(keyword);
 		setFilteredData(data.filter(videos => videos.title.toLowerCase().includes(keyword.toLowerCase())));
-	}, [keyword]);
+	}, [keyword, data]);
 
 	const searchDynamic = (e) => {
 		setKeyword(e.target.value);

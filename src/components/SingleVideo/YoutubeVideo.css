@@ -146,12 +146,20 @@
 }
 
 .wrap-dictation {
-    padding: 10px 20px;
+    /* padding: 10px 20px; */
     display: flex;
     align-items: center;
+    justify-content: space-between;
 
     border-bottom: 2px solid rgba(83, 72, 61, 0.4);
     background-color: rgba(255, 255, 255, 0.5);
+    /* background-color: var(--primary-color)20; */
+}
+
+.wrap-dictation .first-two-elements{
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
     /* background-color: var(--primary-color)20; */
 }
 
@@ -167,6 +175,14 @@
     /* margin-left: 20px; */
     font-size: 20px;
     color: #53483D;
+}
+
+.icon-check {
+    cursor: pointer;
+    margin-right: 20px;
+    left: 0px;
+    font-size: 20px;
+    color: #2C542F;
 }
 
 .form-dictation {

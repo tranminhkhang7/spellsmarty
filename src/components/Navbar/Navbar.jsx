@@ -1,6 +1,6 @@
 import { FiLogIn, FiUserPlus, FiUser, FiSearch } from 'react-icons/fi';
 import { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 const Navbar = () => {
   const [token, setToken] = useState('');
   const [userName, setUserName] = useState('');
@@ -12,8 +12,14 @@ const Navbar = () => {
   }, []);
   const handleChange = (e) => {
     setInputValue(e.target.value);
-    console.log(inputValue);
+    // console.log(inputValue);
   };
+  const navigate = useNavigate();
+  const handleSearch = (e) => {
+    e.preventDefault();
+    navigate(`/search?q=${inputValue}`);
+  };
+  const location = useLocation();
   return (
     <nav className="bg-gray-950 py-4 px-8 flex flex-wrap items-center">
       <div className="text-2xl font-bold text-white">
@@ -37,18 +43,24 @@ const Navbar = () => {
             About
           </Link>
         </li>
-        <li>
-          <div className="relative text-gray-400 focus-within:text-gray-600">
-            <input
-              value={inputValue}
-              onChange={handleChange}
-              type="text"
-              className="px-20 py-3 rounded-full w-full shadow-lg"
-              placeholder="Search your favorite video"
-            />
-            <FiSearch className="absolute top-1/4 left-3/4 ml-14" />
-          </div>
-        </li>
+        {location.pathname === '/search' ? (
+          <></>
+        ) : (
+          <li>
+            <div className="relative text-gray-400 focus-within:text-gray-600">
+              <form onSubmit={handleSearch}>
+                <input
+                  value={inputValue}
+                  onChange={handleChange}
+                  type="text"
+                  className="px-5 py-3 w-full md:w-96 shadow-lg"
+                  placeholder="Search your favorite video"
+                />
+              </form>
+              {/* <FiSearch className="absolute top-1/4 left-3/4 ml-10" /> */}
+            </div>
+          </li>
+        )}
       </ul>
 
       <div className="ml-auto flex space-x-6">
