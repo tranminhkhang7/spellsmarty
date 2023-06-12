@@ -2,8 +2,9 @@ import React, { useEffect, useRef, useState } from 'react';
 import jsonData from '../../assets/subtitle.json';
 import "./YoutubeVideo.css"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCirclePlay } from '@fortawesome/free-solid-svg-icons';
+import { faCirclePlay, faTriangleExclamation } from '@fortawesome/free-solid-svg-icons';
 import { faCheck } from '@fortawesome/free-solid-svg-icons';
+import { faFlag } from '@fortawesome/free-solid-svg-icons';
 import { faSquareCheck } from '@fortawesome/free-solid-svg-icons';
 import { faCrown } from '@fortawesome/free-solid-svg-icons';
 import { useParams } from 'react-router-dom';
@@ -186,6 +187,10 @@ const YouTubeVideo = () => {
         event.preventDefault();
     };
 
+    const handleReport = () => {
+        console.log("hello report");
+    }
+
     if (!isLoadSuccess) return (<NotFoundVideo />);
     else return (
         <>
@@ -284,11 +289,18 @@ const YouTubeVideo = () => {
                                                 {/* <button className="button-check" onClick={(event) => handleFormSubmit(event, index)}>Check</button> */}
                                             </form>
                                         </div>
-                                        
+
                                         <FontAwesomeIcon
                                             icon={faCheck}
-                                            className='icon-check'
-                                        />
+                                            id='icon-check'
+                                        >
+                                        </FontAwesomeIcon>
+                                        <FontAwesomeIcon
+                                            icon={faTriangleExclamation}
+                                            id='icon-flag'
+                                            onClick={() => handleReport()}
+                                        >
+                                        </FontAwesomeIcon>
                                     </div>
 
                                 ))}

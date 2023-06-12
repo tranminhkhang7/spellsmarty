@@ -52,8 +52,7 @@
 
 .image {
   display: inline-block;
-  width: 320px;
-  height: 180px;
+  width: 25vw;
+  height: 100%;
   margin-right: 10px;
-  /* border-radius: 10px; */
 }
