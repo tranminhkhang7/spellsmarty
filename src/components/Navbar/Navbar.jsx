@@ -40,7 +40,7 @@ const Navbar = () => {
         </li>
         <li>
           <Link to="/about" className="text-secondaryColor hover:text-gray-600">
-            About
+            About Us
           </Link>
         </li>
         {location.pathname === '/search' ? (
