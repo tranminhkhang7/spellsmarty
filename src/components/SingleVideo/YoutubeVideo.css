@@ -195,9 +195,9 @@
     display: none;
 }
 
-#icon-check:hover {
+/* #icon-check:hover {
     display: none;
-}
+} */
 
 #icon-check:hover+#icon-flag {
     display: inline;

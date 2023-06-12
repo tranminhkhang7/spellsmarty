@@ -26,6 +26,17 @@ const YouTubeVideo = () => {
 
     const [isLoadSuccess, setIsLoadSuccess] = useState(true);
 
+    const [isCorrect, setIsCorrect] = useState([]);
+
+    const updateLineCorrect = (index) => {
+        setIsCorrect((prevArray) => {
+            const newArray = [...prevArray];
+            newArray[index] = true;
+            console.log(newArray);
+            return newArray;
+        });
+    };
+
     const fetchVideo = () => {
         fetchVideoByVideoId(videoId)
             .then((res) => {
@@ -36,6 +47,7 @@ const YouTubeVideo = () => {
                 setVideoLevel(res?.data?.level);
                 setVideoLearntCount(res?.data?.learntCount);
                 setData(JSON.parse(res?.data?.subtitle).events);
+                setIsCorrect(Array(JSON.parse(res?.data?.subtitle).events?.length + 1).fill(false));
             })
             .catch((err) => {
                 console.log(err);
@@ -104,7 +116,7 @@ const YouTubeVideo = () => {
     // const [currentIndex, setCurrentIndex] = useState(0);
     // const [line, setLine] = useState('');
     // const [correctLineToShow, setCorrectLineToShow] = useState('');
-    const correctLineToShow = useRef('');
+    // const correctLineToShow = useRef('');
     const handleSubmit = (e, isForcedPlay, currentIndexLine) => {
         if (isForcedPlay) {
             play(currentIndexLine);
@@ -120,19 +132,20 @@ const YouTubeVideo = () => {
                 // setCurrentIndex(currentIndexLine + 1);
                 // setLine('');
 
+                updateLineCorrect(currentIndexLine);
+
                 play(currentIndexLine + 1);
                 inputRefs.current[currentIndexLine + 1][0].focus();
                 // setCorrectLineToShow('You are correct!');
-                correctLineToShow.current = 'You are correct!';
+                // correctLineToShow.current = 'You are correct!';
             }
             else {
-                correctLineToShow.current = correctLine;
+                // correctLineToShow.current = correctLine;
                 // setCorrectLineToShow("saii");
                 // console.log("sai");
             }
         }
     };
-
 
     const inputRefs = useRef([]);
     for (let i = 0; i < data?.length + 1; i++) {
@@ -190,6 +203,11 @@ const YouTubeVideo = () => {
     const handleReport = () => {
         console.log("hello report");
     }
+
+
+
+
+
 
     if (!isLoadSuccess) return (<NotFoundVideo />);
     else return (
@@ -289,18 +307,21 @@ const YouTubeVideo = () => {
                                                 {/* <button className="button-check" onClick={(event) => handleFormSubmit(event, index)}>Check</button> */}
                                             </form>
                                         </div>
-
-                                        <FontAwesomeIcon
-                                            icon={faCheck}
-                                            id='icon-check'
-                                        >
-                                        </FontAwesomeIcon>
-                                        <FontAwesomeIcon
+                                        {
+                                            isCorrect[index] ?
+                                                <FontAwesomeIcon
+                                                    icon={faCheck}
+                                                    id='icon-check'
+                                                >
+                                                </FontAwesomeIcon> :
+                                                <></>
+                                        }
+                                        {/* <FontAwesomeIcon
                                             icon={faTriangleExclamation}
                                             id='icon-flag'
                                             onClick={() => handleReport()}
                                         >
-                                        </FontAwesomeIcon>
+                                        </FontAwesomeIcon> */}
                                     </div>
 
                                 ))}
@@ -309,7 +330,7 @@ const YouTubeVideo = () => {
                         </div>
 
 
-                        {correctLineToShow.current ?
+                        {/* {correctLineToShow.current ?
                             <>
                                 <div className="correct-section">
                                     {correctLineToShow.current === 'You are correct!' ?
@@ -330,7 +351,7 @@ const YouTubeVideo = () => {
                             :
                             <>
                             </>
-                        }
+                        } */}
 
 
 
