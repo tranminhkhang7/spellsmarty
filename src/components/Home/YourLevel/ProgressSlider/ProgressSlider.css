@@ -1,0 +1,11 @@
+.swiper-slide-active {
+  transform: scale(1.2) !important;
+  transition: ease-in-out 300ms;
+  z-index: 1 !important;
+}
+.swiper-slide-next {
+  transform: scale(0.8) !important;
+  transition: ease-in-out 300ms;
+  z-index: -1 !important;
+  left: -15%;
+}

@@ -1,0 +1,141 @@
+* {
+    /* Layout Declarations */
+    box-sizing: border-box;
+}
+
+body {
+    /* Typography Declarations */
+    color: #222222;
+    font-size: 1em;
+    font-family: "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+::selection {
+    /* Appearance Declarations */
+    background: #FFE799;
+}
+
+.masthead,
+.introduction,
+.location,
+.questions,
+.content-footer {
+    /* Layout Declarations */
+    padding-left: 2em;
+    padding-right: 2em;
+}
+
+.masthead-intro,
+.masthead-heading,
+.content-footer>p,
+.social {
+    /* Layout Declarations */
+    text-align: center;
+}
+
+.introduction,
+.location,
+.questions {
+    /* Layout Declarations */
+    max-width: 38em;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.introduction>p,
+.location>p,
+.content-footer>p {
+    /* Typography Declarations */
+    font-weight: 300;
+    letter-spacing: 0.05em;
+}
+
+.masthead {
+    /* Layout Declrations */
+    padding: 6em 0;
+    /* Appearance Declrations */
+    background-image: url('https://pbs.twimg.com/media/FxQ4ZfOaUAAf8op?format=jpg&name=large');
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-top: solid 1em var(--primary-color);
+}
+
+.masthead-intro {
+    /* Layout Declarations */
+    margin-bottom: 0.1em;
+    /* Typography Declarations */
+    color: #FFFFFF;
+    font-family: "Gentium Book Basic", Georgia, serif;
+    font-size: 2em;
+}
+
+.masthead-heading {
+    /* Layout Declarations */
+    margin-top: -0.2em;
+    /* Typography Declarations */
+    color: #FFF1C2;
+    font-family: "Open Sans", "Helvetica Neue", sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 6em;
+    letter-spacing: -0.02em;
+    text-transform: uppercase;
+    text-shadow: 0px 3px 0px #FFCF33;
+}
+
+.heading {
+    /* Layout Declarations */
+    max-width: 19em;
+    margin-top: 2em;
+}
+
+.question {
+    /* Layout Declarations */
+    margin: 2em 0 1em 0;
+    /* Typography Declarations */
+    color: var(--primary-color);
+    font-family: "Gentium Book Basic", Georgia, serif;
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+.answer {
+    /* Layout Declarations */
+    margin-left: 0em;
+}
+
+.content-footer {
+    /* Layout Declarations */
+    margin-top: 5em;
+    padding: 4em 0;
+    /* Appearance Rules */
+    background-color: #594F49;
+}
+
+.content-footer>p {
+    /* Typography Declarations */
+    color: white;
+}
+
+.social {
+    /* Layout Declarations */
+    padding: 0;
+    /* Appearance Declarations */
+    list-style: none;
+}
+
+.social>li {
+    /* Layout Declarations */
+    display: inline-block;
+    margin-right: 1em;
+}
+
+@media screen and (max-width: 500px) {
+    .masthead {
+        padding: 3em 0;
+    }
+
+    .masthead-heading {
+        font-size: 3em;
+    }
+}

@@ -1,12 +1,16 @@
+/* eslint-disable jsx-a11y/alt-text */
+/* eslint-disable jsx-a11y/img-redundant-alt */
 import React, { useState } from 'react';
 import { useRef, useEffect } from 'react';
 import './FromThisCreator.css';
 import { fetchVideoByVideoId } from '../../services/videoServices';
-import { useParams } from 'react-router-dom';
+import { fetchVideoByChannelName } from '../../services/videoServices';
+import { useNavigate, useParams } from 'react-router-dom';
 
 const FromThisCreator = () => {
   const { videoId } = useParams();
   const [channelName, setChannelName] = useState('');
+  const [list, setList] = useState();
 
   const fetchVideo = () => {
     fetchVideoByVideoId(videoId)
@@ -22,19 +26,19 @@ const FromThisCreator = () => {
     fetchVideo();
   }, []);
 
-  const fetchVideoByChannelName = () => {
+  const fetchVideoByChannel = () => {
     fetchVideoByChannelName(channelName)
       .then((res) => {
-        console.log(res);
+        setList(res?.data);
       })
       .catch((err) => {
         console.log(err);
       });
   };
 
-  // useEffect(() => {
-  //   fetchVideoByChannelName();
-  // }, []);
+  useEffect(() => {
+    fetchVideoByChannel();
+  }, [channelName]);
 
   const containerRef = useRef(null);
   useEffect(() => {
@@ -81,6 +85,14 @@ const FromThisCreator = () => {
   const stopDragging = () => {
     isDragging = false;
   };
+
+  const navigate = useNavigate();
+
+  const handleClick = (videoId) => {
+    navigate(`/video/${videoId}`);
+    navigate(0);
+  };
+
   return (
     <>
       <h2
@@ -96,72 +108,19 @@ const FromThisCreator = () => {
         From This Creator
       </h2>
       <div className="image-container" ref={containerRef}>
-        <img
-          src="https://static.skillshare.com/uploads/users/tmp/67305fda"
-          alt="Image 1"
-          className="image"
-        />
-        <img
-          src="https://static.skillshare.com/uploads/users/tmp/67305fda"
-          alt="Image 2"
-          className="image"
-        />
-        <img
-          src="https://static.skillshare.com/uploads/users/tmp/67305fda"
-          alt="Image 3"
-          className="image"
-        />
-        <img
-          src="https://static.skillshare.com/uploads/users/tmp/67305fda"
-          alt="Image 3"
-          className="image"
-        />
-        <img
-          src="https://static.skillshare.com/uploads/users/tmp/67305fda"
-          alt="Image 3"
-          className="image"
-        />
-        <img
-          src="https://static.skillshare.com/uploads/users/tmp/67305fda"
-          alt="Image 3"
-          className="image"
-        />
-        <img
-          src="https://static.skillshare.com/uploads/users/tmp/67305fda"
-          alt="Image 3"
-          className="image"
-        />
-        <img
-          src="https://static.skillshare.com/uploads/users/tmp/67305fda"
-          alt="Image 3"
-          className="image"
-        />
-        <img
-          src="https://static.skillshare.com/uploads/users/tmp/67305fda"
-          alt="Image 3"
-          className="image"
-        />
-        <img
-          src="https://static.skillshare.com/uploads/users/tmp/67305fda"
-          alt="Image 3"
-          className="image"
-        />
-        <img
-          src="https://static.skillshare.com/uploads/users/tmp/67305fda"
-          alt="Image 3"
-          className="image"
-        />
-        <img
-          src="https://static.skillshare.com/uploads/users/tmp/67305fda"
-          alt="Image 3"
-          className="image"
-        />
-        <img
-          src="https://static.skillshare.com/uploads/users/tmp/67305fda"
-          alt="Image 3"
-          className="image"
-        />
-        {/* Add more images as needed */}
+        {list?.map((video, index) => (
+          <div className="image-wrapper" key={index} onClick={() => handleClick(video?.videoid)}>
+            <img src={video.thumbnailLink} className="image" alt="Image" />
+            <div className="overlay">
+              <div className="title">
+                {video.title}
+                <div className="views">
+                  {video.learntCount} writes · 1 year ago
+                </div>
+              </div>
+            </div>
+          </div>
+        ))}
       </div>
     </>
   );
