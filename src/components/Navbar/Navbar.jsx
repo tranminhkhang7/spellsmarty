@@ -21,7 +21,7 @@ const Navbar = () => {
   };
   const location = useLocation();
   return (
-    <nav className="bg-gray-950 py-4 px-8 flex flex-wrap items-center">
+    <nav className="bg-navBarColor py-4 px-8 flex flex-wrap items-center">
       <div className="text-2xl font-bold text-white">
         <Link to="/">
           <img width={70} src={require('../../assets/logo.png')} alt="Logo" />
@@ -53,7 +53,7 @@ const Navbar = () => {
                   value={inputValue}
                   onChange={handleChange}
                   type="text"
-                  className="px-5 py-3 w-full md:w-96 shadow-lg"
+                  className="bg-searchBarColor px-5 py-3 w-full md:w-96 shadow-lg placeholder-searchBarPlaceHolder"
                   placeholder="Search your favorite video"
                 />
               </form>

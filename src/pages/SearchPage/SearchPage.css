@@ -1,31 +1,31 @@
-body{
-	background-color: white;
+body {
+  background-color: white;
 }
-#background-item{
-	position: absolute;
-	width: 1806.53px;
-	height: 1027.62px;
-	left: -73px;
-	top: -169px;
+#background-item {
+  position: absolute;
+  width: 1806.53px;
+  height: 1027.62px;
+  left: -73px;
+  top: -169px;
 
-	background: #2F3D7E;
-	border: 1px solid #2F3D7E;
-	box-shadow: inset -15px -15px 20px rgba(0, 0, 0, 0.25);
+  background: #2f3d7e;
+  border: 1px solid #2f3d7e;
+  box-shadow: inset -15px -15px 20px rgba(0, 0, 0, 0.25);
 }
-.search-section{
-	position: relative;
-	left: 0;
-	right: 0;
-	margin-top: 5vh;
-	margin-left: auto;
-	margin-right: auto;
-	width: 75%;
-	height: max-content;
+.search-section {
+  position: relative;
+  left: 0;
+  right: 0;
+  margin-top: 5vh;
+  margin-left: auto;
+  margin-right: auto;
+  width: 75%;
+  height: max-content;
 }
-.video-list{
-	position: relative;
-	left: 0;
-	right: 0;
-	margin-left: auto;
-	margin-right: auto;
+.video-list {
+  position: relative;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
 }

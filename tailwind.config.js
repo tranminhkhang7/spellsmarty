@@ -11,6 +11,9 @@ module.exports = {
         primaryColor: '#1C0735',
         secondaryColor: '#faf9fc',
         goldenColor: '#E3B23C',
+        searchBarColor: '#373737',
+        searchBarPlaceHolder: '#fff',
+        navBarColor: '#0e0e0e',
       },
       minWidth: {
         36: '9rem',
