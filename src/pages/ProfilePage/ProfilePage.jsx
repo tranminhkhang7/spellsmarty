@@ -47,15 +47,15 @@ function ProfilePage() {
   return (
     <>
       <Navbar />
-      <div className="bg-gray-100">
+      <div className="bg-gray-100 min-h-screen">
         {/* Banner */}
-        <div className="bg-primary py-8">
+        <div className="bg-primaryColor py-8">
           <div className="max-w-4xl mx-auto px-4">
             <h1 className="text-3xl text-white font-bold mb-4">Welcome, {user.name}!</h1>
             <p className="text-white mb-8">Upgrade to Premium for exclusive benefits. </p>
             <button
               onClick={toggleQR}
-              className="bg-secondary text-primary font-semibold py-2 px-4 rounded hover:bg-blue-100"
+              className="bg-secondaryColor text-primaryColor font-semibold py-2 px-4 rounded hover:bg-blue-100"
             >
               Upgrade to Premium <FontAwesomeIcon style={{ color: '#f1c40f' }} icon={faCrown} />
             </button>

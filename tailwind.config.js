@@ -8,6 +8,9 @@ module.exports = {
         primary: '#2C542F',
         secondary: '#F2F4E6',
         browne: '#b7783a',
+        primaryColor: '#1C0735',
+        secondaryColor: '#faf9fc',
+        goldenColor: '#E3B23C',
       },
       minWidth: {
         36: '9rem',

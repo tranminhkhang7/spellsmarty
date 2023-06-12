@@ -23,17 +23,17 @@ const Navbar = () => {
       </div>
       <ul className="ml-10 py-4 space-x-14 flex flex-wrap md:flex-nowrap items-center">
         <li>
-          <Link to="/" className="text-white hover:text-gray-600">
+          <Link to="/" className="text-secondaryColor hover:text-gray-600">
             Home
           </Link>
         </li>
         <li>
-          <Link to="/search" className="text-white hover:text-gray-600">
+          <Link to="/search" className="text-secondaryColor hover:text-gray-600">
             Videos
           </Link>
         </li>
         <li>
-          <Link to="/about" className="text-white hover:text-gray-600">
+          <Link to="/about" className="text-secondaryColor hover:text-gray-600">
             About
           </Link>
         </li>
@@ -46,26 +46,37 @@ const Navbar = () => {
               className="px-20 py-3 rounded-full w-full shadow-lg"
               placeholder="Search your favorite video"
             />
-            <FiSearch className="absolute top-1/4 left-3/4 ml-10" />
+            <FiSearch className="absolute top-1/4 left-3/4 ml-14" />
           </div>
         </li>
       </ul>
 
       <div className="ml-auto flex space-x-6">
         {token ? (
-          <Link to="/profile">
-            <div className="flex items-center text-white overflow-hidden whitespace-nowrap">
-              <FiUser className="mr-2" />
-              {userName}
-            </div>
-          </Link>
+          <div className="flex flex-row justify-center items-center space-x-4">
+            <Link to="/profile">
+              <div className="flex flex-1 items-center text-secondaryColor overflow-hidden whitespace-nowrap">
+                <FiUser className="mr-2" />
+                {userName}
+              </div>
+            </Link>
+            <button className="bg-secondaryColor text-primaryColor font-semibold py-2 px-4 rounded">
+              Logout
+            </button>
+          </div>
         ) : (
           <>
-            <Link to="/signin" className="flex items-center text-white hover:text-gray-600">
+            <Link
+              to="/signin"
+              className="flex items-center text-secondaryColor hover:text-gray-600"
+            >
               <FiLogIn className="mr-2" />
               Login
             </Link>
-            <Link to="/signup" className="flex items-center text-white hover:text-gray-600">
+            <Link
+              to="/signup"
+              className="flex items-center text-secondaryColor hover:text-gray-600"
+            >
               <FiUserPlus className="mr-2" />
               Sign Up
             </Link>
