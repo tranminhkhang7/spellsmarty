@@ -57,14 +57,14 @@ function DateSelect() {
     <div className="relative">
       <button
         ref={trigger}
-        className="btn justify-between min-w-44 bg-white border-slate-200 hover:border-slate-300 text-slate-500 hover:text-slate-600"
+        className="btn justify-between min-w-56 bg-white border-slate-200 hover:border-slate-300 text-slate-500 hover:text-slate-600"
         aria-label="Select date range"
         aria-haspopup="true"
         onClick={() => setDropdownOpen(!dropdownOpen)}
         aria-expanded={dropdownOpen}
       >
-        <span className="flex items-center">
-          <svg className="w-4 h-4 fill-current text-slate-500 shrink-0 mr-2" viewBox="0 0 16 16">
+        <span className="flex items-center text-xl">
+          <svg className="w-5 h-5 fill-current text-slate-500 shrink-0 mr-2" viewBox="0 0 16 16">
             <path d="M15 2h-2V0h-2v2H9V0H7v2H5V0H3v2H1a1 1 0 00-1 1v12a1 1 0 001 1h14a1 1 0 001-1V3a1 1 0 00-1-1zm-1 12H2V6h12v8z" />
           </svg>
           <span>{options[selected].period}</span>
@@ -91,7 +91,7 @@ function DateSelect() {
       >
         <div
           ref={dropdown}
-          className="font-medium text-sm text-slate-600"
+          className="font-medium text-xl text-slate-600"
           onFocus={() => setDropdownOpen(true)}
           onBlur={() => setDropdownOpen(false)}
         >

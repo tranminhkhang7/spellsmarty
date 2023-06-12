@@ -58,49 +58,49 @@ function DropdownFilter({ align }) {
         leaveEnd="opacity-0"
       >
         <div ref={dropdown}>
-          <div className="text-xs font-semibold text-slate-400 uppercase pt-1.5 pb-2 px-4">
+          <div className="text-xl font-semibold text-slate-400 uppercase pt-1.5 pb-2 px-4">
             Filters
           </div>
           <ul className="mb-4">
             <li className="py-3 px-3">
               <label className="flex items-center">
                 <input type="checkbox" className="form-checkbox" />
-                <span className="text-sm font-medium ml-2">Direct VS Indirect</span>
+                <span className="text-xl font-medium ml-2">Direct VS Indirect</span>
               </label>
             </li>
             <li className="py-3 px-3">
               <label className="flex items-center">
                 <input type="checkbox" className="form-checkbox" />
-                <span className="text-sm font-medium ml-2">Real Time Value</span>
+                <span className="text-xl font-medium ml-2">Real Time Value</span>
               </label>
             </li>
             <li className="py-3 px-3">
               <label className="flex items-center">
                 <input type="checkbox" className="form-checkbox" />
-                <span className="text-sm font-medium ml-2">Top Channels</span>
+                <span className="text-xl font-medium ml-2">Top Channels</span>
               </label>
             </li>
             <li className="py-3 px-3">
               <label className="flex items-center">
                 <input type="checkbox" className="form-checkbox" />
-                <span className="text-sm font-medium ml-2">Sales VS Refunds</span>
+                <span className="text-xl font-medium ml-2">Sales VS Refunds</span>
               </label>
             </li>
             <li className="py-3 px-3">
               <label className="flex items-center">
                 <input type="checkbox" className="form-checkbox" />
-                <span className="text-sm font-medium ml-2">Last Order</span>
+                <span className="text-xl font-medium ml-2">Last Order</span>
               </label>
             </li>
             <li className="py-3 px-3">
               <label className="flex items-center">
                 <input type="checkbox" className="form-checkbox" />
-                <span className="text-sm font-medium ml-2">Total Spent</span>
+                <span className="text-xl font-medium ml-2">Total Spent</span>
               </label>
             </li>
           </ul>
-          <div className="py-4 px-16 w-full border-t border-slate-200 bg-slate-50">
-            <ul className="flex items-center justify-between w-full">
+          <div className="py-4 px-16 w-full border-t border-slate-200 bg-slate-100">
+            <ul className="flex items-center justify-between w-full space-x-6">
               <li>
                 <button className="btn-xs bg-white border-slate-200 hover:border-slate-300 text-slate-500 hover:text-slate-600">
                   Clear
