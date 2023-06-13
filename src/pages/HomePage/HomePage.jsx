@@ -6,6 +6,7 @@ import CustomSlider from '../../components/Home/Slider/CustomSlider';
 import HomeVideos from '../../components/Home/HomeVideos/HomeVideos';
 import TypingEffect from '../../utils/TypingEffect/TypingEffect';
 import NavBar from '../../components/Navbar/Navbar';
+import backgroundImage from '../../assets/background.png';
 
 const HomePage = () => {
   // const [inputValue, setInputValue] = useState('');
@@ -20,7 +21,7 @@ const HomePage = () => {
       <div>
         <div className="relative">
           <img
-            src="https://scontent.fsgn5-11.fna.fbcdn.net/v/t39.30808-6/348226226_4626506184139767_8564810293824353910_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=e3f864&_nc_ohc=mp0amoSM768AX9LXuII&_nc_ht=scontent.fsgn5-11.fna&oh=00_AfBgNfsLsH5kgyA7V7adi-HOGxdNOKxMSmXfM6oxNL3-8g&oe=6487C665"
+            src={backgroundImage}
             alt="background"
             className="w-full"
             loading="lazy"
