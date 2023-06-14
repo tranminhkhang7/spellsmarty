@@ -7,7 +7,7 @@ import { faCheck } from '@fortawesome/free-solid-svg-icons';
 import { faFlag } from '@fortawesome/free-solid-svg-icons';
 import { faSquareCheck } from '@fortawesome/free-solid-svg-icons';
 import { faCrown } from '@fortawesome/free-solid-svg-icons';
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import { fetchVideoByVideoId } from '../../services/videoServices';
 import NotFoundVideo from '../NotFoundVideo/NotFoundVideo';
 
@@ -20,6 +20,7 @@ const YouTubeVideo = () => {
     const [channelName, setChannelName] = useState('');
     const [videoLevel, setVideoLevel] = useState('');
     const [videoLearntCount, setVideoLearntCount] = useState('');
+    const [videoPremium, setVideoPremium] = useState('');
 
     const [data, setData] = useState(null);
     const [timeoutId, setTimeoutId] = useState(null);
@@ -43,11 +44,13 @@ const YouTubeVideo = () => {
                 // console.log("hehe", res.data);
                 setVideoSrcId(res?.data?.srcId);
                 setVideoTitle(res?.data?.title);
+                setVideoPremium(res?.data?.premium);
                 setChannelName(res?.data?.channelName);
                 setVideoLevel(res?.data?.level);
                 setVideoLearntCount(res?.data?.learntCount);
                 setData(JSON.parse(res?.data?.subtitle).events);
                 setIsCorrect(Array(JSON.parse(res?.data?.subtitle).events?.length + 1).fill(false));
+
             })
             .catch((err) => {
                 console.log(err);
@@ -98,9 +101,13 @@ const YouTubeVideo = () => {
 
         // Initialize YouTube player when API script is loaded
         window.onYouTubeIframeAPIReady = () => {
+            const container = document.getElementById('youtube-player');
+            const width = container.offsetWidth;
+            const height = (width / 16) * 9; // Assuming 16:9 aspect ratio
+
             playerRef.current = new window.YT.Player('youtube-player', {
-                // height: 'auto',
-                width: '100%',
+                height: `${height}px`,
+                width: width,
                 videoId: videoSrcId,
                 playerVars: {
                     autoplay: 0, // Disable autoplay  
@@ -209,14 +216,26 @@ const YouTubeVideo = () => {
 
 
 
-    if (!isLoadSuccess) return (<NotFoundVideo />);
-    else return (
+    // if (!isLoadSuccess) return (<NotFoundVideo />);
+    // else 
+    return (
         <>
             <div className="dictation-section">
 
                 <div className='left-side'>
                     <div id="youtube-player"></div>
-                    <h1>{videoTitle} <FontAwesomeIcon style={{ color: 'var(--golden-color)' }} icon={faCrown} /></h1>
+                    <h1>{videoTitle}</h1>
+
+                    {videoPremium
+                        ?
+                        <div className='PREMIUM-tag'>
+                            <div className="box">
+                                <h4 className="text">PREMIUM</h4>
+                            </div>
+                        </div>
+                        :
+                        <></>
+                    }
 
                     <div className='creator-level'>
                         <h2>{channelName}</h2>
@@ -232,6 +251,15 @@ const YouTubeVideo = () => {
 
                 <div className='right-side'>
                     <div>
+                        {videoPremium
+                            ?
+                            <div className="upgrage-info">
+                                Please
+                                &nbsp;<Link to='/profile' style={{ textDecoration: "underline" }}>UPGRADE</Link>&nbsp;
+                                to dictate this video!
+                            </div>
+                            : <></>
+                        }
                         <div className="container-dictation">
                             <div className="box-dictation">
                                 {data?.map((sub, index) => (
@@ -247,7 +275,6 @@ const YouTubeVideo = () => {
                                             <form
                                                 onSubmit={(event) => handleFormSubmit(event, index)}
                                                 className="form-dictation"
-
                                             >
                                                 {countWords(sub.segs[0]['utf8'])?.map((word, indexWord) => {
                                                     if (indexWord !== countWords(sub.segs[0]['utf8'])?.length - 1) {
@@ -276,35 +303,6 @@ const YouTubeVideo = () => {
                                                         );
                                                     }
                                                 })}
-
-
-                                                {/* <input
-                                                ref={ref => (inputRefs.current[index][0] = ref)}
-                                                type="text"
-                                                className="word-input"
-                                                style={{ width: "50px" }}
-                                                onKeyDown={(e) => handleKeyPress(e, index, 1)}
-                                                onChange={(e) => handleInputChange(index, 0, e.target.value)}
-                                            />
-
-
-                                            <input
-                                                ref={ref => (inputRefs.current[index][1] = ref)}
-                                                type="text"
-                                                className="word-input"
-                                                style={{ width: "80px" }}
-                                                onKeyDown={(e) => handleKeyPress(e, index, 2)}
-                                                onChange={(e) => handleInputChange(index, 1, e.target.value)}
-                                            />
-                                            <input
-                                                ref={ref => (inputRefs.current[index][2] = ref)}
-                                                type="text"
-                                                className="word-input"
-                                                style={{ width: "30px" }}
-                                                onKeyDown={(e) => handleKeyPress(e, index, 3, true)}
-                                                onChange={(e) => handleInputChange(index, 2, e.target.value)}
-                                            /> */}
-                                                {/* <button className="button-check" onClick={(event) => handleFormSubmit(event, index)}>Check</button> */}
                                             </form>
                                         </div>
                                         {
@@ -357,6 +355,7 @@ const YouTubeVideo = () => {
 
                         {/* <button className="button-check" onClick={handleSubmit}>Check</button> */}
                     </div>
+
                 </div>
             </div>
 

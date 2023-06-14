@@ -20,8 +20,8 @@
   position: absolute;
   top: 0;
   left: 0;
-  width: 320px;
-  height: 180px;
+  width: 25vw;
+  height: 100%;
   background-color: rgba(0, 0, 0, 0.7);
   /* border-radius: 10px; */
   opacity: 0;
