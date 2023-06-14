@@ -10,10 +10,12 @@ import { faCrown } from '@fortawesome/free-solid-svg-icons';
 import { Link, useParams } from 'react-router-dom';
 import { fetchVideoByVideoId } from '../../services/videoServices';
 import NotFoundVideo from '../NotFoundVideo/NotFoundVideo';
+import { Tooltip } from 'react-tooltip'
 
 
 
 const YouTubeVideo = () => {
+    // const [videoId, setVideoId] = useState('')
     const { videoId } = useParams();
     const [videoSrcId, setVideoSrcId] = useState('');
     const [videoTitle, setVideoTitle] = useState('');
@@ -26,6 +28,7 @@ const YouTubeVideo = () => {
     const [timeoutId, setTimeoutId] = useState(null);
 
     const [isLoadSuccess, setIsLoadSuccess] = useState(true);
+    const [isVideoReady, setIsVideoReady] = useState(false);
 
     const [isCorrect, setIsCorrect] = useState([]);
 
@@ -47,8 +50,8 @@ const YouTubeVideo = () => {
                 setChannelName(res?.data?.channelName);
                 setVideoLevel(res?.data?.level);
                 setVideoLearntCount(res?.data?.learntCount);
-                setData(JSON.parse(res?.data?.subtitle).events);
-                setIsCorrect(Array(JSON.parse(res?.data?.subtitle).events?.length + 1).fill(false));
+                setData(JSON.parse(res?.data?.subtitle)?.events);
+                setIsCorrect(Array(res.data.subtitle ? JSON.parse(res?.data?.subtitle)?.events?.length + 1 : 1).fill(false));
             })
             .catch((err) => {
                 console.log(err);
@@ -99,8 +102,9 @@ const YouTubeVideo = () => {
 
         // Initialize YouTube player when API script is loaded
         window.onYouTubeIframeAPIReady = () => {
+            setIsVideoReady(true);
             const container = document.getElementById('youtube-player');
-            const width = container.offsetWidth;
+            const width = container?.offsetWidth;
             const height = (width / 16) * 9; // Assuming 16:9 aspect ratio
 
             playerRef.current = new window.YT.Player('youtube-player', {
@@ -212,39 +216,56 @@ const YouTubeVideo = () => {
 
 
 
+    function handleReload() {
+        window.location.reload()
+      }
 
-
-    // if (!isLoadSuccess) return (<NotFoundVideo />);
-    // else 
+    if (!isLoadSuccess) return (<NotFoundVideo />);
+    else 
     return (
         <>
             <div className="dictation-section">
-
                 <div className='left-side'>
-                    <div id="youtube-player"></div>
-                    <h1>{videoTitle}</h1>
 
-                    {videoPremium
-                        ?
-                        <div className='PREMIUM-tag'>
-                            <div className="box">
-                                <h4 className="text">PREMIUM</h4>
+                    <div id="youtube-player"></div>
+                    {isVideoReady ?
+                        <>
+                            <h1>{videoTitle}</h1>
+
+                            {videoPremium
+                                ?
+                                <div className='PREMIUM-tag'>
+                                    <div className="box">
+                                        <h4 className="text">PREMIUM</h4>
+                                    </div>
+                                </div>
+                                :
+                                <></>
+                            }
+
+                            <div className='creator-level'>
+                                <h2>{channelName}</h2>
+                                <div className="box">
+                                    <h4 className="text">{videoLevel} Level</h4>
+                                </div>
                             </div>
-                        </div>
+                            <h3>
+                                {videoLearntCount}
+                                {videoLearntCount >= 2 ? <> writes </> : <> write</>}
+                            </h3>
+                        </>
                         :
-                        <></>
+                        <div style={{ textAlign: 'center' }}>
+                            <h1>Something went wrong.</h1>
+                            <h3>Sorry about that! Please &nbsp;
+                                <span style={{textDecoration: 'underline', cursor: 'pointer'}} onClick={() => handleReload()}>
+                                    try again.
+                                </span>
+                            </h3>
+
+                        </div>
                     }
 
-                    <div className='creator-level'>
-                        <h2>{channelName}</h2>
-                        <div className="box">
-                            <h4 className="text">{videoLevel} Level</h4>
-                        </div>
-                    </div>
-                    <h3>
-                        {videoLearntCount}
-                        {videoLearntCount >= 2 ? <> writes </> : <> write</>}
-                    </h3>
                 </div>
 
                 <div className='right-side'>
@@ -254,10 +275,12 @@ const YouTubeVideo = () => {
                             <div className="upgrage-info">
                                 Please
                                 &nbsp;<Link to='/profile' style={{ textDecoration: "underline" }}>UPGRADE</Link>&nbsp;
-                                to dictate this video!                                
+                                to dictate this video!
                             </div>
                             : <></>
                         }
+
+                        <Tooltip id="my-tooltip" />
                         <div className="container-dictation">
                             <div className="box-dictation">
                                 {data?.map((sub, index) => (
@@ -269,6 +292,8 @@ const YouTubeVideo = () => {
                                             <FontAwesomeIcon
                                                 icon={faCirclePlay}
                                                 className='icon-play'
+                                                data-tooltip-id="my-tooltip"
+                                                data-tooltip-content="You can press Ctrl to replay."
                                                 onClick={(e) => handleSubmit(e, true, index)} />
                                             <form
                                                 onSubmit={(event) => handleFormSubmit(event, index)}
@@ -305,19 +330,21 @@ const YouTubeVideo = () => {
                                         </div>
                                         {
                                             isCorrect[index] ?
-                                                <FontAwesomeIcon
-                                                    icon={faCheck}
-                                                    id='icon-check'
-                                                >
-                                                </FontAwesomeIcon> :
+                                                <>
+                                                    <FontAwesomeIcon
+                                                        icon={faCheck}
+                                                        id='icon-check'
+                                                    >
+                                                    </FontAwesomeIcon>
+                                                    <FontAwesomeIcon
+                                                        icon={faTriangleExclamation}
+                                                        id='icon-flag'
+                                                        onClick={() => handleReport()}
+                                                    >
+                                                    </FontAwesomeIcon>
+                                                </> :
                                                 <></>
                                         }
-                                        {/* <FontAwesomeIcon
-                                            icon={faTriangleExclamation}
-                                            id='icon-flag'
-                                            onClick={() => handleReport()}
-                                        >
-                                        </FontAwesomeIcon> */}
                                     </div>
 
                                 ))}
@@ -357,15 +384,7 @@ const YouTubeVideo = () => {
                 </div>
             </div>
 
-            {/* <div>
-                {data?.map((sub) => (
-                    <div>
-                        {sub.tStartMs} &nbsp;
-                        {sub.dDurationMs} &nbsp;
-                        {sub.segs[0]['utf8']}
-                    </div>
-                ))}
-            </div> */}
+
         </>
     );
 };
