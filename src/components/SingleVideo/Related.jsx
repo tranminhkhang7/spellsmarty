@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import "./Related.css"
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import { fetchRelatedVideos } from '../../services/videoServices';
 
 const Related = () => {
@@ -10,8 +10,7 @@ const Related = () => {
     const fetchVideos = () => {
         fetchRelatedVideos(videoId)
             .then((res) => {
-                setList(res?.data)
-                console.log("lolo", res);
+                setList(res?.data);
             })
             .catch((err) => {
                 console.log(err);
@@ -22,13 +21,20 @@ const Related = () => {
         fetchVideos();
     }, []);
 
+    const navigate = useNavigate();
+
+    const handleClick = (videoId) => {
+        navigate(`/video/${videoId}`);
+        navigate(0);
+    };
+
     return (
         <>
             {list && list.length !== 0 ? <h2 style={{ marginLeft: '60px', marginTop: '19.92px', marginBottom: '19.92px', color: '#2C2C2C', fontWeight: 'bold', fontSize: '26px' }}>Related</h2> : <></>}
             <div className="image-grid">
 
                 {list?.map((video, index) => (
-                    <div className="grid-item">
+                    <div className="grid-item" key={index} onClick={() => handleClick(video?.videoid)}>
                         <div className="grid-item-content">
                             <div className="grid-image">
                                 <img src={video?.thumbnailLink} alt="Image 1" />

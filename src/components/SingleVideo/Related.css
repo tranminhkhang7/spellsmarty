@@ -5,7 +5,9 @@
   grid-gap: 50px;
 }
 
-.grid-item {}
+.grid-item {
+  cursor: pointer;
+}
 
 .grid-item-content {
   display: flex;
