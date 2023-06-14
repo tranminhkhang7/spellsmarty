@@ -33,7 +33,6 @@ const YouTubeVideo = () => {
         setIsCorrect((prevArray) => {
             const newArray = [...prevArray];
             newArray[index] = true;
-            console.log(newArray);
             return newArray;
         });
     };
@@ -50,7 +49,6 @@ const YouTubeVideo = () => {
                 setVideoLearntCount(res?.data?.learntCount);
                 setData(JSON.parse(res?.data?.subtitle).events);
                 setIsCorrect(Array(JSON.parse(res?.data?.subtitle).events?.length + 1).fill(false));
-
             })
             .catch((err) => {
                 console.log(err);

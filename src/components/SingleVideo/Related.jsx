@@ -10,8 +10,7 @@ const Related = () => {
     const fetchVideos = () => {
         fetchRelatedVideos(videoId)
             .then((res) => {
-                setList(res?.data)
-                console.log("lolo", res);
+                setList(res?.data);
             })
             .catch((err) => {
                 console.log(err);
@@ -28,7 +27,7 @@ const Related = () => {
             <div className="image-grid">
 
                 {list?.map((video, index) => (
-                    <div className="grid-item">
+                    <div className="grid-item" key={index}>
                         <div className="grid-item-content">
                             <div className="grid-image">
                                 <img src={video?.thumbnailLink} alt="Image 1" />
