@@ -4,6 +4,7 @@ import FromThisCreator from '../../components/SingleVideo/FromThisCreator';
 import Related from '../../components/SingleVideo/Related';
 import Navbar from '../../components/Navbar/Navbar';
 import { useNavigate } from 'react-router-dom';
+import Footer from '../../components/Navbar/Footer';
 
 const SingleVideo = () => {
     useEffect(() => {
@@ -16,6 +17,7 @@ const SingleVideo = () => {
             <YouTubeVideo />
             <FromThisCreator />
             <Related />
+            <Footer />
         </>
     );
 };
