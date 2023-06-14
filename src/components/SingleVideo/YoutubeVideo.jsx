@@ -251,12 +251,12 @@ const YouTubeVideo = () => {
 
                 <div className='right-side'>
                     <div>
-                        {videoPremium
+                        {!data
                             ?
                             <div className="upgrage-info">
                                 Please
                                 &nbsp;<Link to='/profile' style={{ textDecoration: "underline" }}>UPGRADE</Link>&nbsp;
-                                to dictate this video!
+                                to dictate this video!                                
                             </div>
                             : <></>
                         }

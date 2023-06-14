@@ -3,31 +3,15 @@
 import React, { useState } from 'react';
 import { useRef, useEffect } from 'react';
 import './FromThisCreator.css';
-import { fetchVideoByVideoId } from '../../services/videoServices';
-import { fetchVideoByChannelName } from '../../services/videoServices';
+import { fetchVideoWithSameCreator } from '../../services/videoServices';
 import { useNavigate, useParams } from 'react-router-dom';
 
 const FromThisCreator = () => {
   const { videoId } = useParams();
-  const [channelName, setChannelName] = useState('');
   const [list, setList] = useState();
 
-  const fetchVideo = () => {
-    fetchVideoByVideoId(videoId)
-      .then((res) => {
-        setChannelName(res?.data?.channelName);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-  };
-
-  useEffect(() => {
-    fetchVideo();
-  }, []);
-
-  const fetchVideoByChannel = () => {
-    fetchVideoByChannelName(channelName)
+  const fetchVideos = () => {
+    fetchVideoWithSameCreator(videoId)
       .then((res) => {
         setList(res?.data);
       })
@@ -37,8 +21,8 @@ const FromThisCreator = () => {
   };
 
   useEffect(() => {
-    fetchVideoByChannel();
-  }, [channelName]);
+    fetchVideos();
+  }, []);
 
   const containerRef = useRef(null);
   useEffect(() => {
@@ -95,18 +79,22 @@ const FromThisCreator = () => {
 
   return (
     <>
-      <h2
-        style={{
-          marginLeft: '60px',
-          marginTop: '19.92px',
-          marginBottom: '19.92px',
-          color: '#2C2C2C',
-          fontWeight: 'bold',
-          fontSize: '26px',
-        }}
-      >
-        From This Creator
-      </h2>
+      {list ?
+        <h2
+          style={{
+            marginLeft: '60px',
+            marginTop: '19.92px',
+            marginBottom: '19.92px',
+            color: '#2C2C2C',
+            fontWeight: 'bold',
+            fontSize: '26px',
+          }}
+        >
+          From This Creator
+        </h2>
+        :
+        <></>}
+
       <div className="image-container" ref={containerRef}>
         {list?.map((video, index) => (
           <div className="image-wrapper" key={index} onClick={() => handleClick(video?.videoid)}>
@@ -124,6 +112,7 @@ const FromThisCreator = () => {
       </div>
     </>
   );
+
 };
 
 export default FromThisCreator;
