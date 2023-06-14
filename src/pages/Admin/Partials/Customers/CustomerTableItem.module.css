@@ -1,0 +1,13 @@
+.content {
+  height: 0;
+  overflow: hidden;
+  transition: height 2s ease;
+}
+
+.expanded {
+  height: auto;
+}
+
+.collapsed {
+  height: 0;
+}

@@ -53,7 +53,7 @@ const Navbar = () => {
                   value={inputValue}
                   onChange={handleChange}
                   type="text"
-                  className="bg-searchBarColor px-5 py-3 w-full md:w-96 shadow-lg placeholder-searchBarPlaceHolder"
+                  className="bg-searchBarColor px-5 py-3 w-full md:w-96 shadow-lg placeholder-searchBarPlaceHolder text-searchBarPlaceHolder"
                   placeholder="Search your favorite video"
                 />
               </form>
