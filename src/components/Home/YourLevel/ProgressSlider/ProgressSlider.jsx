@@ -2,7 +2,6 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/free-mode';
 import 'swiper/css/pagination';
-import { FreeMode, Pagination } from 'swiper';
 import { fetchVideosByUserId } from '../../../../services/homeServices';
 import { useEffect, useState } from 'react';
 import ProgressBarSlider from '../../Slider/ProgressBarSlider/ProgressBarSlider';
@@ -14,9 +13,10 @@ function ProgressSlider() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetchVideosByUserId(2);
+        const response = await fetchVideosByUserId(localStorage.getItem('token'));
+
+        console.log(response);
         setProgressItems(response.data);
-        console.log(response.data);
       } catch (error) {
         console.log('Error fetching videos:', error);
       }
@@ -24,6 +24,7 @@ function ProgressSlider() {
 
     fetchData();
   }, []);
+
   return (
     <div>
       <Swiper slidesPerView={2} className="mySwiper w-7/12">

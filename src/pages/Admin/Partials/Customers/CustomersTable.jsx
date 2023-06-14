@@ -194,27 +194,27 @@ function CustomersTable({ selectedItems }) {
                     </label>
                   </div>
                 </th>
-                <th className="px-4 first:pl-5 last:pr-5 py-4 whitespace-nowrap w-px">
+                {/* <th className="px-4 first:pl-5 last:pr-5 py-4 whitespace-nowrap w-px">
                   <span className="sr-only">Favourite</span>
-                </th>
+                </th> */}
                 <th className="px-4 first:pl-5 last:pr-5 py-4 whitespace-nowrap">
-                  <div className="font-semibold text-left">Order</div>
+                  <div className="font-semibold text-left">User Name</div>
                 </th>
                 <th className="px-4 first:pl-5 last:pr-5 py-4 whitespace-nowrap">
                   <div className="font-semibold text-left">Email</div>
                 </th>
                 <th className="px-4 first:pl-5 last:pr-5 py-4 whitespace-nowrap">
-                  <div className="font-semibold text-left">Location</div>
+                  <div className="font-semibold text-left">Full Name</div>
                 </th>
-                <th className="px-4 first:pl-5 last:pr-5 py-4 whitespace-nowrap">
+                {/* <th className="px-4 first:pl-5 last:pr-5 py-4 whitespace-nowrap">
                   <div className="font-semibold">Orders</div>
-                </th>
+                </th> */}
                 <th className="px-4 first:pl-5 last:pr-5 py-4 whitespace-nowrap">
-                  <div className="font-semibold text-left">Last order</div>
+                  <div className="font-semibold text-left">Plan Type</div>
                 </th>
-                <th className="px-4 first:pl-5 last:pr-5 py-4 whitespace-nowrap">
+                {/* <th className="px-4 first:pl-5 last:pr-5 py-4 whitespace-nowrap">
                   <div className="font-semibold text-left">Total spent</div>
-                </th>
+                </th> */}
                 <th className="px-4 first:pl-5 last:pr-5 py-4 whitespace-nowrap">
                   <div className="font-semibold">Refunds</div>
                 </th>

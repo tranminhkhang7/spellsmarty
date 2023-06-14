@@ -6,7 +6,7 @@ import DeleteButton from '../Partials/Actions/DeleteButton';
 import DateSelect from '../Components/DateSelect';
 import FilterButton from '../Components/DropdownFilter';
 import CustomersTable from '../Partials/Customers/CustomersTable';
-import PaginationClassic from '../Components/PaginationClassic';
+import PaginationClassic from '../Components/PaginationNumeric';
 import ModalBasic from '../Components/ModalBasic';
 function Customers() {
   const [sidebarOpen, setSidebarOpen] = useState(false);
@@ -33,8 +33,18 @@ function Customers() {
             {/* Page header */}
             <div className="sm:flex sm:justify-between sm:items-center mb-8">
               {/* Left: Title */}
-              <div className="mb-4 sm:mb-0">
+              <div className="mb-4 sm:mb-0 flex space-x-4 items-center">
                 <h1 className="text-4xl md:text-5xl text-slate-800 font-bold">Customers ✨</h1>
+                <div className="flex items-center border border-gray-300 rounded-md p-2 focus-within:border-indigo-600">
+                  <input
+                    type="text"
+                    placeholder="Search..."
+                    className="flex-grow px-2 py-1 outline-none bg-transparent"
+                  />
+                  <button className="ml-2 bg-indigo-500 hover:bg-indigo-600 text-white px-4 py-2 rounded-md">
+                    Search
+                  </button>
+                </div>
               </div>
 
               {/* Right: Actions */}

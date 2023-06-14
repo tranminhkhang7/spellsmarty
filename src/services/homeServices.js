@@ -6,8 +6,20 @@ export const fetchVideos = async () => {
   });
 };
 
-export const fetchVideosByUserId = async (userId) => {
-  return await axios.get(`/Video/GetVideoByUserId?userId=${userId}`).then((response) => {
-    return response;
-  });
+export const fetchVideosByUserId = async (token) => {
+  console.log(token);
+  return await await axios
+    .get('/Video/GetVideoByUserId', {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    })
+    .then(
+      (response) => {
+        return response;
+      },
+      (error) => {
+        var status = error.response.status;
+      }
+    );
 };
