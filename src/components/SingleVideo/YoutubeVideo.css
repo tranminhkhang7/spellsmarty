@@ -160,20 +160,42 @@
     /* background-color: var(--primary-color)20; */
 }
 
+.wrap-dictation .first-two-elements .icon-stack {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    /* Ensure the container takes up the full height */
+}
 
 .icon-play {
     cursor: pointer;
     /* margin-left: 20px; */
     font-size: 20px;
     color: #53483D;
+    margin-bottom: 20px;
+}
+
+.icon-question {
+    /* margin-left: 20px; */
+    font-size: 20px;
+    color: #53483D;
 }
 
 #icon-check {
-    cursor: pointer;
     margin-right: 20px;
     left: 0px;
     font-size: 20px;
     color: #2C542F;
+    display: inline;
+}
+
+#icon-x {
+    margin-right: 20px;
+    left: 0px;
+    font-size: 20px;
+    color: #c0392b;
     display: inline;
 }
 

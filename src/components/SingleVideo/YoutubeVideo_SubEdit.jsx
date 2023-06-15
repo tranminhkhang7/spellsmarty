@@ -135,7 +135,7 @@ const YouTubeVideo_SubEdit = () => {
     // const correctLineToShow = useRef('');
     const handleSubmit = (e, isForcedPlay, currentIndexLine) => {
         const correctLine = data[currentIndexLine]?.segs[0]['utf8'];
-        setCorrectLineToShow(correctLine);
+        // setCorrectLineToShow(correctLine);
 
         if (isForcedPlay) {
             play(currentIndexLine);
