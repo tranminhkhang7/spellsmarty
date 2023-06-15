@@ -7,7 +7,6 @@
     /* flex: 1; */
     width: 50vw;
     max-width: 100%;
-    /* background-color: var(--primary-color); */
     background-color: var(--primary-color);
     padding: 60px;
 }
@@ -17,7 +16,6 @@
     font-size: 28px;
     font-weight: bold;
     margin-top: 18.76px;
-    /* margin-bottom: 18.76px; */
 }
 
 .dictation-section .left-side .creator-level {
@@ -114,7 +112,7 @@
     background-color: rgba(255, 255, 255, 0.6);
 }
 
-.dictation-section .right-side .box-correct-line {
+/* .dictation-section .right-side .box-correct-line {
     margin-top: 20px;
     display: block;
     border: 2px solid transparent;
@@ -125,52 +123,12 @@
 
 .dictation-section .right-side .text-correct-line {
     color: black;
-    /* Text color */
-}
-
-
-.textarea {
-    display: block;
-    width: 450px;
-    height: 150px;
-    padding: 10px;
-    resize: none;
-
-    background-color: rgba(255, 255, 255, 0.6);
-
-    color: #53483D;
-    font-size: 20px;
-    font-weight: bold;
-}
-
-.button-check {
-    /* width: 100px;
-    height: 30px; */
-    padding: 4px 10px;
-    background-color: var(--primary-color);
-    color: var(--secondary-color);
-    border: none;
-    cursor: pointer;
-    margin-top: 10px;
-}
-
-.button-skip {
-    /* width: 100px;
-    height: 30px; */
-    padding: 4px 10px;
-    margin-left: 20px;
-    color: var(--primary-color);
-    background-color: var(--secondary-color);
-    border: none;
-    cursor: pointer;
-    margin-top: 10px;
-}
+} */
 
 .container-dictation {
     display: flex;
     justify-content: center;
     align-items: center;
-    /* height: 100vh; */
 }
 
 .box-dictation {
@@ -187,7 +145,6 @@
 
     border-bottom: 2px solid rgba(83, 72, 61, 0.4);
     background-color: rgba(255, 255, 255, 0.5);
-    /* background-color: var(--primary-color)20; */
 }
 
 .wrap-dictation .first-two-elements {
@@ -197,12 +154,6 @@
     /* background-color: var(--primary-color)20; */
 }
 
-.status-bar {
-    /* width: 100px; */
-    width: 10px;
-    height: 100px;
-    background-color: var(--primary-color)85;
-}
 
 .icon-play {
     cursor: pointer;
@@ -222,21 +173,20 @@
 
 #icon-flag {
     cursor: pointer;
-    margin-right: 20px;
+    /* margin-right: 20px; */
     left: 0px;
     font-size: 20px;
     color: #53483D;
-    display: none;
+    display: inline;
 }
 
-#icon-check:hover {
+/* #icon-check:hover {
     display: none;
 }
 
 #icon-check:hover+#icon-flag {
     display: inline;
-}
-
+} */
 
 
 .form-dictation {
@@ -259,28 +209,26 @@
     border-bottom: 3px solid rgba(83, 72, 61, 0.8);
     background-color: rgba(255, 255, 255, 0);
     color: #53483D;
-    font-family: 'Consolas', 'monaco', monospace;
+    font-family: 'JetBrains Mono', monospace;
     font-size: 20px;
-    font-weight: bold;
+    font-weight: 500;
 }
 
-.word-input-PUNCTUATION {
+/* .word-input-PUNCTUATION {
     width: 12px;
     height: 30px;
     margin-top: 5px;
     margin-left: 8px;
-    /* padding-top: 5px;
-    padding-bottom: 8px; */
-    /* border-bottom: 3px solid rgba(83, 72, 61, 0.8); */
+   
     background-color: rgba(255, 255, 255, 0);
     color: #53483D;
     font-family: 'Consolas', 'monaco', monospace;
     font-size: 20px;
     font-weight: bold;
-}
+} */
 
 .correct-section {
-    width: 500px;
+    width: 100%;
     margin-top: 20px;
     padding: 10px 20px;
     display: flex;
@@ -288,17 +236,7 @@
     background-color: rgba(255, 255, 255, 0.5);
 
     color: #53483D;
-    font-family: 'Consolas', 'monaco', monospace;
+    font-family: 'JetBrains Mono', monospace;
     font-size: 20px;
     font-weight: bold;
-}
-
-.something-went-wrong {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border: 1px solid black;
-    padding: 10px;
-    width: 300px;
-    height: 150px;
 }
