@@ -12,7 +12,7 @@ const SearchPage = () => {
 	const [data, setData] = useState([]);
 	const [filteredData, setFilteredData] = useState(data);
 	const [keyword, setKeyword] = useState('');
-	const [level,setLevel] = useState('');
+	const [level, setLevel] = useState('');
 
 	var axios = require('axios');
 
@@ -41,13 +41,13 @@ const SearchPage = () => {
 	}, []);
 
 	useEffect(() => {
-		console.log(keyword);
+		// console.log(keyword);
 
 		setFilteredData(data.filter(videos => videos.title.toLowerCase().includes(keyword.toLowerCase())));
 	}, [keyword, data]);
 
 
-	useEffect(()=>{
+	useEffect(() => {
 		setFilteredData(data.filter(video => video.level.includes(level)));
 	}, [level]);
 
@@ -75,14 +75,14 @@ const SearchPage = () => {
 								placeholder="How America’s richest donate their money"
 								className="px-4 py-2 w-full rounded-l-md  hover:border-grey-300/50 focus:outline-none focus:ring-2 focus:ring-blue-500/50 text-center" />
 							<button onClick={handleSearch}
-								class="px-4 py-2 text-black rounded-r-md hover:bg-blue-500/50 focus:outline-none focus:ring-2 focus:ring-blue-500">
+								className="px-4 py-2 text-black rounded-r-md hover:bg-blue-500/50 focus:outline-none focus:ring-2 focus:ring-blue-500">
 								Search
 							</button>
 						</div>
 						<div className="flex items-center justify-between mb-4 ">
 							<select className='w-1/5 px-4 py-2 rounded-md border border-gray-300 text-center text-grey-500 focus:outline-none focus:ring-1 focus:ring-blue-500/50'
 								value={level}
-								onChange={(e)=> setLevel(e.target.value)}
+								onChange={(e) => setLevel(e.target.value)}
 							>
 								<option value="" disabled hidden selected>Level</option>
 								<option value="">All</option>
@@ -118,10 +118,11 @@ const SearchPage = () => {
 					</form>
 				</div>
 				<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
-					{filteredData.map((video) => (
+					{filteredData.map((video, index) => (
 						<VideoCard
+							key={index}
 							srcId={video.srcId}
-							videoId = {video?.videoid}
+							videoId={video?.videoid}
 							thumbnail={video.thumbnailLink}
 							//length={video.length}
 							title={video.title}

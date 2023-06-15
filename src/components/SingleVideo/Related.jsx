@@ -1,112 +1,68 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import "./Related.css"
+import { useNavigate, useParams } from 'react-router-dom';
+import { fetchRelatedVideos } from '../../services/videoServices';
 
 const Related = () => {
+    const { videoId } = useParams();
+    const [list, setList] = useState();
+
+    const fetchVideos = () => {
+        fetchRelatedVideos(videoId)
+            .then((res) => {
+                setList(res?.data);
+            })
+            .catch((err) => {
+                console.log(err);
+            });
+    };
+
+    useEffect(() => {
+        fetchVideos();
+    }, []);
+
+    const navigate = useNavigate();
+
+    const handleClick = (videoId) => {
+        navigate(`/video/${videoId}`);
+        navigate(0);
+    };
+
     return (
         <>
-            <h2 style={{ marginLeft: '60px', marginTop: '19.92px', marginBottom: '19.92px', color: '#2C2C2C',  fontWeight: 'bold', fontSize: '26px' }}>Related</h2>
+            {list && list.length !== 0 ? <h2 style={{ marginLeft: '60px', marginTop: '19.92px', marginBottom: '19.92px', color: '#2C2C2C', fontWeight: 'bold', fontSize: '26px' }}>Related</h2> : <></>}
             <div className="image-grid">
 
-                <div className="grid-item">
-                    <div className="grid-item-content">
-                        <div className="grid-image">
-                            <img src="https://static.skillshare.com/uploads/users/tmp/67305fda" alt="Image 1" />
-                        </div>
-                        <div className="grid-title">
-                            <div className="circular-image">
-                                <img src="https://static.skillshare.com/uploads/users/tmp/67305fda" alt="Image 1" />
+                {list?.map((video, index) => (
+                    <div className="grid-item" key={index} onClick={() => handleClick(video?.videoid)}>
+                        <div className="grid-item-content">
+                            <div className="grid-image">
+                                <img src={video?.thumbnailLink} alt="Image 1" />
                             </div>
-                            <div className="title">
-                                <div className="title-video">
-                                    How being a nom
+                            <div className="grid-title">
+                                <div className="circular-image">
+                                    <img src="https://static.skillshare.com/uploads/users/tmp/67305fda" alt="Image 1" />
                                 </div>
-                                <div className="creator">
-                                    David Godman
-                                </div>
-                                <div className="views">
-                                    47K writes · 1 year ago
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div className="grid-item">
-                    <div className="grid-item-content">
-                        <div className="grid-image">
-                            <img src="https://static.skillshare.com/uploads/video/thumbnails/41dad68d5836f509b9d1dd7201d0db7c/original" alt="Image 1" />
-                        </div>
-                        <div className="grid-title">
-                            <div className="circular-image">
-                                <img src="https://static.skillshare.com/uploads/users/tmp/67305fda" alt="Image 1" />
-                            </div>
-                            <div className="title">
-                                <div className="title-video">
-                                    How being a nomad changes my entire life forever, like, ever
-                                </div>
-                                <div className="creator">
-                                    David Godman
-                                </div>
-                                <div className="views">
-                                    47K writes · 1 year ago
+                                <div className="title">
+                                    <div className="title-video">
+                                        {video?.title}
+                                    </div>
+                                    <div className="creator">
+                                        {video?.channelName}
+                                    </div>
+                                    <div className="views">
+                                        {video?.learntCount} {video?.learntCount > 1 ? <>write</> : <>writes</>} · 1 year ago
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
-
-                <div className="grid-item">
-                    <div className="grid-item-content">
-                        <div className="grid-image">
-                            <img src="https://hardrockmedia.org/wp-content/uploads/2022/11/Hardrockmedia.org_-51.png" alt="Image 1" />
-                        </div>
-                        <div className="grid-title">
-                            <div className="circular-image">
-                                <img src="https://static.skillshare.com/uploads/users/tmp/67305fda" alt="Image 1" />
-                            </div>
-                            <div className="title">
-                                <div className="title-video">
-                                    How being a nomad changes my entire life forever, like, ever
-                                </div>
-                                <div className="creator">
-                                    David Godman
-                                </div>
-                                <div className="views">
-                                    47K writes · 2 years ago
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div className="grid-item">
-                    <div className="grid-item-content">
-                        <div className="grid-image">
-                            <img src="https://photoresources.wtatennis.com/photo-resources/2019/10/08/16313740-f4f5-4d76-bb46-10048e3a74fc/UUdKdWvR.jpg?width=1200&height=630" alt="Image 1" />
-                        </div>
-                        <div className="grid-title">
-                            <div className="circular-image">
-                                <img src="https://pbs.twimg.com/profile_images/1526795887120351233/h8sSvL-W_400x400.jpg" alt="Image 1" />
-                            </div>
-                            <div className="title">
-                                <div className="title-video">
-                                    How being a nomad changes my entire life forever, like, ever
-                                </div>
-                                <div className="creator">
-                                    David Godman
-                                </div>
-                                <div className="views">
-                                    47K writes · 2 years ago
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                ))}
             </div>
 
-            <div className="button-container">
+            {/* <div className="button-container">
                 <button className="button">SEE MORE</button>
-            </div>
+            </div> */}
 
         </>
     );

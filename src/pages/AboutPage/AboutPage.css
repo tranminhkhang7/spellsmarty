@@ -54,7 +54,7 @@ body {
     /* Layout Declrations */
     padding: 6em 0;
     /* Appearance Declrations */
-    background-image: url('https://pbs.twimg.com/media/FxQ4ZfOaUAAf8op?format=jpg&name=large');
+    background-image: url('../../assets/about.jpeg');
     background-repeat: no-repeat;
     background-size: cover;
     border-top: solid 1em var(--primary-color);
