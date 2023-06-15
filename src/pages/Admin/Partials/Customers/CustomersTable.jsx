@@ -1,153 +1,36 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
 import Customer from './CustomersTableItem';
-
-import Image01 from '../../images/user-40-01.jpg';
-import Image02 from '../../images/user-40-02.jpg';
-import Image03 from '../../images/user-40-03.jpg';
-import Image04 from '../../images/user-40-04.jpg';
-import Image05 from '../../images/user-40-05.jpg';
-import Image06 from '../../images/user-40-06.jpg';
-import Image07 from '../../images/user-40-07.jpg';
-import Image08 from '../../images/user-40-08.jpg';
-import Image09 from '../../images/user-40-09.jpg';
-import Image10 from '../../images/user-40-10.jpg';
-
+import { fetchAllAccounts } from '../../../../services/adminServices';
+import ModalViewPlan from '../../Components/ModalViewPlan';
+import ModalBasic from '../../Components/ModalBasic';
 function CustomersTable({ selectedItems }) {
-  const customers = [
-    {
-      id: '0',
-      image: Image01,
-      name: 'Patricia Semklo',
-      email: 'patricia.semklo@app.com',
-      location: '🇬🇧 London, UK',
-      orders: '24',
-      lastOrder: '#123567',
-      spent: '$2,890.66',
-      refunds: '-',
-      fav: true,
-    },
-    {
-      id: '1',
-      image: Image02,
-      name: 'Dominik Lamakani',
-      email: 'dominik.lamakani@gmail.com',
-      location: '🇩🇪 Dortmund, DE',
-      orders: '77',
-      lastOrder: '#779912',
-      spent: '$14,767.04',
-      refunds: '4',
-      fav: false,
-    },
-    {
-      id: '2',
-      image: Image03,
-      name: 'Ivan Mesaros',
-      email: 'imivanmes@gmail.com',
-      location: '🇫🇷 Paris, FR',
-      orders: '44',
-      lastOrder: '#889924',
-      spent: '$4,996.00',
-      refunds: '1',
-      fav: true,
-    },
-    {
-      id: '3',
-      image: Image04,
-      name: 'Maria Martinez',
-      email: 'martinezhome@gmail.com',
-      location: '🇮🇹 Bologna, IT',
-      orders: '29',
-      lastOrder: '#897726',
-      spent: '$3,220.66',
-      refunds: '2',
-      fav: false,
-    },
-    {
-      id: '4',
-      image: Image05,
-      name: 'Vicky Jung',
-      email: 'itsvicky@contact.com',
-      location: '🇬🇧 London, UK',
-      orders: '22',
-      lastOrder: '#123567',
-      spent: '$2,890.66',
-      refunds: '-',
-      fav: true,
-    },
-    {
-      id: '5',
-      image: Image06,
-      name: 'Tisho Yanchev',
-      email: 'tisho.y@kurlytech.com',
-      location: '🇬🇧 London, UK',
-      orders: '14',
-      lastOrder: '#896644',
-      spent: '$1,649.99',
-      refunds: '1',
-      fav: true,
-    },
-    {
-      id: '6',
-      image: Image07,
-      name: 'James Cameron',
-      email: 'james.ceo@james.tech',
-      location: '🇫🇷 Marseille, FR',
-      orders: '34',
-      lastOrder: '#136988',
-      spent: '$3,569.87',
-      refunds: '2',
-      fav: true,
-    },
-    {
-      id: '7',
-      image: Image08,
-      name: 'Haruki Masuno',
-      email: 'haruki@supermail.jp',
-      location: '🇯🇵 Tokio, JP',
-      orders: '112',
-      lastOrder: '#442206',
-      spent: '$19,246.07',
-      refunds: '6',
-      fav: false,
-    },
-    {
-      id: '8',
-      image: Image09,
-      name: 'Joe Huang',
-      email: 'joehuang@hotmail.com',
-      location: '🇨🇳 Shanghai, CN',
-      orders: '64',
-      lastOrder: '#764321',
-      spent: '$12,276.92',
-      refunds: '-',
-      fav: true,
-    },
-    {
-      id: '9',
-      image: Image10,
-      name: 'Carolyn McNeail',
-      email: 'carolynlove@gmail.com',
-      location: '🇮🇹 Milan, IT',
-      orders: '19',
-      lastOrder: '#908764',
-      spent: '$1,289.97',
-      refunds: '2',
-      fav: false,
-    },
-  ];
-
   const [selectAll, setSelectAll] = useState(false);
   const [isCheck, setIsCheck] = useState([]);
-  const [list, setList] = useState([]);
+  // const [list, setList] = useState([]);
+
+  // useEffect(() => {
+  //   setList(customers);
+  //   // eslint-disable-next-line react-hooks/exhaustive-deps
+  // }, []);
+
+  const [customers, setCustomers] = useState([]);
 
   useEffect(() => {
-    setList(customers);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+    const fetchData = async () => {
+      try {
+        const response = await fetchAllAccounts(localStorage.getItem('token'));
+        setCustomers(response.data);
+      } catch (error) {
+        console.log('Error fetching videos:', error);
+      }
+    };
+
+    fetchData();
   }, []);
 
   const handleSelectAll = () => {
     setSelectAll(!selectAll);
-    setIsCheck(list.map((li) => li.id));
+    setIsCheck(customers.map((li) => li.id));
     if (selectAll) {
       setIsCheck([]);
     }
@@ -167,6 +50,15 @@ function CustomersTable({ selectedItems }) {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isCheck]);
 
+  const [modalOpen, setModalOpen] = useState(false);
+  const [date, setDate] = useState(null);
+  const handleViewPlan = (subribeDate, endDate) => {
+    console.log(`${subribeDate} ${endDate}`);
+    setDate({ subribeDate, endDate });
+    setModalOpen(!modalOpen);
+  };
+
+  const [selectedCustomer, setSelectedCustomer] = useState(null);
   return (
     <div className="bg-white shadow-lg rounded-sm border border-slate-200 relative">
       <header className="px-5 py-5">
@@ -181,7 +73,7 @@ function CustomersTable({ selectedItems }) {
             {/* Table header */}
             <thead className="text-2xl font-semibold uppercase text-slate-500 bg-slate-50 border-t border-b border-slate-200">
               <tr>
-                <th className="px-5 first:pl-5 last:pr-5 py-5 whitespace-nowrap w-px">
+                {/* <th className="px-5 first:pl-5 last:pr-5 py-5 whitespace-nowrap w-px">
                   <div className="flex items-center">
                     <label className="inline-flex">
                       <span className="sr-only">Select all</span>
@@ -193,10 +85,13 @@ function CustomersTable({ selectedItems }) {
                       />
                     </label>
                   </div>
-                </th>
+                </th> */}
                 {/* <th className="px-4 first:pl-5 last:pr-5 py-4 whitespace-nowrap w-px">
                   <span className="sr-only">Favourite</span>
                 </th> */}
+                <th className="px-4 first:pl-5 last:pr-5 py-4 whitespace-nowrap">
+                  <div className="font-semibold text-left">User Id</div>
+                </th>
                 <th className="px-4 first:pl-5 last:pr-5 py-4 whitespace-nowrap">
                   <div className="font-semibold text-left">User Name</div>
                 </th>
@@ -210,13 +105,13 @@ function CustomersTable({ selectedItems }) {
                   <div className="font-semibold">Orders</div>
                 </th> */}
                 <th className="px-4 first:pl-5 last:pr-5 py-4 whitespace-nowrap">
-                  <div className="font-semibold text-left">Plan Type</div>
+                  <div className="font-semibold">Plan Type</div>
                 </th>
                 {/* <th className="px-4 first:pl-5 last:pr-5 py-4 whitespace-nowrap">
                   <div className="font-semibold text-left">Total spent</div>
                 </th> */}
                 <th className="px-4 first:pl-5 last:pr-5 py-4 whitespace-nowrap">
-                  <div className="font-semibold">Refunds</div>
+                  <div className="font-semibold">Actions</div>
                 </th>
                 <th className="px-4 first:pl-5 last:pr-5 py-4 whitespace-nowrap">
                   <span className="sr-only">Menu</span>
@@ -225,27 +120,53 @@ function CustomersTable({ selectedItems }) {
             </thead>
             {/* Table body */}
             <tbody className="text-2xl divide-y divide-slate-200">
-              {list.map((customer) => {
+              {customers.map((customer) => {
                 return (
                   <Customer
                     key={customer.id}
                     id={customer.id}
-                    image={customer.image}
+                    username={customer.username}
                     name={customer.name}
                     email={customer.email}
-                    location={customer.location}
-                    orders={customer.orders}
-                    lastOrder={customer.lastOrder}
-                    spent={customer.spent}
-                    refunds={customer.refunds}
-                    fav={customer.fav}
                     handleClick={handleClick}
+                    planid={customer.planid}
+                    subribeDate={customer.subribeDate}
+                    endDate={customer.endDate}
                     isChecked={isCheck.includes(customer.id)}
+                    handleViewPlan={handleViewPlan}
                   />
                 );
               })}
             </tbody>
           </table>
+          {modalOpen ? (
+            <div className="fixed inset-0 w-full h-full z-40 flex justify-center mt-48">
+              <div className="bg-white shadow-2xl w-fit h-fit p-6 space-y-8">
+                <div className="mb-4">Subscribe date: {date.subribeDate}</div>
+                <div className="mb-4">End Date: {date.endDate}</div>
+                <div className="text-xl font-semibold border border-gray-300 rounded-md p-2 focus-within:border-indigo-600">
+                  <input
+                    type="text"
+                    placeholder="Months"
+                    className="flex-grow px-2 py-1 outline-none bg-transparent"
+                  />
+                </div>
+                <div className="flex justify-end mt-3">
+                  <button
+                    onClick={handleViewPlan}
+                    className="btn-xs !text-xl bg-gray-300 hover:bg-gray-400 text-gray-800 mr-2"
+                  >
+                    Close
+                  </button>
+                  <button className="btn-xs !text-xl bg-indigo-500 hover:bg-indigo-600 text-white">
+                    Save
+                  </button>
+                </div>
+              </div>
+            </div>
+          ) : (
+            <div></div>
+          )}
         </div>
       </div>
     </div>

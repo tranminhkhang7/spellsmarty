@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
-// import jsonData from '../../assets/subtitle.json';
+import jsonData from '../../assets/subtitle.json';
 import "./YoutubeVideo.css"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCheck, faCirclePlay, faTriangleExclamation } from '@fortawesome/free-solid-svg-icons';
@@ -10,10 +10,22 @@ import { Tooltip } from 'react-tooltip'
 
 
 
-const YouTubeVideo = () => {
-    // const [videoId, setVideoId] = useState('')
-    const { videoId } = useParams();
-    const [videoSrcId, setVideoSrcId] = useState('');
+const YouTubeVideo_SubEdit = () => {
+
+
+    // ------------------Modify this-------------------
+    const [videoSrcId, setVideoSrcId] = useState('yWO-cvGETRQ');
+    // ------------------Modify this. other part: no care :))--------------------
+
+
+
+
+    useEffect(() => {
+        const JSONobj = JSON.parse(JSON.stringify(jsonData, null, 2)).events;
+        setData(JSONobj);
+    }, []);
+
+
     const [videoTitle, setVideoTitle] = useState('');
     const [channelName, setChannelName] = useState('');
     const [videoLevel, setVideoLevel] = useState('');
@@ -36,28 +48,28 @@ const YouTubeVideo = () => {
         });
     };
 
-    const fetchVideo = () => {
-        fetchVideoByVideoId(videoId)
-            .then((res) => {
-                // console.log("hehe", res.data);
-                setVideoSrcId(res?.data?.srcId);
-                setVideoTitle(res?.data?.title);
-                setVideoPremium(res?.data?.premium);
-                setChannelName(res?.data?.channelName);
-                setVideoLevel(res?.data?.level);
-                setVideoLearntCount(res?.data?.learntCount);
-                setData(JSON.parse(res?.data?.subtitle)?.events);
-                setIsCorrect(Array(res.data.subtitle ? JSON.parse(res?.data?.subtitle)?.events?.length + 1 : 1).fill(false));
-            })
-            .catch((err) => {
-                console.log(err);
-                setIsLoadSuccess(false);
-            });
-    };
+    // const fetchVideo = () => {
+    //     fetchVideoByVideoId(videoId)
+    //         .then((res) => {
+    //             // console.log("hehe", res.data);
+    //             setVideoSrcId(res?.data?.srcId);
+    //             setVideoTitle(res?.data?.title);
+    //             setVideoPremium(res?.data?.premium);
+    //             setChannelName(res?.data?.channelName);
+    //             setVideoLevel(res?.data?.level);
+    //             setVideoLearntCount(res?.data?.learntCount);
+    //             setData(JSON.parse(res?.data?.subtitle)?.events);
+    //             setIsCorrect(Array(res.data.subtitle ? JSON.parse(res?.data?.subtitle)?.events?.length + 1 : 1).fill(false));
+    //         })
+    //         .catch((err) => {
+    //             console.log(err);
+    //             setIsLoadSuccess(false);
+    //         });
+    // };
 
-    useEffect(() => {
-        fetchVideo();
-    }, []);
+    // useEffect(() => {
+    //     fetchVideo();
+    // }, []);
 
     function normalize(str) {
         if (str === undefined) { } else
@@ -109,7 +121,6 @@ const YouTubeVideo = () => {
                 videoId: videoSrcId,
                 playerVars: {
                     autoplay: 0, // Disable autoplay  
-                    controls: 0, // Disable default controls
                     disablekb: 1, // Disable keyboard controls 
                 },
             });
@@ -123,20 +134,24 @@ const YouTubeVideo = () => {
     const [correctLineToShow, setCorrectLineToShow] = useState('');
     // const correctLineToShow = useRef('');
     const handleSubmit = (e, isForcedPlay, currentIndexLine) => {
+        const correctLine = data[currentIndexLine]?.segs[0]['utf8'];
+        setCorrectLineToShow(correctLine);
+
         if (isForcedPlay) {
             play(currentIndexLine);
         } else {
             e.preventDefault();
 
             const line = (inputValues[currentIndexLine] ?? []).join(' ');
-            const correctLine = data[currentIndexLine]?.segs[0]['utf8'];           
+            
+            
 
             if (normalize(line) === normalize(correctLine)) {
                 // setCurrentIndex(currentIndexLine + 1);
                 // setLine('');
 
                 updateLineCorrect(currentIndexLine);
-
+                
                 play(currentIndexLine + 1);
                 inputRefs.current[currentIndexLine + 1][0].focus();
                 // setCorrectLineToShow('You are correct!');
@@ -232,6 +247,7 @@ const YouTubeVideo = () => {
                                             data-tooltip-content="This is one of our Premium videos. Only subscribed users can dictate this.">
                                             <h4 className="text">PREMIUM</h4>
                                         </div>
+
                                     </div>
                                     :
                                     <></>
@@ -240,7 +256,7 @@ const YouTubeVideo = () => {
                                 <div className='creator-level'>
                                     <h2>{channelName}</h2>
                                     <div className="box">
-                                        <h4 className="text">{videoLevel} Level</h4>
+                                        <h4 className="text">{videoLevel} Level hehe</h4>
                                     </div>
                                 </div>
                                 <h3>
@@ -340,22 +356,15 @@ const YouTubeVideo = () => {
                                 </div>
                             </div>
 
-                            {/* {correctLineToShow && correctLineToShow.length !== 0 ?
-                                <>
-                                    <div className="correct-section">
-                                        <>
-                                            {correctLineToShow}
-                                            <FontAwesomeIcon
-                                                icon={faTriangleExclamation}
-                                                id='icon-flag'
-                                                onClick={() => handleReport()}
-                                            >
-                                            </FontAwesomeIcon>
-                                            <box-icon name='play-circle'></box-icon>
-                                        </>
-                                    </div>
-                                </>
-                                :
+                            {/* {correctLineToShow && correctLineToShow.length !== 0 ? */}
+                            <>
+                                <div className="correct-section">
+                                    <>
+                                        {correctLineToShow}
+                                    </>
+                                </div>
+                            </>
+                            {/* :
                                 <></>
                             } */}
 
@@ -372,4 +381,4 @@ const YouTubeVideo = () => {
         );
 };
 
-export default YouTubeVideo;
+export default YouTubeVideo_SubEdit;

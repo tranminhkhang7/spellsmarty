@@ -17,7 +17,7 @@ function Customers() {
   };
 
   const [feedbackModalOpen, setFeedbackModalOpen] = useState(false);
-
+  const [modalOpen, setModalOpen] = useState(true);
   return (
     <div className="flex h-screen overflow-hidden bg-gray-200">
       {/* Sidebar */}
@@ -35,13 +35,13 @@ function Customers() {
               {/* Left: Title */}
               <div className="mb-4 sm:mb-0 flex space-x-4 items-center">
                 <h1 className="text-4xl md:text-5xl text-slate-800 font-bold">Customers ✨</h1>
-                <div className="flex items-center border border-gray-300 rounded-md p-2 focus-within:border-indigo-600">
+                <div className="text-xl font-semibold flex items-center border border-gray-300 rounded-md p-2 focus-within:border-indigo-600">
                   <input
                     type="text"
                     placeholder="Search..."
                     className="flex-grow px-2 py-1 outline-none bg-transparent"
                   />
-                  <button className="ml-2 bg-indigo-500 hover:bg-indigo-600 text-white px-4 py-2 rounded-md">
+                  <button className="text-xl font-semibold ml-2 bg-indigo-500 hover:bg-indigo-600 text-white px-4 py-2 rounded-md">
                     Search
                   </button>
                 </div>
@@ -147,7 +147,6 @@ function Customers() {
 
             {/* Table */}
             <CustomersTable selectedItems={handleSelectedItems} />
-
             {/* Pagination */}
             <div className="mt-8">
               <PaginationClassic />

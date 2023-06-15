@@ -102,6 +102,16 @@ const FromThisCreator = () => {
             <div className="overlay">
               <div className="title">
                 {video.title}
+                {
+                  video?.premium ?
+                    <div className='PREMIUM-tag' style={{ marginTop: '0px' }}>
+                      <div className="box">
+                        <h4 className="text">PREMIUM</h4>
+                      </div>
+                    </div>
+                    :
+                    <></>
+                }
                 <div className="views">
                   {video.learntCount} writes · 1 year ago
                 </div>

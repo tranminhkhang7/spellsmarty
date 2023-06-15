@@ -1,914 +1,787 @@
 {
-    "wireMagic": "pb3",
-    "pens": [ {
-    
-    } ],
-    "wsWinStyles": [ {
-    
-    } ],
-    "wpWinPositions": [ {
-    
-    } ],
-    "events": [ {
-      "tStartMs": 3000,
-      "dDurationMs": 3100,
-      "segs": [ {
-        "utf8": "You were on your way home, when you died."
-      } ]
-    }, {
-      "tStartMs": 6100,
-      "dDurationMs": 2100,
-      "segs": [ {
-        "utf8": "It was a car accident."
-      } ]
-    }, {
-      "tStartMs": 8920,
-      "dDurationMs": 2280,
-      "segs": [ {
-        "utf8": "Nothing particularly remarkable."
-      } ]
-    }, {
-      "tStartMs": 11480,
-      "dDurationMs": 1680,
-      "segs": [ {
-        "utf8": "But fatal, none the less."
-      } ]
-    }, {
-      "tStartMs": 13740,
-      "dDurationMs": 1520,
-      "segs": [ {
-        "utf8": "It was a painless death."
-      } ]
-    }, {
-      "tStartMs": 15460,
-      "dDurationMs": 3980,
-      "segs": [ {
-        "utf8": "The medics tried their best to save you... but to no avail."
-      } ]
-    }, {
-      "tStartMs": 19900,
-      "dDurationMs": 4660,
-      "segs": [ {
-        "utf8": "Your body was so utterly shattered, you were better off. Trust me."
-      } ]
-    }, {
-      "tStartMs": 25335,
-      "dDurationMs": 1930,
-      "segs": [ {
-        "utf8": "And that's when you met me."
-      } ]
-    }, {
-      "tStartMs": 28215,
-      "dDurationMs": 1190,
-      "segs": [ {
-        "utf8": "What happened?"
-      } ]
-    }, {
-      "tStartMs": 30205,
-      "dDurationMs": 1050,
-      "segs": [ {
-        "utf8": "Where am I?"
-      } ]
-    }, {
-      "tStartMs": 31740,
-      "dDurationMs": 1300,
-      "segs": [ {
-        "utf8": "You died."
-      } ]
-    }, {
-      "tStartMs": 33100,
-      "dDurationMs": 1792,
-      "segs": [ {
-        "utf8": "I said, matter of factly."
-      } ]
-    }, {
-      "tStartMs": 35260,
-      "dDurationMs": 2080,
-      "segs": [ {
-        "utf8": "No point in mincing words."
-      } ]
-    }, {
-      "tStartMs": 37600,
-      "dDurationMs": 2720,
-      "segs": [ {
-        "utf8": "There was... there was a truck."
-      } ]
-    }, {
-      "tStartMs": 40468,
-      "dDurationMs": 1272,
-      "segs": [ {
-        "utf8": "And it was skidding."
-      } ]
-    }, {
-      "tStartMs": 43140,
-      "dDurationMs": 1000,
-      "segs": [ {
-        "utf8": "Yes."
-      } ]
-    }, {
-      "tStartMs": 44580,
-      "dDurationMs": 2180,
-      "segs": [ {
-        "utf8": "I... I died?"
-      } ]
-    }, {
-      "tStartMs": 47640,
-      "dDurationMs": 900,
-      "segs": [ {
-        "utf8": "Yes."
-      } ]
-    }, {
-      "tStartMs": 49000,
-      "dDurationMs": 1940,
-      "segs": [ {
-        "utf8": "But don't feel bad about it."
-      } ]
-    }, {
-      "tStartMs": 51200,
-      "dDurationMs": 1483,
-      "segs": [ {
-        "utf8": "Everyone dies."
-      } ]
-    }, {
-      "tStartMs": 53020,
-      "dDurationMs": 1359,
-      "segs": [ {
-        "utf8": "You looked around."
-      } ]
-    }, {
-      "tStartMs": 55080,
-      "dDurationMs": 1780,
-      "segs": [ {
-        "utf8": "There was... nothingness."
-      } ]
-    }, {
-      "tStartMs": 56740,
-      "dDurationMs": 2280,
-      "segs": [ {
-        "utf8": "Just you, and me."
-      } ]
-    }, {
-      "tStartMs": 59788,
-      "dDurationMs": 1292,
-      "segs": [ {
-        "utf8": "What is this place?"
-      } ]
-    }, {
-      "tStartMs": 62255,
-      "dDurationMs": 2040,
-      "segs": [ {
-        "utf8": "Is this, the afterlife?"
-      } ]
-    }, {
-      "tStartMs": 64783,
-      "dDurationMs": 1217,
-      "segs": [ {
-        "utf8": "More or less."
-      } ]
-    }, {
-      "tStartMs": 67000,
-      "dDurationMs": 1400,
-      "segs": [ {
-        "utf8": "Are you... God?"
-      } ]
-    }, {
-      "tStartMs": 69295,
-      "dDurationMs": 825,
-      "segs": [ {
-        "utf8": "Yes."
-      } ]
-    }, {
-      "tStartMs": 70420,
-      "dDurationMs": 755,
-      "segs": [ {
-        "utf8": "I'm God."
-      } ]
-    }, {
-      "tStartMs": 72700,
-      "dDurationMs": 800,
-      "segs": [ {
-        "utf8": "My kids..."
-      } ]
-    }, {
-      "tStartMs": 73940,
-      "dDurationMs": 920,
-      "segs": [ {
-        "utf8": "My wife..."
-      } ]
-    }, {
-      "tStartMs": 75940,
-      "dDurationMs": 1095,
-      "segs": [ {
-        "utf8": "What about them?"
-      } ]
-    }, {
-      "tStartMs": 78340,
-      "dDurationMs": 1760,
-      "segs": [ {
-        "utf8": "Will they be alright?"
-      } ]
-    }, {
-      "tStartMs": 81000,
-      "dDurationMs": 2269,
-      "segs": [ {
-        "utf8": "\"That's what I like to see,\" I said."
-      } ]
-    }, {
-      "tStartMs": 83580,
-      "dDurationMs": 3648,
-      "segs": [ {
-        "utf8": "You just died, and your main concern is for your family."
-      } ]
-    }, {
-      "tStartMs": 87228,
-      "dDurationMs": 2112,
-      "segs": [ {
-        "utf8": "That's good stuff right there."
-      } ]
-    }, {
-      "tStartMs": 90408,
-      "dDurationMs": 2052,
-      "segs": [ {
-        "utf8": "You looked at me with fascination."
-      } ]
-    }, {
-      "tStartMs": 92820,
-      "dDurationMs": 2609,
-      "segs": [ {
-        "utf8": "To you, I didn't look like God."
-      } ]
-    }, {
-      "tStartMs": 95660,
-      "dDurationMs": 3188,
-      "segs": [ {
-        "utf8": "I just looked like some man, or possibly a woman."
-      } ]
-    }, {
-      "tStartMs": 99460,
-      "dDurationMs": 1960,
-      "segs": [ {
-        "utf8": "Some vague authority figure maybe."
-      } ]
-    }, {
-      "tStartMs": 103780,
-      "dDurationMs": 980,
-      "segs": [ {
-        "utf8": "\"Don't worry,\" I said."
-      } ]
-    }, {
-      "tStartMs": 105220,
-      "dDurationMs": 880,
-      "segs": [ {
-        "utf8": "They'll be fine."
-      } ]
-    }, {
-      "tStartMs": 106460,
-      "dDurationMs": 3160,
-      "segs": [ {
-        "utf8": "Your kids will remember you as perfect in every way."
-      } ]
-    }, {
-      "tStartMs": 110480,
-      "dDurationMs": 2880,
-      "segs": [ {
-        "utf8": "They didn't have time to grow contemptuous of you."
-      } ]
-    }, {
-      "tStartMs": 114100,
-      "dDurationMs": 2240,
-      "segs": [ {
-        "utf8": "Your wife will cry on the outside."
-      } ]
-    }, {
-      "tStartMs": 116800,
-      "dDurationMs": 1700,
-      "segs": [ {
-        "utf8": "But will be secretly relieved."
-      } ]
-    }, {
-      "tStartMs": 120020,
-      "dDurationMs": 2820,
-      "segs": [ {
-        "utf8": "To be fair, your marriage was falling apart."
-      } ]
-    }, {
-      "tStartMs": 123600,
-      "dDurationMs": 4980,
-      "segs": [ {
-        "utf8": "If it's any consolation, she'll feel very guilty for feeling relieved."
-      } ]
-    }, {
-      "tStartMs": 129560,
-      "dDurationMs": 500,
-      "segs": [ {
-        "utf8": "Oh..."
-      } ]
-    }, {
-      "tStartMs": 130880,
-      "dDurationMs": 1280,
-      "segs": [ {
-        "utf8": "So what happens now?"
-      } ]
-    }, {
-      "tStartMs": 133020,
-      "dDurationMs": 2680,
-      "segs": [ {
-        "utf8": "Do I go to Heaven? Or Hell or something?"
-      } ]
-    }, {
-      "tStartMs": 136880,
-      "dDurationMs": 1120,
-      "segs": [ {
-        "utf8": "Neither."
-      } ]
-    }, {
-      "tStartMs": 138060,
-      "dDurationMs": 1540,
-      "segs": [ {
-        "utf8": "You'll be reincarnated."
-      } ]
-    }, {
-      "tStartMs": 140960,
-      "dDurationMs": 4000,
-      "segs": [ {
-        "utf8": "Ah... So the Hindus were right!"
-      } ]
-    },  {
-      "tStartMs": 145280,
-      "dDurationMs": 2060,
-      "segs": [ {
-        "utf8": "All religions are right in their own way."
-      } ]
-    }, {
-      "tStartMs": 148660,
-      "dDurationMs": 660,
-      "segs": [ {
-        "utf8": "Walk with me."
-      } ]
-    }, {
-      "tStartMs": 151100,
-      "dDurationMs": 2820,
-      "segs": [ {
-        "utf8": "You followed along as we strolled through the void."
-      } ]
-    }, {
-      "tStartMs": 155680,
-      "dDurationMs": 760,
-      "segs": [ {
-        "utf8": "Where are we going?"
-      } ]
-    }, {
-      "tStartMs": 157280,
-      "dDurationMs": 1480,
-      "segs": [ {
-        "utf8": "No where in particular."
-      } ]
-    }, {
-      "tStartMs": 158780,
-      "dDurationMs": 1940,
-      "segs": [ {
-        "utf8": "It's just nice to walk while we talk."
-      } ]
-    }, {
-      "tStartMs": 162240,
-      "dDurationMs": 1920,
-      "segs": [ {
-        "utf8": "So, what's the point then?"
-      } ]
-    }, {
-      "tStartMs": 165220,
-      "dDurationMs": 3360,
-      "segs": [ {
-        "utf8": "When I get reborn, I'll just be a blank slate right?"
-      } ]
-    }, {
-      "tStartMs": 169760,
-      "dDurationMs": 500,
-      "segs": [ {
-        "utf8": "A baby?"
-      } ]
-    }, {
-      "tStartMs": 171140,
-      "dDurationMs": 4560,
-      "segs": [ {
-        "utf8": "So, all my experiences and everything... everything I did in this life..."
-      } ]
-    }, {
-      "tStartMs": 176040,
-      "dDurationMs": 500,
-      "segs": [ {
-        "utf8": "Won't matter..."
-      } ]
-    }, {
-      "tStartMs": 177600,
-      "dDurationMs": 820,
-      "segs": [ {
-        "utf8": "Not so."
-      } ]
-    }, {
-      "tStartMs": 179140,
-      "dDurationMs": 5360,
-      "segs": [ {
-        "utf8": "You have within you, all the knowledge and experiences of all your past lives."
-      } ]
-    }, {
-      "tStartMs": 185000,
-      "dDurationMs": 1780,
-      "segs": [ {
-        "utf8": "You just don't remember them right now."
-      } ]
-    }, {
-      "tStartMs": 188220,
-      "dDurationMs": 2780,
-      "segs": [ {
-        "utf8": "I stopped walking, and took you by the shoulders."
-      } ]
-    }, {
-      "tStartMs": 191640,
-      "dDurationMs": 5660,
-      "segs": [ {
-        "utf8": "Your soul is more magnificent, beautiful, and gigantic than you can possibly imagine."
-      } ]
-    }, {
-      "tStartMs": 198520,
-      "dDurationMs": 3860,
-      "segs": [ {
-        "utf8": "A human mind can only contain a tiny fraction of what you are."
-      } ]
-    }, {
-      "tStartMs": 203220,
-      "dDurationMs": 2700,
-      "segs": [ {
-        "utf8": "It's like sticking your finger in a glass of water."
-      } ]
-    }, {
-      "tStartMs": 206240,
-      "dDurationMs": 1280,
-      "segs": [ {
-        "utf8": "To see if it's hot or cold."
-      } ]
-    }, {
-      "tStartMs": 208340,
-      "dDurationMs": 7540,
-      "segs": [ {
-        "utf8": "You put a tiny part of yourself into the vessel, and when you bring it back out, you've gained all the experiences it had."
-      } ]
-    }, {
-      "tStartMs": 216860,
-      "dDurationMs": 2640,
-      "segs": [ {
-        "utf8": "You've been in a human for the last 48 years."
-      } ]
-    }, {
-      "tStartMs": 219940,
-      "dDurationMs": 4420,
-      "segs": [ {
-        "utf8": "So you haven't stretched out yet and felt the rest of your immense consciousness."
-      } ]
-    }, {
-      "tStartMs": 225460,
-      "dDurationMs": 3900,
-      "segs": [ {
-        "utf8": "If we hung out here for long enough, you'd start remembering everything."
-      } ]
-    }, {
-      "tStartMs": 229960,
-      "dDurationMs": 2320,
-      "segs": [ {
-        "utf8": "But there's not point to doing that between each life."
-      } ]
-    }, {
-      "tStartMs": 234060,
-      "dDurationMs": 2400,
-      "segs": [ {
-        "utf8": "How many times have I been reincarnated then?"
-      } ]
-    }, {
-      "tStartMs": 237800,
-      "dDurationMs": 2000,
-      "segs": [ {
-        "utf8": "Oh, lots! Lots and lots!"
-      } ]
-    }, {
-      "tStartMs": 240220,
-      "dDurationMs": 2080,
-      "segs": [ {
-        "utf8": "And into lots of different lives."
-      } ]
-    }, {
-      "tStartMs": 242760,
-      "dDurationMs": 4780,
-      "segs": [ {
-        "utf8": "This time around, you'll be a Chinese peasant girl in 540 A.D."
-      } ]
-    }, {
-      "tStartMs": 249160,
-      "dDurationMs": 1460,
-      "segs": [ {
-        "utf8": "Wait... what?!"
-      } ]
-    }, {
-      "tStartMs": 251200,
-      "dDurationMs": 1780,
-      "segs": [ {
-        "utf8": "You're sending me back in time?"
-      } ]
-    }, {
-      "tStartMs": 254300,
-      "dDurationMs": 1740,
-      "segs": [ {
-        "utf8": "Well I guess technically."
-      } ]
-    }, {
-      "tStartMs": 256560,
-      "dDurationMs": 3340,
-      "segs": [ {
-        "utf8": "Time as you know it, only exists in your universe."
-      } ]
-    }, {
-      "tStartMs": 260500,
-      "dDurationMs": 1560,
-      "segs": [ {
-        "utf8": "Things are different where I come from."
-      } ]
-    }, {
-      "tStartMs": 263560,
-      "dDurationMs": 1740,
-      "segs": [ {
-        "utf8": "Where... where you come from?"
-      } ]
-    }, {
-      "tStartMs": 266520,
-      "dDurationMs": 3100,
-      "segs": [ {
-        "utf8": "Oh sure, I come from somewhere. Somewhere else."
-      } ]
-    }, {
-      "tStartMs": 270040,
-      "dDurationMs": 1760,
-      "segs": [ {
-        "utf8": "And there are others like me."
-      } ]
-    }, {
-      "tStartMs": 272440,
-      "dDurationMs": 4260,
-      "segs": [ {
-        "utf8": "I know you'll want to know what it's like there but honestly you wouldn't understand."
-      } ]
-    }, {
-      "tStartMs": 278400,
-      "dDurationMs": 500,
-      "segs": [ {
-        "utf8": "\"Oh...\""
-      } ]
-    }, {
-      "tStartMs": 279200,
-      "dDurationMs": 1580,
-      "segs": [ {
-        "utf8": "You said, a little let down."
-      } ]
-    }, {
-      "tStartMs": 281920,
-      "dDurationMs": 540,
-      "segs": [ {
-        "utf8": "But wait..."
-      } ]
-    }, {
-      "tStartMs": 283240,
-      "dDurationMs": 5980,
-      "segs": [ {
-        "utf8": "If I get reincarnated to other places in time, I could have interacted with myself at some point."
-      } ]
-    }, {
-      "tStartMs": 291000,
-      "dDurationMs": 1740,
-      "segs": [ {
-        "utf8": "Sure, happens all the time."
-      } ]
-    }, {
-      "tStartMs": 293240,
-      "dDurationMs": 5480,
-      "segs": [ {
-        "utf8": "And with both lives only aware of their own lifespans, you don't even know it's happening."
-      } ]
-    }, {
-      "tStartMs": 300180,
-      "dDurationMs": 740,
-      "segs": [ {
-        "utf8": "So..."
-      } ]
-    }, {
-      "tStartMs": 300920,
-      "dDurationMs": 1663,
-      "segs": [ {
-        "utf8": "what's the point of it all?"
-      } ]
-    }, {
-      "tStartMs": 303403,
-      "dDurationMs": 1277,
-      "segs": [ {
-        "utf8": "I looked you in the eye."
-      } ]
-    }, {
-      "tStartMs": 305200,
-      "dDurationMs": 1711,
-      "segs": [ {
-        "utf8": "The meaning of life,"
-      } ]
-    }, {
-      "tStartMs": 306911,
-      "dDurationMs": 2489,
-      "segs": [ {
-        "utf8": "the reason I made this whole universe,"
-      } ]
-    }, {
-      "tStartMs": 309400,
-      "dDurationMs": 2000,
-      "segs": [ {
-        "utf8": "is for you to mature."
-      } ]
-    }, {
-      "tStartMs": 312000,
-      "dDurationMs": 1860,
-      "segs": [ {
-        "utf8": "You mean... mankind?"
-      } ]
-    }, {
-      "tStartMs": 313860,
-      "dDurationMs": 2000,
-      "segs": [ {
-        "utf8": "You want to us to mature?"
-      } ]
-    }, {
-      "tStartMs": 317020,
-      "dDurationMs": 1240,
-      "segs": [ {
-        "utf8": "No, just you."
-      } ]
-    }, {
-      "tStartMs": 318760,
-      "dDurationMs": 2128,
-      "segs": [ {
-        "utf8": "I made this whole universe for you."
-      } ]
-    }, {
-      "tStartMs": 321220,
-      "dDurationMs": 1380,
-      "segs": [ {
-        "utf8": "With each new life"
-      } ]
-    }, {
-      "tStartMs": 322600,
-      "dDurationMs": 4100,
-      "segs": [ {
-        "utf8": "you grow and mature, and become a larger and greater intellect."
-      } ]
-    }, {
-      "tStartMs": 328100,
-      "dDurationMs": 900,
-      "segs": [ {
-        "utf8": "Just me?"
-      } ]
-    }, {
-      "tStartMs": 329540,
-      "dDurationMs": 1700,
-      "segs": [ {
-        "utf8": "What about everyone else?"
-      } ]
-    }, {
-      "tStartMs": 332080,
-      "dDurationMs": 1520,
-      "segs": [ {
-        "utf8": "There is no one else."
-      } ]
-    }, {
-      "tStartMs": 333600,
-      "dDurationMs": 3531,
-      "segs": [ {
-        "utf8": "In this universe, there's just you and me."
-      } ]
-    }, {
-      "tStartMs": 337940,
-      "dDurationMs": 1751,
-      "segs": [ {
-        "utf8": "You stared blankly at me."
-      } ]
-    }, {
-      "tStartMs": 340500,
-      "dDurationMs": 1406,
-      "segs": [ {
-        "utf8": "But all the people on Earth..."
-      } ]
-    }, {
-      "tStartMs": 342480,
-      "dDurationMs": 1031,
-      "segs": [ {
-        "utf8": "All you."
-      } ]
-    }, {
-      "tStartMs": 343680,
-      "dDurationMs": 2092,
-      "segs": [ {
-        "utf8": "Different incarnations of you."
-      } ]
-    }, {
-      "tStartMs": 346700,
-      "dDurationMs": 2560,
-      "segs": [ {
-        "utf8": "Wait... I'm... everyone?"
-      } ]
-    }, {
-      "tStartMs": 350320,
-      "dDurationMs": 1640,
-      "segs": [ {
-        "utf8": "Now you're getting it."
-      } ]
-    }, {
-      "tStartMs": 352560,
-      "dDurationMs": 2394,
-      "segs": [ {
-        "utf8": "I'm every human being who ever lived?"
-      } ]
-    }, {
-      "tStartMs": 356560,
-      "dDurationMs": 2560,
-      "segs": [ {
-        "utf8": "Or who will ever live,  yes."
-      } ]
-    }, {
-      "tStartMs": 359700,
-      "dDurationMs": 1260,
-      "segs": [ {
-        "utf8": "I'm Abraham Lincoln?"
-      } ]
-    }, {
-      "tStartMs": 362040,
-      "dDurationMs": 2160,
-      "segs": [ {
-        "utf8": "And you're John Wilkes Booth too."
-      } ]
-    }, {
-      "tStartMs": 364600,
-      "dDurationMs": 1180,
-      "segs": [ {
-        "utf8": "I'm Hitler?!"
-      } ]
-    }, {
-      "tStartMs": 366589,
-      "dDurationMs": 1577,
-      "segs": [ {
-        "utf8": "You said appalled."
-      } ]
-    }, {
-      "tStartMs": 368800,
-      "dDurationMs": 2080,
-      "segs": [ {
-        "utf8": "And you're the millions he killed."
-      } ]
-    }, {
-      "tStartMs": 371180,
-      "dDurationMs": 1700,
-      "segs": [ {
-        "utf8": "I'm Jesus?!"
-      } ]
-    }, {
-      "tStartMs": 373080,
-      "dDurationMs": 2100,
-      "segs": [ {
-        "utf8": "And you're everyone who followed Him."
-      } ]
-    }, {
-      "tStartMs": 375700,
-      "dDurationMs": 1560,
-      "segs": [ {
-        "utf8": "You fell silent."
-      } ]
-    }, {
-      "tStartMs": 378200,
-      "dDurationMs": 3891,
-      "segs": [ {
-        "utf8": "Every time you victimized someone, you were victimizing yourself."
-      } ]
-    }, {
-      "tStartMs": 382640,
-      "dDurationMs": 4100,
-      "segs": [ {
-        "utf8": "Every act of kindness you have done, you have done to yourself."
-      } ]
-    }, {
-      "tStartMs": 387000,
-      "dDurationMs": 7860,
-      "segs": [ {
-        "utf8": "Every happy and sad moment ever experienced by any human was or will be experienced by you."
-      } ]
-    }, {
-      "tStartMs": 396020,
-      "dDurationMs": 1660,
-      "segs": [ {
-        "utf8": "You thought for a long time."
-      } ]
-    }, {
-      "tStartMs": 398880,
-      "dDurationMs": 3440,
-      "segs": [ {
-        "utf8": "Why? Why do all this?"
-      } ]
-    }, {
-      "tStartMs": 402380,
-      "dDurationMs": 3151,
-      "segs": [ {
-        "utf8": "Because someday you will become like me."
-      } ]
-    }, {
-      "tStartMs": 405660,
-      "dDurationMs": 2218,
-      "segs": [ {
-        "utf8": "Because that's what you are!"
-      } ]
-    }, {
-      "tStartMs": 407878,
-      "dDurationMs": 2042,
-      "segs": [ {
-        "utf8": "You're one of my kind."
-      } ]
-    }, {
-      "tStartMs": 409920,
-      "dDurationMs": 1580,
-      "segs": [ {
-        "utf8": "You're my child!"
-      } ]
-    }, {
-      "tStartMs": 413100,
-      "dDurationMs": 2240,
-      "segs": [ {
-        "utf8": "Wow!! You said incredulous."
-      } ]
-    }, {
-      "tStartMs": 415720,
-      "dDurationMs": 1840,
-      "segs": [ {
-        "utf8": "You mean I'm a God?"
-      } ]
-    }, {
-      "tStartMs": 419040,
-      "dDurationMs": 2623,
-      "segs": [ {
-        "utf8": "No, not yet, you're a fetus."
-      } ]
-    }, {
-      "tStartMs": 421663,
-      "dDurationMs": 1317,
-      "segs": [ {
-        "utf8": "You're still growing."
-      } ]
-    }, {
-      "tStartMs": 423140,
-      "dDurationMs": 3872,
-      "segs": [ {
-        "utf8": "Once you've lived every human life throughout all time,"
-      } ]
-    }, {
-      "tStartMs": 427012,
-      "dDurationMs": 2548,
-      "segs": [ {
-        "utf8": "you will have grown enough to be born."
-      } ]
-    }, {
-      "tStartMs": 430980,
-      "dDurationMs": 1820,
-      "segs": [ {
-        "utf8": "So the whole universe..."
-      } ]
-    }, {
-      "tStartMs": 433300,
-      "dDurationMs": 1180,
-      "segs": [ {
-        "utf8": "it's just..."
-      } ]
-    }, {
-      "tStartMs": 435280,
-      "dDurationMs": 931,
-      "segs": [ {
-        "utf8": "an egg!"
-      } ]
-    }, {
-      "tStartMs": 436460,
-      "dDurationMs": 1400,
-      "segs": [ {
-        "utf8": "I answered:"
-      } ]
-    }, {
-      "tStartMs": 438120,
-      "dDurationMs": 2669,
-      "segs": [ {
-        "utf8": "now it's time for you to move on to your next life."
-      } ]
-    }, {
-      "tStartMs": 441320,
-      "dDurationMs": 1747,
-      "segs": [ {
-        "utf8": "And I sent you on your way."
-      } ]
-    } ]
-  }
+  "wireMagic": "pb3",
+  "pens": [ {
   
+  } ],
+  "wsWinStyles": [ {
+  
+  } ],
+  "wpWinPositions": [ {
+  
+  } ],
+  "events": [ {
+    "tStartMs": 580,
+    "dDurationMs": 3400,
+    "segs": [ {
+      "utf8": "Black holes are the most powerful things in the universe,"
+    } ]
+  }, {
+    "tStartMs": 3900,
+    "dDurationMs": 4000,
+    "segs": [ {
+      "utf8": "strong enough to rip whole stars into atom sized pieces."
+    } ]
+  }, {
+    "tStartMs": 7680,
+    "dDurationMs": 2060,
+    "segs": [ {
+      "utf8": "Well, this is scary enough."
+    } ]
+  }, {
+    "tStartMs": 9680,
+    "dDurationMs": 6560,
+    "segs": [ {
+      "utf8": "They have an even more powerful and dark property: they might delete the universe itself."
+    } ]
+  }, {
+    "tStartMs": 26140,
+    "dDurationMs": 2500,
+    "segs": [ {
+      "utf8": "Black holes in a nutshell"
+    } ]
+  }, {
+    "tStartMs": 29080,
+    "dDurationMs": 5489,
+    "segs": [ {
+      "utf8": "A black hole appears when an extraordinary amount of matter is concentrated in a tiny space."
+    } ]
+  }, {
+    "tStartMs": 34180,
+    "dDurationMs": 4209,
+    "segs": [ {
+      "utf8": "At their center, gravity is almost infinitely strong"
+    } ]
+  }, {
+    "tStartMs": 38100,
+    "dDurationMs": 4049,
+    "segs": [ {
+      "utf8": "and whatever gets too close is ripped into its elementary particles."
+    } ]
+  }, {
+    "tStartMs": 42230,
+    "dDurationMs": 6119,
+    "segs": [ {
+      "utf8": "Not even light can escape black holes, and so we perceive them as spheres of blackness."
+    } ]
+  }, {
+    "tStartMs": 48550,
+    "dDurationMs": 3749,
+    "segs": [ {
+      "utf8": "If you were to fall into a black hole, nothing bad would happen until "
+    } ] 
+  }, {
+    "tStartMs": 52080,
+    "dDurationMs": 3820,
+    "segs": [ {
+      "utf8": "well after you crossed its outer border: the event horizon."
+    } ]
+  }, {
+    "tStartMs": 55780,
+    "dDurationMs": 4820,
+    "segs": [ {
+      "utf8": "You can imagine this as swimming in a river that ends in an enormous waterfall."
+    } ]
+  }, {
+    "tStartMs": 60900,
+    "dDurationMs": 6329,
+    "segs": [ {
+      "utf8": "As you float along, imperceptibly, the stream gets faster and faster, even if you can't see the waterfall yet."
+    } ]
+  }, {
+    "tStartMs": 67480,
+    "dDurationMs": 5440,
+    "segs": [ {
+      "utf8": "You could swim to safety, until without even noticing it, you cross the point of no return."
+    } ]
+  }, {
+    "tStartMs": 73180,
+    "dDurationMs": 5000,
+    "segs": [ {
+      "utf8": "No matter how fast you try to swim now, the stream will pull you towards certain death."
+    } ]
+  }, {
+    "tStartMs": 78520,
+    "dDurationMs": 4030,
+    "segs": [ {
+      "utf8": "Nothing can escape a black hole waterfall once it gets too close."
+    } ]
+  }, {
+    "tStartMs": 82630,
+    "dDurationMs": 4430,
+    "segs": [ {
+      "utf8": "This border completely separates black holes from the rest of the universe:"
+    } ]
+  }, {
+    "tStartMs": 86929,
+    "dDurationMs": 3880,
+    "segs": [ {
+      "utf8": "we can't access them unless we're willing to never return."
+    } ]
+  }, {
+    "tStartMs": 90729,
+    "dDurationMs": 3980,
+    "segs": [ {
+      "utf8": "So there's no way of telling what's really going on inside black holes,"
+    } ]
+  }, {
+    "tStartMs": 94380,
+    "dDurationMs": 4259,
+    "segs": [ {
+      "utf8": "but we have a few ideas about what's going on right at their very edges."
+    } ]
+  }, {
+    "tStartMs": 98619,
+    "dDurationMs": 6281,
+    "segs": [ {
+      "utf8": "Black holes radiate their mass away, like a hot pot on a stove losing its water as steam."
+    } ]
+  }, {
+    "tStartMs": 104200,
+    "dDurationMs": 2800,
+    "segs": [ {
+      "utf8": "This is called Hawking radiation."
+    } ]
+  }, {
+    "tStartMs": 106700,
+    "dDurationMs": 4260,
+    "segs": [ {
+      "utf8": "Black holes constantly lose an extremely tiny amount of their mass,"
+    } ]
+  }, {
+    "tStartMs": 110700,
+    "dDurationMs": 2440,
+    "segs": [ {
+      "utf8": "a process that's unbelievably slow."
+    } ]
+  }, {
+    "tStartMs": 113740,
+    "dDurationMs": 13000,
+    "segs": [ {
+      "utf8": "It will take a black hole with a mass of our sun 10,000 billion billion billion billion billion billion years to lose 0.0000001% of its mass."
+    } ]
+  }, {
+    "tStartMs": 126520,
+    "dDurationMs": 6360,
+    "segs": [ {
+      "utf8": "This is happening constantly and unstoppably, and as it goes on it speeds up more and more."
+    } ]
+  }, {
+    "tStartMs": 132890,
+    "dDurationMs": 5559,
+    "segs": [ {
+      "utf8": "In the far far future when the last star in the universe has been dead for trillions of years,"
+    } ]
+  }, {
+    "tStartMs": 138079,
+    "dDurationMs": 5340,
+    "segs": [ {
+      "utf8": "black holes will become tinier and tinier until they evaporate and disappear,"
+    } ]
+  }, {
+    "tStartMs": 143079,
+    "dDurationMs": 3140,
+    "segs": [ {
+      "utf8": "leaving behind just a bit of radiation."
+    } ]
+  }, {
+    "tStartMs": 145730,
+    "dDurationMs": 3479,
+    "segs": [ {
+      "utf8": "But this is a problem, because in the process of disappearing"
+    } ]
+  }, {
+    "tStartMs": 149130,
+    "dDurationMs": 4379,
+    "segs": [ {
+      "utf8": "black holes might delete something fundamental: information."
+    } ]
+  }, {
+    "tStartMs": 154099,
+    "dDurationMs": 3200,
+    "segs": [ {
+      "utf8": "2 - What is information?"
+    } ]
+  }, {
+    "tStartMs": 157190,
+    "dDurationMs": 2249,
+    "segs": [ {
+      "utf8": "Information is nothing tangible."
+    } ]
+  }, {
+    "tStartMs": 159290,
+    "dDurationMs": 3649,
+    "segs": [ {
+      "utf8": "It's typically understood as a property of the arrangement of particles."
+    } ]
+  }, {
+    "tStartMs": 162690,
+    "dDurationMs": 2249,
+    "segs": [ {
+      "utf8": "What does this mean?"
+    } ]
+  }, {
+    "tStartMs": 164600,
+    "dDurationMs": 4960,
+    "segs": [ {
+      "utf8": "Imagine a bunch of carbon atoms. Arrange them in a certain way and you get coal."
+    } ]
+  }, {
+    "tStartMs": 169260,
+    "dDurationMs": 3160,
+    "segs": [ {
+      "utf8": "Arrange them in a different way, and you get a diamond."
+    } ]
+  }, {
+    "tStartMs": 173450,
+    "dDurationMs": 4460,
+    "segs": [ {
+      "utf8": "The atoms are the same, what changes is the information."
+    } ]
+  }, {
+    "tStartMs": 177450,
+    "dDurationMs": 3860,
+    "segs": [ {
+      "utf8": "If we make this more complex and add in a few more atoms,"
+    } ]
+  }, {
+    "tStartMs": 180910,
+    "dDurationMs": 1479,
+    "segs": [ {
+      "utf8": "we get a banana."
+    } ]
+  }, {
+    "tStartMs": 182389,
+    "dDurationMs": 3430,
+    "segs": [ {
+      "utf8": "Change the arrangement of the atoms, and we get a squirrel."
+    } ]
+  }, {
+    "tStartMs": 186140,
+    "dDurationMs": 3800,
+    "segs": [ {
+      "utf8": "The basic building blocks of everything in the universe are the same,"
+    } ]
+  }, {
+    "tStartMs": 189940,
+    "dDurationMs": 4800,
+    "segs": [ {
+      "utf8": "and don't care if they're part of a bird or a rock or a cup of coffee."
+    } ]
+  }, {
+    "tStartMs": 194660,
+    "dDurationMs": 3940,
+    "segs": [ {
+      "utf8": "Without information everything in the universe would be the same."
+    } ]
+  }, {
+    "tStartMs": 199310,
+    "dDurationMs": 4559,
+    "segs": [ {
+      "utf8": "According to the theory of quantum mechanics information is indestructible."
+    } ]
+  }, {
+    "tStartMs": 203810,
+    "dDurationMs": 2049,
+    "segs": [ {
+      "utf8": "It might change shape,"
+    } ]
+  }, {
+    "tStartMs": 205359,
+    "dDurationMs": 5270,
+    "segs": [ {
+      "utf8": "but it can never be lost: for example if you burn a piece of paper, you get ash."
+    } ]
+  }, {
+    "tStartMs": 210330,
+    "dDurationMs": 2579,
+    "segs": [ {
+      "utf8": "That ash will never become paper again."
+    } ]
+  }, {
+    "tStartMs": 213020,
+    "dDurationMs": 7600,
+    "segs": [ {
+      "utf8": "But, if you were able to carefully collect every single carbon atom in the ash, and measured the exact properties of the smoke and heat"
+    } ]
+  }, {
+    "tStartMs": 220340,
+    "dDurationMs": 3840,
+    "segs": [ {
+      "utf8": "radiating from the fire, you could, in theory reconstruct the paper."
+    } ]
+  }, {
+    "tStartMs": 224410,
+    "dDurationMs": 4939,
+    "segs": [ {
+      "utf8": "The information of the paper is still in the universe. It's not lost,"
+    } ]
+  }, {
+    "tStartMs": 229019,
+    "dDurationMs": 1800,
+    "segs": [ {
+      "utf8": "it's just hard to read."
+    } ]
+  }, {
+    "tStartMs": 230880,
+    "dDurationMs": 6220,
+    "segs": [ {
+      "utf8": "If you could somehow measure every single atom and particle and wave of radiation in the universe,"
+    } ]
+  }, {
+    "tStartMs": 236700,
+    "dDurationMs": 3780,
+    "segs": [ {
+      "utf8": "you could see and track every bit of information there is."
+    } ]
+  }, {
+    "tStartMs": 240780,
+    "dDurationMs": 5520,
+    "segs": [ {
+      "utf8": "Hypothetically, you could see the entire history of the universe right back to the Big Bang."
+    } ]
+  }, {
+    "tStartMs": 246660,
+    "dDurationMs": 3200,
+    "segs": [ {
+      "utf8": "And here black holes trip us up."
+    } ]
+  }, {
+    "tStartMs": 250320,
+    "dDurationMs": 4480,
+    "segs": [ {
+      "utf8": "seed toi day Information tells us how things are different from each other and what used to be what."
+    } ]
+  }, {
+    "tStartMs": 255400,
+    "dDurationMs": 6780,
+    "segs": [ {
+      "utf8": "Black holes do the opposite: they take different things and make them the same. They destroy information."
+    } ]
+  }, {
+    "tStartMs": 262900,
+    "dDurationMs": 4700,
+    "segs": [ {
+      "utf8": "This creates the information paradox, and this is a serious problem."
+    } ]
+  }, {
+    "tStartMs": 270130,
+    "dDurationMs": 2000,
+    "segs": [ {
+      "utf8": "The information paradox"
+    } ]
+  }, {
+    "tStartMs": 273220,
+    "dDurationMs": 4660,
+    "segs": [ {
+      "utf8": "It's fundamental for all our laws of physics that information can never be lost."
+    } ]
+  }, {
+    "tStartMs": 278620,
+    "dDurationMs": 4840,
+    "segs": [ {
+      "utf8": "Existing, not existing. Without information, everything is relative."
+    } ]
+  }, {
+    "tStartMs": 284140,
+    "dDurationMs": 3820,
+    "segs": [ {
+      "utf8": "When it comes to our understanding of reality, we need absolutes."
+    } ]
+  }, {
+    "tStartMs": 288400,
+    "dDurationMs": 2680,
+    "segs": [ {
+      "utf8": "How could we solve this paradox?"
+    } ]
+  }, {
+    "tStartMs": 291260,
+    "dDurationMs": 1760,
+    "segs": [ {
+      "utf8": "There are a few possibilities."
+    } ]
+  }, {
+    "tStartMs": 293400,
+    "dDurationMs": 2040,
+    "segs": [ {
+      "utf8": "1) Information is lost."
+    } ]
+  }, {
+    "tStartMs": 295640,
+    "dDurationMs": 2460,
+    "segs": [ {
+      "utf8": "Irretrievably and forever."
+    } ]
+  }, {
+    "tStartMs": 298400,
+    "dDurationMs": 3400,
+    "segs": [ {
+      "utf8": "This means we have to nix all our laws of physics, throwing out a lot of stuff"
+    } ]
+  }, {
+    "tStartMs": 301800,
+    "dDurationMs": 2369,
+    "segs": [ {
+      "utf8": "that's worked very well so far and to start from scratch"
+    } ]
+  }, {
+    "tStartMs": 304660,
+    "dDurationMs": 4960,
+    "segs": [ {
+      "utf8": "What those new laws of physics would look like, or what that means for us, nobody knows."
+    } ]
+  }, {
+    "tStartMs": 309940,
+    "dDurationMs": 2860,
+    "segs": [ {
+      "utf8": "This is a little frightening, but also kind of exciting."
+    } ]
+  }, {
+    "tStartMs": 313690,
+    "dDurationMs": 2000,
+    "segs": [ {
+      "utf8": "2) Information is hidden."
+    } ]
+  }, {
+    "tStartMs": 316060,
+    "dDurationMs": 3620,
+    "segs": [ {
+      "utf8": "Maybe a little part of the black hole splits off and forms a baby universe."
+    } ]
+  }, {
+    "tStartMs": 319780,
+    "dDurationMs": 5800,
+    "segs": [ {
+      "utf8": "The information would be transferred into this new weird place, where we could never observe or interact with it,"
+    } ]
+  }, {
+    "tStartMs": 325589,
+    "dDurationMs": 1991,
+    "segs": [ {
+      "utf8": "but technically it would not be lost."
+    } ]
+  }, {
+    "tStartMs": 327700,
+    "dDurationMs": 5120,
+    "segs": [ {
+      "utf8": "It's like having a broken hard drive with all your family photos, that you could never access."
+    } ]
+  }, {
+    "tStartMs": 332820,
+    "dDurationMs": 3680,
+    "segs": [ {
+      "utf8": "Sure, it's nice that they've not been deleted, but also not very helpful."
+    } ]
+  }, {
+    "tStartMs": 337080,
+    "dDurationMs": 4600,
+    "segs": [ {
+      "utf8": "Or maybe black holes don't disappear completely after the end of their life cycles,"
+    } ]
+  }, {
+    "tStartMs": 341700,
+    "dDurationMs": 2580,
+    "segs": [ {
+      "utf8": "but a little piece is left, an information diamond."
+    } ]
+  }, {
+    "tStartMs": 344380,
+    "dDurationMs": 4080,
+    "segs": [ {
+      "utf8": "like a clown car filled with an infinite amount of information clowns."
+    } ]
+  }, {
+    "tStartMs": 349270,
+    "dDurationMs": 1769,
+    "segs": [ {
+      "utf8": "But there's a third option:"
+    } ]
+  }, {
+    "tStartMs": 351039,
+    "dDurationMs": 3170,
+    "segs": [ {
+      "utf8": "Information is safe after all, not lost or hidden."
+    } ]
+  }, {
+    "tStartMs": 354940,
+    "dDurationMs": 2449,
+    "segs": [ {
+      "utf8": "Perhaps we've just been looking at this whole thing the wrong way."
+    } ]
+  }, {
+    "tStartMs": 358000,
+    "dDurationMs": 6080,
+    "segs": [ {
+      "utf8": "We know that black holes trap information and might delete it later, but we never thought about what they do with it in the meantime."
+    } ]
+  }, {
+    "tStartMs": 364720,
+    "dDurationMs": 2400,
+    "segs": [ {
+      "utf8": "Where do black holes store their information?"
+    } ]
+  }, {
+    "tStartMs": 369580,
+    "dDurationMs": 2000,
+    "segs": [ {
+      "utf8": "Cosmic housekeeping"
+    } ]
+  }, {
+    "tStartMs": 372900,
+    "dDurationMs": 2880,
+    "segs": [ {
+      "utf8": "Let's create a black hole with dirty laundry."
+    } ]
+  }, {
+    "tStartMs": 375780,
+    "dDurationMs": 5820,
+    "segs": [ {
+      "utf8": "First, we fill up a room with laundry baskets: the more laundry you want to store, the more baskets you put in the room."
+    } ]
+  }, {
+    "tStartMs": 382080,
+    "dDurationMs": 7740,
+    "segs": [ {
+      "utf8": "But at some point every single basket is full, and the room is completely stacked, not a single extra sock fits in."
+    } ]
+  }, {
+    "tStartMs": 390040,
+    "dDurationMs": 2300,
+    "segs": [ {
+      "utf8": "The room is at maximum capacity."
+    } ]
+  }, {
+    "tStartMs": 393180,
+    "dDurationMs": 6760,
+    "segs": [ {
+      "utf8": "But if we still squeeze the sock in with a lot of energy and violence, the room collapses in on itself and forms a black hole."
+    } ]
+  }, {
+    "tStartMs": 400500,
+    "dDurationMs": 5780,
+    "segs": [ {
+      "utf8": "But the capacity of the room itself has not changed, fitting in more stuff or information is still impossible."
+    } ]
+  }, {
+    "tStartMs": 407020,
+    "dDurationMs": 2660,
+    "segs": [ {
+      "utf8": "So what happens if we throw more laundry into it?"
+    } ]
+  }, {
+    "tStartMs": 410500,
+    "dDurationMs": 4220,
+    "segs": [ {
+      "utf8": "The room itself gets a little bit bigger to make space for the new information."
+    } ]
+  }, {
+    "tStartMs": 415150,
+    "dDurationMs": 5929,
+    "segs": [ {
+      "utf8": "It turns out a black hole grows its surface by a tiny pixel for each bit of information we throw into it."
+    } ]
+  }, {
+    "tStartMs": 421960,
+    "dDurationMs": 3589,
+    "segs": [ {
+      "utf8": "In a nutshell, more information means more surface area."
+    } ]
+  }, {
+    "tStartMs": 426160,
+    "dDurationMs": 5059,
+    "segs": [ {
+      "utf8": "The information gets painted on the surface, similar to what happens when we throw a stone into a pond."
+    } ]
+  }, {
+    "tStartMs": 431650,
+    "dDurationMs": 2839,
+    "segs": [ {
+      "utf8": "After the stone sinks to the bottom we can't see it anymore,"
+    } ]
+  }, {
+    "tStartMs": 434789,
+    "dDurationMs": 3750,
+    "segs": [ {
+      "utf8": "but we can tell that something went in from the ripples on the surface of the pond."
+    } ]
+  }, {
+    "tStartMs": 439510,
+    "dDurationMs": 6229,
+    "segs": [ {
+      "utf8": "Even the smallest black hole can store more information on its surface than all the data ever produced in human history."
+    } ]
+  }, {
+    "tStartMs": 446200,
+    "dDurationMs": 5029,
+    "segs": [ {
+      "utf8": "They do this by storing information in a type of pixel that is unbelievably tiny."
+    } ]
+  }, {
+    "tStartMs": 452000,
+    "dDurationMs": 2600,
+    "segs": [ {
+      "utf8": "Black holes are the ultimate hard drive."
+    } ]
+  }, {
+    "tStartMs": 455640,
+    "dDurationMs": 6040,
+    "segs": [ {
+      "utf8": "This is a bit like taking a paper back, and turning it into an e-book, two things that look completely different."
+    } ]
+  }, {
+    "tStartMs": 461680,
+    "dDurationMs": 4760,
+    "segs": [ {
+      "utf8": "But their content is the same -- it's just encoded and memorized in another way."
+    } ]
+  }, {
+    "tStartMs": 467260,
+    "dDurationMs": 5479,
+    "segs": [ {
+      "utf8": "Black holes swallowing stars and planets is a bit like transferring a whole library onto an e-reader."
+    } ]
+  }, {
+    "tStartMs": 473800,
+    "dDurationMs": 7140,
+    "segs": [ {
+      "utf8": "This solution is called the holographic principle, but if it's correct then everything we thought we knew about the universe is wrong."
+    } ]
+  }, {
+    "tStartMs": 483640,
+    "dDurationMs": 2000,
+    "segs": [ {
+      "utf8": "The universe is a hologram"
+    } ]
+  }, {
+    "tStartMs": 488180,
+    "dDurationMs": 6320,
+    "segs": [ {
+      "utf8": "If information is actually stored on the boundary of a black hole, the Hawking radiation has a chance of learning about the information"
+    } ]
+  }, {
+    "tStartMs": 494660,
+    "dDurationMs": 2000,
+    "segs": [ {
+      "utf8": "encoded there, and can carry it away."
+    } ]
+  }, {
+    "tStartMs": 497720,
+    "dDurationMs": 3199,
+    "segs": [ {
+      "utf8": "So, information is not lost when black holes fade away,"
+    } ]
+  }, {
+    "tStartMs": 500919,
+    "dDurationMs": 4920,
+    "segs": [ {
+      "utf8": "and we do not need to redo physics: the information paradox is resolved."
+    } ]
+  }, {
+    "tStartMs": 506260,
+    "dDurationMs": 4420,
+    "segs": [ {
+      "utf8": "But we still have to change our understanding of reality in a fundamental way."
+    } ]
+  }, {
+    "tStartMs": 511180,
+    "dDurationMs": 7520,
+    "segs": [ {
+      "utf8": "If everything that falls into the black hole is stored on its event horizon, that basically means that three-dimensional stuff is encoded on a flat surface."
+    } ]
+  }, {
+    "tStartMs": 519020,
+    "dDurationMs": 2300,
+    "segs": [ {
+      "utf8": "We have a name for this: a hologram."
+    } ]
+  }, {
+    "tStartMs": 521940,
+    "dDurationMs": 5460,
+    "segs": [ {
+      "utf8": "A hologram is like a 3D photo, a flat piece of plastic that encodes a three-dimensional image."
+    } ]
+  }, {
+    "tStartMs": 528120,
+    "dDurationMs": 5320,
+    "segs": [ {
+      "utf8": "A black hole is like a hologram, because everything inside it is encoded on its event horizon."
+    } ]
+  }, {
+    "tStartMs": 533760,
+    "dDurationMs": 4120,
+    "segs": [ {
+      "utf8": "A person inside a black hole will experience their usual three-dimensional life."
+    } ]
+  }, {
+    "tStartMs": 538300,
+    "dDurationMs": 4600,
+    "segs": [ {
+      "utf8": "but for us on the outside they are flattened images on the surface of the black hole."
+    } ]
+  }, {
+    "tStartMs": 543300,
+    "dDurationMs": 3720,
+    "segs": [ {
+      "utf8": "The consequence of this is counterintuitive, but stay with us for a moment."
+    } ]
+  }, {
+    "tStartMs": 547700,
+    "dDurationMs": 4820,
+    "segs": [ {
+      "utf8": "Black holes are very extreme objects, but they're still bound to the same rules as everything else."
+    } ]
+  }, {
+    "tStartMs": 553120,
+    "dDurationMs": 7440,
+    "segs": [ {
+      "utf8": "So if this crazy duality between 2D and 3D works for black holes, then it might work for the whole universe, and you in it."
+    } ]
+  }, {
+    "tStartMs": 561160,
+    "dDurationMs": 4300,
+    "segs": [ {
+      "utf8": "Since a person inside a black hole would not realize that they're encoded on a flat surface,"
+    } ]
+  }, {
+    "tStartMs": 565640,
+    "dDurationMs": 5539,
+    "segs": [ {
+      "utf8": "we might share the same fate: you really might be stretched over a flat screen at the end of the universe."
+    } ]
+  }, {
+    "tStartMs": 572630,
+    "dDurationMs": 7760,
+    "segs": [ {
+      "utf8": "The science behind this is complicated and really weird, with toy universes to play with, string theory and a lot of maths."
+    } ]
+  }, {
+    "tStartMs": 580910,
+    "dDurationMs": 2000,
+    "segs": [ {
+      "utf8": "We'll talk about this more in another video."
+    } ]
+  }, {
+    "tStartMs": 583960,
+    "dDurationMs": 5500,
+    "segs": [ {
+      "utf8": "Regardless of what the true nature of the universe really is, we just know that it's strange and complicated,"
+    } ]
+  }, {
+    "tStartMs": 589460,
+    "dDurationMs": 2580,
+    "segs": [ {
+      "utf8": "and we have to do a lot more physics to understand it."
+    } ]
+  }, {
+    "tStartMs": 592370,
+    "dDurationMs": 4909,
+    "segs": [ {
+      "utf8": "But black holes might be key to understanding the nature of reality itself."
+    } ]
+  }, {
+    "tStartMs": 598940,
+    "dDurationMs": 6260,
+    "segs": [ {
+      "utf8": "This video was supported by the Swiss National Science Foundation, and realized with the scientific advice of Alessandro Sfondrini."
+    } ]
+  } ]
+}

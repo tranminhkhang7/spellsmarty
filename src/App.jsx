@@ -11,6 +11,7 @@ import NotFoundPage from './pages/NotFoundPage/NotFoundPage';
 import AboutPage from './pages/AboutPage/AboutPage';
 import Customers from './pages/Admin/Customer/Customers';
 import VerifyPage from './pages/VerifyPage/VerifyPage';
+import YouTubeVideo_SubEdit from './components/SingleVideo/YoutubeVideo_SubEdit';
 const App = () => {
   return (
     <div className="app">
@@ -28,6 +29,7 @@ const App = () => {
           <Route path="/" element={<HomePage />} />
           <Route path="/home" element={<HomePage />} />
           <Route path="/video/:videoId" element={<SingleVideo />} />
+          <Route path="/subedit" element={<YouTubeVideo_SubEdit />} />
           <Route path="/search" element={<SearchPage />} />
           <Route path="/progress" element={<ProgressPage />} />
           <Route path="/signin" element={<Signin />} />
