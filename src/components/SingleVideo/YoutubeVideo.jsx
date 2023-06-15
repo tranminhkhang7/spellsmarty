@@ -232,7 +232,6 @@ const YouTubeVideo = () => {
                                             data-tooltip-content="This is one of our Premium videos. Only subscribed users can dictate this.">
                                             <h4 className="text">PREMIUM</h4>
                                         </div>
-
                                     </div>
                                     :
                                     <></>
