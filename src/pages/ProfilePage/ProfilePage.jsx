@@ -71,7 +71,7 @@ function ProfilePage() {
         <div className="bg-gray-100 min-h-screen">
           {/* Banner */}
           <div className="bg-primaryColor py-8">
-            <div className="max-w-4xl mx-auto px-4">
+            <div className="max-w-xl mx-auto px-4">
               <h1 className="text-xl text-white font-bold mb-4">Welcome, {user.name}!</h1>
               {user.planid === 1 ? (
                 <>
@@ -79,7 +79,7 @@ function ProfilePage() {
                     Upgrade to Premium for exclusive benefits.{' '}
                   </p>
                   <button
-                    onClick={toggleQR}
+                    onClick={() => toggleQR()}
                     className="bg-secondaryColor text-primaryColor font-semibold py-2 px-4 rounded hover:bg-blue-100 text-lg"
                   >
                     Upgrade to Premium{' '}
@@ -98,9 +98,13 @@ function ProfilePage() {
           </div>
           {/* Modal For QR */}
           {showQR && (
-            <div className="fixed w-full h-full bg-black bg-opacity-50 backdrop-filter backdrop-blur-sm">
-              <div className="bg-white p-4 rounded max-w-lg m-auto" ref={modalRef}>
-                <img src="https://z-p3-scontent.fsgn5-6.fna.fbcdn.net/v/t1.15752-9/353071081_969901747690094_4238618978827462517_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=ae9488&_nc_ohc=EmyBF0hMtRsAX9U7QtV&_nc_ht=z-p3-scontent.fsgn5-6.fna&oh=03_AdSu60a8G5c6cJh_ApUpbpHCKLt9wH-bNZ6fkxHaqBVDLA&oe=64A97306" />
+            <div className="fixed inset-0 flex items-center justify-center bg-gray-900 bg-opacity-50">
+              <div className="max-w-md mx-auto bg-white rounded-lg p-4" ref={modalRef}>
+                <img
+                  className="mx-auto"
+                  src="https://z-p3-scontent.fsgn5-6.fna.fbcdn.net/v/t1.15752-9/353071081_969901747690094_4238618978827462517_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=ae9488&_nc_ohc=EmyBF0hMtRsAX9U7QtV&_nc_ht=z-p3-scontent.fsgn5-6.fna&oh=03_AdSu60a8G5c6cJh_ApUpbpHCKLt9wH-bNZ6fkxHaqBVDLA&oe=64A97306"
+                  alt="QR Code"
+                />
               </div>
             </div>
           )}

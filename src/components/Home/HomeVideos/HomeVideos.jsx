@@ -57,7 +57,7 @@ const HomeVideos = () => {
         Browse
       </h2>
       <div class="image-grid relative">
-        {videos.slice(0, 12).map((video, index) => (
+        {videos.map((video, index) => (
           <div
             key={index}
             class="grid-item hover:cursor-pointer"
