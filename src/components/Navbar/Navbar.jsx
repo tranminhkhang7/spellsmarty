@@ -20,6 +20,14 @@ const Navbar = () => {
     navigate(`/search?q=${inputValue}`);
   };
   const location = useLocation();
+
+  const logout = () => {
+    localStorage.removeItem('token');
+    localStorage.removeItem('username');
+
+    navigate('/signin');
+}
+
   return (
     <nav className="bg-navBarColor py-4 px-8 flex flex-wrap items-center">
       <div className="text-2xl font-bold text-white">
@@ -72,7 +80,7 @@ const Navbar = () => {
                 {userName}
               </div>
             </Link>
-            <button className="bg-secondaryColor text-primaryColor font-semibold py-2 px-4 rounded">
+            <button className="bg-secondaryColor text-primaryColor font-semibold py-2 px-4 rounded" onClick={() => logout()}>
               Logout
             </button>
           </div>
