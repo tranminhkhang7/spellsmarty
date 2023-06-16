@@ -20,14 +20,18 @@ const Navbar = () => {
     navigate(`/search?q=${inputValue}`);
   };
   const location = useLocation();
+  const handleClearLocalStorage = () => {
+    localStorage.clear();
+    window.location.reload();
+  };
   return (
-    <nav className="bg-navBarColor py-4 px-8 flex flex-wrap items-center">
-      <div className="text-2xl font-bold text-white">
+    <nav className="bg-navBarColor px-8 flex flex-wrap items-center">
+      <div className="text-xl font-bold text-white">
         <Link to="/">
           <img width={70} src={require('../../assets/logo.png')} alt="Logo" />
         </Link>
       </div>
-      <ul className="ml-10 py-4 space-x-14 flex flex-wrap md:flex-nowrap items-center">
+      <ul className="ml-10 py-4 space-x-14 flex flex-wrap md:flex-nowrap items-center text-sm">
         <li>
           <Link to="/" className="text-secondaryColor hover:text-gray-600">
             Home
@@ -38,6 +42,16 @@ const Navbar = () => {
             Videos
           </Link>
         </li>
+        {token ? (
+          <li>
+            <Link to="/progress" className="text-secondaryColor hover:text-gray-600">
+              Progress
+            </Link>
+          </li>
+        ) : (
+          <></>
+        )}
+
         <li>
           <Link to="/about" className="text-secondaryColor hover:text-gray-600">
             About Us
@@ -67,12 +81,15 @@ const Navbar = () => {
         {token ? (
           <div className="flex flex-row justify-center items-center space-x-4">
             <Link to="/profile">
-              <div className="flex flex-1 items-center text-secondaryColor overflow-hidden whitespace-nowrap">
+              <div className="flex flex-1 items-center text-secondaryColor overflow-hidden whitespace-nowrap text-sm">
                 <FiUser className="mr-2" />
                 {userName}
               </div>
             </Link>
-            <button className="bg-secondaryColor text-primaryColor font-semibold py-2 px-4 rounded">
+            <button
+              onClick={handleClearLocalStorage}
+              className="bg-secondaryColor text-primaryColor font-semibold py-2 px-4 rounded text-sm"
+            >
               Logout
             </button>
           </div>
@@ -80,14 +97,14 @@ const Navbar = () => {
           <>
             <Link
               to="/signin"
-              className="flex items-center text-secondaryColor hover:text-gray-600"
+              className="flex items-center text-secondaryColor hover:text-gray-600 text-sm"
             >
               <FiLogIn className="mr-2" />
               Login
             </Link>
             <Link
               to="/signup"
-              className="flex items-center text-secondaryColor hover:text-gray-600"
+              className="flex items-center text-secondaryColor hover:text-gray-600 text-sm"
             >
               <FiUserPlus className="mr-2" />
               Sign Up

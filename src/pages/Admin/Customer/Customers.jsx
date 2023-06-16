@@ -34,14 +34,14 @@ function Customers() {
             <div className="sm:flex sm:justify-between sm:items-center mb-8">
               {/* Left: Title */}
               <div className="mb-4 sm:mb-0 flex space-x-4 items-center">
-                <h1 className="text-4xl md:text-5xl text-slate-800 font-bold">Customers ✨</h1>
-                <div className="text-xl font-semibold flex items-center border border-gray-300 rounded-md p-2 focus-within:border-indigo-600">
+                <h1 className="text-2xl md:text-2xl text-slate-800 font-bold">Customers ✨</h1>
+                <div className="text-sm font-semibold flex items-center border border-gray-300 rounded-md p-1 focus-within:border-indigo-600">
                   <input
                     type="text"
                     placeholder="Search..."
-                    className="flex-grow px-2 py-1 outline-none bg-transparent"
+                    className="flex-grow px-2 outline-none bg-transparent"
                   />
-                  <button className="text-xl font-semibold ml-2 bg-indigo-500 hover:bg-indigo-600 text-white px-4 py-2 rounded-md">
+                  <button className="text-sm font-semibold ml-2 bg-indigo-500 hover:bg-indigo-600 text-white btn-xs">
                     Search
                   </button>
                 </div>
@@ -60,16 +60,16 @@ function Customers() {
 
                 {/* Add customer button */}
                 <button
-                  class="btn bg-indigo-500 hover:bg-indigo-600 text-white"
                   onClick={(e) => {
                     e.stopPropagation();
                     setFeedbackModalOpen(true);
                   }}
+                  className="btn bg-indigo-500 hover:bg-indigo-600 text-white"
                 >
                   <svg className="w-4 h-4 fill-current opacity-50 shrink-0" viewBox="0 0 16 16">
                     <path d="M15 7H9V1c0-.6-.4-1-1-1S7 .4 7 1v6H1c-.6 0-1 .4-1 1s.4 1 1 1h6v6c0 .6.4 1 1 1s1-.4 1-1V9h6c.6 0 1-.4 1-1s-.4-1-1-1z" />
                   </svg>
-                  <span className="xs:block ml-2 text-xl">Add Customer</span>
+                  <span className="hidden xs:block ml-2">Add Customer</span>
                 </button>
               </div>
             </div>
@@ -148,9 +148,7 @@ function Customers() {
             {/* Table */}
             <CustomersTable selectedItems={handleSelectedItems} />
             {/* Pagination */}
-            <div className="mt-8">
-              <PaginationClassic />
-            </div>
+            <div className="mt-8">{/* <PaginationClassic /> */}</div>
           </div>
         </main>
       </div>

@@ -62,7 +62,7 @@ function CustomersTable({ selectedItems }) {
   return (
     <div className="bg-white shadow-lg rounded-sm border border-slate-200 relative">
       <header className="px-5 py-5">
-        <h2 className="text-3xl font-semibold text-slate-800">
+        <h2 className="text-lg font-semibold text-slate-800">
           All Customers <span className="text-slate-400 font-medium">248</span>
         </h2>
       </header>
@@ -71,7 +71,7 @@ function CustomersTable({ selectedItems }) {
         <div className="overflow-x-auto">
           <table className="table-auto w-full">
             {/* Table header */}
-            <thead className="text-2xl font-semibold uppercase text-slate-500 bg-slate-50 border-t border-b border-slate-200">
+            <thead className="text-sm font-semibold uppercase text-slate-500 bg-slate-50 border-t border-b border-slate-200">
               <tr>
                 {/* <th className="px-5 first:pl-5 last:pr-5 py-5 whitespace-nowrap w-px">
                   <div className="flex items-center">
@@ -119,7 +119,7 @@ function CustomersTable({ selectedItems }) {
               </tr>
             </thead>
             {/* Table body */}
-            <tbody className="text-2xl divide-y divide-slate-200">
+            <tbody className="text-sm divide-y divide-slate-200">
               {customers.map((customer) => {
                 return (
                   <Customer
@@ -142,9 +142,9 @@ function CustomersTable({ selectedItems }) {
           {modalOpen ? (
             <div className="fixed inset-0 w-full h-full z-40 flex justify-center mt-48">
               <div className="bg-white shadow-2xl w-fit h-fit p-6 space-y-8">
-                <div className="mb-4">Subscribe date: {date.subribeDate}</div>
-                <div className="mb-4">End Date: {date.endDate}</div>
-                <div className="text-xl font-semibold border border-gray-300 rounded-md p-2 focus-within:border-indigo-600">
+                <div className="mb-4 text-lg">Subscribe date: {date.subribeDate}</div>
+                <div className="mb-4 text-lg">End Date: {date.endDate}</div>
+                <div className="text-lg font-semibold border border-gray-300 rounded-md p-2 focus-within:border-indigo-600">
                   <input
                     type="text"
                     placeholder="Months"
@@ -154,11 +154,11 @@ function CustomersTable({ selectedItems }) {
                 <div className="flex justify-end mt-3">
                   <button
                     onClick={handleViewPlan}
-                    className="btn-xs !text-xl bg-gray-300 hover:bg-gray-400 text-gray-800 mr-2"
+                    className="btn-xs !text-lg bg-gray-300 hover:bg-gray-400 text-gray-800 mr-2"
                   >
                     Close
                   </button>
-                  <button className="btn-xs !text-xl bg-indigo-500 hover:bg-indigo-600 text-white">
+                  <button className="btn-xs !text-lg bg-indigo-500 hover:bg-indigo-600 text-white">
                     Save
                   </button>
                 </div>

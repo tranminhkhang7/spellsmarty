@@ -23,7 +23,7 @@ const TypingEffect = ({ text }) => {
   }, [text]);
 
   return (
-    <div className="text-white text-base md:text-3xl sm:text-sm splash-text p-5 whitespace-pre-line">
+    <div className="text-white text-base md:text-lg sm:text-sm splash-text p-5 whitespace-pre-line">
       {displayText}
     </div>
   );
