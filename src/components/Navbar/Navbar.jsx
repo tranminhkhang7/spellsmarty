@@ -20,10 +20,14 @@ const Navbar = () => {
     navigate(`/search?q=${inputValue}`);
   };
   const location = useLocation();
-  const handleClearLocalStorage = () => {
-    localStorage.clear();
-    window.location.reload();
+
+  const logout = () => {
+    localStorage.removeItem('token');
+    localStorage.removeItem('username');
+    localStorage.removeItem('role');
+    navigate('/signin');
   };
+
   return (
     <nav className="bg-navBarColor px-8 flex flex-wrap items-center">
       <div className="text-xl font-bold text-white">
@@ -86,11 +90,12 @@ const Navbar = () => {
                 {userName}
               </div>
             </Link>
+
             <button
-              onClick={handleClearLocalStorage}
-              className="bg-secondaryColor text-primaryColor font-semibold py-2 px-4 rounded text-sm"
+              className="bg-secondaryColor text-primaryColor font-semibold py-2 px-4"
+              onClick={() => logout()}
             >
-              Logout
+              Log out
             </button>
           </div>
         ) : (
@@ -100,14 +105,14 @@ const Navbar = () => {
               className="flex items-center text-secondaryColor hover:text-gray-600 text-sm"
             >
               <FiLogIn className="mr-2" />
-              Login
+              Log in
             </Link>
             <Link
               to="/signup"
               className="flex items-center text-secondaryColor hover:text-gray-600 text-sm"
             >
               <FiUserPlus className="mr-2" />
-              Sign Up
+              Sign up
             </Link>
           </>
         )}

@@ -1,7 +1,6 @@
 import axios from './config';
 
 export const fetchVideoByVideoId = async (videoId) => {
-    console.log("tookk", localStorage.getItem('token'));
     return await axios.get(`/Video/GetVideoByVideoId?videoId=${videoId}`
         , {
             headers: {

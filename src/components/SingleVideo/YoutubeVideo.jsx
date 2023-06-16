@@ -256,8 +256,9 @@ const YouTubeVideo = () => {
                                 <h1>Something went wrong.</h1>
                                 <h3>Sorry about that! Please &nbsp;
                                     <span style={{ textDecoration: 'underline', cursor: 'pointer' }} onClick={() => handleReload()}>
-                                        try again.
+                                        try again
                                     </span>
+                                    .
                                 </h3>
 
                             </div>
@@ -297,8 +298,7 @@ const YouTubeVideo = () => {
                                                         icon={faCircleQuestion}
                                                         className='icon-question'
                                                         data-tooltip-id="correct-line-tooltip"
-                                                        data-tooltip-content={data[index]?.segs[0]['utf8']}
-                                                        onClick={(e) => handleSubmit(e, true, index)} />
+                                                        data-tooltip-content={data[index]?.segs[0]['utf8']} />
                                                 </div>
                                                 <form
                                                     onSubmit={(event) => handleFormSubmit(event, index)}
@@ -306,7 +306,7 @@ const YouTubeVideo = () => {
                                                 >
                                                     {countWords(sub.segs[0]['utf8'])?.map((word, indexWord) => {
                                                         if (indexWord !== countWords(sub.segs[0]['utf8'])?.length - 1) {
-                                                            return (                                                                
+                                                            return (
                                                                 <input
                                                                     key={indexWord}
                                                                     ref={ref => (inputRefs.current[index][indexWord] = ref)}
@@ -343,12 +343,12 @@ const YouTubeVideo = () => {
                                                     </FontAwesomeIcon>
                                                     :
                                                     isCorrect[index] === false ?
-                                                    <FontAwesomeIcon
-                                                        icon={faXmark} shakep
-                                                        id='icon-x'>
-                                                    </FontAwesomeIcon>
-                                                    :
-                                                    <></>
+                                                        <FontAwesomeIcon
+                                                            icon={faXmark} shakep
+                                                            id='icon-x'>
+                                                        </FontAwesomeIcon>
+                                                        :
+                                                        <></>
                                             }
 
                                             {/* <div className="correct-section">
@@ -378,7 +378,7 @@ const YouTubeVideo = () => {
                 </div>
 
                 <Tooltip id="play-tooltip" />
-                <Tooltip id="correct-line-tooltip" style={{ width: '250px', textAlign: 'center'}} place='left'/>
+                <Tooltip id="correct-line-tooltip" style={{ width: '250px', textAlign: 'center' }} place='left' />
                 <Tooltip id="premium-tooltip" style={{ width: '250px' }} />
 
             </>
