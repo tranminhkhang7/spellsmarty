@@ -26,7 +26,7 @@ const Navbar = () => {
     localStorage.removeItem('username');
 
     navigate('/signin');
-}
+  }
 
   return (
     <nav className="bg-navBarColor py-4 px-8 flex flex-wrap items-center">
@@ -80,8 +80,8 @@ const Navbar = () => {
                 {userName}
               </div>
             </Link>
-            <button className="bg-secondaryColor text-primaryColor font-semibold py-2 px-4 rounded" onClick={() => logout()}>
-              Logout
+            <button className="bg-secondaryColor text-primaryColor font-semibold py-2 px-4" onClick={() => logout()}>
+              Log out
             </button>
           </div>
         ) : (
@@ -91,14 +91,14 @@ const Navbar = () => {
               className="flex items-center text-secondaryColor hover:text-gray-600"
             >
               <FiLogIn className="mr-2" />
-              Login
+              Log in
             </Link>
             <Link
               to="/signup"
               className="flex items-center text-secondaryColor hover:text-gray-600"
             >
               <FiUserPlus className="mr-2" />
-              Sign Up
+              Sign up
             </Link>
           </>
         )}
