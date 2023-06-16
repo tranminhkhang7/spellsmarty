@@ -34,7 +34,7 @@ function DropdownNotifications({ align }) {
     <div className="relative inline-flex">
       <button
         ref={trigger}
-        className={`w-16 h-16 flex items-center justify-center bg-slate-100 hover:bg-slate-200 transition duration-150 rounded-full ${
+        className={`w-8 h-8 flex items-center justify-center bg-slate-100 hover:bg-slate-200 transition duration-150 rounded-full ${
           dropdownOpen && 'bg-slate-200'
         }`}
         aria-haspopup="true"
@@ -42,7 +42,7 @@ function DropdownNotifications({ align }) {
         aria-expanded={dropdownOpen}
       >
         <span className="sr-only">Notifications</span>
-        <svg className="w-6 h-6" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+        <svg className="w-4 h-4" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
           <path
             className="fill-current text-slate-500"
             d="M6.5 0C2.91 0 0 2.462 0 5.5c0 1.075.37 2.074 1 2.922V12l2.699-1.542A7.454 7.454 0 006.5 11c3.59 0 6.5-2.462 6.5-5.5S10.09 0 6.5 0z"

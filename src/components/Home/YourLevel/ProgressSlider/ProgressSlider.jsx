@@ -27,7 +27,7 @@ function ProgressSlider(props) {
             <div className="swiper-slide py-16 px-16">
               <div className="card bg-white shadow-lg rounded-xl p-2 text-center">
                 <img src={e.thumbnailLink} alt="Image 1" className="w-full" />
-                <span>{e.title}</span>
+                <p className="text-sm leading-tight mt-3">{e.title}</p>
                 <ProgressBarSlider
                   bg="#000"
                   completed={

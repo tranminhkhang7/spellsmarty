@@ -9,9 +9,11 @@ function ProgressPage() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetchVideosByUserId(2);
-        setProgressItems(response.data);
-        console.log(response.data);
+        const response = await fetchVideosByUserId(localStorage.getItem('token'));
+
+        console.log(response);
+        setProgressItems(response === undefined ? [] : response.data);
+        console.log(progressItems.length);
       } catch (error) {
         console.log('Error fetching videos:', error);
       }
@@ -23,18 +25,32 @@ function ProgressPage() {
     <>
       <NavBar />
       <div className="p-10">
-        {progressItems.map((e, index) => (
-          <ProgressCard
-            key={index}
-            title={e.title}
-            channel={e.channelName}
-            level={e.level}
-            progress={e.progress}
-            thumbnail={e.thumbnailLink}
-            views={e.learntCount}
-            color={e.color}
-          />
-        ))}
+        {/* {progressItems ? (
+          progressItems.map((e, index) => (
+            <ProgressCard
+              key={index}
+              title={e.title}
+              channel={e.channelName}
+              level={e.level}
+              progress={(
+                (e.progress.split(' ').length / JSON.parse(e.subtitle)?.events?.length) *
+                100
+              ).toFixed(1)}
+              thumbnail={e.thumbnailLink}
+              views={e.learntCount}
+              color={e.color}
+            />
+          ))
+        ) : (
+          <div className="">
+            <img src={require('../../assets/tumbleweed.gif')} />
+            <h2 className="text-xl">Get your self some exercises</h2>
+          </div>
+        )} */}
+        <div className="flex flex-col items-center justify-center">
+          <img src={require('../../assets/tumbleweed.gif')} alt="Tumbleweed" />
+          <h2 className="text-xl font-semibold">Get yourself some exercises</h2>
+        </div>
       </div>
     </>
   );

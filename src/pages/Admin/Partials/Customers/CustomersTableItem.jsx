@@ -133,7 +133,7 @@ function CustomersTableItem(props) {
           <div className="flex justify-center items-center">
             <button
               onClick={() => setIsOpen((prev) => !prev)}
-              className="btn-xs bg-indigo-500 hover:bg-indigo-600 text-center text-white !font-semibold !text-xl min-w-44"
+              className="btn bg-indigo-500 hover:bg-indigo-600 text-center text-white !font-semibold !text-sm min-w-36"
             >
               Upgrade
             </button>
@@ -143,7 +143,7 @@ function CustomersTableItem(props) {
               }`}
             >
               <div
-                className={`border text-xl font-semibold flex items-center ml-3 border-gray-300 rounded-md p-2 focus-within:border-indigo-600 space-x-4 ${
+                className={`border text-sm font-semibold flex items-center ml-3 border-gray-300 rounded-md p-2 focus-within:border-indigo-600 space-x-4 ${
                   isInputEmpty ? 'border-red-500' : ''
                 }`}
               >
@@ -151,14 +151,14 @@ function CustomersTableItem(props) {
                   type="number"
                   placeholder="Months"
                   required={true}
-                  className="px-2 py-1 outline-none bg-transparent w-36"
+                  className="outline-none bg-transparent w-28"
                   value={inputValue}
                   onChange={handleInputChange}
                 />
               </div>
               <button
                 onClick={() => handleConfirm(props.id, inputValue)}
-                className="btn-xs bg-primaryColor text-white"
+                className="btn-xs bg-primaryColor text-white !text-sm"
               >
                 Confirm
               </button>
@@ -171,7 +171,7 @@ function CustomersTableItem(props) {
           <div className="flex justify-center items-center space-x-4">
             <button
               onClick={handleViewPlanMemoized}
-              className="btn-xs bg-goldenColor  text-center text-white !font-semibold !text-xl min-w-44"
+              className="btn bg-goldenColor  text-center text-white !font-semibold !text-sm min-w-36"
             >
               View Plan
             </button>

@@ -21,7 +21,7 @@ const ProgressBarSlider = (props) => {
   };
 
   return (
-    <div className="mt-6 h-4" style={containerStyles}>
+    <div className="mt-3 h-2" style={containerStyles}>
       <div className="bg-primary" style={fillerStyles}></div>
     </div>
   );

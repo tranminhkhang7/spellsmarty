@@ -20,21 +20,16 @@ const HomePage = () => {
       <NavBar />
       <div>
         <div className="relative">
-          <img
-            src={backgroundImage}
-            alt="background"
-            className="w-full"
-            loading="lazy"
-          />
-          <div className="flex flex-col absolute top-1/4 left-3/4 home-text text-base md:text-5xl sm:text-sm md:w-1/3">
-            <div className="text-white mb-10 text-left">
+          <img src={backgroundImage} alt="background" className="w-full" loading="lazy" />
+          <div className="flex flex-col absolute top-1/4 left-3/4 home-text text-base md:text-lg sm:text-sm md:w-1/3">
+            <div className="text-white text-left">
               <div className="inline-block px-5 py-3 splash-text uppercase font-semibold">
                 We are here to help you
               </div>
             </div>
-            <h1 className="text-center relative mb-10">
-              <span className="text-base md:text-7xl sm:text-sm font-bold">
-                <span className="before:absolute before:content before:w-1.5 before:h-full before:left-0 before:top-1/2 before:transform before:-translate-y-1/2 before:bg-browne"></span>
+            <h1 className="text-center relative py-3 my-10">
+              <span className="text-base md:text-3xl sm:text-sm font-bold">
+                <span className="before:absolute before:content before:w-1 before:h-full before:left-0 before:top-1/2 before:transform before:-translate-y-1/2 before:bg-browne ml-4"></span>
                 Write Your Way To English Fluency
               </span>
             </h1>
