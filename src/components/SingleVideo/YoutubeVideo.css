@@ -43,6 +43,7 @@
 
 .dictation-section .left-side .creator-level .text {
     color: var(--primary-color);
+    font-size: 16px;
     text-align: center;
     font-weight: bold;
 }
@@ -174,11 +175,12 @@
     /* margin-left: 20px; */
     font-size: 20px;
     color: #53483D;
+    margin-top: 5px;
     margin-bottom: 20px;
 }
 
 .icon-question {
-    /* margin-left: 20px; */
+    margin-bottom: 5px;
     font-size: 20px;
     color: #53483D;
 }

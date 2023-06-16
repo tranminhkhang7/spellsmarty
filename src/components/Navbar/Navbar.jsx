@@ -92,7 +92,7 @@ const Navbar = () => {
             </Link>
 
             <button
-              className="bg-secondaryColor text-primaryColor font-semibold py-2 px-4"
+              className="bg-secondaryColor text-primaryColor font-semibold py-2 px-4 text-sm"
               onClick={() => logout()}
             >
               Log out
