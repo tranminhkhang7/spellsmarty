@@ -25,7 +25,7 @@ function ProgressPage() {
     <>
       <NavBar />
       <div className="p-10">
-        {/* {progressItems ? (
+        {progressItems ? (
           progressItems.map((e, index) => (
             <ProgressCard
               key={index}
@@ -42,15 +42,11 @@ function ProgressPage() {
             />
           ))
         ) : (
-          <div className="">
-            <img src={require('../../assets/tumbleweed.gif')} />
-            <h2 className="text-xl">Get your self some exercises</h2>
+          <div className="flex flex-col items-center justify-center">
+            <img src={require('../../assets/tumbleweed.gif')} alt="Tumbleweed" />
+            <h2 className="text-xl font-semibold">Get yourself some exercises</h2>
           </div>
-        )} */}
-        <div className="flex flex-col items-center justify-center">
-          <img src={require('../../assets/tumbleweed.gif')} alt="Tumbleweed" />
-          <h2 className="text-xl font-semibold">Get yourself some exercises</h2>
-        </div>
+        )}
       </div>
     </>
   );
