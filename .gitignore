@@ -4,8 +4,6 @@
 /node_modules
 /.pnp
 .pnp.js
-/src/assets/subtitle.json
-/src/components/SingleVideo/YoutubeVideo_SubEdit.jsx
 
 # testing
 /coverage
