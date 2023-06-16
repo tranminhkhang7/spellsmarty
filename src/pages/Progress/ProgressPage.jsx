@@ -10,10 +10,7 @@ function ProgressPage() {
     const fetchData = async () => {
       try {
         const response = await fetchVideosByUserId(localStorage.getItem('token'));
-
-        console.log(response);
         setProgressItems(response === undefined ? [] : response.data);
-        console.log(progressItems.length);
       } catch (error) {
         console.log('Error fetching videos:', error);
       }
