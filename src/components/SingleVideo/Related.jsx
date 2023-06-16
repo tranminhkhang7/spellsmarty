@@ -32,7 +32,6 @@ const Related = () => {
         <>
             {list && list.length !== 0 ? <h2 style={{ marginLeft: '60px', marginTop: '19.92px', marginBottom: '19.92px', color: '#2C2C2C', fontWeight: 'bold', fontSize: '26px' }}>Related</h2> : <></>}
             <div className="image-grid">
-
                 {list?.map((video, index) => (
                     <div className="grid-item" key={index} onClick={() => handleClick(video?.videoid)}>
                         <div className="grid-item-content">
@@ -41,7 +40,7 @@ const Related = () => {
                             </div>
                             <div className="grid-title">
                                 <div className="circular-image">
-                                    <img src="https://static.skillshare.com/uploads/users/tmp/67305fda" alt="Image 1" />
+                                    <img src="https://yt3.googleusercontent.com/ytc/AGIKgqOibtncbyNaJVeUjVotNRl0r00hkiUfYEEv5XmNdw=s176-c-k-c0x00ffffff-no-rj" alt="Image 1" />
                                 </div>
                                 <div className="title">
                                     <div className="title-video">

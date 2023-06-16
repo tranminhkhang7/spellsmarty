@@ -70,7 +70,7 @@ const HomeVideos = () => {
               <div class="grid-title">
                 <div class="circular-image">
                   <img
-                    src="https://static.skillshare.com/uploads/users/tmp/67305fda"
+                    src="https://yt3.googleusercontent.com/ytc/AGIKgqOibtncbyNaJVeUjVotNRl0r00hkiUfYEEv5XmNdw=s176-c-k-c0x00ffffff-no-rj"
                     alt="Image 1"
                   />
                 </div>

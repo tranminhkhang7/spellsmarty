@@ -4,7 +4,7 @@ import Videos from '../../assets/videos';
 import { useState } from 'react';
 import VideoCard from '../../components/Search/VideoCard';
 import Navbar from '../../components/Navbar/Navbar';
-import { useSearchParams } from 'react-router-dom';
+import { useNavigate, useSearchParams } from 'react-router-dom';
 
 const SearchPage = () => {
   const [queryParameters] = useSearchParams();
@@ -66,6 +66,12 @@ const SearchPage = () => {
     );
   };
 
+  const navigator = useNavigate();
+  const handleClick = (videoId) => {
+    navigator(`/video/${videoId}`);
+  };
+
+  const alteration = 1;
   return (
     <>
       <Navbar />
@@ -138,21 +144,62 @@ const SearchPage = () => {
             </div>
           </form>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
-          {filteredData.map((video, index) => (
-            <VideoCard
-              key={index}
-              srcId={video.srcId}
-              videoId={video?.videoid}
-              thumbnail={video.thumbnailLink}
-              //length={video.length}
-              title={video.title}
-              //channelAvatar={video.channel.avatar}
-              channelName={video.channelName}
+        {alteration === 0 ?
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+            {filteredData.map((video, index) => (
+              <VideoCard
+                key={index}
+                srcId={video.srcId}
+                videoId={video?.videoid}
+                thumbnail={video.thumbnailLink}
+                //length={video.length}
+                title={video.title}
+                //channelAvatar={video.channel.avatar}
+                channelName={video.channelName}
               //views={video.views}
-            />
-          ))}
-        </div>
+              />
+            ))}
+          </div>
+          :
+          <div className="image-grid" style={{marginLeft: '0px', marginRight: '0px'}}>
+            {filteredData?.map((video, index) => (
+              <div className="grid-item" key={index} onClick={() => handleClick(video?.videoid)}>
+                <div className="grid-item-content">
+                  <div className="grid-image">
+                    <img src={video?.thumbnailLink} alt="Image 1" />
+                  </div>
+                  <div className="grid-title">
+                    <div className="circular-image">
+                      <img src="https://yt3.googleusercontent.com/ytc/AGIKgqOibtncbyNaJVeUjVotNRl0r00hkiUfYEEv5XmNdw=s176-c-k-c0x00ffffff-no-rj" alt="Image 1" />
+                    </div>
+                    <div className="title">
+                      <div className="title-video">
+                        {video?.title}
+                      </div>
+                      {
+                        video?.premium ?
+                          <div className='PREMIUM-tag' style={{ marginLeft: '20px', marginTop: '12px' }}>
+                            <div className="box">
+                              <h4 className="text">PREMIUM</h4>
+                            </div>
+                          </div>
+                          :
+                          <></>
+                      }
+                      <div className="creator">
+                        {video?.channelName}
+                      </div>
+                      <div className="views">
+                        {video?.learntCount} {video?.learntCount > 1 ? <>write</> : <>writes</>} · 1 year ago
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        }
+
       </div>
     </>
   );
