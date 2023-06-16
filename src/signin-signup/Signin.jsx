@@ -7,6 +7,16 @@ const Signin = () => {
   const [success, setSuccess] = useState(true);
   const navigate = useNavigate();
 
+  // function parseJwt(token) {
+  //   var base64Url = token.split('.')[1];
+  //   var base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
+  //   var jsonPayload = decodeURIComponent(window.atob(base64).split('').map(function (c) {
+  //     return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
+  //   }).join(''));
+
+  //   return JSON.parse(jsonPayload);
+  // }
+
   const handleLogin = () => {
     var axios = require('axios');
     var data = JSON.stringify({
@@ -28,6 +38,7 @@ const Signin = () => {
         console.log(response);
         localStorage.setItem('token', response.data.token);
         localStorage.setItem('username', response.data.name);
+        localStorage.setItem('role', response.data.role);
         navigate('/');
       })
       .catch(function (error) {
@@ -148,7 +159,7 @@ const Signin = () => {
             </div>
           </div>
         </div>
-      </div> 
+      </div>
     </>
   );
 };
