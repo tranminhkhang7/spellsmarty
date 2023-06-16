@@ -2,7 +2,8 @@ import React, { useEffect, useRef, useState } from 'react';
 // import jsonData from '../../assets/subtitle.json';
 import "./YoutubeVideo.css"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCheck, faCirclePlay, faTriangleExclamation } from '@fortawesome/free-solid-svg-icons';
+import { faCheck, faCirclePlay, faXmark, faTriangleExclamation } from '@fortawesome/free-solid-svg-icons';
+import { faCircleQuestion } from '@fortawesome/free-regular-svg-icons';
 import { Link, useParams } from 'react-router-dom';
 import { fetchVideoByVideoId } from '../../services/videoServices';
 import NotFoundVideo from '../NotFoundVideo/NotFoundVideo';
@@ -28,10 +29,10 @@ const YouTubeVideo = () => {
 
     const [isCorrect, setIsCorrect] = useState([]);
 
-    const updateLineCorrect = (index) => {
+    const updateLineCorrect = (index, status) => {
         setIsCorrect((prevArray) => {
             const newArray = [...prevArray];
-            newArray[index] = true;
+            newArray[index] = status;
             return newArray;
         });
     };
@@ -47,7 +48,7 @@ const YouTubeVideo = () => {
                 setVideoLevel(res?.data?.level);
                 setVideoLearntCount(res?.data?.learntCount);
                 setData(JSON.parse(res?.data?.subtitle)?.events);
-                setIsCorrect(Array(res.data.subtitle ? JSON.parse(res?.data?.subtitle)?.events?.length + 1 : 1).fill(false));
+                setIsCorrect(Array(res.data.subtitle ? JSON.parse(res?.data?.subtitle)?.events?.length + 1 : 1).fill(null));
             })
             .catch((err) => {
                 console.log(err);
@@ -67,8 +68,9 @@ const YouTubeVideo = () => {
     function countWords(str) {
         const trimmedString = str.trim().replace(/[^a-zA-Z0-9 ']/g, '');
         const words = trimmedString.split(/\s+/);
-        const letterCounts = words.map(word => word.length);
-        return letterCounts;
+        // const letterCounts = words.map(word => word.length);
+        // return letterCounts;
+        return words;
     }
 
     function play(currentIndex) {
@@ -129,13 +131,13 @@ const YouTubeVideo = () => {
             e.preventDefault();
 
             const line = (inputValues[currentIndexLine] ?? []).join(' ');
-            const correctLine = data[currentIndexLine]?.segs[0]['utf8'];           
+            const correctLine = data[currentIndexLine]?.segs[0]['utf8'];
 
             if (normalize(line) === normalize(correctLine)) {
                 // setCurrentIndex(currentIndexLine + 1);
                 // setLine('');
 
-                updateLineCorrect(currentIndexLine);
+                updateLineCorrect(currentIndexLine, true);
 
                 play(currentIndexLine + 1);
                 inputRefs.current[currentIndexLine + 1][0].focus();
@@ -143,6 +145,7 @@ const YouTubeVideo = () => {
                 // correctLineToShow.current = 'You are correct!';
             }
             else {
+                updateLineCorrect(currentIndexLine, false);
                 // correctLineToShow.current = correctLine;
                 // setCorrectLineToShow("saii");
                 // console.log("sai");
@@ -232,7 +235,6 @@ const YouTubeVideo = () => {
                                             data-tooltip-content="This is one of our Premium videos. Only subscribed users can dictate this.">
                                             <h4 className="text">PREMIUM</h4>
                                         </div>
-
                                     </div>
                                     :
                                     <></>
@@ -283,25 +285,35 @@ const YouTubeVideo = () => {
                                             key={index}
                                         >
                                             <div className='first-two-elements'>
-                                                <FontAwesomeIcon
-                                                    icon={faCirclePlay}
-                                                    className='icon-play'
-                                                    data-tooltip-id="play-tooltip"
-                                                    data-tooltip-content="You can press Ctrl to replay."
-                                                    onClick={(e) => handleSubmit(e, true, index)} />
+                                                <div className="icon-stack">
+                                                    <FontAwesomeIcon
+                                                        icon={faCirclePlay}
+                                                        className='icon-play'
+                                                        data-tooltip-id="play-tooltip"
+                                                        data-tooltip-content="You can press Ctrl to replay."
+                                                        onClick={(e) => handleSubmit(e, true, index)} />
+
+                                                    <FontAwesomeIcon
+                                                        icon={faCircleQuestion}
+                                                        className='icon-question'
+                                                        data-tooltip-id="correct-line-tooltip"
+                                                        data-tooltip-content={data[index]?.segs[0]['utf8']}
+                                                        onClick={(e) => handleSubmit(e, true, index)} />
+                                                </div>
                                                 <form
                                                     onSubmit={(event) => handleFormSubmit(event, index)}
                                                     className="form-dictation"
                                                 >
                                                     {countWords(sub.segs[0]['utf8'])?.map((word, indexWord) => {
                                                         if (indexWord !== countWords(sub.segs[0]['utf8'])?.length - 1) {
-                                                            return (
+                                                            return (                                                                
                                                                 <input
                                                                     key={indexWord}
                                                                     ref={ref => (inputRefs.current[index][indexWord] = ref)}
                                                                     type="text"
                                                                     className="word-input"
-                                                                    style={{ width: `${word * 12}px` }}
+                                                                    defaultValue={isCorrect[index] === true ? word : ''}
+                                                                    style={{ width: `${word.length * 12}px` }}
                                                                     onKeyDown={(e) => handleKeyPress(e, index, indexWord + 1)}
                                                                     onChange={(e) => handleInputChange(index, indexWord, e.target.value)}
                                                                 />
@@ -313,7 +325,8 @@ const YouTubeVideo = () => {
                                                                     ref={ref => (inputRefs.current[index][indexWord] = ref)}
                                                                     type="text"
                                                                     className="word-input"
-                                                                    style={{ width: `${word * 12}px` }}
+                                                                    defaultValue={isCorrect[index] === true ? word : ''}
+                                                                    style={{ width: `${word.length * 12}px` }}
                                                                     onKeyDown={(e) => handleKeyPress(e, index, indexWord + 1, true)}
                                                                     onChange={(e) => handleInputChange(index, indexWord, e.target.value)}
                                                                 />
@@ -323,50 +336,49 @@ const YouTubeVideo = () => {
                                                 </form>
                                             </div>
                                             {
-                                                isCorrect[index] ?
-                                                    <>
-                                                        <FontAwesomeIcon
-                                                            icon={faCheck}
-                                                            id='icon-check'
-                                                        >
-                                                        </FontAwesomeIcon>
-
-                                                    </> :
+                                                isCorrect[index] === true ?
+                                                    <FontAwesomeIcon
+                                                        icon={faCheck}
+                                                        id='icon-check'>
+                                                    </FontAwesomeIcon>
+                                                    :
+                                                    isCorrect[index] === false ?
+                                                    <FontAwesomeIcon
+                                                        icon={faXmark} shakep
+                                                        id='icon-x'>
+                                                    </FontAwesomeIcon>
+                                                    :
                                                     <></>
                                             }
+
+                                            {/* <div className="correct-section">
+                                                <>
+                                                    {data[index].segs[0]['utf8']}
+                                                    <FontAwesomeIcon
+                                                        icon={faTriangleExclamation}
+                                                        id='icon-flag'
+                                                        onClick={() => handleReport()}
+                                                    >
+                                                    </FontAwesomeIcon>
+                                                </>
+                                            </div> */}
+
                                         </div>
+
+
 
                                     ))}
 
                                 </div>
                             </div>
 
-                            {/* {correctLineToShow && correctLineToShow.length !== 0 ?
-                                <>
-                                    <div className="correct-section">
-                                        <>
-                                            {correctLineToShow}
-                                            <FontAwesomeIcon
-                                                icon={faTriangleExclamation}
-                                                id='icon-flag'
-                                                onClick={() => handleReport()}
-                                            >
-                                            </FontAwesomeIcon>
-                                            <box-icon name='play-circle'></box-icon>
-                                        </>
-                                    </div>
-                                </>
-                                :
-                                <></>
-                            } */}
-
-                            {/* <button className="button-check" onClick={handleSubmit}>Check</button> */}
                         </div>
 
                     </div>
                 </div>
 
                 <Tooltip id="play-tooltip" />
+                <Tooltip id="correct-line-tooltip" style={{ width: '250px', textAlign: 'center'}} place='left'/>
                 <Tooltip id="premium-tooltip" style={{ width: '250px' }} />
 
             </>

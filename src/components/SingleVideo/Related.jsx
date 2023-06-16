@@ -47,6 +47,16 @@ const Related = () => {
                                     <div className="title-video">
                                         {video?.title}
                                     </div>
+                                    {
+                                        video?.premium ?
+                                            <div className='PREMIUM-tag' style={{ marginLeft: '20px', marginTop: '12px' }}>
+                                                <div className="box">
+                                                    <h4 className="text">PREMIUM</h4>
+                                                </div>
+                                            </div>
+                                            :
+                                            <></>
+                                    }
                                     <div className="creator">
                                         {video?.channelName}
                                     </div>

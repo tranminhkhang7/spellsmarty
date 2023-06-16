@@ -47,13 +47,17 @@
     font-weight: bold;
 }
 
-.dictation-section .left-side .PREMIUM-tag {
+.dictation-section .left-side {}
+
+.PREMIUM-tag {
     margin-top: 18.76px;
     display: flex;
     justify-content: space-between;
 }
 
-.dictation-section .left-side .PREMIUM-tag .box {
+.dictation-section .left-side {}
+
+.PREMIUM-tag .box {
     display: flex;
     align-items: flex-end;
     justify-content: flex-end;
@@ -62,7 +66,9 @@
     border: 1px solid var(--golden-color);
 }
 
-.dictation-section .left-side .PREMIUM-tag .text {
+.dictation-section .left-side {}
+
+.PREMIUM-tag .text {
     color: var(--golden-color);
     text-align: center;
     font-size: x-small;
@@ -154,20 +160,42 @@
     /* background-color: var(--primary-color)20; */
 }
 
+.wrap-dictation .first-two-elements .icon-stack {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    /* Ensure the container takes up the full height */
+}
 
 .icon-play {
     cursor: pointer;
     /* margin-left: 20px; */
     font-size: 20px;
     color: #53483D;
+    margin-bottom: 20px;
+}
+
+.icon-question {
+    /* margin-left: 20px; */
+    font-size: 20px;
+    color: #53483D;
 }
 
 #icon-check {
-    cursor: pointer;
     margin-right: 20px;
     left: 0px;
     font-size: 20px;
     color: #2C542F;
+    display: inline;
+}
+
+#icon-x {
+    margin-right: 20px;
+    left: 0px;
+    font-size: 20px;
+    color: #c0392b;
     display: inline;
 }
 

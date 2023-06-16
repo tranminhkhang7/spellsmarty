@@ -76,6 +76,16 @@ const HomeVideos = () => {
                 </div>
                 <div className="title">
                   <div className="title-video">{`${video.title}`}</div>
+                  {video?.premium ? (
+                    <div className="PREMIUM-tag" style={{ marginLeft: '20px', marginTop: '12px' }}>
+                      <div className="box">
+                        <h4 className="text">PREMIUM</h4>
+                      </div>
+                    </div>
+                  ) : (
+                    <></>
+                  )}
+
                   <div className="creator">{`${video.channelName}`}</div>
                   <div className="views">{`${video.learntCount} writes · 1 year ago`}</div>
                 </div>
