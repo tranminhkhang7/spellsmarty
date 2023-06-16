@@ -40,7 +40,7 @@ const HomeVideos = () => {
 
   const handleClick = (videoid) => {
     navigator(`/video/${videoid}`);
-  }
+  };
 
   return (
     <>
@@ -57,8 +57,12 @@ const HomeVideos = () => {
         Browse
       </h2>
       <div class="image-grid relative">
-        {videos.map((video, index) => (
-          <div key={index} class="grid-item hover:cursor-pointer" onClick={() => handleClick(video?.videoid)}>
+        {videos.slice(0, 12).map((video, index) => (
+          <div
+            key={index}
+            class="grid-item hover:cursor-pointer"
+            onClick={() => handleClick(video?.videoid)}
+          >
             <div class="grid-item-content">
               <div class="grid-image">
                 <img src={`${video.thumbnailLink}`} alt="Image 1" />
@@ -72,22 +76,19 @@ const HomeVideos = () => {
                 </div>
                 <div className="title">
                   <div className="title-video">{`${video.title}`}</div>
-                  {
-                    video?.premium ?
-                      <div className='PREMIUM-tag' style={{marginLeft: '20px', marginTop: '12px'}}>
-                        <div className="box">
-                          <h4 className="text">PREMIUM</h4>
-                        </div>
+                  {video?.premium ? (
+                    <div className="PREMIUM-tag" style={{ marginLeft: '20px', marginTop: '12px' }}>
+                      <div className="box">
+                        <h4 className="text">PREMIUM</h4>
                       </div>
-                      :
-                      <></>
-                  }
+                    </div>
+                  ) : (
+                    <></>
+                  )}
 
                   <div className="creator">{`${video.channelName}`}</div>
                   <div className="views">{`${video.learntCount} writes · 1 year ago`}</div>
-
                 </div>
-
               </div>
             </div>
           </div>

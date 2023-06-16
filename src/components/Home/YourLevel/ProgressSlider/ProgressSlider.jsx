@@ -7,34 +7,33 @@ import { useEffect, useState } from 'react';
 import ProgressBarSlider from '../../Slider/ProgressBarSlider/ProgressBarSlider';
 import './ProgressSlider.css';
 // Rest of your component code
-function ProgressSlider() {
-  const [progressItems, setProgressItems] = useState([]);
+function ProgressSlider(props) {
+  const [totalSentences, setTotalSentences] = useState(1);
+  const [isCorrect, setIsCorrect] = useState([]);
 
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await fetchVideosByUserId(localStorage.getItem('token'));
-
-        console.log(response);
-        setProgressItems(response.data);
-      } catch (error) {
-        console.log('Error fetching videos:', error);
-      }
-    };
-
-    fetchData();
-  }, []);
+  const updateLineCorrect = (index) => {
+    setIsCorrect((prevArray) => {
+      const newArray = [...prevArray];
+      newArray[index] = true;
+      return newArray;
+    });
+  };
 
   return (
     <div>
       <Swiper slidesPerView={2} className="mySwiper w-7/12">
-        {progressItems.map((e) => (
-          <SwiperSlide>
+        {props.progressItems.map((e, index) => (
+          <SwiperSlide key={index}>
             <div className="swiper-slide py-16 px-16">
               <div className="card bg-white shadow-lg rounded-xl p-2 text-center">
                 <img src={e.thumbnailLink} alt="Image 1" className="w-full" />
                 <span>{e.title}</span>
-                <ProgressBarSlider bg="#000" completed={e.progress} />
+                <ProgressBarSlider
+                  bg="#000"
+                  completed={
+                    (e.progress.split(' ').length / JSON.parse(e.subtitle)?.events?.length) * 100
+                  }
+                />
               </div>
             </div>
           </SwiperSlide>

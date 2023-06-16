@@ -1,9 +1,13 @@
 import axios from './config';
 
 export const fetchVideoByVideoId = async (videoId) => {
-    return await axios.get(`/Video/GetVideoByVideoId?videoId=${videoId}`).then((response) => {
-        return response;
-    });
+    return await axios.get(`/Video/GetVideoByVideoId?videoId=${videoId}`
+        , {
+            headers: {
+                Authorization: 'Bearer ' + localStorage.getItem('token')
+            },
+        }
+    );
 };
 
 export const fetchVideoWithSameCreator = async (videoId) => {

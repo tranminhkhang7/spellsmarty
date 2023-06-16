@@ -139,11 +139,11 @@ function CustomersTableItem(props) {
             </button>
             <div
               className={`flex flex-row space-x-4 overflow-hidden transition-all duration-700 ease-in-out ${
-                isOpen ? '2xl:w-2/3 xl:2/3' : `w-0`
+                isOpen ? '2xl:w-2/3 xl:full' : `w-0`
               }`}
             >
               <div
-                className={`flex-grow w-px border text-xl font-semibold flex items-center ml-3 border-gray-300 rounded-md p-2 focus-within:border-indigo-600 space-x-4 ${
+                className={`border text-xl font-semibold flex items-center ml-3 border-gray-300 rounded-md p-2 focus-within:border-indigo-600 space-x-4 ${
                   isInputEmpty ? 'border-red-500' : ''
                 }`}
               >
@@ -151,7 +151,7 @@ function CustomersTableItem(props) {
                   type="number"
                   placeholder="Months"
                   required={true}
-                  className="flex-grow px-2 py-1 outline-none bg-transparent"
+                  className="px-2 py-1 outline-none bg-transparent w-36"
                   value={inputValue}
                   onChange={handleInputChange}
                 />
