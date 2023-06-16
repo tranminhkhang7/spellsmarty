@@ -16,6 +16,7 @@ module.exports = {
         navBarColor: '#0e0e0e',
       },
       minWidth: {
+        12: '3rem',
         36: '9rem',
         44: '11rem',
         56: '14rem',

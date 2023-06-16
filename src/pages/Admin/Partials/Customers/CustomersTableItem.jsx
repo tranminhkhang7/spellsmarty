@@ -32,13 +32,15 @@ function CustomersTableItem(props) {
   }, [props.endDate]);
 
   const handleViewPlanMemoized = useCallback(() => {
-    props.handleViewPlan(formattedSubribeDate, formattedEndDate);
-  }, [formattedSubribeDate, formattedEndDate, props.handleViewPlan]);
+    console.log(props.id);
+    props.handleViewPlan(props.id, formattedSubribeDate, formattedEndDate);
+  }, [props.id, formattedSubribeDate, formattedEndDate, props.handleViewPlan]);
 
   const [inputValue, setInputValue] = useState('');
   const [isInputEmpty, setIsInputEmpty] = useState(false);
 
   const handleInputChange = (event) => {
+    console.log(event.target.value);
     setInputValue(event.target.value);
     setIsInputEmpty(false);
   };
@@ -148,7 +150,7 @@ function CustomersTableItem(props) {
                 }`}
               >
                 <input
-                  type="number"
+                  type="text"
                   placeholder="Months"
                   required={true}
                   className="outline-none bg-transparent w-28"
@@ -158,9 +160,9 @@ function CustomersTableItem(props) {
               </div>
               <button
                 onClick={() => handleConfirm(props.id, inputValue)}
-                className="btn-xs bg-primaryColor text-white !text-sm"
+                className="btn-xs bg-primaryColor text-white !text-sm min-w-12"
               >
-                Confirm
+                OK
               </button>
               {/* <button onClick={handleOpen} className="btn-xs bg-goldenColor text-white">
                 Close

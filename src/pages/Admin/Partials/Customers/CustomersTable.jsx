@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useMemo } from 'react';
 import Customer from './CustomersTableItem';
 import { fetchAllAccounts } from '../../../../services/adminServices';
+import { updateAccountPremium } from '../../../../services/adminServices';
 import ModalViewPlan from '../../Components/ModalViewPlan';
 import ModalBasic from '../../Components/ModalBasic';
 function CustomersTable({ selectedItems }) {
@@ -21,13 +22,49 @@ function CustomersTable({ selectedItems }) {
         const response = await fetchAllAccounts(localStorage.getItem('token'));
         setCustomers(response.data);
       } catch (error) {
-        console.log('Error fetching videos:', error);
+        console.log('Error fetching users:', error);
       }
     };
 
     fetchData();
   }, []);
 
+  const [inputValue, setInputValue] = useState('');
+  const [isInputEmpty, setIsInputEmpty] = useState(false);
+  const handleInputChange = (event) => {
+    setInputValue(event.target.value);
+    setIsInputEmpty(false);
+  };
+  const handleConfirm = (accountId, months) => {
+    if (inputValue.trim() === '') {
+      setIsInputEmpty(true);
+    } else {
+      const token = '';
+      updateAccountPremium(token, accountId, months)
+        .then((response) => {
+          console.log(response.data);
+          setInputValue('');
+          setModalOpen(false);
+          updateCustomer(response.data);
+        })
+        .catch((error) => {
+          console.error(error);
+        });
+      setIsInputEmpty(false);
+    }
+  };
+  const updateCustomer = (updatedCustomer) => {
+    const updatedList = customers.map((customer, index) => {
+      if (customer.id === updatedCustomer.id) {
+        // Update the specific item
+        return { ...updatedCustomer };
+      }
+      // Return the unchanged item
+      return customer;
+    });
+
+    setCustomers(updatedList);
+  };
   const handleSelectAll = () => {
     setSelectAll(!selectAll);
     setIsCheck(customers.map((li) => li.id));
@@ -52,9 +89,11 @@ function CustomersTable({ selectedItems }) {
 
   const [modalOpen, setModalOpen] = useState(false);
   const [date, setDate] = useState(null);
-  const handleViewPlan = (subribeDate, endDate) => {
-    console.log(`${subribeDate} ${endDate}`);
+  const [selectedCustomerId, setSelectedCustomerId] = useState('');
+  const handleViewPlan = (customerId, subribeDate, endDate) => {
+    console.log(`${subribeDate} ${endDate} ${customerId}`);
     setDate({ subribeDate, endDate });
+    setSelectedCustomerId(customerId);
     setModalOpen(!modalOpen);
   };
 
@@ -140,15 +179,24 @@ function CustomersTable({ selectedItems }) {
             </tbody>
           </table>
           {modalOpen ? (
-            <div className="fixed inset-0 w-full h-full z-40 flex justify-center mt-48">
-              <div className="bg-white shadow-2xl w-fit h-fit p-6 space-y-8">
-                <div className="mb-4 text-lg">Subscribe date: {date.subribeDate}</div>
-                <div className="mb-4 text-lg">End Date: {date.endDate}</div>
-                <div className="text-lg font-semibold border border-gray-300 rounded-md p-2 focus-within:border-indigo-600">
+            <div className="fixed inset-0 w-full h-full z-40 flex justify-center mt-12">
+              <div className="bg-white shadow-2xl w-fit h-fit p-6 flex flex-col space-y-10">
+                <div className="text-lg font-semibold">View & extend user premium</div>
+                <div className="text-lg">User ID: {selectedCustomerId}</div>
+                <div className="text-lg">Subscribe date: {date.subribeDate}</div>
+                <div className="text-lg">End Date: {date.endDate}</div>
+                <div
+                  className={`border text-sm font-semibold flex items-center border-gray-300 rounded-md p-2 focus-within:border-indigo-600 space-x-4 ${
+                    isInputEmpty ? 'border-red-500' : ''
+                  }`}
+                >
                   <input
-                    type="text"
+                    type="number"
                     placeholder="Months"
-                    className="flex-grow px-2 py-1 outline-none bg-transparent"
+                    required={true}
+                    className="outline-none bg-transparent w-full"
+                    value={inputValue}
+                    onChange={handleInputChange}
                   />
                 </div>
                 <div className="flex justify-end mt-3">
@@ -158,8 +206,11 @@ function CustomersTable({ selectedItems }) {
                   >
                     Close
                   </button>
-                  <button className="btn-xs !text-lg bg-indigo-500 hover:bg-indigo-600 text-white">
-                    Save
+                  <button
+                    onClick={() => handleConfirm(selectedCustomerId, inputValue)}
+                    className="btn-xs !text-lg bg-indigo-500 hover:bg-indigo-600 text-white"
+                  >
+                    Extend
                   </button>
                 </div>
               </div>
