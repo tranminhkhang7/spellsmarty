@@ -48,8 +48,19 @@ const YouTubeVideo = () => {
                 setVideoLevel(res?.data?.level);
                 setVideoLearntCount(res?.data?.learntCount);
                 setData(JSON.parse(res?.data?.subtitle)?.events);
-                console.log(res?.data?.progress);
-                setIsCorrect(Array(res.data.subtitle ? JSON.parse(res?.data?.subtitle)?.events?.length + 1 : 1).fill(null));
+                // console.log(res?.data?.progress);
+                // setIsCorrect(Array(res.data.subtitle ? JSON.parse(res?.data?.subtitle)?.events?.length + 1 : 1).fill(null));
+                const progressArr = res?.data?.progress?.split(" ").map(Number);
+                const arr = Array(res.data.subtitle ? JSON.parse(res?.data?.subtitle)?.events?.length + 1 : 1).fill(null);
+
+                if (progressArr)
+                    progressArr.forEach((index) => {
+                        if (index < arr.length) {
+                            arr[index] = true;
+                        }
+                    });
+
+                setIsCorrect(arr);
             })
             .catch((err) => {
                 console.log(err);

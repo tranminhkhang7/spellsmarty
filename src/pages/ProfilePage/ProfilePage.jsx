@@ -76,7 +76,7 @@ function ProfilePage() {
               {user.planid === 1 ? (
                 <>
                   <p className="text-white mb-8 text-lg">
-                    Upgrade to Premium for exclusive benefits.{' '}
+                    Upgrade to Premium to dictate more videos!{' '}
                   </p>
                   <button
                     onClick={toggleQR}
@@ -89,7 +89,7 @@ function ProfilePage() {
               ) : (
                 <>
                   <div className="bg-secondaryColor text-primaryColor font-semibold py-2 px-4 rounded text-lg w-fit">
-                    Thanks for be our premiums{' '}
+                    Thanks for you donation{' '}
                     <FontAwesomeIcon style={{ color: '#f1c40f' }} icon={faCrown} />
                   </div>
                 </>

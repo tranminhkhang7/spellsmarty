@@ -1,13 +1,18 @@
 import axios from './config';
 
 export const fetchVideoByVideoId = async (videoId) => {
-    return await axios.get(`/Video/GetVideoByVideoId?videoId=${videoId}`
-        , {
-            headers: {
-                Authorization: 'Bearer ' + localStorage.getItem('token')
-            },
-        }
-    );
+    if (!localStorage.getItem('token'))
+        return await axios.get(`/Video/GetVideoByVideoId?videoId=${videoId}`).then((response) => {
+            return response;
+        });
+    else
+        return await axios.get(`/Video/GetVideoByVideoId?videoId=${videoId}`
+            , {
+                headers: {
+                    Authorization: 'Bearer ' + localStorage.getItem('token')
+                },
+            }
+        );
 };
 
 export const fetchVideoWithSameCreator = async (videoId) => {
@@ -36,3 +41,5 @@ export const saveProgress = async (videoId, progress) => {
 
     return response;
 };
+// catch trường hợp chưa login mà vô video premium
+// đăng xuất bên admin
