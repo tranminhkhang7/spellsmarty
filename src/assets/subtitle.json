@@ -1,787 +1,1169 @@
 {
   "wireMagic": "pb3",
-  "pens": [ {
-  
-  } ],
-  "wsWinStyles": [ {
-  
-  } ],
-  "wpWinPositions": [ {
-  
-  } ],
-  "events": [ {
-    "tStartMs": 580,
-    "dDurationMs": 3400,
-    "segs": [ {
-      "utf8": "Black holes are the most powerful things in the universe,"
-    } ]
-  }, {
-    "tStartMs": 3900,
-    "dDurationMs": 4000,
-    "segs": [ {
-      "utf8": "strong enough to rip whole stars into atom sized pieces."
-    } ]
-  }, {
-    "tStartMs": 7680,
-    "dDurationMs": 2060,
-    "segs": [ {
-      "utf8": "Well, this is scary enough."
-    } ]
-  }, {
-    "tStartMs": 9680,
-    "dDurationMs": 6560,
-    "segs": [ {
-      "utf8": "They have an even more powerful and dark property: they might delete the universe itself."
-    } ]
-  }, {
-    "tStartMs": 26140,
-    "dDurationMs": 2500,
-    "segs": [ {
-      "utf8": "Black holes in a nutshell"
-    } ]
-  }, {
-    "tStartMs": 29080,
-    "dDurationMs": 5489,
-    "segs": [ {
-      "utf8": "A black hole appears when an extraordinary amount of matter is concentrated in a tiny space."
-    } ]
-  }, {
-    "tStartMs": 34180,
-    "dDurationMs": 4209,
-    "segs": [ {
-      "utf8": "At their center, gravity is almost infinitely strong"
-    } ]
-  }, {
-    "tStartMs": 38100,
-    "dDurationMs": 4049,
-    "segs": [ {
-      "utf8": "and whatever gets too close is ripped into its elementary particles."
-    } ]
-  }, {
-    "tStartMs": 42230,
-    "dDurationMs": 6119,
-    "segs": [ {
-      "utf8": "Not even light can escape black holes, and so we perceive them as spheres of blackness."
-    } ]
-  }, {
-    "tStartMs": 48550,
-    "dDurationMs": 3749,
-    "segs": [ {
-      "utf8": "If you were to fall into a black hole, nothing bad would happen until "
-    } ] 
-  }, {
-    "tStartMs": 52080,
-    "dDurationMs": 3820,
-    "segs": [ {
-      "utf8": "well after you crossed its outer border: the event horizon."
-    } ]
-  }, {
-    "tStartMs": 55780,
-    "dDurationMs": 4820,
-    "segs": [ {
-      "utf8": "You can imagine this as swimming in a river that ends in an enormous waterfall."
-    } ]
-  }, {
-    "tStartMs": 60900,
-    "dDurationMs": 6329,
-    "segs": [ {
-      "utf8": "As you float along, imperceptibly, the stream gets faster and faster, even if you can't see the waterfall yet."
-    } ]
-  }, {
-    "tStartMs": 67480,
-    "dDurationMs": 5440,
-    "segs": [ {
-      "utf8": "You could swim to safety, until without even noticing it, you cross the point of no return."
-    } ]
-  }, {
-    "tStartMs": 73180,
-    "dDurationMs": 5000,
-    "segs": [ {
-      "utf8": "No matter how fast you try to swim now, the stream will pull you towards certain death."
-    } ]
-  }, {
-    "tStartMs": 78520,
-    "dDurationMs": 4030,
-    "segs": [ {
-      "utf8": "Nothing can escape a black hole waterfall once it gets too close."
-    } ]
-  }, {
-    "tStartMs": 82630,
-    "dDurationMs": 4430,
-    "segs": [ {
-      "utf8": "This border completely separates black holes from the rest of the universe:"
-    } ]
-  }, {
-    "tStartMs": 86929,
-    "dDurationMs": 3880,
-    "segs": [ {
-      "utf8": "we can't access them unless we're willing to never return."
-    } ]
-  }, {
-    "tStartMs": 90729,
-    "dDurationMs": 3980,
-    "segs": [ {
-      "utf8": "So there's no way of telling what's really going on inside black holes,"
-    } ]
-  }, {
-    "tStartMs": 94380,
-    "dDurationMs": 4259,
-    "segs": [ {
-      "utf8": "but we have a few ideas about what's going on right at their very edges."
-    } ]
-  }, {
-    "tStartMs": 98619,
-    "dDurationMs": 6281,
-    "segs": [ {
-      "utf8": "Black holes radiate their mass away, like a hot pot on a stove losing its water as steam."
-    } ]
-  }, {
-    "tStartMs": 104200,
-    "dDurationMs": 2800,
-    "segs": [ {
-      "utf8": "This is called Hawking radiation."
-    } ]
-  }, {
-    "tStartMs": 106700,
-    "dDurationMs": 4260,
-    "segs": [ {
-      "utf8": "Black holes constantly lose an extremely tiny amount of their mass,"
-    } ]
-  }, {
-    "tStartMs": 110700,
-    "dDurationMs": 2440,
-    "segs": [ {
-      "utf8": "a process that's unbelievably slow."
-    } ]
-  }, {
-    "tStartMs": 113740,
-    "dDurationMs": 13000,
-    "segs": [ {
-      "utf8": "It will take a black hole with a mass of our sun 10,000 billion billion billion billion billion billion years to lose 0.0000001% of its mass."
-    } ]
-  }, {
-    "tStartMs": 126520,
-    "dDurationMs": 6360,
-    "segs": [ {
-      "utf8": "This is happening constantly and unstoppably, and as it goes on it speeds up more and more."
-    } ]
-  }, {
-    "tStartMs": 132890,
-    "dDurationMs": 5559,
-    "segs": [ {
-      "utf8": "In the far far future when the last star in the universe has been dead for trillions of years,"
-    } ]
-  }, {
-    "tStartMs": 138079,
-    "dDurationMs": 5340,
-    "segs": [ {
-      "utf8": "black holes will become tinier and tinier until they evaporate and disappear,"
-    } ]
-  }, {
-    "tStartMs": 143079,
-    "dDurationMs": 3140,
-    "segs": [ {
-      "utf8": "leaving behind just a bit of radiation."
-    } ]
-  }, {
-    "tStartMs": 145730,
-    "dDurationMs": 3479,
-    "segs": [ {
-      "utf8": "But this is a problem, because in the process of disappearing"
-    } ]
-  }, {
-    "tStartMs": 149130,
-    "dDurationMs": 4379,
-    "segs": [ {
-      "utf8": "black holes might delete something fundamental: information."
-    } ]
-  }, {
-    "tStartMs": 154099,
-    "dDurationMs": 3200,
-    "segs": [ {
-      "utf8": "2 - What is information?"
-    } ]
-  }, {
-    "tStartMs": 157190,
-    "dDurationMs": 2249,
-    "segs": [ {
-      "utf8": "Information is nothing tangible."
-    } ]
-  }, {
-    "tStartMs": 159290,
-    "dDurationMs": 3649,
-    "segs": [ {
-      "utf8": "It's typically understood as a property of the arrangement of particles."
-    } ]
-  }, {
-    "tStartMs": 162690,
-    "dDurationMs": 2249,
-    "segs": [ {
-      "utf8": "What does this mean?"
-    } ]
-  }, {
-    "tStartMs": 164600,
-    "dDurationMs": 4960,
-    "segs": [ {
-      "utf8": "Imagine a bunch of carbon atoms. Arrange them in a certain way and you get coal."
-    } ]
-  }, {
-    "tStartMs": 169260,
-    "dDurationMs": 3160,
-    "segs": [ {
-      "utf8": "Arrange them in a different way, and you get a diamond."
-    } ]
-  }, {
-    "tStartMs": 173450,
-    "dDurationMs": 4460,
-    "segs": [ {
-      "utf8": "The atoms are the same, what changes is the information."
-    } ]
-  }, {
-    "tStartMs": 177450,
-    "dDurationMs": 3860,
-    "segs": [ {
-      "utf8": "If we make this more complex and add in a few more atoms,"
-    } ]
-  }, {
-    "tStartMs": 180910,
-    "dDurationMs": 1479,
-    "segs": [ {
-      "utf8": "we get a banana."
-    } ]
-  }, {
-    "tStartMs": 182389,
-    "dDurationMs": 3430,
-    "segs": [ {
-      "utf8": "Change the arrangement of the atoms, and we get a squirrel."
-    } ]
-  }, {
-    "tStartMs": 186140,
-    "dDurationMs": 3800,
-    "segs": [ {
-      "utf8": "The basic building blocks of everything in the universe are the same,"
-    } ]
-  }, {
-    "tStartMs": 189940,
-    "dDurationMs": 4800,
-    "segs": [ {
-      "utf8": "and don't care if they're part of a bird or a rock or a cup of coffee."
-    } ]
-  }, {
-    "tStartMs": 194660,
-    "dDurationMs": 3940,
-    "segs": [ {
-      "utf8": "Without information everything in the universe would be the same."
-    } ]
-  }, {
-    "tStartMs": 199310,
-    "dDurationMs": 4559,
-    "segs": [ {
-      "utf8": "According to the theory of quantum mechanics information is indestructible."
-    } ]
-  }, {
-    "tStartMs": 203810,
-    "dDurationMs": 2049,
-    "segs": [ {
-      "utf8": "It might change shape,"
-    } ]
-  }, {
-    "tStartMs": 205359,
-    "dDurationMs": 5270,
-    "segs": [ {
-      "utf8": "but it can never be lost: for example if you burn a piece of paper, you get ash."
-    } ]
-  }, {
-    "tStartMs": 210330,
-    "dDurationMs": 2579,
-    "segs": [ {
-      "utf8": "That ash will never become paper again."
-    } ]
-  }, {
-    "tStartMs": 213020,
-    "dDurationMs": 7600,
-    "segs": [ {
-      "utf8": "But, if you were able to carefully collect every single carbon atom in the ash, and measured the exact properties of the smoke and heat"
-    } ]
-  }, {
-    "tStartMs": 220340,
-    "dDurationMs": 3840,
-    "segs": [ {
-      "utf8": "radiating from the fire, you could, in theory reconstruct the paper."
-    } ]
-  }, {
-    "tStartMs": 224410,
-    "dDurationMs": 4939,
-    "segs": [ {
-      "utf8": "The information of the paper is still in the universe. It's not lost,"
-    } ]
-  }, {
-    "tStartMs": 229019,
-    "dDurationMs": 1800,
-    "segs": [ {
-      "utf8": "it's just hard to read."
-    } ]
-  }, {
-    "tStartMs": 230880,
-    "dDurationMs": 6220,
-    "segs": [ {
-      "utf8": "If you could somehow measure every single atom and particle and wave of radiation in the universe,"
-    } ]
-  }, {
-    "tStartMs": 236700,
-    "dDurationMs": 3780,
-    "segs": [ {
-      "utf8": "you could see and track every bit of information there is."
-    } ]
-  }, {
-    "tStartMs": 240780,
-    "dDurationMs": 5520,
-    "segs": [ {
-      "utf8": "Hypothetically, you could see the entire history of the universe right back to the Big Bang."
-    } ]
-  }, {
-    "tStartMs": 246660,
-    "dDurationMs": 3200,
-    "segs": [ {
-      "utf8": "And here black holes trip us up."
-    } ]
-  }, {
-    "tStartMs": 250320,
-    "dDurationMs": 4480,
-    "segs": [ {
-      "utf8": "seed toi day Information tells us how things are different from each other and what used to be what."
-    } ]
-  }, {
-    "tStartMs": 255400,
-    "dDurationMs": 6780,
-    "segs": [ {
-      "utf8": "Black holes do the opposite: they take different things and make them the same. They destroy information."
-    } ]
-  }, {
-    "tStartMs": 262900,
-    "dDurationMs": 4700,
-    "segs": [ {
-      "utf8": "This creates the information paradox, and this is a serious problem."
-    } ]
-  }, {
-    "tStartMs": 270130,
-    "dDurationMs": 2000,
-    "segs": [ {
-      "utf8": "The information paradox"
-    } ]
-  }, {
-    "tStartMs": 273220,
-    "dDurationMs": 4660,
-    "segs": [ {
-      "utf8": "It's fundamental for all our laws of physics that information can never be lost."
-    } ]
-  }, {
-    "tStartMs": 278620,
-    "dDurationMs": 4840,
-    "segs": [ {
-      "utf8": "Existing, not existing. Without information, everything is relative."
-    } ]
-  }, {
-    "tStartMs": 284140,
-    "dDurationMs": 3820,
-    "segs": [ {
-      "utf8": "When it comes to our understanding of reality, we need absolutes."
-    } ]
-  }, {
-    "tStartMs": 288400,
-    "dDurationMs": 2680,
-    "segs": [ {
-      "utf8": "How could we solve this paradox?"
-    } ]
-  }, {
-    "tStartMs": 291260,
-    "dDurationMs": 1760,
-    "segs": [ {
-      "utf8": "There are a few possibilities."
-    } ]
-  }, {
-    "tStartMs": 293400,
-    "dDurationMs": 2040,
-    "segs": [ {
-      "utf8": "1) Information is lost."
-    } ]
-  }, {
-    "tStartMs": 295640,
-    "dDurationMs": 2460,
-    "segs": [ {
-      "utf8": "Irretrievably and forever."
-    } ]
-  }, {
-    "tStartMs": 298400,
-    "dDurationMs": 3400,
-    "segs": [ {
-      "utf8": "This means we have to nix all our laws of physics, throwing out a lot of stuff"
-    } ]
-  }, {
-    "tStartMs": 301800,
-    "dDurationMs": 2369,
-    "segs": [ {
-      "utf8": "that's worked very well so far and to start from scratch"
-    } ]
-  }, {
-    "tStartMs": 304660,
-    "dDurationMs": 4960,
-    "segs": [ {
-      "utf8": "What those new laws of physics would look like, or what that means for us, nobody knows."
-    } ]
-  }, {
-    "tStartMs": 309940,
-    "dDurationMs": 2860,
-    "segs": [ {
-      "utf8": "This is a little frightening, but also kind of exciting."
-    } ]
-  }, {
-    "tStartMs": 313690,
-    "dDurationMs": 2000,
-    "segs": [ {
-      "utf8": "2) Information is hidden."
-    } ]
-  }, {
-    "tStartMs": 316060,
-    "dDurationMs": 3620,
-    "segs": [ {
-      "utf8": "Maybe a little part of the black hole splits off and forms a baby universe."
-    } ]
-  }, {
-    "tStartMs": 319780,
-    "dDurationMs": 5800,
-    "segs": [ {
-      "utf8": "The information would be transferred into this new weird place, where we could never observe or interact with it,"
-    } ]
-  }, {
-    "tStartMs": 325589,
-    "dDurationMs": 1991,
-    "segs": [ {
-      "utf8": "but technically it would not be lost."
-    } ]
-  }, {
-    "tStartMs": 327700,
-    "dDurationMs": 5120,
-    "segs": [ {
-      "utf8": "It's like having a broken hard drive with all your family photos, that you could never access."
-    } ]
-  }, {
-    "tStartMs": 332820,
-    "dDurationMs": 3680,
-    "segs": [ {
-      "utf8": "Sure, it's nice that they've not been deleted, but also not very helpful."
-    } ]
-  }, {
-    "tStartMs": 337080,
-    "dDurationMs": 4600,
-    "segs": [ {
-      "utf8": "Or maybe black holes don't disappear completely after the end of their life cycles,"
-    } ]
-  }, {
-    "tStartMs": 341700,
-    "dDurationMs": 2580,
-    "segs": [ {
-      "utf8": "but a little piece is left, an information diamond."
-    } ]
-  }, {
-    "tStartMs": 344380,
-    "dDurationMs": 4080,
-    "segs": [ {
-      "utf8": "like a clown car filled with an infinite amount of information clowns."
-    } ]
-  }, {
-    "tStartMs": 349270,
-    "dDurationMs": 1769,
-    "segs": [ {
-      "utf8": "But there's a third option:"
-    } ]
-  }, {
-    "tStartMs": 351039,
-    "dDurationMs": 3170,
-    "segs": [ {
-      "utf8": "Information is safe after all, not lost or hidden."
-    } ]
-  }, {
-    "tStartMs": 354940,
-    "dDurationMs": 2449,
-    "segs": [ {
-      "utf8": "Perhaps we've just been looking at this whole thing the wrong way."
-    } ]
-  }, {
-    "tStartMs": 358000,
-    "dDurationMs": 6080,
-    "segs": [ {
-      "utf8": "We know that black holes trap information and might delete it later, but we never thought about what they do with it in the meantime."
-    } ]
-  }, {
-    "tStartMs": 364720,
-    "dDurationMs": 2400,
-    "segs": [ {
-      "utf8": "Where do black holes store their information?"
-    } ]
-  }, {
-    "tStartMs": 369580,
-    "dDurationMs": 2000,
-    "segs": [ {
-      "utf8": "Cosmic housekeeping"
-    } ]
-  }, {
-    "tStartMs": 372900,
-    "dDurationMs": 2880,
-    "segs": [ {
-      "utf8": "Let's create a black hole with dirty laundry."
-    } ]
-  }, {
-    "tStartMs": 375780,
-    "dDurationMs": 5820,
-    "segs": [ {
-      "utf8": "First, we fill up a room with laundry baskets: the more laundry you want to store, the more baskets you put in the room."
-    } ]
-  }, {
-    "tStartMs": 382080,
-    "dDurationMs": 7740,
-    "segs": [ {
-      "utf8": "But at some point every single basket is full, and the room is completely stacked, not a single extra sock fits in."
-    } ]
-  }, {
-    "tStartMs": 390040,
-    "dDurationMs": 2300,
-    "segs": [ {
-      "utf8": "The room is at maximum capacity."
-    } ]
-  }, {
-    "tStartMs": 393180,
-    "dDurationMs": 6760,
-    "segs": [ {
-      "utf8": "But if we still squeeze the sock in with a lot of energy and violence, the room collapses in on itself and forms a black hole."
-    } ]
-  }, {
-    "tStartMs": 400500,
-    "dDurationMs": 5780,
-    "segs": [ {
-      "utf8": "But the capacity of the room itself has not changed, fitting in more stuff or information is still impossible."
-    } ]
-  }, {
-    "tStartMs": 407020,
-    "dDurationMs": 2660,
-    "segs": [ {
-      "utf8": "So what happens if we throw more laundry into it?"
-    } ]
-  }, {
-    "tStartMs": 410500,
-    "dDurationMs": 4220,
-    "segs": [ {
-      "utf8": "The room itself gets a little bit bigger to make space for the new information."
-    } ]
-  }, {
-    "tStartMs": 415150,
-    "dDurationMs": 5929,
-    "segs": [ {
-      "utf8": "It turns out a black hole grows its surface by a tiny pixel for each bit of information we throw into it."
-    } ]
-  }, {
-    "tStartMs": 421960,
-    "dDurationMs": 3589,
-    "segs": [ {
-      "utf8": "In a nutshell, more information means more surface area."
-    } ]
-  }, {
-    "tStartMs": 426160,
-    "dDurationMs": 5059,
-    "segs": [ {
-      "utf8": "The information gets painted on the surface, similar to what happens when we throw a stone into a pond."
-    } ]
-  }, {
-    "tStartMs": 431650,
-    "dDurationMs": 2839,
-    "segs": [ {
-      "utf8": "After the stone sinks to the bottom we can't see it anymore,"
-    } ]
-  }, {
-    "tStartMs": 434789,
-    "dDurationMs": 3750,
-    "segs": [ {
-      "utf8": "but we can tell that something went in from the ripples on the surface of the pond."
-    } ]
-  }, {
-    "tStartMs": 439510,
-    "dDurationMs": 6229,
-    "segs": [ {
-      "utf8": "Even the smallest black hole can store more information on its surface than all the data ever produced in human history."
-    } ]
-  }, {
-    "tStartMs": 446200,
-    "dDurationMs": 5029,
-    "segs": [ {
-      "utf8": "They do this by storing information in a type of pixel that is unbelievably tiny."
-    } ]
-  }, {
-    "tStartMs": 452000,
-    "dDurationMs": 2600,
-    "segs": [ {
-      "utf8": "Black holes are the ultimate hard drive."
-    } ]
-  }, {
-    "tStartMs": 455640,
-    "dDurationMs": 6040,
-    "segs": [ {
-      "utf8": "This is a bit like taking a paper back, and turning it into an e-book, two things that look completely different."
-    } ]
-  }, {
-    "tStartMs": 461680,
-    "dDurationMs": 4760,
-    "segs": [ {
-      "utf8": "But their content is the same -- it's just encoded and memorized in another way."
-    } ]
-  }, {
-    "tStartMs": 467260,
-    "dDurationMs": 5479,
-    "segs": [ {
-      "utf8": "Black holes swallowing stars and planets is a bit like transferring a whole library onto an e-reader."
-    } ]
-  }, {
-    "tStartMs": 473800,
-    "dDurationMs": 7140,
-    "segs": [ {
-      "utf8": "This solution is called the holographic principle, but if it's correct then everything we thought we knew about the universe is wrong."
-    } ]
-  }, {
-    "tStartMs": 483640,
-    "dDurationMs": 2000,
-    "segs": [ {
-      "utf8": "The universe is a hologram"
-    } ]
-  }, {
-    "tStartMs": 488180,
-    "dDurationMs": 6320,
-    "segs": [ {
-      "utf8": "If information is actually stored on the boundary of a black hole, the Hawking radiation has a chance of learning about the information"
-    } ]
-  }, {
-    "tStartMs": 494660,
-    "dDurationMs": 2000,
-    "segs": [ {
-      "utf8": "encoded there, and can carry it away."
-    } ]
-  }, {
-    "tStartMs": 497720,
-    "dDurationMs": 3199,
-    "segs": [ {
-      "utf8": "So, information is not lost when black holes fade away,"
-    } ]
-  }, {
-    "tStartMs": 500919,
-    "dDurationMs": 4920,
-    "segs": [ {
-      "utf8": "and we do not need to redo physics: the information paradox is resolved."
-    } ]
-  }, {
-    "tStartMs": 506260,
-    "dDurationMs": 4420,
-    "segs": [ {
-      "utf8": "But we still have to change our understanding of reality in a fundamental way."
-    } ]
-  }, {
-    "tStartMs": 511180,
-    "dDurationMs": 7520,
-    "segs": [ {
-      "utf8": "If everything that falls into the black hole is stored on its event horizon, that basically means that three-dimensional stuff is encoded on a flat surface."
-    } ]
-  }, {
-    "tStartMs": 519020,
-    "dDurationMs": 2300,
-    "segs": [ {
-      "utf8": "We have a name for this: a hologram."
-    } ]
-  }, {
-    "tStartMs": 521940,
-    "dDurationMs": 5460,
-    "segs": [ {
-      "utf8": "A hologram is like a 3D photo, a flat piece of plastic that encodes a three-dimensional image."
-    } ]
-  }, {
-    "tStartMs": 528120,
-    "dDurationMs": 5320,
-    "segs": [ {
-      "utf8": "A black hole is like a hologram, because everything inside it is encoded on its event horizon."
-    } ]
-  }, {
-    "tStartMs": 533760,
-    "dDurationMs": 4120,
-    "segs": [ {
-      "utf8": "A person inside a black hole will experience their usual three-dimensional life."
-    } ]
-  }, {
-    "tStartMs": 538300,
-    "dDurationMs": 4600,
-    "segs": [ {
-      "utf8": "but for us on the outside they are flattened images on the surface of the black hole."
-    } ]
-  }, {
-    "tStartMs": 543300,
-    "dDurationMs": 3720,
-    "segs": [ {
-      "utf8": "The consequence of this is counterintuitive, but stay with us for a moment."
-    } ]
-  }, {
-    "tStartMs": 547700,
-    "dDurationMs": 4820,
-    "segs": [ {
-      "utf8": "Black holes are very extreme objects, but they're still bound to the same rules as everything else."
-    } ]
-  }, {
-    "tStartMs": 553120,
-    "dDurationMs": 7440,
-    "segs": [ {
-      "utf8": "So if this crazy duality between 2D and 3D works for black holes, then it might work for the whole universe, and you in it."
-    } ]
-  }, {
-    "tStartMs": 561160,
-    "dDurationMs": 4300,
-    "segs": [ {
-      "utf8": "Since a person inside a black hole would not realize that they're encoded on a flat surface,"
-    } ]
-  }, {
-    "tStartMs": 565640,
-    "dDurationMs": 5539,
-    "segs": [ {
-      "utf8": "we might share the same fate: you really might be stretched over a flat screen at the end of the universe."
-    } ]
-  }, {
-    "tStartMs": 572630,
-    "dDurationMs": 7760,
-    "segs": [ {
-      "utf8": "The science behind this is complicated and really weird, with toy universes to play with, string theory and a lot of maths."
-    } ]
-  }, {
-    "tStartMs": 580910,
-    "dDurationMs": 2000,
-    "segs": [ {
-      "utf8": "We'll talk about this more in another video."
-    } ]
-  }, {
-    "tStartMs": 583960,
-    "dDurationMs": 5500,
-    "segs": [ {
-      "utf8": "Regardless of what the true nature of the universe really is, we just know that it's strange and complicated,"
-    } ]
-  }, {
-    "tStartMs": 589460,
-    "dDurationMs": 2580,
-    "segs": [ {
-      "utf8": "and we have to do a lot more physics to understand it."
-    } ]
-  }, {
-    "tStartMs": 592370,
-    "dDurationMs": 4909,
-    "segs": [ {
-      "utf8": "But black holes might be key to understanding the nature of reality itself."
-    } ]
-  }, {
-    "tStartMs": 598940,
-    "dDurationMs": 6260,
-    "segs": [ {
-      "utf8": "This video was supported by the Swiss National Science Foundation, and realized with the scientific advice of Alessandro Sfondrini."
-    } ]
-  } ]
+  "pens": [{}],
+  "wsWinStyles": [{}],
+  "wpWinPositions": [{}],
+  "events": [
+    {
+      "tStartMs": 580,
+      "dDurationMs": 3400,
+      "segs": [
+        {
+          "utf8": "Black holes are the most powerful things in the universe,"
+        }
+      ]
+    },
+    {
+      "tStartMs": 3900,
+      "dDurationMs": 4000,
+      "segs": [
+        {
+          "utf8": "strong enough to rip whole stars into atom sized pieces."
+        }
+      ]
+    },
+    {
+      "tStartMs": 7680,
+      "dDurationMs": 2060,
+      "segs": [
+        {
+          "utf8": "Well, this is scary enough."
+        }
+      ]
+    },
+    {
+      "tStartMs": 9680,
+      "dDurationMs": 6560,
+      "segs": [
+        {
+          "utf8": "They have an even more powerful and dark property: they might delete the universe itself."
+        }
+      ]
+    },
+    {
+      "tStartMs": 26140,
+      "dDurationMs": 2500,
+      "segs": [
+        {
+          "utf8": "Black holes in a nutshell"
+        }
+      ]
+    },
+    {
+      "tStartMs": 29080,
+      "dDurationMs": 5489,
+      "segs": [
+        {
+          "utf8": "A black hole appears when an extraordinary amount of matter is concentrated in a tiny space."
+        }
+      ]
+    },
+    {
+      "tStartMs": 34180,
+      "dDurationMs": 4209,
+      "segs": [
+        {
+          "utf8": "At their center, gravity is almost infinitely strong"
+        }
+      ]
+    },
+    {
+      "tStartMs": 38100,
+      "dDurationMs": 4049,
+      "segs": [
+        {
+          "utf8": "and whatever gets too close is ripped into its elementary particles."
+        }
+      ]
+    },
+    {
+      "tStartMs": 42230,
+      "dDurationMs": 6119,
+      "segs": [
+        {
+          "utf8": "Not even light can escape black holes, and so we perceive them as spheres of blackness."
+        }
+      ]
+    },
+    {
+      "tStartMs": 48550,
+      "dDurationMs": 3749,
+      "segs": [
+        {
+          "utf8": "If you were to fall into a black hole, nothing bad would happen until "
+        }
+      ]
+    },
+    {
+      "tStartMs": 52080,
+      "dDurationMs": 3820,
+      "segs": [
+        {
+          "utf8": "well after you crossed its outer border: the event horizon."
+        }
+      ]
+    },
+    {
+      "tStartMs": 55780,
+      "dDurationMs": 4820,
+      "segs": [
+        {
+          "utf8": "You can imagine this as swimming in a river that ends in an enormous waterfall."
+        }
+      ]
+    },
+    {
+      "tStartMs": 60900,
+      "dDurationMs": 6329,
+      "segs": [
+        {
+          "utf8": "As you float along, imperceptibly, the stream gets faster and faster, even if you can't see the waterfall yet."
+        }
+      ]
+    },
+    {
+      "tStartMs": 67480,
+      "dDurationMs": 5440,
+      "segs": [
+        {
+          "utf8": "You could swim to safety, until without even noticing it, you cross the point of no return."
+        }
+      ]
+    },
+    {
+      "tStartMs": 73180,
+      "dDurationMs": 5000,
+      "segs": [
+        {
+          "utf8": "No matter how fast you try to swim now, the stream will pull you towards certain death."
+        }
+      ]
+    },
+    {
+      "tStartMs": 78520,
+      "dDurationMs": 4030,
+      "segs": [
+        {
+          "utf8": "Nothing can escape a black hole waterfall once it gets too close."
+        }
+      ]
+    },
+    {
+      "tStartMs": 82630,
+      "dDurationMs": 4430,
+      "segs": [
+        {
+          "utf8": "This border completely separates black holes from the rest of the universe:"
+        }
+      ]
+    },
+    {
+      "tStartMs": 86929,
+      "dDurationMs": 3880,
+      "segs": [
+        {
+          "utf8": "we can't access them unless we're willing to never return."
+        }
+      ]
+    },
+    {
+      "tStartMs": 90729,
+      "dDurationMs": 3980,
+      "segs": [
+        {
+          "utf8": "So there's no way of telling what's really going on inside black holes,"
+        }
+      ]
+    },
+    {
+      "tStartMs": 94380,
+      "dDurationMs": 4259,
+      "segs": [
+        {
+          "utf8": "but we have a few ideas about what's going on right at their very edges."
+        }
+      ]
+    },
+    {
+      "tStartMs": 98619,
+      "dDurationMs": 6281,
+      "segs": [
+        {
+          "utf8": "Black holes radiate their mass away, like a hot pot on a stove losing its water as steam."
+        }
+      ]
+    },
+    {
+      "tStartMs": 104200,
+      "dDurationMs": 2800,
+      "segs": [
+        {
+          "utf8": "This is called Hawking radiation."
+        }
+      ]
+    },
+    {
+      "tStartMs": 106700,
+      "dDurationMs": 4260,
+      "segs": [
+        {
+          "utf8": "Black holes constantly lose an extremely tiny amount of their mass,"
+        }
+      ]
+    },
+    {
+      "tStartMs": 110700,
+      "dDurationMs": 2440,
+      "segs": [
+        {
+          "utf8": "a process that's unbelievably slow."
+        }
+      ]
+    },
+    {
+      "tStartMs": 113740,
+      "dDurationMs": 13000,
+      "segs": [
+        {
+          "utf8": "It will take a black hole with a mass of our sun 10,000 billion billion billion billion billion billion years to lose 0.0000001% of its mass."
+        }
+      ]
+    },
+    {
+      "tStartMs": 126520,
+      "dDurationMs": 6360,
+      "segs": [
+        {
+          "utf8": "This is happening constantly and unstoppably, and as it goes on it speeds up more and more."
+        }
+      ]
+    },
+    {
+      "tStartMs": 132890,
+      "dDurationMs": 5559,
+      "segs": [
+        {
+          "utf8": "In the far far future when the last star in the universe has been dead for trillions of years,"
+        }
+      ]
+    },
+    {
+      "tStartMs": 138079,
+      "dDurationMs": 5340,
+      "segs": [
+        {
+          "utf8": "black holes will become tinier and tinier until they evaporate and disappear,"
+        }
+      ]
+    },
+    {
+      "tStartMs": 143079,
+      "dDurationMs": 3140,
+      "segs": [
+        {
+          "utf8": "leaving behind just a bit of radiation."
+        }
+      ]
+    },
+    {
+      "tStartMs": 145730,
+      "dDurationMs": 3479,
+      "segs": [
+        {
+          "utf8": "But this is a problem, because in the process of disappearing"
+        }
+      ]
+    },
+    {
+      "tStartMs": 149130,
+      "dDurationMs": 4379,
+      "segs": [
+        {
+          "utf8": "black holes might delete something fundamental: information."
+        }
+      ]
+    },
+    {
+      "tStartMs": 154099,
+      "dDurationMs": 3200,
+      "segs": [
+        {
+          "utf8": "2 - What is information?"
+        }
+      ]
+    },
+    {
+      "tStartMs": 157190,
+      "dDurationMs": 2249,
+      "segs": [
+        {
+          "utf8": "Information is nothing tangible."
+        }
+      ]
+    },
+    {
+      "tStartMs": 159290,
+      "dDurationMs": 3649,
+      "segs": [
+        {
+          "utf8": "It's typically understood as a property of the arrangement of particles."
+        }
+      ]
+    },
+    {
+      "tStartMs": 162690,
+      "dDurationMs": 2249,
+      "segs": [
+        {
+          "utf8": "What does this mean?"
+        }
+      ]
+    },
+    {
+      "tStartMs": 164600,
+      "dDurationMs": 4960,
+      "segs": [
+        {
+          "utf8": "Imagine a bunch of carbon atoms. Arrange them in a certain way and you get coal."
+        }
+      ]
+    },
+    {
+      "tStartMs": 169260,
+      "dDurationMs": 3160,
+      "segs": [
+        {
+          "utf8": "Arrange them in a different way, and you get a diamond."
+        }
+      ]
+    },
+    {
+      "tStartMs": 173450,
+      "dDurationMs": 4460,
+      "segs": [
+        {
+          "utf8": "The atoms are the same, what changes is the information."
+        }
+      ]
+    },
+    {
+      "tStartMs": 177450,
+      "dDurationMs": 3860,
+      "segs": [
+        {
+          "utf8": "If we make this more complex and add in a few more atoms,"
+        }
+      ]
+    },
+    {
+      "tStartMs": 180910,
+      "dDurationMs": 1479,
+      "segs": [
+        {
+          "utf8": "we get a banana."
+        }
+      ]
+    },
+    {
+      "tStartMs": 182389,
+      "dDurationMs": 3430,
+      "segs": [
+        {
+          "utf8": "Change the arrangement of the atoms, and we get a squirrel."
+        }
+      ]
+    },
+    {
+      "tStartMs": 186140,
+      "dDurationMs": 3800,
+      "segs": [
+        {
+          "utf8": "The basic building blocks of everything in the universe are the same,"
+        }
+      ]
+    },
+    {
+      "tStartMs": 189940,
+      "dDurationMs": 4800,
+      "segs": [
+        {
+          "utf8": "and don't care if they're part of a bird or a rock or a cup of coffee."
+        }
+      ]
+    },
+    {
+      "tStartMs": 194660,
+      "dDurationMs": 3940,
+      "segs": [
+        {
+          "utf8": "Without information everything in the universe would be the same."
+        }
+      ]
+    },
+    {
+      "tStartMs": 199310,
+      "dDurationMs": 4559,
+      "segs": [
+        {
+          "utf8": "According to the theory of quantum mechanics information is indestructible."
+        }
+      ]
+    },
+    {
+      "tStartMs": 203810,
+      "dDurationMs": 2049,
+      "segs": [
+        {
+          "utf8": "It might change shape,"
+        }
+      ]
+    },
+    {
+      "tStartMs": 205359,
+      "dDurationMs": 5270,
+      "segs": [
+        {
+          "utf8": "but it can never be lost: for example if you burn a piece of paper, you get ash."
+        }
+      ]
+    },
+    {
+      "tStartMs": 210330,
+      "dDurationMs": 2579,
+      "segs": [
+        {
+          "utf8": "That ash will never become paper again."
+        }
+      ]
+    },
+    {
+      "tStartMs": 213020,
+      "dDurationMs": 7600,
+      "segs": [
+        {
+          "utf8": "But, if you were able to carefully collect every single carbon atom in the ash, and measured the exact properties of the smoke and heat"
+        }
+      ]
+    },
+    {
+      "tStartMs": 220340,
+      "dDurationMs": 3840,
+      "segs": [
+        {
+          "utf8": "radiating from the fire, you could, in theory reconstruct the paper."
+        }
+      ]
+    },
+    {
+      "tStartMs": 224410,
+      "dDurationMs": 4939,
+      "segs": [
+        {
+          "utf8": "The information of the paper is still in the universe. It's not lost,"
+        }
+      ]
+    },
+    {
+      "tStartMs": 229019,
+      "dDurationMs": 1800,
+      "segs": [
+        {
+          "utf8": "it's just hard to read."
+        }
+      ]
+    },
+    {
+      "tStartMs": 230880,
+      "dDurationMs": 6220,
+      "segs": [
+        {
+          "utf8": "If you could somehow measure every single atom and particle and wave of radiation in the universe,"
+        }
+      ]
+    },
+    {
+      "tStartMs": 236700,
+      "dDurationMs": 3780,
+      "segs": [
+        {
+          "utf8": "you could see and track every bit of information there is."
+        }
+      ]
+    },
+    {
+      "tStartMs": 240780,
+      "dDurationMs": 5520,
+      "segs": [
+        {
+          "utf8": "Hypothetically, you could see the entire history of the universe right back to the Big Bang."
+        }
+      ]
+    },
+    {
+      "tStartMs": 246660,
+      "dDurationMs": 3200,
+      "segs": [
+        {
+          "utf8": "And here black holes trip us up."
+        }
+      ]
+    },
+    {
+      "tStartMs": 250320,
+      "dDurationMs": 4480,
+      "segs": [
+        {
+          "utf8": "seed toi day Information tells us how things are different from each other and what used to be what."
+        }
+      ]
+    },
+    {
+      "tStartMs": 255400,
+      "dDurationMs": 6780,
+      "segs": [
+        {
+          "utf8": "Black holes do the opposite: they take different things and make them the same. They destroy information."
+        }
+      ]
+    },
+    {
+      "tStartMs": 262900,
+      "dDurationMs": 4700,
+      "segs": [
+        {
+          "utf8": "This creates the information paradox, and this is a serious problem."
+        }
+      ]
+    },
+    {
+      "tStartMs": 270130,
+      "dDurationMs": 2000,
+      "segs": [
+        {
+          "utf8": "The information paradox"
+        }
+      ]
+    },
+    {
+      "tStartMs": 273220,
+      "dDurationMs": 4660,
+      "segs": [
+        {
+          "utf8": "It's fundamental for all our laws of physics that information can never be lost."
+        }
+      ]
+    },
+    {
+      "tStartMs": 278620,
+      "dDurationMs": 4840,
+      "segs": [
+        {
+          "utf8": "Existing, not existing. Without information, everything is relative."
+        }
+      ]
+    },
+    {
+      "tStartMs": 284140,
+      "dDurationMs": 3820,
+      "segs": [
+        {
+          "utf8": "When it comes to our understanding of reality, we need absolutes."
+        }
+      ]
+    },
+    {
+      "tStartMs": 288400,
+      "dDurationMs": 2680,
+      "segs": [
+        {
+          "utf8": "How could we solve this paradox?"
+        }
+      ]
+    },
+    {
+      "tStartMs": 291260,
+      "dDurationMs": 1760,
+      "segs": [
+        {
+          "utf8": "There are a few possibilities."
+        }
+      ]
+    },
+    {
+      "tStartMs": 293400,
+      "dDurationMs": 2040,
+      "segs": [
+        {
+          "utf8": "1) Information is lost."
+        }
+      ]
+    },
+    {
+      "tStartMs": 295640,
+      "dDurationMs": 2460,
+      "segs": [
+        {
+          "utf8": "Irretrievably and forever."
+        }
+      ]
+    },
+    {
+      "tStartMs": 298400,
+      "dDurationMs": 3400,
+      "segs": [
+        {
+          "utf8": "This means we have to nix all our laws of physics, throwing out a lot of stuff"
+        }
+      ]
+    },
+    {
+      "tStartMs": 301800,
+      "dDurationMs": 2369,
+      "segs": [
+        {
+          "utf8": "that's worked very well so far and to start from scratch"
+        }
+      ]
+    },
+    {
+      "tStartMs": 304660,
+      "dDurationMs": 4960,
+      "segs": [
+        {
+          "utf8": "What those new laws of physics would look like, or what that means for us, nobody knows."
+        }
+      ]
+    },
+    {
+      "tStartMs": 309940,
+      "dDurationMs": 2860,
+      "segs": [
+        {
+          "utf8": "This is a little frightening, but also kind of exciting."
+        }
+      ]
+    },
+    {
+      "tStartMs": 313690,
+      "dDurationMs": 2000,
+      "segs": [
+        {
+          "utf8": "2) Information is hidden."
+        }
+      ]
+    },
+    {
+      "tStartMs": 316060,
+      "dDurationMs": 3620,
+      "segs": [
+        {
+          "utf8": "Maybe a little part of the black hole splits off and forms a baby universe."
+        }
+      ]
+    },
+    {
+      "tStartMs": 319780,
+      "dDurationMs": 5800,
+      "segs": [
+        {
+          "utf8": "The information would be transferred into this new weird place, where we could never observe or interact with it,"
+        }
+      ]
+    },
+    {
+      "tStartMs": 325589,
+      "dDurationMs": 1991,
+      "segs": [
+        {
+          "utf8": "but technically it would not be lost."
+        }
+      ]
+    },
+    {
+      "tStartMs": 327700,
+      "dDurationMs": 5120,
+      "segs": [
+        {
+          "utf8": "It's like having a broken hard drive with all your family photos, that you could never access."
+        }
+      ]
+    },
+    {
+      "tStartMs": 332820,
+      "dDurationMs": 3680,
+      "segs": [
+        {
+          "utf8": "Sure, it's nice that they've not been deleted, but also not very helpful."
+        }
+      ]
+    },
+    {
+      "tStartMs": 337080,
+      "dDurationMs": 4600,
+      "segs": [
+        {
+          "utf8": "Or maybe black holes don't disappear completely after the end of their life cycles,"
+        }
+      ]
+    },
+    {
+      "tStartMs": 341700,
+      "dDurationMs": 2580,
+      "segs": [
+        {
+          "utf8": "but a little piece is left, an information diamond."
+        }
+      ]
+    },
+    {
+      "tStartMs": 344380,
+      "dDurationMs": 4080,
+      "segs": [
+        {
+          "utf8": "like a clown car filled with an infinite amount of information clowns."
+        }
+      ]
+    },
+    {
+      "tStartMs": 349270,
+      "dDurationMs": 1769,
+      "segs": [
+        {
+          "utf8": "But there's a third option:"
+        }
+      ]
+    },
+    {
+      "tStartMs": 351039,
+      "dDurationMs": 3170,
+      "segs": [
+        {
+          "utf8": "Information is safe after all, not lost or hidden."
+        }
+      ]
+    },
+    {
+      "tStartMs": 354940,
+      "dDurationMs": 2449,
+      "segs": [
+        {
+          "utf8": "Perhaps we've just been looking at this whole thing the wrong way."
+        }
+      ]
+    },
+    {
+      "tStartMs": 358000,
+      "dDurationMs": 6080,
+      "segs": [
+        {
+          "utf8": "We know that black holes trap information and might delete it later, but we never thought about what they do with it in the meantime."
+        }
+      ]
+    },
+    {
+      "tStartMs": 364720,
+      "dDurationMs": 2400,
+      "segs": [
+        {
+          "utf8": "Where do black holes store their information?"
+        }
+      ]
+    },
+    {
+      "tStartMs": 369580,
+      "dDurationMs": 2000,
+      "segs": [
+        {
+          "utf8": "Cosmic housekeeping"
+        }
+      ]
+    },
+    {
+      "tStartMs": 372900,
+      "dDurationMs": 2880,
+      "segs": [
+        {
+          "utf8": "Let's create a black hole with dirty laundry."
+        }
+      ]
+    },
+    {
+      "tStartMs": 375780,
+      "dDurationMs": 5820,
+      "segs": [
+        {
+          "utf8": "First, we fill up a room with laundry baskets: the more laundry you want to store, the more baskets you put in the room."
+        }
+      ]
+    },
+    {
+      "tStartMs": 382080,
+      "dDurationMs": 7740,
+      "segs": [
+        {
+          "utf8": "But at some point every single basket is full, and the room is completely stacked, not a single extra sock fits in."
+        }
+      ]
+    },
+    {
+      "tStartMs": 390040,
+      "dDurationMs": 2300,
+      "segs": [
+        {
+          "utf8": "The room is at maximum capacity."
+        }
+      ]
+    },
+    {
+      "tStartMs": 393180,
+      "dDurationMs": 6760,
+      "segs": [
+        {
+          "utf8": "But if we still squeeze the sock in with a lot of energy and violence, the room collapses in on itself and forms a black hole."
+        }
+      ]
+    },
+    {
+      "tStartMs": 400500,
+      "dDurationMs": 5780,
+      "segs": [
+        {
+          "utf8": "But the capacity of the room itself has not changed, fitting in more stuff or information is still impossible."
+        }
+      ]
+    },
+    {
+      "tStartMs": 407020,
+      "dDurationMs": 2660,
+      "segs": [
+        {
+          "utf8": "So what happens if we throw more laundry into it?"
+        }
+      ]
+    },
+    {
+      "tStartMs": 410500,
+      "dDurationMs": 4220,
+      "segs": [
+        {
+          "utf8": "The room itself gets a little bit bigger to make space for the new information."
+        }
+      ]
+    },
+    {
+      "tStartMs": 415150,
+      "dDurationMs": 5929,
+      "segs": [
+        {
+          "utf8": "It turns out a black hole grows its surface by a tiny pixel for each bit of information we throw into it."
+        }
+      ]
+    },
+    {
+      "tStartMs": 421960,
+      "dDurationMs": 3589,
+      "segs": [
+        {
+          "utf8": "In a nutshell, more information means more surface area."
+        }
+      ]
+    },
+    {
+      "tStartMs": 426160,
+      "dDurationMs": 5059,
+      "segs": [
+        {
+          "utf8": "The information gets painted on the surface, similar to what happens when we throw a stone into a pond."
+        }
+      ]
+    },
+    {
+      "tStartMs": 431650,
+      "dDurationMs": 2839,
+      "segs": [
+        {
+          "utf8": "After the stone sinks to the bottom we can't see it anymore,"
+        }
+      ]
+    },
+    {
+      "tStartMs": 434789,
+      "dDurationMs": 3750,
+      "segs": [
+        {
+          "utf8": "but we can tell that something went in from the ripples on the surface of the pond."
+        }
+      ]
+    },
+    {
+      "tStartMs": 439510,
+      "dDurationMs": 6229,
+      "segs": [
+        {
+          "utf8": "Even the smallest black hole can store more information on its surface than all the data ever produced in human history."
+        }
+      ]
+    },
+    {
+      "tStartMs": 446200,
+      "dDurationMs": 5029,
+      "segs": [
+        {
+          "utf8": "They do this by storing information in a type of pixel that is unbelievably tiny."
+        }
+      ]
+    },
+    {
+      "tStartMs": 452000,
+      "dDurationMs": 2600,
+      "segs": [
+        {
+          "utf8": "Black holes are the ultimate hard drive."
+        }
+      ]
+    },
+    {
+      "tStartMs": 455640,
+      "dDurationMs": 6040,
+      "segs": [
+        {
+          "utf8": "This is a bit like taking a paper back, and turning it into an e-book, two things that look completely different."
+        }
+      ]
+    },
+    {
+      "tStartMs": 461680,
+      "dDurationMs": 4760,
+      "segs": [
+        {
+          "utf8": "But their content is the same -- it's just encoded and memorized in another way."
+        }
+      ]
+    },
+    {
+      "tStartMs": 467260,
+      "dDurationMs": 5479,
+      "segs": [
+        {
+          "utf8": "Black holes swallowing stars and planets is a bit like transferring a whole library onto an e-reader."
+        }
+      ]
+    },
+    {
+      "tStartMs": 473800,
+      "dDurationMs": 7140,
+      "segs": [
+        {
+          "utf8": "This solution is called the holographic principle, but if it's correct then everything we thought we knew about the universe is wrong."
+        }
+      ]
+    },
+    {
+      "tStartMs": 483640,
+      "dDurationMs": 2000,
+      "segs": [
+        {
+          "utf8": "The universe is a hologram"
+        }
+      ]
+    },
+    {
+      "tStartMs": 488180,
+      "dDurationMs": 6320,
+      "segs": [
+        {
+          "utf8": "If information is actually stored on the boundary of a black hole, the Hawking radiation has a chance of learning about the information"
+        }
+      ]
+    },
+    {
+      "tStartMs": 494660,
+      "dDurationMs": 2000,
+      "segs": [
+        {
+          "utf8": "encoded there, and can carry it away."
+        }
+      ]
+    },
+    {
+      "tStartMs": 497720,
+      "dDurationMs": 3199,
+      "segs": [
+        {
+          "utf8": "So, information is not lost when black holes fade away,"
+        }
+      ]
+    },
+    {
+      "tStartMs": 500919,
+      "dDurationMs": 4920,
+      "segs": [
+        {
+          "utf8": "and we do not need to redo physics: the information paradox is resolved."
+        }
+      ]
+    },
+    {
+      "tStartMs": 506260,
+      "dDurationMs": 4420,
+      "segs": [
+        {
+          "utf8": "But we still have to change our understanding of reality in a fundamental way."
+        }
+      ]
+    },
+    {
+      "tStartMs": 511180,
+      "dDurationMs": 7520,
+      "segs": [
+        {
+          "utf8": "If everything that falls into the black hole is stored on its event horizon, that basically means that three-dimensional stuff is encoded on a flat surface."
+        }
+      ]
+    },
+    {
+      "tStartMs": 519020,
+      "dDurationMs": 2300,
+      "segs": [
+        {
+          "utf8": "We have a name for this: a hologram."
+        }
+      ]
+    },
+    {
+      "tStartMs": 521940,
+      "dDurationMs": 5460,
+      "segs": [
+        {
+          "utf8": "A hologram is like a 3D photo, a flat piece of plastic that encodes a three-dimensional image."
+        }
+      ]
+    },
+    {
+      "tStartMs": 528120,
+      "dDurationMs": 5320,
+      "segs": [
+        {
+          "utf8": "A black hole is like a hologram, because everything inside it is encoded on its event horizon."
+        }
+      ]
+    },
+    {
+      "tStartMs": 533760,
+      "dDurationMs": 4120,
+      "segs": [
+        {
+          "utf8": "A person inside a black hole will experience their usual three-dimensional life."
+        }
+      ]
+    },
+    {
+      "tStartMs": 538300,
+      "dDurationMs": 4600,
+      "segs": [
+        {
+          "utf8": "but for us on the outside they are flattened images on the surface of the black hole."
+        }
+      ]
+    },
+    {
+      "tStartMs": 543300,
+      "dDurationMs": 3720,
+      "segs": [
+        {
+          "utf8": "The consequence of this is counterintuitive, but stay with us for a moment."
+        }
+      ]
+    },
+    {
+      "tStartMs": 547700,
+      "dDurationMs": 4820,
+      "segs": [
+        {
+          "utf8": "Black holes are very extreme objects, but they're still bound to the same rules as everything else."
+        }
+      ]
+    },
+    {
+      "tStartMs": 553120,
+      "dDurationMs": 7440,
+      "segs": [
+        {
+          "utf8": "So if this crazy duality between 2D and 3D works for black holes, then it might work for the whole universe, and you in it."
+        }
+      ]
+    },
+    {
+      "tStartMs": 561160,
+      "dDurationMs": 4300,
+      "segs": [
+        {
+          "utf8": "Since a person inside a black hole would not realize that they're encoded on a flat surface,"
+        }
+      ]
+    },
+    {
+      "tStartMs": 565640,
+      "dDurationMs": 5539,
+      "segs": [
+        {
+          "utf8": "we might share the same fate: you really might be stretched over a flat screen at the end of the universe."
+        }
+      ]
+    },
+    {
+      "tStartMs": 572630,
+      "dDurationMs": 7760,
+      "segs": [
+        {
+          "utf8": "The science behind this is complicated and really weird, with toy universes to play with, string theory and a lot of maths."
+        }
+      ]
+    },
+    {
+      "tStartMs": 580910,
+      "dDurationMs": 2000,
+      "segs": [
+        {
+          "utf8": "We'll talk about this more in another video."
+        }
+      ]
+    },
+    {
+      "tStartMs": 583960,
+      "dDurationMs": 5500,
+      "segs": [
+        {
+          "utf8": "Regardless of what the true nature of the universe really is, we just know that it's strange and complicated,"
+        }
+      ]
+    },
+    {
+      "tStartMs": 589460,
+      "dDurationMs": 2580,
+      "segs": [
+        {
+          "utf8": "and we have to do a lot more physics to understand it."
+        }
+      ]
+    },
+    {
+      "tStartMs": 592370,
+      "dDurationMs": 4909,
+      "segs": [
+        {
+          "utf8": "But black holes might be key to understanding the nature of reality itself."
+        }
+      ]
+    },
+    {
+      "tStartMs": 598940,
+      "dDurationMs": 6260,
+      "segs": [
+        {
+          "utf8": "This video was supported by the Swiss National Science Foundation, and realized with the scientific advice of Alessandro Sfondrini."
+        }
+      ]
+    }
+  ]
 }
