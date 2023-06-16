@@ -21,3 +21,18 @@ export const fetchRelatedVideos = async (videoId) => {
         return response;
     });
 };
+
+export const saveProgress = async (videoId, progress) => {
+    const response = await axios.post('/Video/SaveProgress', null, {
+        headers: {
+            Authorization: 'Bearer ' + localStorage.getItem('token'),
+            'Content-Type': 'application/json',
+        },
+        params: {
+            videoId: videoId,
+            progress: progress,
+        },
+    });
+
+    return response;
+};

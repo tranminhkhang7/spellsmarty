@@ -5,7 +5,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCheck, faCirclePlay, faXmark, faTriangleExclamation } from '@fortawesome/free-solid-svg-icons';
 import { faCircleQuestion } from '@fortawesome/free-regular-svg-icons';
 import { Link, useParams } from 'react-router-dom';
-import { fetchVideoByVideoId } from '../../services/videoServices';
+import { fetchVideoByVideoId, saveProgress } from '../../services/videoServices';
 import NotFoundVideo from '../NotFoundVideo/NotFoundVideo';
 import { Tooltip } from 'react-tooltip'
 
@@ -48,11 +48,22 @@ const YouTubeVideo = () => {
                 setVideoLevel(res?.data?.level);
                 setVideoLearntCount(res?.data?.learntCount);
                 setData(JSON.parse(res?.data?.subtitle)?.events);
+                console.log(res?.data?.progress);
                 setIsCorrect(Array(res.data.subtitle ? JSON.parse(res?.data?.subtitle)?.events?.length + 1 : 1).fill(null));
             })
             .catch((err) => {
                 console.log(err);
                 setIsLoadSuccess(false);
+            });
+    };
+
+    const fetchSaveProgress = (videoIdString, progress) => {
+        saveProgress(videoIdString, progress)
+            .then((res) => {
+                console.log("proo", res);
+            })
+            .catch((err) => {
+                console.log(err);
             });
     };
 
@@ -137,6 +148,7 @@ const YouTubeVideo = () => {
                 // setCurrentIndex(currentIndexLine + 1);
                 // setLine('');
 
+                fetchSaveProgress(videoId, currentIndexLine);
                 updateLineCorrect(currentIndexLine, true);
 
                 play(currentIndexLine + 1);
@@ -246,7 +258,7 @@ const YouTubeVideo = () => {
                                         <h4 className="text">{videoLevel} Level</h4>
                                     </div>
                                 </div>
-                                <h3>
+                                <h3 style={{ fontSize: '16px' }}>
                                     {videoLearntCount}
                                     {videoLearntCount >= 2 ? <> writes </> : <> write</>}
                                 </h3>
@@ -268,7 +280,7 @@ const YouTubeVideo = () => {
 
                     <div className='right-side'>
                         <div>
-                            {!data
+                            {!data && localStorage.getItem('role') === 'Free'
                                 ?
                                 <div className="upgrage-info">
                                     Please
@@ -344,7 +356,7 @@ const YouTubeVideo = () => {
                                                     :
                                                     isCorrect[index] === false ?
                                                         <FontAwesomeIcon
-                                                            icon={faXmark} shakep
+                                                            icon={faXmark} shake
                                                             id='icon-x'>
                                                         </FontAwesomeIcon>
                                                         :
@@ -377,9 +389,9 @@ const YouTubeVideo = () => {
                     </div>
                 </div>
 
-                <Tooltip id="play-tooltip" />
-                <Tooltip id="correct-line-tooltip" style={{ width: '250px', textAlign: 'center' }} place='left' />
-                <Tooltip id="premium-tooltip" style={{ width: '250px' }} />
+                <Tooltip id="play-tooltip" style={{ fontSize: '14px' }} />
+                <Tooltip id="correct-line-tooltip" style={{ fontSize: '14px', width: '250px', textAlign: 'center' }} place='left' />
+                <Tooltip id="premium-tooltip" style={{ fontSize: '14px', width: '250px' }} />
 
             </>
         );
