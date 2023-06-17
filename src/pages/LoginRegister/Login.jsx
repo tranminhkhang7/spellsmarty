@@ -61,7 +61,7 @@ const Login = () =>{
 		<div class='hidden bg-image bg-no-repeat bg-cover lg:flex flex-col justify-between g:p-8 xl:p-12 lg:max-w-sm xl:max-w-lg'>
 			<div class="flex items-center justify-start space-x-3">
 			<span class="bg-amber-300 rounded-full w-8 h-8"></span>
-			<a href="/" class="font-bold text-3xl text-amber-300">Spell Smarty</a>
+			<a href="/" class="font-bold text-3xl text-amber-300 cursor-pointer">Spell Smarty</a>
 			</div>
 			<div class='space-y-5'>
 			<h1 class="text-orange-400 lg:text-3xl xl:text-5xl xl:leading-snug font-extrabold">Enter your account and discover new
@@ -80,7 +80,7 @@ const Login = () =>{
 			<div class="flex lg:hidden justify-between items-center w-full py-4">
 			<div class="flex items-center justify-start space-x-3">
 				<span class="bg-black rounded-full w-6 h-6"></span>
-				<a href="#" class="font-medium text-lg">Spell Smarty</a>
+				<a href="/" class="font-medium text-lg cursor-pointer">Spell Smarty</a>
 			</div>
 			<div class="flex items-center space-x-2">
 				<span>Not a member? </span>
@@ -97,21 +97,21 @@ const Login = () =>{
 			</div>
 			<div class="flex flex-col max-w-md space-y-5">
 				{/* Username */}
-				<label class="font-semibold text-2xl text-gray-600 pb-1 block">User Name</label>
+				<label class="font-semibold text-xl text-gray-600 pb-1 block">User Name</label>
 				<input type="text" placeholder="Username"
-				class="flex px-3 py-2 shadow-lg focus:ring focus:ring-black md:px-4 md:py-3 rounded-lg font-medium placeholder:font-normal" 
+				class="flex px-3 py-2 text-lg shadow-lg focus:ring focus:ring-black md:px-4 md:py-3 rounded-lg font-medium placeholder:font-normal" 
 				value={username}
 				onChange={(e)=>setUsername(e.target.value)}
 				/>
 				{/* Password */}
-				<label class="font-semibold text-2xl text-gray-600 pb-1 block">Password</label>
+				<label class="font-semibold text-xl text-gray-600 pb-1 block">Password</label>
 				<input type="password" placeholder="Password"
-				class="flex px-3 py-2 shadow-lg focus:ring focus:ring-black md:px-4 md:py-3 border-2 border-black rounded-lg font-medium placeholder:font-normal" 
+				class="flex px-3 py-2 text-lg shadow-lg focus:ring focus:ring-black md:px-4 md:py-3 border-2 border-black rounded-lg font-medium placeholder:font-normal" 
 				value={password}
 				onChange={(e)=>setPassword(e.target.value)}
 				/>
 				<button 
-				className={`flex items-center justify-center flex-none px-3 md:px-4 md:py-3 border-2 rounded-lg font-medium border-black bg-black text-white transition duration-300 ease-out hover:-translate-y-1  hover:ease-in focus:-translate-y-1 focus:ease-in  ${isDisabled ? 'opacity-50 cursor-not-allowed' : 'cursor-pointer'}`}
+				className={`flex items-center justify-center flex-none text-xl px-3 md:px-4 md:py-3 border-2 rounded-lg font-medium border-black bg-black text-white transition duration-300 ease-out hover:-translate-y-1  hover:ease-in focus:-translate-y-1 focus:ease-in  ${isDisabled ? 'opacity-50 cursor-not-allowed' : 'cursor-pointer'}`}
 				onClick={handleLogin}
 				>Login</button>
 				{!success && <p className="font-semibold rounded-lg bg-red-300/50 p-2 text-red-500 text-lg text-center">Fail to login</p>}
@@ -120,7 +120,7 @@ const Login = () =>{
 				</div>
 				<div className="flex justify-center items-center">
 					<button 
-					className="flex w-full items-center justify-center flex-none px-3 py-2 md:px-4 md:py-3 border-2 rounded-lg font-medium border-black bg-primaryColor text-white transition duration-300 ease-out hover:-translate-y-1  hover:ease-in focus:-translate-y-1 focus:ease-in cursor-pointer"
+					className="flex w-full items-center justify-center flex-none text-xl px-3 py-2 md:px-4 md:py-3 border-2 rounded-lg font-medium border-black bg-primaryColor text-white transition duration-300 ease-out hover:-translate-y-1  hover:ease-in focus:-translate-y-1 focus:ease-in cursor-pointer"
 					>
 						Forgot password?
 					</button>
