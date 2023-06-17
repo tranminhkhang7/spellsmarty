@@ -94,3 +94,8 @@ a[href] {
   padding-top: 0.25rem;
   padding-bottom: 0.25rem;
 }
+
+.toast-message {
+    font-size: 1.125rem;
+    line-height: 1.75rem;
+}

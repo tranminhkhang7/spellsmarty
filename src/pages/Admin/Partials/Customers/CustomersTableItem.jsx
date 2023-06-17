@@ -1,7 +1,8 @@
 import { React, useState, useMemo, useCallback, useEffect } from 'react';
 import { updateAccountPremium } from '../../../../services/adminServices';
 import styles from './CustomerTableItem.module.css';
-
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 function CustomersTableItem(props) {
   const [isExpanded, setIsExpanded] = useState(false);
 
@@ -49,18 +50,32 @@ function CustomersTableItem(props) {
     if (inputValue.trim() === '') {
       setIsInputEmpty(true);
     } else {
-      // Perform your API call or further actions
-      // Reset the isInputEmpty state if necessary
-      // Call the updateAccountPremium function
       const token = '';
+      const id = toast.loading('Please wait...', { className: 'text-sm' });
       updateAccountPremium(token, accountId, months)
         .then((response) => {
           // Handle the response
-          console.log(response.data); // Example: log the response data
+          setInputValue('');
+          if (response.data) {
+            toast.update(id, {
+              render: 'Upgrade success',
+              type: 'success',
+              isLoading: false,
+              autoClose: 5000,
+              className: 'text-sm',
+            });
+          }
+          props.handleUpdateCustomer(response.data);
         })
         .catch((error) => {
           // Handle the error
-          console.error(error); // Example: log the error
+          toast.update(id, {
+            render: 'Something went wrong',
+            type: 'error',
+            isLoading: false,
+            autoClose: 5000,
+            className: 'text-sm',
+          });
         });
       setIsInputEmpty(false);
     }
@@ -133,12 +148,21 @@ function CustomersTableItem(props) {
       <td className="px-2 first:pl-5 last:pr-5 py-3 whitespace-nowrap">
         {props.planid === 1 ? (
           <div className="flex justify-center items-center">
-            <button
-              onClick={() => setIsOpen((prev) => !prev)}
-              className="btn bg-indigo-500 hover:bg-indigo-600 text-center text-white !font-semibold !text-sm min-w-36"
-            >
-              Upgrade
-            </button>
+            {isOpen ? (
+              <button
+                onClick={() => setIsOpen((prev) => !prev)}
+                className="btn bg-red-400 hover:bg-goldenColorDark text-center text-white !font-semibold !text-sm min-w-36"
+              >
+                Close
+              </button>
+            ) : (
+              <button
+                onClick={() => setIsOpen((prev) => !prev)}
+                className="btn bg-indigo-500 hover:bg-indigo-600 text-center text-white !font-semibold !text-sm min-w-36"
+              >
+                Upgrade
+              </button>
+            )}
             <div
               className={`flex flex-row space-x-4 overflow-hidden transition-all duration-700 ease-in-out ${
                 isOpen ? '2xl:w-2/3 xl:full' : `w-0`
