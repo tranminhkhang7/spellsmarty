@@ -50,7 +50,7 @@ const App = () => {
             <Route path="/signup" element={<Register />} />
           </Route>
 
-          <Route path="*" element={<NotFoundPage />} />c
+          <Route path="*" element={<NotFoundPage />} />
           <Route path="/admin/customers" element={<Customers />} />
         </Routes>
       </Router>

@@ -10,6 +10,7 @@ import NotFoundVideo from '../NotFoundVideo/NotFoundVideo';
 import { Tooltip } from 'react-tooltip'
 import { ToastContainer, Zoom, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { Fade } from '@material-ui/core';
 
 const YouTubeVideo = () => {
     // const [videoId, setVideoId] = useState('')
@@ -80,6 +81,12 @@ const YouTubeVideo = () => {
 
     useEffect(() => {
         fetchVideo();
+    }, []);
+
+    useEffect(() => {
+        console.log("bennh");
+        const notify = () => toast("You are not logged in yet. All your progress will not be saved! ");
+        if (!localStorage.getItem('token')) notify();
     }, []);
 
     function normalize(str) {
@@ -236,7 +243,9 @@ const YouTubeVideo = () => {
 
     function handleReload() {
         window.location.reload()
-    } const notify = () => toast("Wow so easy!");
+    } 
+    
+    
 
     if (!isLoadSuccess) return (<NotFoundVideo />);
     else
@@ -396,7 +405,6 @@ const YouTubeVideo = () => {
                             </div>
 
                         </div>
-                        <button onClick={notify}>Notify!</button>
 
                     </div>
                 </div>
@@ -405,7 +413,7 @@ const YouTubeVideo = () => {
                 <Tooltip id="correct-line-tooltip" style={{ fontSize: '14px', width: '250px', textAlign: 'center' }} place='left' />
                 <Tooltip id="premium-tooltip" style={{ fontSize: '14px', width: '250px' }} />
                 <ToastContainer
-                    position="top-center"
+                    position="bottom-center"
                     autoClose={7000}
                     hideProgressBar={false}
                     newestOnTop={false}
@@ -417,7 +425,8 @@ const YouTubeVideo = () => {
                     theme="colored"
                     transition={Zoom}
                     style={{fontSize: '18px'}}
-                >hehe</ToastContainer>
+                />
+                
 
             </>
         );

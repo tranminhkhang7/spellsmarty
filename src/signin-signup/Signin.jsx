@@ -70,7 +70,8 @@ const Signin = () => {
               />
               <button
                 type="button"
-                className="transition duration-200 bg-blue-500 hover:bg-blue-600 focus:bg-blue-700 focus:shadow-sm focus:ring-4 focus:ring-blue-500 focus:ring-opacity-50 text-white w-full py-2.5 mt-6 rounded-lg text-2xl shadow-sm hover:shadow-md font-semibold text-center inline-block"
+                className="transition duration-200 bg-blue-500 hover:bg-blue-600 focus:bg-blue-700 focus:shadow-sm focus:ring-4 focus:ring-blue-500 focus:ring-opacity-50 text-primaryColor
+                 w-full py-2.5 mt-6 text-2xl shadow-sm hover:shadow-md font-semibold text-center inline-block"
                 onClick={handleLogin}
               >
                 <span class="inline-block mr-2">Login</span>
