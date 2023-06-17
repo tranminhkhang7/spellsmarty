@@ -61,7 +61,7 @@ const Login = () =>{
 		<div class='hidden bg-image bg-no-repeat bg-cover lg:flex flex-col justify-between g:p-8 xl:p-12 lg:max-w-sm xl:max-w-lg'>
 			<div class="flex items-center justify-start space-x-3">
 			<span class="bg-amber-300 rounded-full w-8 h-8"></span>
-			<a href="/" class="font-bold text-3xl text-amber-300">Spell Smarty</a>
+			<a href="/" class="font-bold text-3xl text-amber-300 cursor-pointer">Spell Smarty</a>
 			</div>
 			<div class='space-y-5'>
 			<h1 class="text-orange-400 lg:text-3xl xl:text-5xl xl:leading-snug font-extrabold">Enter your account and discover new
@@ -80,7 +80,7 @@ const Login = () =>{
 			<div class="flex lg:hidden justify-between items-center w-full py-4">
 			<div class="flex items-center justify-start space-x-3">
 				<span class="bg-black rounded-full w-6 h-6"></span>
-				<a href="#" class="font-medium text-lg">Spell Smarty</a>
+				<a href="/" class="font-medium text-lg cursor-pointer">Spell Smarty</a>
 			</div>
 			<div class="flex items-center space-x-2">
 				<span>Not a member? </span>
