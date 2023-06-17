@@ -8,8 +8,8 @@ import { Link, useParams } from 'react-router-dom';
 import { fetchVideoByVideoId, saveProgress } from '../../services/videoServices';
 import NotFoundVideo from '../NotFoundVideo/NotFoundVideo';
 import { Tooltip } from 'react-tooltip'
-
-
+import { ToastContainer, Zoom, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const YouTubeVideo = () => {
     // const [videoId, setVideoId] = useState('')
@@ -236,7 +236,7 @@ const YouTubeVideo = () => {
 
     function handleReload() {
         window.location.reload()
-    }
+    } const notify = () => toast("Wow so easy!");
 
     if (!isLoadSuccess) return (<NotFoundVideo />);
     else
@@ -396,6 +396,7 @@ const YouTubeVideo = () => {
                             </div>
 
                         </div>
+                        <button onClick={notify}>Notify!</button>
 
                     </div>
                 </div>
@@ -403,6 +404,20 @@ const YouTubeVideo = () => {
                 <Tooltip id="play-tooltip" style={{ fontSize: '14px' }} />
                 <Tooltip id="correct-line-tooltip" style={{ fontSize: '14px', width: '250px', textAlign: 'center' }} place='left' />
                 <Tooltip id="premium-tooltip" style={{ fontSize: '14px', width: '250px' }} />
+                <ToastContainer
+                    position="top-center"
+                    autoClose={7000}
+                    hideProgressBar={false}
+                    newestOnTop={false}
+                    closeOnClick
+                    rtl={false}
+                    pauseOnFocusLoss
+                    draggable
+                    pauseOnHover
+                    theme="colored"
+                    transition={Zoom}
+                    style={{fontSize: '18px'}}
+                >hehe</ToastContainer>
 
             </>
         );
