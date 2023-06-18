@@ -83,7 +83,6 @@ const YouTubeVideo = () => {
     }, []);
 
     useEffect(() => {
-        console.log("bennh");
         const notify = () => toast("You are not logged in yet. All your progress will not be saved! ");
         if (!localStorage.getItem('token')) notify();
     }, []);
@@ -101,6 +100,8 @@ const YouTubeVideo = () => {
         return words;
     }
 
+    const playerRef = useRef(null);
+
     function play(currentIndex) {
         clearTimeout(timeoutId);
         setTimeoutId(null);
@@ -117,8 +118,12 @@ const YouTubeVideo = () => {
             setTimeoutId(id);
         }
     }
+    function onPlayerError(event) {
+        console.log("Error playing video");
+      }
 
-    const playerRef = useRef(null);
+    console.log("moi vo ne", videoSrcId);
+    
     useEffect(() => {
         // Load YouTube API script
         const tag = document.createElement('script');
@@ -133,15 +138,21 @@ const YouTubeVideo = () => {
             const width = container?.offsetWidth;
             const height = (width / 16) * 9; // Assuming 16:9 aspect ratio
 
+            console.log("ksss", videoSrcId);
             playerRef.current = new window.YT.Player('youtube-player', {
                 height: `${height}px`,
                 width: width,
-                videoId: videoSrcId,
-                playerVars: {
+                videoId: videoSrcId ? videoSrcId : '5LyksSB6APY',
+                // sử dụng props sẽ giải quyết đc cái màn hình đen
+                playerVars: {                    
                     autoplay: 0, // Disable autoplay  
                     controls: 0, // Disable default controls
                     disablekb: 1, // Disable keyboard controls 
                 },
+                events: {
+                    'onError': onPlayerError,
+                    
+                  }
             });
         };
     }, [videoSrcId]);
@@ -306,7 +317,15 @@ const YouTubeVideo = () => {
                                     &nbsp;<Link to='/profile' style={{ textDecoration: "underline" }}>UPGRADE</Link>&nbsp;
                                     to dictate this video!
                                 </div>
-                                : <></>
+                                : 
+                                !data && !localStorage.getItem('role') ? <>
+                                <div className="upgrage-info">
+                                    Please
+                                    &nbsp;<Link to='/signin' style={{ textDecoration: "underline" }}>LOG IN</Link>&nbsp;
+                                    to dictate this video!
+                                </div>
+                                </> :                                
+                                <></>
                             }
 
                             <div className="container-dictation">

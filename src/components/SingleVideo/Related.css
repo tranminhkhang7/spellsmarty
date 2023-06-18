@@ -2,11 +2,23 @@
   margin-left: 60px;
   margin-right: 60px;
   display: grid;
-  grid-gap: 50px;
+  grid-gap: 40px;
 }
 
 .grid-item {
+  padding: 10px;
   cursor: pointer;
+  transition: 0.3s;
+}
+
+.grid-item:hover {
+  /* cursor: pointer; */
+  background-color: #ecf0f1;
+}
+
+.grid-item:focus {
+  /* cursor: pointer; */
+  background-color: red;
 }
 
 .grid-item-content {

@@ -26,6 +26,7 @@ function ProgressPage() {
           progressItems.map((e, index) => (
             <ProgressCard
               key={index}
+              videoid={e.videoid}
               title={e.title}
               channel={e.channelName}
               level={e.level}
