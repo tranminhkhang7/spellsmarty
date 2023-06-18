@@ -1,9 +1,10 @@
-import React, { useState, useEffect, useMemo } from 'react';
+import React, { useState, useEffect } from 'react';
 import Customer from './CustomersTableItem';
 import { fetchAllAccounts } from '../../../../services/adminServices';
 import { updateAccountPremium } from '../../../../services/adminServices';
-import ModalViewPlan from '../../Components/ModalViewPlan';
-import ModalBasic from '../../Components/ModalBasic';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 function CustomersTable({ selectedItems }) {
   const [selectAll, setSelectAll] = useState(false);
   const [isCheck, setIsCheck] = useState([]);
@@ -40,15 +41,31 @@ function CustomersTable({ selectedItems }) {
       setIsInputEmpty(true);
     } else {
       const token = '';
+      const id = toast.loading('Please wait...', { className: 'text-sm' });
       updateAccountPremium(token, accountId, months)
         .then((response) => {
           console.log(response.data);
           setInputValue('');
           setModalOpen(false);
           updateCustomer(response.data);
+          if (response.data) {
+            toast.update(id, {
+              render: 'Extend success',
+              type: 'success',
+              isLoading: false,
+              autoClose: 5000,
+              className: 'text-sm',
+            });
+          }
         })
-        .catch((error) => {
-          console.error(error);
+        .catch((_) => {
+          toast.update(id, {
+            render: 'Something went wrong',
+            type: 'error',
+            isLoading: false,
+            autoClose: 5000,
+            className: 'text-sm',
+          });
         });
       setIsInputEmpty(false);
     }
@@ -100,6 +117,7 @@ function CustomersTable({ selectedItems }) {
   const [selectedCustomer, setSelectedCustomer] = useState(null);
   return (
     <div className="bg-white shadow-lg rounded-sm border border-slate-200 relative">
+      <ToastContainer />
       <header className="px-5 py-5">
         <h2 className="text-lg font-semibold text-slate-800">
           All Customers <span className="text-slate-400 font-medium">248</span>
@@ -173,6 +191,7 @@ function CustomersTable({ selectedItems }) {
                     endDate={customer.endDate}
                     isChecked={isCheck.includes(customer.id)}
                     handleViewPlan={handleViewPlan}
+                    handleUpdateCustomer={updateCustomer}
                   />
                 );
               })}
