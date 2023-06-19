@@ -17,7 +17,8 @@ const Navbar = () => {
   const navigate = useNavigate();
   const handleSearch = (e) => {
     e.preventDefault();
-    navigate(`/search?q=${inputValue}`);
+    const cacheBuster = Date.now();
+    navigate(`/search?q=${inputValue}&upd=${cacheBuster}`);
   };
   const location = useLocation();
 
