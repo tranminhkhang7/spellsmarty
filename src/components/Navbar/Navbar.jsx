@@ -42,7 +42,7 @@ const Navbar = () => {
           </Link>
         </li>
         <li>
-          <Link to="/search" className="text-secondaryColor hover:text-gray-600" >
+          <Link to="/search" className="text-secondaryColor hover:text-gray-600">
             Videos
           </Link>
         </li>
@@ -61,16 +61,19 @@ const Navbar = () => {
             About Us
           </Link>
         </li>
-          <li>
-          <div className="relative text-gray-400 focus-within:text-gray-600 " style={{visibility: location.pathname === '/search' ? 'hidden' : 'visible'}}>
+        <li>
+          <div
+            className="relative text-gray-400 focus-within:text-gray-600 "
+            style={{ visibility: location.pathname === '/search' ? 'hidden' : 'visible' }}
+          >
             <form onSubmit={handleSearch}>
               <input
                 value={inputValue}
                 onChange={handleChange}
                 type="text"
-                className="transition border-solid border-black border focus:border-solid focus:border-white transition bg-searchBarColor px-5 py-3 w-full md:w-96 shadow-lg placeholder-searchBarPlaceHolder text-searchBarPlaceHolder"
+                className="border-solid border-black border focus:border-solid focus:border-white transition bg-searchBarColor px-5 py-3 w-full md:w-96 shadow-lg placeholder-searchBarPlaceHolder text-searchBarPlaceHolder"
                 placeholder="Search your favorite video"
-                style={{ "--placeholder-color": "red" }}
+                style={{ '--placeholder-color': 'red' }}
               />
             </form>
             {/* <FiSearch className="absolute top-1/4 left-3/4 ml-10" /> */}

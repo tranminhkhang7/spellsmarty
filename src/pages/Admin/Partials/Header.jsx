@@ -4,10 +4,16 @@ import SearchModal from '../Components/ModalSearch';
 import Notifications from '../Components/DropdownNotifications';
 import Help from '../Components/DropdownHelp';
 import UserMenu from '../Components/DropdownProfile';
-
+import { useNavigate } from 'react-router-dom';
 function Header({ sidebarOpen, setSidebarOpen }) {
+  const navigate = useNavigate();
   const [searchModalOpen, setSearchModalOpen] = useState(false);
-
+  const logout = () => {
+    localStorage.removeItem('token');
+    localStorage.removeItem('username');
+    localStorage.removeItem('role');
+    navigate('/signin');
+  };
   return (
     <header className="sticky top-0 bg-white border-b border-slate-200 z-30">
       <div className="px-4 sm:px-6 lg:px-8">
@@ -73,7 +79,13 @@ function Header({ sidebarOpen, setSidebarOpen }) {
             <Help align="right" /> */}
             {/*  Divider */}
             {/* <hr className="w-px h-6 bg-slate-200 mx-3" /> */}
-            <UserMenu align="right" />
+            {/* <UserMenu align="right" /> */}
+            <button
+              className="border-solid border-white bg-navBarColor text-secondaryColor font-semibold py-2 px-4 text-sm hover:bg-black hover:text-white transition"
+              onClick={() => logout()}
+            >
+              Log out
+            </button>
           </div>
         </div>
       </div>
