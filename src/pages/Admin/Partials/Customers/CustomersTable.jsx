@@ -198,8 +198,12 @@ function CustomersTable({ selectedItems, customers, setCustomers }) {
             </tbody>
           </table>
           {modalOpen ? (
-            <div className="fixed inset-0 w-full h-full z-40 flex justify-center mt-12 backdrop-blur">
-              <div className="bg-white shadow-2xl w-fit h-fit p-6 flex flex-col space-y-10">
+            <div className="fixed inset-0 w-full h-full z-40 flex justify-center backdrop-blur overflow-auto">
+              <div
+                className={`bg-white mt-16 shadow-2xl w-fit h-fit p-6 flex flex-col space-y-10 min-w-80 transform transition-transform ease-in-out duration-300 ${
+                  modalOpen ? 'translate-x-0' : 'translate-x-full'
+                }`}
+              >
                 <div className="text-lg font-semibold">View & extend user premium</div>
                 <div className="text-lg">ID: {selectedCustomerId}</div>
                 <div className="text-lg">Subscribe date: {date.subribeDate}</div>

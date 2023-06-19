@@ -24,32 +24,36 @@ function YourLevel() {
   return (
     <div className="level-container relative -mt-12 overflow-x-hidden flex flex-row h-full">
       <div
-        className={`h-full ${
+        className={`h-fit ${
           progressItems.length === 0 ? 'w-full items-center' : 'w-7/12'
         } bg-primaryColor flex flex-col py-20 relative`}
       >
         <div
           className={`flex max-w-full w-full ${
             progressItems.length === 0
-              ? 'justify-center items-center'
-              : 'justify-start items-center'
-          }  ml-20`}
+              ? 'justify-center items-center text-2xl lg:text-3xl 2xl:text-4xl font-bold'
+              : 'justify-start items-center ml-20 text-xl lg:text-2xl 2xl:text-3xl font-bold'
+          }`}
         >
-          <h2 className="text-white text-xl lg:text-xl 2xl:text-3xl">
-            Personalize Your Experience
-          </h2>
+          <h2 className="text-white">Continue your good work</h2>
           {/* <div className="bg-blue-300 text-base lg:text-4xl sm:text-sm ml-14 rounded-xl p-3">
             B1 Level
           </div> */}
         </div>
         <div
-          className={`w-1/2 text-secondaryColor mt-14 ml-20 text-lg lg:text-lg 2xl:text-xl text-justify`}
+          className={`w-2/3 text-secondaryColor mt-14  text-justify ${
+            progressItems.length === 0
+              ? 'text-xl lg:text-2xl 2xl:text-2xl font-semibold'
+              : 'text-lg lg:text-lg 2xl:text-xl ml-20 font-semibold'
+          }`}
         >
-          We offer a personalized experience to help you improve your English skills. With our
-          advanced technology, we can assess your language proficiency and preferences, and provide
-          you with customized learning materials tailored to your specific needs. Our platform
-          allows you to track your progress and receive feedback from our robust English language
-          tools.
+          We applaud your commitment to continuing your video progress and encourage you to keep up
+          the good work. Remember, learning is a journey, and every step forward counts. Embrace the
+          power of persistence and dedication as you explore new topics, acquire valuable skills,
+          and broaden your knowledge. Let us support you on this path of growth and inspire you to
+          achieve your learning goals. Together, we can embark on an exciting adventure of continual
+          progress and create a future filled with endless possibilities. Keep going, and enjoy the
+          transformative power of ongoing learning!
         </div>
       </div>
       <div className="level-recommend absolute">
