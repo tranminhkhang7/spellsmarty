@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 import Sidebar from '../Partials/Sidebar';
 import Header from '../Partials/Header';
@@ -8,6 +8,8 @@ import FilterButton from '../Components/DropdownFilter';
 import CustomersTable from '../Partials/Customers/CustomersTable';
 import PaginationClassic from '../Components/PaginationNumeric';
 import ModalBasic from '../Components/ModalBasic';
+import { fetchAllAccounts } from '../../../services/adminServices';
+
 function Customers() {
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const [selectedItems, setSelectedItems] = useState([]);
@@ -18,6 +20,35 @@ function Customers() {
 
   const [feedbackModalOpen, setFeedbackModalOpen] = useState(false);
   const [modalOpen, setModalOpen] = useState(true);
+  const [customers, setCustomers] = useState([]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await fetchAllAccounts(localStorage.getItem('token'));
+        setCustomers(response.data);
+      } catch (error) {
+        console.log('Error fetching users:', error);
+      }
+    };
+
+    fetchData();
+  }, []);
+
+  const [searchQuery, setSearchQuery] = useState('');
+  const handleSearchQuery = (e) => {
+    // console.log(e.target.value);
+    setSearchQuery(e.target.value);
+  };
+  const filteredCustomers = customers.filter((customer) => {
+    // Modify the following condition based on your data structure
+    return (
+      customer.username.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      customer.email.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      customer.name.toLowerCase().includes(searchQuery.toLowerCase())
+    );
+  });
+
   return (
     <div className="flex h-screen overflow-hidden bg-gray-200">
       {/* Sidebar */}
@@ -40,6 +71,8 @@ function Customers() {
                     type="text"
                     placeholder="Search..."
                     className="flex-grow px-2 outline-none bg-transparent"
+                    value={searchQuery}
+                    onChange={handleSearchQuery}
                   />
                   <button className="text-sm font-semibold ml-2 bg-indigo-500 hover:bg-indigo-600 text-white btn-xs">
                     Search
@@ -146,7 +179,11 @@ function Customers() {
             </div>
 
             {/* Table */}
-            <CustomersTable selectedItems={handleSelectedItems} />
+            <CustomersTable
+              selectedItems={handleSelectedItems}
+              customers={filteredCustomers}
+              setCustomers={setCustomers}
+            />
             {/* Pagination */}
             <div className="mt-8">{/* <PaginationClassic /> */}</div>
           </div>

@@ -1,9 +1,13 @@
-import { React, useState, useMemo, useCallback, useEffect } from 'react';
+import { React, useState } from 'react';
+import moment from 'moment';
+
 import { updateAccountPremium } from '../../../../services/adminServices';
 import styles from './CustomerTableItem.module.css';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-function CustomersTableItem(props) {
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCrown } from '@fortawesome/free-solid-svg-icons';
+function VideosTableItem(props) {
   const [isExpanded, setIsExpanded] = useState(false);
 
   const handleToggle = () => {
@@ -14,28 +18,28 @@ function CustomersTableItem(props) {
   const handleOpen = () => {
     setIsOpen(false);
   };
-  const formattedSubribeDate = useMemo(() => {
-    const date = new Date(props.subribeDate);
-    const day = String(date.getDate()).padStart(2, '0');
-    const month = String(date.getMonth() + 1).padStart(2, '0');
-    const year = String(date.getFullYear());
+  // const formattedSubribeDate = useMemo(() => {
+  //   const date = new Date(props.subribeDate);
+  //   const day = String(date.getDate()).padStart(2, '0');
+  //   const month = String(date.getMonth() + 1).padStart(2, '0');
+  //   const year = String(date.getFullYear());
 
-    return `${day}-${month}-${year}`;
-  }, [props.subribeDate]);
+  //   return `${day}-${month}-${year}`;
+  // }, [props.subribeDate]);
 
-  const formattedEndDate = useMemo(() => {
-    const date = new Date(props.endDate);
-    const day = String(date.getDate()).padStart(2, '0');
-    const month = String(date.getMonth() + 1).padStart(2, '0');
-    const year = String(date.getFullYear());
+  // const formattedEndDate = useMemo(() => {
+  //   const date = new Date(props.endDate);
+  //   const day = String(date.getDate()).padStart(2, '0');
+  //   const month = String(date.getMonth() + 1).padStart(2, '0');
+  //   const year = String(date.getFullYear());
 
-    return `${day}-${month}-${year}`;
-  }, [props.endDate]);
+  //   return `${day}-${month}-${year}`;
+  // }, [props.endDate]);
 
-  const handleViewPlanMemoized = useCallback(() => {
-    console.log(props.id);
-    props.handleViewPlan(props.id, formattedSubribeDate, formattedEndDate);
-  }, [props.id, formattedSubribeDate, formattedEndDate, props.handleViewPlan]);
+  // const handleViewPlanMemoized = useCallback(() => {
+  //   console.log(props.id);
+  //   props.handleViewPlan(props.id, formattedSubribeDate, formattedEndDate);
+  // }, [props.id, formattedSubribeDate, formattedEndDate, props.handleViewPlan]);
 
   const [inputValue, setInputValue] = useState('');
   const [isInputEmpty, setIsInputEmpty] = useState(false);
@@ -127,17 +131,20 @@ function CustomersTableItem(props) {
               alt={props.name}
             />
           </div> */}
-          <div className="font-medium text-slate-800">{props.username}</div>
+          <div className="font-medium text-slate-800">
+            {props.title}{' '}
+            {props.premium ? <FontAwesomeIcon style={{ color: '#f1c40f' }} icon={faCrown} /> : null}
+          </div>
         </div>
       </td>
       <td className="px-2 first:pl-5 last:pr-5 py-3 whitespace-nowrap">
-        <div className="text-left">{props.email}</div>
+        <div className="text-left">{props.rating}</div>
       </td>
       <td className="px-2 first:pl-5 last:pr-5 py-3 whitespace-nowrap">
-        <div className="text-left">{props.name}</div>
+        <div className="text-center">{props.level}</div>
       </td>
       <td className="px-2 first:pl-5 last:pr-5 py-3 whitespace-nowrap">
-        <div className="text-center">{props.planid === 1 ? `Free` : `Premium`}</div>
+        <div className="text-center">{moment(props.addedDate).format('MM-DD-YYYY')}</div>
       </td>
       {/* <td className="px-2 first:pl-5 last:pr-5 py-3 whitespace-nowrap">
         <div className="text-left font-medium text-sky-500">{props.lastOrder}</div>
@@ -146,63 +153,12 @@ function CustomersTableItem(props) {
         <div className="text-left font-medium text-emerald-500">{props.spent}</div>
       </td> */}
       <td className="px-2 first:pl-5 last:pr-5 py-3 whitespace-nowrap">
-        {props.planid === 1 ? (
-          <div className="flex justify-center items-center">
-            {isOpen ? (
-              <button
-                onClick={() => setIsOpen((prev) => !prev)}
-                className="btn bg-red-400 hover:bg-goldenColorDark text-center text-white !font-semibold !text-sm min-w-36"
-              >
-                Close
-              </button>
-            ) : (
-              <button
-                onClick={() => setIsOpen((prev) => !prev)}
-                className="btn bg-indigo-500 hover:bg-indigo-600 text-center text-white !font-semibold !text-sm min-w-36"
-              >
-                Upgrade
-              </button>
-            )}
-            <div
-              className={`flex flex-row space-x-4 overflow-hidden transition-all duration-700 ease-in-out ${
-                isOpen ? '2xl:w-2/3 xl:full' : `w-0`
-              }`}
-            >
-              <div
-                className={`border text-sm font-semibold flex items-center ml-3 border-gray-300 rounded-md p-2 focus-within:border-indigo-600 space-x-4 ${
-                  isInputEmpty ? 'border-red-500' : ''
-                }`}
-              >
-                <input
-                  type="text"
-                  placeholder="Months"
-                  required={true}
-                  className="outline-none bg-transparent w-14"
-                  value={inputValue}
-                  onChange={handleInputChange}
-                />
-              </div>
-              <button
-                onClick={() => handleConfirm(props.id, inputValue)}
-                className="btn-xs bg-primaryColor text-white !text-sm min-w-12"
-              >
-                OK
-              </button>
-              {/* <button onClick={handleOpen} className="btn-xs bg-goldenColor text-white">
-                Close
-              </button> */}
-            </div>
-          </div>
-        ) : (
-          <div className="flex justify-center items-center space-x-4">
-            <button
-              onClick={handleViewPlanMemoized}
-              className="btn bg-goldenColor  text-center text-white !font-semibold !text-sm min-w-36"
-            >
-              View Plan
-            </button>
-          </div>
-        )}
+        <button
+          className="btn bg-indigo-500 hover:bg-indigo-600 text-white"
+          onClick={() => props.handleUpdateVideo(props.video)}
+        >
+          Details
+        </button>
       </td>
       {/* Menu button */}
       {/* <td className="px-2 first:pl-5 last:pr-5 py-3 whitespace-nowrap w-px">
@@ -219,4 +175,4 @@ function CustomersTableItem(props) {
   );
 }
 
-export default CustomersTableItem;
+export default VideosTableItem;
