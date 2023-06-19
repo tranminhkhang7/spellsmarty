@@ -50,7 +50,7 @@ function CustomersTableItem(props) {
     if (inputValue.trim() === '') {
       setIsInputEmpty(true);
     } else {
-      const token = '';
+      const token = localStorage.getItem('token');
       const id = toast.loading('Please wait...', { className: 'text-sm' });
       updateAccountPremium(token, accountId, months)
         .then((response) => {
