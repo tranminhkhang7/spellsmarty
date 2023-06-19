@@ -187,7 +187,10 @@ function VideosTable({ selectedItems, videos, setVideos }) {
                     </div>
                   ))}
                 </div>
-                <div className="border border-indigo-400">
+                <label htmlFor="id" className="text-lg">
+                  Description
+                </label>
+                <div id="description" className="border border-indigo-400">
                   <textarea className="w-full p-2" value={singleVideo.videoDescription}></textarea>
                 </div>
                 {/* <div className="border-indigo-400">
@@ -205,12 +208,12 @@ function VideosTable({ selectedItems, videos, setVideos }) {
                   >
                     Close
                   </button>
-                  <button
+                  {/* <button
                     onClick={null}
                     className="btn-xs !text-lg bg-indigo-500 hover:bg-indigo-600 text-white"
                   >
                     Extend
-                  </button>
+                  </button> */}
                 </div>
               </div>
             </div>

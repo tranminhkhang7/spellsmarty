@@ -92,7 +92,7 @@ function Videos() {
                 <button
                   onClick={(e) => {
                     e.stopPropagation();
-                    setFeedbackModalOpen(true);
+                    //setFeedbackModalOpen(true);
                   }}
                   className="btn bg-indigo-500 hover:bg-indigo-600 text-white"
                 >
