@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import Customer from './CustomersTableItem';
-import { fetchAllAccounts } from '../../../../services/adminServices';
-import { updateAccountPremium } from '../../../../services/adminServices';
+import Video from './VideosTableItem';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCrown } from '@fortawesome/free-solid-svg-icons';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
-function CustomersTable({ selectedItems, customers, setCustomers }) {
+function VideosTable({ selectedItems, videos, setVideos }) {
   const [selectAll, setSelectAll] = useState(false);
   const [isCheck, setIsCheck] = useState([]);
   // const [list, setList] = useState([]);
@@ -36,59 +36,14 @@ function CustomersTable({ selectedItems, customers, setCustomers }) {
     setInputValue(event.target.value);
     setIsInputEmpty(false);
   };
-  const handleConfirm = (accountId, months) => {
-    if (inputValue.trim() === '') {
-      setIsInputEmpty(true);
-    } else {
-      const token = localStorage.getItem('token');
-      const id = toast.loading('Please wait...', { className: 'text-sm' });
-      updateAccountPremium(token, accountId, months)
-        .then((response) => {
-          console.log(response.data);
-          setInputValue('');
-          setModalOpen(false);
-          updateCustomer(response.data);
-          if (response.data) {
-            toast.update(id, {
-              render: 'Extend success',
-              type: 'success',
-              isLoading: false,
-              autoClose: 5000,
-              className: 'text-sm',
-            });
-          }
-        })
-        .catch((_) => {
-          toast.update(id, {
-            render: 'Something went wrong',
-            type: 'error',
-            isLoading: false,
-            autoClose: 5000,
-            className: 'text-sm',
-          });
-        });
-      setIsInputEmpty(false);
-    }
-  };
-  const updateCustomer = (updatedCustomer) => {
-    const updatedList = customers.map((customer, index) => {
-      if (customer.id === updatedCustomer.id) {
-        // Update the specific item
-        return { ...updatedCustomer };
-      }
-      // Return the unchanged item
-      return customer;
-    });
 
-    setCustomers(updatedList);
-  };
-  const handleSelectAll = () => {
-    setSelectAll(!selectAll);
-    setIsCheck(customers.map((li) => li.id));
-    if (selectAll) {
-      setIsCheck([]);
-    }
-  };
+  // const handleSelectAll = () => {
+  //   setSelectAll(!selectAll);
+  //   setIsCheck(customers.map((li) => li.id));
+  //   if (selectAll) {
+  //     setIsCheck([]);
+  //   }
+  // };
 
   const handleClick = (e) => {
     const { id, checked } = e.target;
@@ -107,20 +62,25 @@ function CustomersTable({ selectedItems, customers, setCustomers }) {
   const [modalOpen, setModalOpen] = useState(false);
   const [date, setDate] = useState(null);
   const [selectedCustomerId, setSelectedCustomerId] = useState('');
-  const handleViewPlan = (customerId, subribeDate, endDate) => {
-    console.log(`${subribeDate} ${endDate} ${customerId}`);
-    setDate({ subribeDate, endDate });
-    setSelectedCustomerId(customerId);
+  // const handleViewPlan = (customerId, subribeDate, endDate) => {
+  //   console.log(`${subribeDate} ${endDate} ${customerId}`);
+  //   setDate({ subribeDate, endDate });
+  //   setSelectedCustomerId(customerId);
+  //   setModalOpen(!modalOpen);
+  // };
+
+  const [singleVideo, setSingleVideo] = useState({});
+  const handleUpdateVideo = (video) => {
+    setSingleVideo(video);
     setModalOpen(!modalOpen);
   };
-
   const [selectedCustomer, setSelectedCustomer] = useState(null);
   return (
     <div className="bg-white shadow-lg rounded-sm border border-slate-200 relative">
       <ToastContainer />
       <header className="px-5 py-5">
         <h2 className="text-lg font-semibold text-slate-800">
-          All Customers <span className="text-slate-400 font-semibold">{customers.length}</span>
+          All Videos <span className="text-slate-400 font-semibold">{videos.length}</span>
         </h2>
       </header>
       <div>
@@ -147,22 +107,22 @@ function CustomersTable({ selectedItems, customers, setCustomers }) {
                   <span className="sr-only">Favourite</span>
                 </th> */}
                 <th className="px-4 first:pl-5 last:pr-5 py-4 whitespace-nowrap">
-                  <div className="font-semibold text-left">User Id</div>
+                  <div className="font-semibold text-left">Video Id</div>
                 </th>
                 <th className="px-4 first:pl-5 last:pr-5 py-4 whitespace-nowrap">
-                  <div className="font-semibold text-left">User Name</div>
+                  <div className="font-semibold text-left">Title</div>
                 </th>
                 <th className="px-4 first:pl-5 last:pr-5 py-4 whitespace-nowrap">
-                  <div className="font-semibold text-left">Email</div>
+                  <div className="font-semibold text-left">Rating</div>
                 </th>
                 <th className="px-4 first:pl-5 last:pr-5 py-4 whitespace-nowrap">
-                  <div className="font-semibold text-left">Full Name</div>
+                  <div className="font-semibold text-left">Level</div>
                 </th>
                 {/* <th className="px-4 first:pl-5 last:pr-5 py-4 whitespace-nowrap">
                   <div className="font-semibold">Orders</div>
                 </th> */}
                 <th className="px-4 first:pl-5 last:pr-5 py-4 whitespace-nowrap">
-                  <div className="font-semibold">Plan Type</div>
+                  <div className="font-semibold">Add Date</div>
                 </th>
                 {/* <th className="px-4 first:pl-5 last:pr-5 py-4 whitespace-nowrap">
                   <div className="font-semibold text-left">Total spent</div>
@@ -170,71 +130,90 @@ function CustomersTable({ selectedItems, customers, setCustomers }) {
                 <th className="px-4 first:pl-5 last:pr-5 py-4 whitespace-nowrap">
                   <div className="font-semibold">Actions</div>
                 </th>
-                <th className="px-4 first:pl-5 last:pr-5 py-4 whitespace-nowrap">
+                {/* <th className="px-4 first:pl-5 last:pr-5 py-4 whitespace-nowrap">
                   <span className="sr-only">Menu</span>
-                </th>
+                </th> */}
               </tr>
             </thead>
             {/* Table body */}
             <tbody className="text-sm divide-y divide-slate-200">
-              {customers.map((customer) => {
+              {videos.map((video) => {
                 return (
-                  <Customer
-                    key={customer.id}
-                    id={customer.id}
-                    username={customer.username}
-                    name={customer.name}
-                    email={customer.email}
-                    handleClick={handleClick}
-                    planid={customer.planid}
-                    subribeDate={customer.subribeDate}
-                    endDate={customer.endDate}
-                    isChecked={isCheck.includes(customer.id)}
-                    handleViewPlan={handleViewPlan}
-                    handleUpdateCustomer={updateCustomer}
+                  <Video
+                    key={video.videoid}
+                    id={video.videoid}
+                    subtitle={video.subtitle}
+                    srcId={video.srcId}
+                    title={video.title}
+                    rating={video.rating}
+                    thumbnailLink={video.thumbnailLink}
+                    channelName={video.channelName}
+                    learntCount={video.learntCount}
+                    videoDescription={video.videoDescription}
+                    level={video.level}
+                    addedDate={video.addedDate}
+                    videoGenres={video.videoGenres}
+                    premium={video.premium}
+                    handleUpdateVideo={handleUpdateVideo}
+                    video={video}
                   />
                 );
               })}
             </tbody>
           </table>
           {modalOpen ? (
-            <div className="fixed inset-0 w-full h-full z-40 flex justify-center backdrop-blur overflow-auto">
+            <div className="fixed inset-0 w-full h-full z-40 flex justify-center  backdrop-blur overflow-auto ">
               <div
-                className={`bg-white mt-16 shadow-2xl w-fit h-fit p-6 flex flex-col space-y-10 min-w-80 transform transition-transform ease-in-out duration-300 ${
+                className={`bg-white mt-12 shadow-2xl w-fit h-fit p-6 flex flex-col space-y-10 max-w-100 transform transition-transform ease-in-out duration-300 ${
                   modalOpen ? 'translate-x-0' : 'translate-x-full'
                 }`}
               >
-                <div className="text-lg font-semibold">View & extend user premium</div>
-                <div className="text-lg">ID: {selectedCustomerId}</div>
-                <div className="text-lg">Subscribe date: {date.subribeDate}</div>
-                <div className="text-lg">End Date: {date.endDate}</div>
-                <div
-                  className={`border text-sm font-semibold flex items-center border-gray-300 rounded-md p-2 focus-within:border-indigo-600 space-x-4 ${
-                    isInputEmpty ? 'border-red-500' : ''
-                  }`}
-                >
-                  <input
-                    type="number"
-                    placeholder="Months"
-                    required={true}
-                    className="outline-none bg-transparent w-full"
-                    value={inputValue}
-                    onChange={handleInputChange}
-                  />
+                {/* Modal content */}{' '}
+                <div className="text-lg font-semibold">
+                  {singleVideo.title}
+                  {singleVideo.premium ? (
+                    <FontAwesomeIcon style={{ color: '#f1c40f' }} icon={faCrown} />
+                  ) : null}
                 </div>
+                <div className="text-lg">
+                  <img className="w-auto h-44 m-auto" src={singleVideo.thumbnailLink}></img>
+                </div>
+                <div className="text-lg">Channel: {singleVideo.channelName}</div>
+                <div className="text-lg">Learnt: {singleVideo.learntCount}</div>
+                <div className="grid grid-cols-3 gap-2">
+                  {singleVideo.videoGenres.map((genre, index) => (
+                    <div key={index} className="btn-xs bg-indigo-400">
+                      {genre}
+                    </div>
+                  ))}
+                </div>
+                <label htmlFor="id" className="text-lg">
+                  Description
+                </label>
+                <div id="description" className="border border-indigo-400">
+                  <textarea className="w-full p-2" value={singleVideo.videoDescription}></textarea>
+                </div>
+                {/* <div className="border-indigo-400">
+                  <textarea
+                    className="resize-y rounded-md w-full p-2 text-sm"
+                    value={JSON.stringify(singleVideo.subtitle, null, 2)}
+                    rows={10}
+                    cols={80}
+                  ></textarea>
+                </div> */}
                 <div className="flex justify-end mt-3">
                   <button
-                    onClick={handleViewPlan}
+                    onClick={handleUpdateVideo}
                     className="btn-xs !text-lg bg-gray-300 hover:bg-gray-400 text-gray-800 mr-2"
                   >
                     Close
                   </button>
-                  <button
-                    onClick={() => handleConfirm(selectedCustomerId, inputValue)}
+                  {/* <button
+                    onClick={null}
                     className="btn-xs !text-lg bg-indigo-500 hover:bg-indigo-600 text-white"
                   >
                     Extend
-                  </button>
+                  </button> */}
                 </div>
               </div>
             </div>
@@ -247,4 +226,4 @@ function CustomersTable({ selectedItems, customers, setCustomers }) {
   );
 }
 
-export default CustomersTable;
+export default VideosTable;

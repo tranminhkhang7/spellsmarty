@@ -1,14 +1,17 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 import Sidebar from '../Partials/Sidebar';
 import Header from '../Partials/Header';
 import DeleteButton from '../Partials/Actions/DeleteButton';
 import DateSelect from '../Components/DateSelect';
 import FilterButton from '../Components/DropdownFilter';
-import CustomersTable from '../Partials/Customers/CustomersTable';
+import VideosTable from '../Partials/Videos/VideosTable';
 import PaginationClassic from '../Components/PaginationNumeric';
 import ModalBasic from '../Components/ModalBasic';
-function Customers() {
+import { fetchAllAccounts } from '../../../services/adminServices';
+import { fetchVideos } from '../../../services/homeServices';
+
+function Videos() {
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const [selectedItems, setSelectedItems] = useState([]);
 
@@ -18,6 +21,31 @@ function Customers() {
 
   const [feedbackModalOpen, setFeedbackModalOpen] = useState(false);
   const [modalOpen, setModalOpen] = useState(true);
+  const [videos, setVideos] = useState([]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await fetchVideos();
+        setVideos(response.data);
+      } catch (error) {
+        console.log('Error fetching users:', error);
+      }
+    };
+
+    fetchData();
+  }, []);
+
+  const [searchQuery, setSearchQuery] = useState('');
+  const handleSearchQuery = (e) => {
+    // console.log(e.target.value);
+    setSearchQuery(e.target.value);
+  };
+  const filteredVideos = videos.filter((video) => {
+    // Modify the following condition based on your data structure
+    return video.title.toLowerCase().includes(searchQuery.toLowerCase());
+  });
+
   return (
     <div className="flex h-screen overflow-hidden bg-gray-200">
       {/* Sidebar */}
@@ -34,12 +62,14 @@ function Customers() {
             <div className="sm:flex sm:justify-between sm:items-center mb-8">
               {/* Left: Title */}
               <div className="mb-4 sm:mb-0 flex space-x-4 items-center">
-                <h1 className="text-2xl md:text-2xl text-slate-800 font-bold">Customers ✨</h1>
+                <h1 className="text-2xl md:text-2xl text-slate-800 font-bold">Videos ✨</h1>
                 <div className="text-sm font-semibold flex items-center border border-gray-300 rounded-md p-1 focus-within:border-indigo-600">
                   <input
                     type="text"
                     placeholder="Search..."
                     className="flex-grow px-2 outline-none bg-transparent"
+                    value={searchQuery}
+                    onChange={handleSearchQuery}
                   />
                   <button className="text-sm font-semibold ml-2 bg-indigo-500 hover:bg-indigo-600 text-white btn-xs">
                     Search
@@ -62,7 +92,7 @@ function Customers() {
                 <button
                   onClick={(e) => {
                     e.stopPropagation();
-                    setFeedbackModalOpen(true);
+                    //setFeedbackModalOpen(true);
                   }}
                   className="btn bg-indigo-500 hover:bg-indigo-600 text-white"
                 >
@@ -146,7 +176,11 @@ function Customers() {
             </div>
 
             {/* Table */}
-            <CustomersTable selectedItems={handleSelectedItems} />
+            <VideosTable
+              selectedItems={handleSelectedItems}
+              videos={filteredVideos}
+              setVideos={setVideos}
+            />
             {/* Pagination */}
             <div className="mt-8">{/* <PaginationClassic /> */}</div>
           </div>
@@ -156,4 +190,4 @@ function Customers() {
   );
 }
 
-export default Customers;
+export default Videos;
