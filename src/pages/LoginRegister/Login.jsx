@@ -37,7 +37,12 @@ const Login = () =>{
 			localStorage.setItem('token', response.data.token);
 			localStorage.setItem('username', response.data.name);
 			localStorage.setItem('role', response.data.role);
-			navigate('/');
+			console.log(response.data.role);
+			if(response.data.role === 'Admin' || response.data.role === 'Staff'){
+				navigate('/admin/customers');
+			}else{
+				navigate('/');
+			}
 		})
 		.catch(function (error) {
 			console.log(error);
