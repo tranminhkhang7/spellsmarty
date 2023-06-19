@@ -79,20 +79,15 @@ const SearchPage = () => {
         {/* <div id="background-item"></div> */}
         <div className="flex items-center mb-4">
           <form action="/search" method="GET" className="w-full" onSubmit={handleSearch}>
-            <div className="flex items-center border-2 content-center rounded-md mb-10 text-lg">
+            <div className="flex items-center border-2 border-black-50 content-center mb-10 text-lg">
               <input
-                type="text"
-                value={keyword}
-                onChange={searchDynamic}
-                placeholder="How America’s richest donate their money"
-                className="px-4 py-2 w-full rounded-l-md  hover:border-grey-300/50 focus:outline-none focus:ring-2 focus:ring-blue-500/50 text-center"
-              />
-              <button
-                onClick={handleSearch}
-                className="px-4 py-2 text-black rounded-r-md hover:bg-blue-500/50 focus:outline-none focus:ring-2 focus:ring-blue-500"
-              >
-                Search
-              </button>
+                  type="text"
+                  value={keyword}
+                  onChange={searchDynamic}
+                  placeholder="Search your favorite video"
+                  className="px-4 py-2 w-full hover:border-grey-300/50 focus:outline-none focus:ring-2 focus:ring-black text-center"
+                />
+
             </div>
             <div className="flex items-center justify-between mb-4 text-lg">
               <select
@@ -144,6 +139,7 @@ const SearchPage = () => {
             </div>
           </form>
         </div>
+
         {alteration === 0 ?
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
             {filteredData.map((video, index) => (
@@ -161,7 +157,7 @@ const SearchPage = () => {
             ))}
           </div>
           :
-          <div className="image-grid" style={{marginLeft: '0px', marginRight: '0px'}}>
+          <div className="image-grid" style={{ marginLeft: '0px', marginRight: '0px' }}>
             {filteredData?.map((video, index) => (
               <div className="grid-item" key={index} onClick={() => handleClick(video?.videoid)}>
                 <div className="grid-item-content">

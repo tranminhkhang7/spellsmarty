@@ -1,5 +1,5 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 const VideoCard = ({
   srcId,
@@ -18,8 +18,9 @@ const VideoCard = ({
   };
 
   return (
+    <Link to={`/video/${videoId}`}>
     <div
-      onClick={handleClick}
+      // onClick={handleClick}
       className="bg-white rounded-lg shadow-lg transition duration-300 ease-out hover:-translate-y-3  hover:ease-in hover:shadow-black cursor-pointer"
     >
       <div className="relative">
@@ -35,6 +36,7 @@ const VideoCard = ({
         {/* <p className="text-gray-600">{views} views</p> */}
       </div>
     </div>
+    </Link>
   );
 };
 

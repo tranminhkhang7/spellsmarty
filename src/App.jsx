@@ -15,7 +15,11 @@ import VerifyPage from './pages/VerifyPage/VerifyPage';
 import YouTubeVideo_SubEdit from './components/SingleVideo/YoutubeVideo_SubEdit';
 import UserRouter from './routers/UserRouter';
 import NoRoleRouter from './routers/NoRoleRouter';
+
 import AdminRouter from './routers/AdminRouter';
+
+import Login from './pages/LoginRegister/Login';
+import Register from './pages/LoginRegister/Register';
 const App = () => {
   return (
     <div className="app">
@@ -48,10 +52,11 @@ const App = () => {
               </NoRoleRouter>
             }
           >
-            <Route path="/signin" element={<Signin />} />
-            <Route path="/signup" element={<Signup />} />
+            <Route path="/signin" element={<Login />} />
+            <Route path="/signup" element={<Register />} />
           </Route>
 
+          <Route path="*" element={<NotFoundPage />} />
           <Route
             path="/admin"
             element={
@@ -63,7 +68,6 @@ const App = () => {
             <Route path="customers" element={<Customers />} />
             <Route path="videos" element={<Videos />} />
           </Route>
-          <Route path="*" element={<NotFoundPage />} />
         </Routes>
       </Router>
     </div>

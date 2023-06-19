@@ -8,8 +8,8 @@ import { Link, useParams } from 'react-router-dom';
 import { fetchVideoByVideoId, saveProgress } from '../../services/videoServices';
 import NotFoundVideo from '../NotFoundVideo/NotFoundVideo';
 import { Tooltip } from 'react-tooltip'
-
-
+import { ToastContainer, Zoom, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const YouTubeVideo = () => {
     // const [videoId, setVideoId] = useState('')
@@ -82,6 +82,11 @@ const YouTubeVideo = () => {
         fetchVideo();
     }, []);
 
+    useEffect(() => {
+        const notify = () => toast("You are not logged in yet. All your progress will not be saved! ");
+        if (!localStorage.getItem('token')) notify();
+    }, []);
+
     function normalize(str) {
         if (str === undefined) { } else
             return str.replace(/[^a-zA-Z0-9 ]/g, '').toUpperCase().replace('  ', ' ');
@@ -94,6 +99,8 @@ const YouTubeVideo = () => {
         // return letterCounts;
         return words;
     }
+
+    const playerRef = useRef(null);
 
     function play(currentIndex) {
         clearTimeout(timeoutId);
@@ -111,8 +118,12 @@ const YouTubeVideo = () => {
             setTimeoutId(id);
         }
     }
+    function onPlayerError(event) {
+        console.log("Error playing video");
+      }
 
-    const playerRef = useRef(null);
+    console.log("moi vo ne", videoSrcId);
+    
     useEffect(() => {
         // Load YouTube API script
         const tag = document.createElement('script');
@@ -127,15 +138,21 @@ const YouTubeVideo = () => {
             const width = container?.offsetWidth;
             const height = (width / 16) * 9; // Assuming 16:9 aspect ratio
 
+            console.log("ksss", videoSrcId);
             playerRef.current = new window.YT.Player('youtube-player', {
                 height: `${height}px`,
                 width: width,
-                videoId: videoSrcId,
-                playerVars: {
+                videoId: videoSrcId ? videoSrcId : '5LyksSB6APY',
+                // sử dụng props sẽ giải quyết đc cái màn hình đen
+                playerVars: {                    
                     autoplay: 0, // Disable autoplay  
                     controls: 0, // Disable default controls
                     disablekb: 1, // Disable keyboard controls 
                 },
+                events: {
+                    'onError': onPlayerError,
+                    
+                  }
             });
         };
     }, [videoSrcId]);
@@ -236,7 +253,9 @@ const YouTubeVideo = () => {
 
     function handleReload() {
         window.location.reload()
-    }
+    } 
+    
+    
 
     if (!isLoadSuccess) return (<NotFoundVideo />);
     else
@@ -298,7 +317,15 @@ const YouTubeVideo = () => {
                                     &nbsp;<Link to='/profile' style={{ textDecoration: "underline" }}>UPGRADE</Link>&nbsp;
                                     to dictate this video!
                                 </div>
-                                : <></>
+                                : 
+                                !data && !localStorage.getItem('role') ? <>
+                                <div className="upgrage-info">
+                                    Please
+                                    &nbsp;<Link to='/signin' style={{ textDecoration: "underline" }}>LOG IN</Link>&nbsp;
+                                    to dictate this video!
+                                </div>
+                                </> :                                
+                                <></>
                             }
 
                             <div className="container-dictation">
@@ -403,6 +430,21 @@ const YouTubeVideo = () => {
                 <Tooltip id="play-tooltip" style={{ fontSize: '14px' }} />
                 <Tooltip id="correct-line-tooltip" style={{ fontSize: '14px', width: '250px', textAlign: 'center' }} place='left' />
                 <Tooltip id="premium-tooltip" style={{ fontSize: '14px', width: '250px' }} />
+                <ToastContainer
+                    position="bottom-center"
+                    autoClose={7000}
+                    hideProgressBar={false}
+                    newestOnTop={false}
+                    closeOnClick
+                    rtl={false}
+                    pauseOnFocusLoss
+                    draggable
+                    pauseOnHover
+                    theme="colored"
+                    transition={Zoom}
+                    style={{fontSize: '18px'}}
+                />
+                
 
             </>
         );
