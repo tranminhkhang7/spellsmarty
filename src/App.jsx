@@ -42,6 +42,7 @@ const App = () => {
             <Route exact path="/profile" element={<ProfilePage />} />
             <Route exact path="/about" element={<AboutPage />} />
             <Route exact path="/verify/:verifyToken" element={<VerifyPage />} />
+            <Route path="/admin/customers" element={<Customers />} />
           </Route>
 
           <Route
