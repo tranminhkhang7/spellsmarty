@@ -42,7 +42,7 @@ const Navbar = () => {
           </Link>
         </li>
         <li>
-          <Link to="/search" className="text-secondaryColor hover:text-gray-600">
+          <Link to="/search" className="text-secondaryColor hover:text-gray-600" >
             Videos
           </Link>
         </li>
@@ -61,38 +61,35 @@ const Navbar = () => {
             About Us
           </Link>
         </li>
-        {location.pathname === '/search' ? (
-          <></>
-        ) : (
           <li>
-            <div className="relative text-gray-400 focus-within:text-gray-600">
-              <form onSubmit={handleSearch}>
-                <input
-                  value={inputValue}
-                  onChange={handleChange}
-                  type="text"
-                  className="bg-searchBarColor px-5 py-3 w-full md:w-96 shadow-lg placeholder-searchBarPlaceHolder text-searchBarPlaceHolder"
-                  placeholder="Search your favorite video"
-                />
-              </form>
-              {/* <FiSearch className="absolute top-1/4 left-3/4 ml-10" /> */}
-            </div>
-          </li>
-        )}
+          <div className="relative text-gray-400 focus-within:text-gray-600 " style={{visibility: location.pathname === '/search' ? 'hidden' : 'visible'}}>
+            <form onSubmit={handleSearch}>
+              <input
+                value={inputValue}
+                onChange={handleChange}
+                type="text"
+                className="transition border-solid border-black border focus:border-solid focus:border-white transition bg-searchBarColor px-5 py-3 w-full md:w-96 shadow-lg placeholder-searchBarPlaceHolder text-searchBarPlaceHolder"
+                placeholder="Search your favorite video"
+                style={{ "--placeholder-color": "red" }}
+              />
+            </form>
+            {/* <FiSearch className="absolute top-1/4 left-3/4 ml-10" /> */}
+          </div>
+        </li>
       </ul>
 
       <div className="ml-auto flex space-x-6">
         {token ? (
           <div className="flex flex-row justify-center items-center space-x-4">
             <Link to="/profile">
-              <div className="flex flex-1 items-center text-secondaryColor overflow-hidden whitespace-nowrap text-sm">
+              <div className="flex flex-1 items-center text-secondaryColor overflow-hidden whitespace-nowrap text-sm hover:text-gray-600">
                 <FiUser className="mr-2" />
                 {userName}
               </div>
             </Link>
 
             <button
-              className="bg-secondaryColor text-primaryColor font-semibold py-2 px-4 text-sm"
+              className="border-solid border-white bg-white text-black font-semibold py-2 px-4 text-sm hover:bg-black hover:text-white transition"
               onClick={() => logout()}
             >
               Log out
