@@ -51,32 +51,33 @@ function CustomersTableItem(props) {
       setIsInputEmpty(true);
     } else {
       const token = localStorage.getItem('token');
-      const id = toast.loading('Please wait...', { className: 'text-sm' });
-      updateAccountPremium(token, accountId, months)
-        .then((response) => {
-          // Handle the response
-          setInputValue('');
-          if (response.data) {
-            toast.update(id, {
-              render: 'Upgrade success',
-              type: 'success',
-              isLoading: false,
-              autoClose: 5000,
-              className: 'text-sm',
-            });
-          }
-          props.handleUpdateCustomer(response.data);
-        })
-        .catch((error) => {
-          // Handle the error
-          toast.update(id, {
-            render: 'Something went wrong',
-            type: 'error',
-            isLoading: false,
-            autoClose: 5000,
-            className: 'text-sm',
-          });
-        });
+      console.log(token);
+      // const id = toast.loading('Please wait...', { className: 'text-sm' });
+      // updateAccountPremium(token, accountId, months)
+      //   .then((response) => {
+      //     // Handle the response
+      //     setInputValue('');
+      //     if (response.data) {
+      //       toast.update(id, {
+      //         render: 'Upgrade success',
+      //         type: 'success',
+      //         isLoading: false,
+      //         autoClose: 5000,
+      //         className: 'text-sm',
+      //       });
+      //     }
+      //     props.handleUpdateCustomer(response.data);
+      //   })
+      //   .catch((error) => {
+      //     // Handle the error
+      //     toast.update(id, {
+      //       render: 'Something went wrong',
+      //       type: 'error',
+      //       isLoading: false,
+      //       autoClose: 5000,
+      //       className: 'text-sm',
+      //     });
+      //   });
       setIsInputEmpty(false);
     }
   };
