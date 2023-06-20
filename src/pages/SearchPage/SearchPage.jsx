@@ -96,7 +96,7 @@ const SearchPage = () => {
             </div>
             <div className="flex items-center justify-between mb-4 text-lg">
               <select
-                className="w-1/5 px-4 py-2 rounded-md border border-gray-300 text-center text-grey-500 focus:outline-none focus:ring-1 focus:ring-blue-500/50"
+                className="w-1/5 px-4 py-2 border border-gray-300 text-center text-grey-500 focus:outline-none focus:ring-1 focus:ring-blue-500/50"
                 value={level}
                 onChange={(e) => setLevel(e.target.value)}
               >
@@ -111,7 +111,7 @@ const SearchPage = () => {
                 <option value="C1">C1</option>
               </select>
 
-              <select className="w-1/5 px-4 py-2 rounded-md border border-gray-300 text-center text-grey-500 focus:outline-none focus:ring-1 focus:ring-blue-500/50">
+              <select disabled className="w-1/5 px-4 py-2 border border-gray-300 text-center text-grey-500 focus:outline-none focus:ring-1 focus:ring-blue-500/50">
                 <option value="" disabled selected hidden>
                   Length
                 </option>
@@ -122,8 +122,9 @@ const SearchPage = () => {
               </select>
 
               <select
+                disabled
                 name="category"
-                className="w-1/5 px-4 py-2 rounded-md border border-gray-300 text-center text-grey-500 focus:outline-none focus:ring-1 focus:ring-blue-500/50"
+                className="w-1/5 px-4 py-2 border border-gray-300 text-center text-grey-500 focus:outline-none focus:ring-1 focus:ring-blue-500/50"
               >
                 <option value="" disabled selected hidden>
                   Category
@@ -133,7 +134,7 @@ const SearchPage = () => {
                 <option value="option3">Vlog</option>
               </select>
 
-              <select className="w-1/5 px-4 py-2 rounded-md border border-gray-300 text-center text-grey-500 focus:outline-none focus:ring-1 focus:ring-blue-500/50">
+              <select disabled className="w-1/5 px-4 py-2 border border-gray-300 text-center text-grey-500 focus:outline-none focus:ring-1 focus:ring-blue-500/50">
                 <option value="" disabled selected hidden>
                   Accent
                 </option>
