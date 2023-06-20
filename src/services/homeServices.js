@@ -7,7 +7,6 @@ export const fetchVideos = async () => {
 };
 
 export const fetchVideosByUserId = async (token) => {
-  console.log(token);
   return await await axios
     .get('/Video/GetVideoByUserId', {
       headers: {

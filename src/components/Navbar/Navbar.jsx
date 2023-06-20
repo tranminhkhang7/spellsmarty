@@ -17,7 +17,8 @@ const Navbar = () => {
   const navigate = useNavigate();
   const handleSearch = (e) => {
     e.preventDefault();
-    navigate(`/search?q=${inputValue}`);
+    const cacheBuster = Date.now();
+    navigate(`/search?q=${inputValue}&upd=${cacheBuster}`);
   };
   const location = useLocation();
 
@@ -32,7 +33,7 @@ const Navbar = () => {
     <nav className="bg-navBarColor px-8 flex flex-wrap items-center">
       <div className="text-xl font-bold text-white">
         <Link to="/">
-          <img width={70} src={require('../../assets/logo.png')} alt="Logo" />
+          <img width={90} src={require('../../assets/logo-2.png')} alt="Logo" />
         </Link>
       </div>
       <ul className="ml-10 py-4 space-x-14 flex flex-wrap md:flex-nowrap items-center text-sm">

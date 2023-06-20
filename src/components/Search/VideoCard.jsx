@@ -12,8 +12,9 @@ const VideoCard = ({
   views,
 }) => {
   const navigator = useNavigate();
-
+  
   const handleClick = () => {
+    
     navigator(`/video/${videoId}`);
   };
 

@@ -1,12 +1,16 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import YouTubeVideo from '../../components/SingleVideo/YoutubeVideo';
 import FromThisCreator from '../../components/SingleVideo/FromThisCreator';
 import Related from '../../components/SingleVideo/Related';
 import Navbar from '../../components/Navbar/Navbar';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import Footer from '../../components/Navbar/Footer';
+import { fetchVideoByVideoId } from '../../services/videoServices';
 
 const SingleVideo = () => {
+
+
+
     useEffect(() => {
         window.scrollTo(0, 0);
     }, []);
@@ -15,7 +19,7 @@ const SingleVideo = () => {
         <>
             <Navbar />
             <YouTubeVideo />
-            <FromThisCreator />
+            {/* <FromThisCreator /> */}
             <Related />
             <Footer />
         </>

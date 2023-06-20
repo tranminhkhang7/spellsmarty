@@ -25,7 +25,7 @@ const YouTubeVideo = () => {
     const [timeoutId, setTimeoutId] = useState(null);
 
     const [isLoadSuccess, setIsLoadSuccess] = useState(true);
-    const [isVideoReady, setIsVideoReady] = useState(false);
+    const [isVideoReady, setIsVideoReady] = useState(true);
 
     const [isCorrect, setIsCorrect] = useState([]);
 
@@ -80,6 +80,7 @@ const YouTubeVideo = () => {
 
     useEffect(() => {
         fetchVideo();
+        document.title = videoTitle ? videoTitle : "SpellSmarty";
     }, []);
 
     useEffect(() => {
@@ -89,7 +90,7 @@ const YouTubeVideo = () => {
 
     function normalize(str) {
         if (str === undefined) { } else
-            return str.replace(/[^a-zA-Z0-9 ]/g, '').toUpperCase().replace('  ', ' ');
+            return str.replace(/[^a-zA-Z0-9 ]/g, '').toUpperCase().replace('  ', ' ').trim();
     }
 
     function countWords(str) {
@@ -118,13 +119,15 @@ const YouTubeVideo = () => {
             setTimeoutId(id);
         }
     }
-    function onPlayerError(event) {
-        console.log("Error playing video");
-      }
 
-    console.log("moi vo ne", videoSrcId);
-    
-    useEffect(() => {
+    // console.log("moi vo ne", videoSrcId);
+
+    function onPlayerReady(event) {
+        console.log("load r", videoSrcId);
+    }
+
+    function prepareToPlay() {
+
         // Load YouTube API script
         const tag = document.createElement('script');
         tag.src = 'https://www.youtube.com/iframe_api';
@@ -133,28 +136,29 @@ const YouTubeVideo = () => {
 
         // Initialize YouTube player when API script is loaded
         window.onYouTubeIframeAPIReady = () => {
-            setIsVideoReady(true);
+            // setIsVideoReady(true);
             const container = document.getElementById('youtube-player');
             const width = container?.offsetWidth;
             const height = (width / 16) * 9; // Assuming 16:9 aspect ratio
 
-            console.log("ksss", videoSrcId);
             playerRef.current = new window.YT.Player('youtube-player', {
                 height: `${height}px`,
                 width: width,
-                videoId: videoSrcId ? videoSrcId : '5LyksSB6APY',
-                // sử dụng props sẽ giải quyết đc cái màn hình đen
-                playerVars: {                    
+                videoId: videoSrcId,
+                playerVars: {
                     autoplay: 0, // Disable autoplay  
                     controls: 0, // Disable default controls
                     disablekb: 1, // Disable keyboard controls 
                 },
                 events: {
-                    'onError': onPlayerError,
-                    
-                  }
+                    'onReady': onPlayerReady,
+                }
             });
         };
+    }
+
+    useEffect(() => {
+        prepareToPlay();
     }, [videoSrcId]);
 
 
@@ -171,6 +175,9 @@ const YouTubeVideo = () => {
 
             const line = (inputValues[currentIndexLine] ?? []).join(' ');
             const correctLine = data[currentIndexLine]?.segs[0]['utf8'];
+
+            console.log("line 1", normalize(line));
+            console.log("line 2", normalize(correctLine));
 
             if (normalize(line) === normalize(correctLine)) {
                 // setCurrentIndex(currentIndexLine + 1);
@@ -253,9 +260,9 @@ const YouTubeVideo = () => {
 
     function handleReload() {
         window.location.reload()
-    } 
-    
-    
+    }
+
+
 
     if (!isLoadSuccess) return (<NotFoundVideo />);
     else
@@ -317,15 +324,15 @@ const YouTubeVideo = () => {
                                     &nbsp;<Link to='/profile' style={{ textDecoration: "underline" }}>UPGRADE</Link>&nbsp;
                                     to dictate this video!
                                 </div>
-                                : 
+                                :
                                 !data && !localStorage.getItem('role') ? <>
-                                <div className="upgrage-info">
-                                    Please
-                                    &nbsp;<Link to='/signin' style={{ textDecoration: "underline" }}>LOG IN</Link>&nbsp;
-                                    to dictate this video!
-                                </div>
-                                </> :                                
-                                <></>
+                                    <div className="upgrage-info">
+                                        Please
+                                        &nbsp;<Link to='/signin' style={{ textDecoration: "underline" }}>LOG IN</Link>&nbsp;
+                                        to dictate this video!
+                                    </div>
+                                </> :
+                                    <></>
                             }
 
                             <div className="container-dictation">
@@ -442,12 +449,13 @@ const YouTubeVideo = () => {
                     pauseOnHover
                     theme="colored"
                     transition={Zoom}
-                    style={{fontSize: '18px'}}
+                    style={{ fontSize: '18px' }}
                 />
-                
+
 
             </>
         );
 };
 
 export default YouTubeVideo;
+
