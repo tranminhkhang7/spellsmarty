@@ -401,7 +401,7 @@ const YouTubeVideo = () => {
                                                     })}
                                                 </form>
 
-                                                <div>
+                                                {/* <div>
                                                     <button onClick={openModal}>Open Modal</button>
                                                     <Modal 
                                                     className='feedback-modal'
@@ -410,7 +410,7 @@ const YouTubeVideo = () => {
                                                         <p>This is the content of the modal.</p>
                                                         <button onClick={closeModal}>Close</button>
                                                     </Modal>
-                                                </div>
+                                                </div> */}
 
                                             </div>
                                             {
