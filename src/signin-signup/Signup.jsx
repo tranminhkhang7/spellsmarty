@@ -44,7 +44,8 @@ const Signup = () => {
 		axios(config)
 		.then(function (response) {
 			console.log("Signed up successfully!");
-			navigate('/');
+			const timeBuster = Date.now();
+			navigate(`/signin?no=${timeBuster}`);
 		})
 		.catch(function (error) {
 			console.log(error);

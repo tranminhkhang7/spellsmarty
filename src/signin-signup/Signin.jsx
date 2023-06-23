@@ -1,7 +1,17 @@
-import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useEffect, useState } from 'react';
+import { useNavigate, useSearchParams } from 'react-router-dom';
+import { ToastContainer, Zoom, toast } from 'react-toastify';
 
 const Signin = () => {
+  const [queryParameters] = useSearchParams();
+  console.log("ll", queryParameters.get('no'));
+
+  useEffect(() => {
+    console.log(queryParameters.get('no'));
+    const notify = () => toast("Please check your email.");
+    if (queryParameters.get('no')) notify();
+}, []);
+
   const [email, setEmail] = useState();
   const [password, setPassword] = useState();
   const [success, setSuccess] = useState(true);
@@ -161,6 +171,21 @@ const Signin = () => {
           </div>
         </div>
       </div>
+
+      <ToastContainer
+                    position="bottom-center"
+                    autoClose={7000}
+                    hideProgressBar={false}
+                    newestOnTop={false}
+                    closeOnClick
+                    rtl={false}
+                    pauseOnFocusLoss
+                    draggable
+                    pauseOnHover
+                    theme="colored"
+                    transition={Zoom}
+                    style={{ fontSize: '18px' }}
+                />
     </>
   );
 };
