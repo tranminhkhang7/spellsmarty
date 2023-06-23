@@ -9,6 +9,7 @@ import { fetchVideoByVideoId, saveProgress } from '../../services/videoServices'
 import NotFoundVideo from '../NotFoundVideo/NotFoundVideo';
 import { Tooltip } from 'react-tooltip'
 import { ToastContainer, Zoom, toast } from 'react-toastify';
+import Modal from 'react-modal';
 import 'react-toastify/dist/ReactToastify.css';
 
 const YouTubeVideo = () => {
@@ -71,7 +72,7 @@ const YouTubeVideo = () => {
     const fetchSaveProgress = (videoIdString, progress) => {
         saveProgress(videoIdString, progress)
             .then((res) => {
-                console.log("proo", res);
+                // console.log("proo", res);
             })
             .catch((err) => {
                 console.log(err);
@@ -262,7 +263,15 @@ const YouTubeVideo = () => {
         window.location.reload()
     }
 
+    const [isOpen, setIsOpen] = useState(false);
 
+    const openModal = () => {
+      setIsOpen(true);
+    };
+  
+    const closeModal = () => {
+      setIsOpen(false);
+    };
 
     if (!isLoadSuccess) return (<NotFoundVideo />);
     else
@@ -391,6 +400,18 @@ const YouTubeVideo = () => {
                                                         }
                                                     })}
                                                 </form>
+
+                                                <div>
+                                                    <button onClick={openModal}>Open Modal</button>
+                                                    <Modal 
+                                                    className='feedback-modal'
+                                                    isOpen={isOpen} onRequestClose={closeModal}>
+                                                        <h2>Modal Content</h2>
+                                                        <p>This is the content of the modal.</p>
+                                                        <button onClick={closeModal}>Close</button>
+                                                    </Modal>
+                                                </div>
+
                                             </div>
                                             {
                                                 isCorrect[index] === true ?

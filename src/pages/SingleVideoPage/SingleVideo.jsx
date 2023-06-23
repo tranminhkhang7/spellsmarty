@@ -19,7 +19,7 @@ const SingleVideo = () => {
         <>
             <Navbar />
             <YouTubeVideo />
-            {/* <FromThisCreator /> */}
+            <FromThisCreator />
             <Related />
             <Footer />
         </>

@@ -72,6 +72,8 @@ const Register = () =>{
 		.then(function (response) {
 			console.log("Signed up successfully!");
 			setSuccess(true);
+			const timeBuster = Date.now();
+			navigate(`/signin?no=${timeBuster}`);
 			//navigate('/');
 		})
 		.catch(function (error) {

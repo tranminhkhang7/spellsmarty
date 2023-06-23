@@ -270,3 +270,38 @@
     font-size: 20px;
     font-weight: bold;
 }
+
+.feedback-modal {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 400px;
+    height: 200px;
+    background-color: white;
+    border: 1px solid black;
+    border-radius: 4px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: black;
+  }
+  
+  .feedback-modal h2 {
+    margin-bottom: 10px;
+  }
+  
+  .feedback-modal p {
+    margin-bottom: 20px;
+  }
+  
+  .feedback-modal button {
+    padding: 10px 20px;
+    background-color: #eaeaea;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
