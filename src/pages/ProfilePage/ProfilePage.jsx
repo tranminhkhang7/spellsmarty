@@ -4,6 +4,8 @@ import { faCrown } from '@fortawesome/free-solid-svg-icons';
 import React, { useState, useEffect, useRef } from 'react';
 import Moment from 'moment';
 import { fetchUserDetails } from '../../services/profileServices';
+import momoQRCode from "../../assets/momo_qrcode.jpeg";
+
 function ProfilePage() {
   // Sample user data
   // const user = {
@@ -102,7 +104,7 @@ function ProfilePage() {
               <div className="max-w-md mx-auto bg-white rounded-lg p-4" ref={modalRef}>
                 <img
                   className="mx-auto"
-                  src="https://z-p3-scontent.fsgn5-6.fna.fbcdn.net/v/t1.15752-9/353071081_969901747690094_4238618978827462517_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=ae9488&_nc_ohc=EmyBF0hMtRsAX9U7QtV&_nc_ht=z-p3-scontent.fsgn5-6.fna&oh=03_AdSu60a8G5c6cJh_ApUpbpHCKLt9wH-bNZ6fkxHaqBVDLA&oe=64A97306"
+                  src={momoQRCode}
                   alt="QR Code"
                 />
               </div>
