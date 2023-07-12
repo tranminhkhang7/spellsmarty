@@ -1,3 +1,127 @@
+// import { useState } from "react";
+// import { useNavigate } from "react-router";
+// import "./Login.css";
+// import { useEffect } from "react";
+// import { useSearchParams } from "react-router-dom";
+// import { ToastContainer, Zoom, toast } from 'react-toastify';
+// import image from "../../assets/big-logo-with-shadow.png"
+
+// const Login = () => {
+// 	const [queryParameters] = useSearchParams();
+
+// 	useEffect(() => {
+// 		console.log(queryParameters.get('no'));
+// 		const notify = () => toast("Please check your email.");
+// 		if (queryParameters.get('no')) notify();
+// 	}, []);
+
+// 	const [username, setUsername] = useState('');
+// 	const [password, setPassword] = useState('');
+// 	const [success, setSuccess] = useState(true);
+// 	const [isDisabled, setIsDisabled] = useState(true);
+// 	const navigate = useNavigate();
+
+// 	useEffect(() => {
+// 		setIsDisabled(username === '' || password === '');
+// 	}, [username, password]);
+
+// 	const handleLogin = () => {
+// 		setIsDisabled(true);
+// 		var axios = require('axios');
+// 		var data = JSON.stringify({
+// 			userName: username,
+// 			password: password,
+// 		});
+
+// 		var config = {
+// 			method: 'post',
+// 			url: 'https://spellsmarty.azurewebsites.net/api/Auth/login',
+// 			headers: {
+// 				'Content-Type': 'application/json',
+// 			},
+// 			data: data,
+// 		};
+
+// 		axios(config)
+// 			.then(function (response) {
+// 				console.log(response);
+// 				localStorage.setItem('token', response.data.token);
+// 				localStorage.setItem('username', response.data.name);
+// 				localStorage.setItem('role', response.data.role);
+// 				console.log(response.data.role);
+// 				if (response.data.role === 'Admin' || response.data.role === 'Staff') {
+// 					navigate('/admin/customers');
+// 				} else {
+// 					navigate('/');
+// 				}
+// 			})
+// 			.catch(function (error) {
+// 				console.log(error);
+// 				setSuccess(false);
+// 				setIsDisabled(false);
+// 			});
+// 	};
+
+
+// 	return (
+// 		<div class="flex flex-col md:flex-row">
+// 			<div className="w-full md:w-1/2 left-side md:full-fit" style={{ padding: "0 60px" }}>
+// 				<img src={image} alt="Your Image" className="hidden md:block" />
+// 			</div>
+// 			<div class="w-full md:w-1/2 bg-gray-200">
+// 				<section class="bg-gray-50 dark:bg-gray-900">
+// 					<div class="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0">
+// 						<a href="/" class="flex items-center mb-6 text-2xl font-semibold text-gray-900 dark:text-white">
+// 							SpellSmarty
+// 						</a>
+// 						<div class="w-full bg-white rounded-lg shadow dark:border md:mt-0 sm:max-w-md xl:p-0 dark:bg-gray-800 dark:border-gray-700">
+// 							<div class="p-6 space-y-4 md:space-y-6 sm:p-8">
+// 								<h1 class="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-white">
+// 									Sign in to your account
+// 								</h1>
+// 								<form class="space-y-4 md:space-y-6" action="#">
+// 									<div>
+// 										<label for="email" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Username</label>
+// 										<input type="text" name="email" id="email" class="bg-gray-50 border border-gray-300 text-gray-900 
+//               sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 
+//               dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="YourUsername"
+// 											required=""
+// 											value={username}
+// 											onChange={(e) => setUsername(e.target.value)}
+// 										/>
+// 									</div>
+// 									<div>
+// 										<label for="password" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Password</label>
+// 										<input type="password" name="password" id="password" placeholder="••••••••" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required=""
+// 											value={password}
+// 											onChange={(e) => setPassword(e.target.value)} />
+// 									</div>
+// 									{!success ?
+// 										<p class="text-sm font-light" style={{ color: 'red' }}>
+// 											Fail to login! Make sure you typed correctly and had your account verified.
+// 										</p>
+// 										:
+// 										<></>
+// 									}
+// 									<button
+// 										type="submit"
+// 										class="w-full text-white bg-primaryColor hover:bg-primary-700 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800"
+// 										onClick={handleLogin}>Log in</button>
+// 									<p class="text-sm font-light text-gray-500 dark:text-gray-400">
+// 										You don’t have an account yet? <a href="/signup" class="font-medium text-primary-600 hover:underline dark:text-primary-500">Sign up</a>
+// 									</p>
+// 								</form>
+// 							</div>
+// 						</div>
+// 					</div>
+// 				</section>
+// 			</div>
+// 		</div>
+// 	);
+// }
+
+// export default Login;
+
 import { useState } from "react";
 import { useNavigate } from "react-router";
 import "./Login.css";

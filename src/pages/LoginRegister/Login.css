@@ -1,3 +1,23 @@
-.bg-image{
+/* .bg-image{
 	background-image: url('https://images.pexels.com/photos/2325729/pexels-photo-2325729.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
+} */
+
+.left-side {
+	background-color: #f9fafb;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+  }
+
+.full-fit {
+	position: relative;
+	height: 100vh;
+	overflow: hidden;
+}
+
+.full-fit img {
+	height: auto;
+	width: 100%;
+	max-width: none;
+	object-fit: contain;
 }

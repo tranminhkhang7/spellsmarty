@@ -19,7 +19,7 @@ const SearchPage = () => {
 
   var config = {
     method: 'get',
-    url: 'https://spellsmarty.azurewebsites.net/api/Video',
+    url: 'https://spellsmarty2.azurewebsites.net/api/Video',
     headers: {
       'Content-Type': 'application/json',
     },
