@@ -19,6 +19,16 @@ function ProgressSlider(props) {
     });
   };
 
+  const getLengthJSON = (inputString) => {
+    if (inputString) {
+      try {
+        return JSON.parse(inputString)?.events?.length;
+      } catch (e) {
+        return 0;
+      }
+    }
+  };
+
   return (
     <div>
       <Swiper slidesPerView={2} className="mySwiper w-7/12">
@@ -28,12 +38,19 @@ function ProgressSlider(props) {
               <div className="card bg-white shadow-lg rounded-xl p-2 text-center">
                 <img src={e.thumbnailLink} alt="Image 1" className="w-full" />
                 <p className="text-sm leading-tight mt-3">{e.title}</p>
+
+
+
+
                 <ProgressBarSlider
                   bg="#000"
                   completed={
-                    (e.progress.split(' ').length / JSON.parse(e.subtitle)?.events?.length) * 100
+                    getLengthJSON(e.subtitle) === 0 ?
+                      (e.progress.split(' ').length / getLengthJSON(e.subtitle)) * 100
+                      : 0
                   }
                 />
+
               </div>
             </div>
           </SwiperSlide>
