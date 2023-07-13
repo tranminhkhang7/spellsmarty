@@ -124,14 +124,14 @@ const YouTubeVideo = () => {
     // console.log("moi vo ne", videoSrcId);
 
     function onPlayerReady(event) {
-        console.log("load r", videoSrcId);
+        // console.log("load r", videoSrcId);
     }
 
     function prepareToPlay() {
 
         // Load YouTube API script
         const tag = document.createElement('script');
-        tag.src = 'https://www.youtube.com/iframe_api';
+        tag.src = 'http://www.youtube.com/iframe_api';
         const firstScriptTag = document.getElementsByTagName('script')[0];
         firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 
@@ -144,8 +144,7 @@ const YouTubeVideo = () => {
 
             playerRef.current = new window.YT.Player('youtube-player', {
                 height: `${height}px`,
-                width: width,
-                videoId: videoSrcId,
+                videoId: 'OWbDJFtHl3w',
                 playerVars: {
                     autoplay: 0, // Disable autoplay  
                     controls: 0, // Disable default controls
@@ -160,7 +159,7 @@ const YouTubeVideo = () => {
 
     useEffect(() => {
         prepareToPlay();
-    }, [videoSrcId]);
+    }, []);
 
 
 
@@ -176,9 +175,6 @@ const YouTubeVideo = () => {
 
             const line = (inputValues[currentIndexLine] ?? []).join(' ');
             const correctLine = data[currentIndexLine]?.segs[0]['utf8'];
-
-            console.log("line 1", normalize(line));
-            console.log("line 2", normalize(correctLine));
 
             if (normalize(line) === normalize(correctLine)) {
                 // setCurrentIndex(currentIndexLine + 1);
@@ -266,19 +262,21 @@ const YouTubeVideo = () => {
     const [isOpen, setIsOpen] = useState(false);
 
     const openModal = () => {
-      setIsOpen(true);
+        setIsOpen(true);
     };
-  
+
     const closeModal = () => {
-      setIsOpen(false);
+        setIsOpen(false);
     };
 
     if (!isLoadSuccess) return (<NotFoundVideo />);
     else
         return (
             <>
+                {/* <div id="youtube-player"></div> */}
+
                 <div className="dictation-section">
-                    <div className='left-side'>
+                    <div className='left-dictation-side'>
 
                         <div id="youtube-player"></div>
                         {isVideoReady ?
@@ -324,7 +322,7 @@ const YouTubeVideo = () => {
 
                     </div>
 
-                    <div className='right-side'>
+                    <div className='right-dictation-side'>
                         <div>
                             {!data && localStorage.getItem('role') === 'Free'
                                 ?
@@ -479,4 +477,3 @@ const YouTubeVideo = () => {
 };
 
 export default YouTubeVideo;
-
