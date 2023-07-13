@@ -158,7 +158,7 @@ const Login = () => {
 
 		var config = {
 			method: 'post',
-			url: 'https://spellsmarty.azurewebsites.net/api/Auth/login',
+			url: 'https://spellsmarty2.azurewebsites.net/api/Auth/login',
 			headers: {
 				'Content-Type': 'application/json',
 			},

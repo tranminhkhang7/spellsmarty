@@ -62,7 +62,7 @@ const Register = () => {
 
 		var config = {
 			method: 'post',
-			url: 'https://spellsmarty.azurewebsites.net/api/Auth/signup',
+			url: 'https://spellsmarty2.azurewebsites.net/api/Auth/signup',
 			headers: {
 				'Content-Type': 'application/json',
 			},
